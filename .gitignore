@@ -75,3 +75,13 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 # End of https://www.toptal.com/developers/gitignore/api/unity
+# Unity project - HUS Escape
+/HUS_Escape/[Ll]ibrary/
+/HUS_Escape/[Tt]emp/
+/HUS_Escape/[Oo]bj/
+/HUS_Escape/[Bb]uild/
+/HUS_Escape/[Bb]uilds/
+/HUS_Escape/[Ll]ogs/
+/HUS_Escape/[Uu]ser[Ss]ettings/
+/HUS_Escape/[Mm]emoryCaptures/
+/HUS_Escape/[Rr]ecordings/

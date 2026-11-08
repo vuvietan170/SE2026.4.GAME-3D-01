@@ -1,80 +1,64 @@
 ﻿using UnityEngine;
 using UnityEditor;
 using System.IO;
+using Unity.Scripting.LifecycleManagement;
 using UnityEngine.UIElements;
 
 [CustomEditor(typeof(Readme))]
-[InitializeOnLoad]
-sealed class ReadmeEditor : Editor
+sealed partial class ReadmeEditor : Editor
 {
-    static readonly string k_ShowedReadmeSessionStateName = "ReadmeEditor.showedReadme";
-    static readonly string k_ReadmeSourceDirectory = "Assets/TutorialInfo";
+    const string k_ShowedReadmeSessionStateName = "ReadmeEditor.showedReadme";
+    const string k_ReadmeSourceDirectory = "Assets/TutorialInfo";
 
-    static ReadmeEditor()
+    [OnCodeLoaded]
+    static void OnCodeLoaded()
         => EditorApplication.delayCall += SelectReadmeAutomatically;
 
     static void SelectReadmeAutomatically()
     {
         if (!SessionState.GetBool(k_ShowedReadmeSessionStateName, false))
         {
-            var readme = SelectReadme();
+            SelectReadme();
             SessionState.SetBool(k_ShowedReadmeSessionStateName, true);
-
-            if (readme && !readme.loadedLayout)
-            {
-                EditorUtility.LoadWindowLayout(Path.Combine(Application.dataPath, "TutorialInfo/Layout.wlt"));
-                readme.loadedLayout = true;
-            }
         }
     }
 
     static Readme SelectReadme()
     {
-        var ids = AssetDatabase.FindAssets("Readme t:Readme");
+        var ids = AssetDatabase.FindAssetGUIDs("Readme t:Readme");
         if (ids.Length != 1)
         {
-            Debug.Log("Couldn't find a readme");
+            Debug.LogWarning("Couldn't find a readme");
             return null;
         }
 
-        var readmeObject = AssetDatabase.LoadMainAssetAtPath(AssetDatabase.GUIDToAssetPath(ids[0]));
-        Selection.objects = new UnityEngine.Object[] { readmeObject };
-        return (Readme)readmeObject;
+        var readmeObject = AssetDatabase.LoadAssetByGUID<Readme>(ids[0]);
+        Selection.activeObject = readmeObject;
+        return readmeObject;
     }
-    
-    void RemoveTutorial()
+
+    static void RemoveTutorial()
     {
         if (EditorUtility.DisplayDialog("Remove Readme Assets",
-            
-            $"All contents under {k_ReadmeSourceDirectory} will be removed, are you sure you want to proceed?",
-            "Proceed",
-            "Cancel"))
+                                        $"All contents under {k_ReadmeSourceDirectory} will be removed, are you sure you want to proceed?",
+                                        "Proceed",
+                                        "Cancel"))
         {
             if (Directory.Exists(k_ReadmeSourceDirectory))
-            {
-                FileUtil.DeleteFileOrDirectory(k_ReadmeSourceDirectory);
-                FileUtil.DeleteFileOrDirectory(k_ReadmeSourceDirectory + ".meta");
-            }
+                AssetDatabase.DeleteAsset(k_ReadmeSourceDirectory);
             else
-            {
-                Debug.Log($"Could not find the Readme folder at {k_ReadmeSourceDirectory}");
-            }
+                Debug.LogWarning($"Could not find the Readme folder at {k_ReadmeSourceDirectory}");
 
             var readmeAsset = SelectReadme();
             if (readmeAsset != null)
             {
                 var path = AssetDatabase.GetAssetPath(readmeAsset);
-                FileUtil.DeleteFileOrDirectory(path + ".meta");
-                FileUtil.DeleteFileOrDirectory(path);
+                AssetDatabase.DeleteAsset(path);
             }
 
             AssetDatabase.Refresh();
         }
     }
-
-    //Remove ImGUI
-    protected sealed override void OnHeaderGUI() { }
-    public sealed override void OnInspectorGUI() { }
 
     public override VisualElement CreateInspectorGUI()
     {
@@ -93,7 +77,7 @@ sealed class ReadmeEditor : Editor
         //Header
         VisualElement title = new();
         title.AddToClassList("title");
-        title.Add(ChainWithClass(new Image() { image = readme.icon }, "title__icon"));
+        title.Add(ChainWithClass(new Image { image = readme.icon }, "title__icon"));
         title.Add(ChainWithClass(new Label(readme.title), "title__text"));
         root.Add(title);
 
@@ -112,7 +96,7 @@ sealed class ReadmeEditor : Editor
             if (!string.IsNullOrEmpty(section.linkText))
             {
                 var link = ChainWithClass(new Label(section.linkText), "section__link");
-                link.RegisterCallback<ClickEvent>(evt => Application.OpenURL(section.url));
+                link.RegisterCallback<ClickEvent, string>((_, url) => Application.OpenURL(url), section.url);
                 part.Add(link);
             }
 

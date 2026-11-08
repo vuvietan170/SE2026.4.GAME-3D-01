@@ -4,13 +4,12 @@
 
 .title
 {
-	margin: -2px -6px 0px -15px;
-	padding: 20px 6px 20px 22px;
+	margin: -2px -6px 14px -15px;
+	padding: 20px 6px 20px 15px;
 	flex-direction: row;
 	align-items: center;
 	background-color: var(--unity-colors-inspector_titlebar-background);
-	height: 139px;
-	border-bottom-width: 1px; 
+	border-bottom-width: 1px;
 	border-bottom-color: var(--unity-colors-inspector_titlebar-border);
 }
 
@@ -22,21 +21,21 @@
 
 .title__text
 {
-	margin-left: 25px;
-	padding: 0px 0px 0px 0px;
+	margin-left: 16px;
+	padding: 0;
 	font-size: 26px;
 	flex-shrink: 1;
 	white-space: normal;
 	overflow: hidden;
 }
 
-.section 
+.section
 {
 	align-items:flex-start;
 	margin-bottom: 16px;
 }
 
-.section__header 
+.section__header
 {
 	font-size: 20px;
 	white-space: normal;
@@ -49,25 +48,24 @@
 	white-space: normal;
 }
 
-.section__link 
+.section__link
 {
 	font-size: 14px;
 	white-space: nowrap;
 	overflow: hidden;
-	border-bottom-width: 0px; 
-	margin-bottom: 0px;
-	border-bottom-color: var(--link-color);
+	border-bottom-width: 1px;
+	margin-bottom: -1px;
+    border-bottom-color: transparent;
 	color: var(--link-color);
 }
 
 .section__link:hover
 {
-	border-bottom-width: 1px; 
-	margin-bottom: -1px;
+    border-bottom-color: var(--link-color);
 	cursor: link;
 }
 
-.remove-readme-button 
+.remove-readme-button
 {
 	font-size: 13px;
 	-unity-font-style: bold;
