@@ -1,0 +1,14 @@
+{
+    "name": "HUSEscape.Core.EditModeTests",
+    "rootNamespace": "HUSEscape.Core",
+    "references": [
+        "HUSEscape.Core"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "autoReferenced": false
+}

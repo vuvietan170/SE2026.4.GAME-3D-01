@@ -1,0 +1,11 @@
+{
+    "name": "HUSEscape.Core.PlayModeTests",
+    "rootNamespace": "HUSEscape.Core",
+    "references": [
+        "HUSEscape.Core"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "autoReferenced": false
+}
