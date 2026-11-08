@@ -30,9 +30,11 @@ or Singleton. No packages are added or changed.
 
 ## Initialization lifecycle
 
-1. In a future scene-authoring task, add `GameBootstrap` to a dedicated active root
-   GameObject. Its required `SceneLoader` must also be enabled. Do not put unrelated
-   scene content under this persistent root.
+1. FO-003A authors `GameBootstrap` on the dedicated active BootstrapCore root in
+   `Assets/_Project/Scenes/Bootstrap/Bootstrap.unity`. Its required `SceneLoader`
+   is enabled on the same root. Do not put unrelated scene content under this
+   persistent root. See [BOOTSTRAP_SCENE.md](BOOTSTRAP_SCENE.md) for the separate
+   one-shot BootstrapSceneEntry coordinator and serialized destination.
 2. `Awake` validates the root and elects ownership. An already initialized bootstrap
    wins, even if temporarily inactive. Otherwise, the eligible active bootstrap
    with the lowest Unity entity ID wins, independent of `Awake` ordering.
@@ -66,8 +68,9 @@ permission to use inactive services. A reference to a rejected duplicate never
 silently resolves to a different owner. `Manager` is null before initialization
 or after rejection.
 Initialization does not load a scene or claim a MainMenu scene exists. This
-feature creates or modifies no scenes, prefabs, or build settings, so the Core
-does not automatically run in the existing SampleScene.
+FO-002 feature created or modified no scenes, prefabs, or build settings.
+FO-003A supplies the Bootstrap entry scene and places it first in Build Settings;
+opening SampleScene directly still does not automatically initialize Core.
 
 ## State transitions
 
@@ -184,9 +187,9 @@ and [allowSceneActivation behavior](https://docs.unity3d.com/6000.0/Documentatio
   not depend on subscriber execution order.
 - Add states only with an updated transition matrix, documentation, and tests.
   Add scene-specific recovery, pause consequences, and menu flows separately.
-- The recommended next task is to author and wire a Bootstrap scene, register
-  its intended destination scenes, and validate ownership and scene loading in
-  Play Mode. None of those scene changes are part of FO-002.
+- FO-003A supplies Bootstrap scene wiring and validates startup to the existing
+  SampleScene. Future MainMenu authoring can replace that development destination
+  with a menu scene targeting Ready. Those scene flows remain outside FO-002.
 
 ## Validation and tests
 
