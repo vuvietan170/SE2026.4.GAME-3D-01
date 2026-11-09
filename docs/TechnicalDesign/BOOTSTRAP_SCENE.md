@@ -7,6 +7,11 @@ Core to an application entry point. It introduces no gameplay, menu UI, loading
 UI, packages, prefabs, Singleton, global event system, or changes to the existing
 GameManager, GameBootstrap, SceneLoader, and SceneLoadBackend implementations.
 
+FO-003B adds the separate UI-owned MainMenuFlow to this persistent root and
+updates serialized startup/build configuration as described below. The FO-003A
+entry and all FO-002 implementations remain unchanged. See
+[MAIN_MENU.md](MAIN_MENU.md) for menu behavior and current integration validation.
+
 ## Scene and build configuration
 
 Scene: `Assets/_Project/Scenes/Bootstrap/Bootstrap.unity`.
@@ -17,6 +22,7 @@ BootstrapCore (active root GameObject)
   GameBootstrap       enabled
   SceneLoader         enabled
   BootstrapSceneEntry enabled
+  MainMenuFlow        enabled (FO-003B, HUSEscape.UI)
 ```
 
 The root contains no camera, light, or unrelated content. `GameBootstrap` persists
@@ -29,24 +35,25 @@ needed for this single authored root.
 | Field | Value |
 | --- | --- |
 | `bootstrap` | GameBootstrap on the same BootstrapCore root |
-| `destinationScenePath` | `Assets/Scenes/SampleScene.unity` |
-| `destinationState` | `Playing` |
+| `destinationScenePath` | `Assets/_Project/Scenes/MainMenu/MainMenu.unity` |
+| `destinationState` | `Ready` |
 
-Both scenes are enabled in the global Build Settings:
+All three scenes are enabled in the global Build Settings:
 
 | Index | Scene |
 | --- | --- |
 | 0 | `Assets/_Project/Scenes/Bootstrap/Bootstrap.unity` |
-| 1 | `Assets/Scenes/SampleScene.unity` |
+| 1 | `Assets/_Project/Scenes/MainMenu/MainMenu.unity` |
+| 2 | `Assets/Scenes/SampleScene.unity` |
 
 SampleScene remains at its original path, with GUID
 `99c9720ab356a0642a771bea13969a05` and unchanged content. The Input System config
 object in EditorBuildSettings is preserved. No other ProjectSettings are changed.
 
-SampleScene is a temporary development destination, not a MainMenu implementation
-or a final gameplay scene. A future MainMenu can use the same entry contract with
-its enabled full scene path and `Ready` as its destination state. The release
-platform remains TBD.
+MainMenu uses the existing entry contract with its enabled full path and Ready
+destination. Its Start action loads SampleScene/Playing through the same loader.
+SampleScene is a temporary development destination, not a final gameplay scene.
+The release platform remains TBD.
 
 ## Initialization and transition flow
 
@@ -59,17 +66,18 @@ platform remains TBD.
    `TryGetServices`. Start runs after scene Awake callbacks; no production script
    execution-order setting is required.
 4. The entry subscribes to the loader's instance completion/failure events before
-   requesting SampleScene through the public production `TryLoadScene` API.
+   requesting MainMenu through the public production `TryLoadScene` API.
 5. Core reserves `Loading` and uses the default Unity backend in Single mode.
-   SampleScene activates automatically, and the Bootstrap source scene unloads.
+   MainMenu activates automatically, and the Bootstrap source scene unloads.
    BootstrapCore, its manager, loader, and startup observer survive together.
-6. Core finalizes `Playing`, releases the reservation, and publishes completion.
+6. Core finalizes `Ready`, releases the reservation, and publishes completion.
    The entry records successful completion, removes both handlers, and disables
-   itself. No further scene request is issued automatically.
+   itself. No further scene request is issued automatically. MainMenuFlow binds
+   the scene-owned view; only a Start action requests SampleScene/Playing.
 
 ```text
-Initializing -> Ready -> Loading -> Playing
-Bootstrap scene       ->           SampleScene
+Initializing -> Ready -> Loading -> Ready -> Start -> Loading -> Playing
+Bootstrap scene       ->           MainMenu       ->            SampleScene
           BootstrapCore persists across the replacement
 ```
 
@@ -132,10 +140,10 @@ with the observer. The harness does not call DontDestroyOnLoad, so survival reli
 on production GameBootstrap. A parent process enforces a 600-second timeout and
 can terminate only the editor process it launched.
 
-### Unity test results
+### Historical FO-003A Unity test results
 
-Unity 6000.6.5f1 executed the complete existing and new suites on a disposable
-project copy:
+Before FO-003B changed the destination to MainMenu, Unity 6000.6.5f1 executed the
+complete FO-003A suites on a disposable project copy:
 
 | Suite | Existing FO-002 | New FO-003A | Passed | Failed | Skipped |
 | --- | --- | --- | --- | --- | --- |

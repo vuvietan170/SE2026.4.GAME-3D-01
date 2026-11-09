@@ -1,0 +1,9 @@
+{
+    "name": "HUSEscape.UI",
+    "rootNamespace": "HUSEscape.UI",
+    "references": [
+        "HUSEscape.Core",
+        "UnityEngine.UI",
+        "Unity.InputSystem"
+    ]
+}
