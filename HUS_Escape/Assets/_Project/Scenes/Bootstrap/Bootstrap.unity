@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 819219543}
   - component: {fileID: 819219542}
   - component: {fileID: 819219541}
+  - component: {fileID: 819219545}
   m_Layer: 0
   m_Name: BootstrapCore
   m_TagString: Untagged
@@ -151,8 +152,8 @@ MonoBehaviour:
   m_Name:
   m_EditorClassIdentifier: HUSEscape.Core::HUSEscape.Core.BootstrapSceneEntry
   bootstrap: {fileID: 819219542}
-  destinationScenePath: Assets/Scenes/SampleScene.unity
-  destinationState: 3
+  destinationScenePath: Assets/_Project/Scenes/MainMenu/MainMenu.unity
+  destinationState: 1
 --- !u!114 &819219542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,6 +193,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &819219545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 819219540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6988d4a98a864b89b9f255053c0b2c46, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: HUSEscape.UI::HUSEscape.UI.MainMenuFlow
+  bootstrap: {fileID: 819219542}
+  playScenePath: Assets/Scenes/SampleScene.unity
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

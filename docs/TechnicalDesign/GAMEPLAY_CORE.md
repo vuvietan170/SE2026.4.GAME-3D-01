@@ -71,6 +71,10 @@ Initialization does not load a scene or claim a MainMenu scene exists. This
 FO-002 feature created or modified no scenes, prefabs, or build settings.
 FO-003A supplies the Bootstrap entry scene and places it first in Build Settings;
 opening SampleScene directly still does not automatically initialize Core.
+FO-003B configures that entry to load MainMenu/Ready, then uses a separate
+`HUSEscape.UI` assembly to request SampleScene/Playing on Start. MainMenuFlow is
+explicitly attached to the persistent owner; Core has no dependency on UI and no
+implementation changes. See [MAIN_MENU.md](MAIN_MENU.md) for this integration.
 
 ## State transitions
 
@@ -187,9 +191,10 @@ and [allowSceneActivation behavior](https://docs.unity3d.com/6000.0/Documentatio
   not depend on subscriber execution order.
 - Add states only with an updated transition matrix, documentation, and tests.
   Add scene-specific recovery, pause consequences, and menu flows separately.
-- FO-003A supplies Bootstrap scene wiring and validates startup to the existing
-  SampleScene. Future MainMenu authoring can replace that development destination
-  with a menu scene targeting Ready. Those scene flows remain outside FO-002.
+- FO-003A supplies Bootstrap scene wiring. FO-003B sets its serialized destination
+  to MainMenu/Ready and adds the UI-owned Start flow to SampleScene/Playing.
+  Those scene flows remain outside Core; the transition matrix and loader APIs
+  continue to own state and native loading without feature-specific changes.
 
 ## Validation and tests
 

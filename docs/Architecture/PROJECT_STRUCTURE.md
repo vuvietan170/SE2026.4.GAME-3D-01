@@ -57,6 +57,14 @@ All new project-owned Unity assets and C# code belong in
 These folders reserve ownership boundaries only. FO-001 introduces no gameplay
 scripts, placeholder classes, scenes, or assembly definitions.
 
+FO-003B implements the `Scripts/UI/` boundary as the `HUSEscape.UI` assembly and
+namespace. It references Core and existing Unity UI/Input System assemblies;
+Core never references UI. MainMenuFlow belongs to the persistent BootstrapCore
+owner, while MainMenuView and its EventSystem belong to the MainMenu scene.
+Keep dependencies explicit and release scene references on unload. UI tests live
+in separate `Tests/Editor/` and `Tests/PlayMode/` assemblies. See
+[MAIN_MENU.md](../TechnicalDesign/MAIN_MENU.md) for lifecycle and input contracts.
+
 ## Third-party and existing content
 
 `HUS_Escape/Assets/ThirdParty/` holds externally maintained assets and dependencies

@@ -12,6 +12,7 @@ namespace HUSEscape.Core
     public sealed class BootstrapSceneEntryTests
     {
         private const string BootstrapPath = "Assets/_Project/Scenes/Bootstrap/Bootstrap.unity";
+        private const string MenuPath = "Assets/_Project/Scenes/MainMenu/MainMenu.unity";
         private const string SamplePath = "Assets/Scenes/SampleScene.unity";
         private GameObject root;
         private BootstrapSceneEntry entry;
@@ -102,10 +103,10 @@ namespace HUSEscape.Core
         }
 
         [Test]
-        public void BuildSettings_HaveBootstrapThenPreservedSampleScene()
+        public void BuildSettings_HaveBootstrapMenuThenPreservedSampleScene()
         {
             EditorBuildSettingsScene[] scenes = EditorBuildSettings.scenes;
-            Assert.That(scenes.Select(scene => scene.path), Is.EqualTo(new[] { BootstrapPath, SamplePath }));
+            Assert.That(scenes.Select(scene => scene.path), Is.EqualTo(new[] { BootstrapPath, MenuPath, SamplePath }));
             Assert.That(scenes.All(scene => scene.enabled), Is.True);
             Assert.That(AssetDatabase.AssetPathToGUID(SamplePath), Is.EqualTo("99c9720ab356a0642a771bea13969a05"));
             Assert.That(AssetDatabase.AssetPathToGUID(BootstrapPath), Has.Length.EqualTo(32));
@@ -125,7 +126,7 @@ namespace HUSEscape.Core
                 Assert.That(core.name, Is.EqualTo("BootstrapCore"));
                 Assert.That(core.activeSelf, Is.True);
                 Assert.That(core.transform.parent, Is.Null);
-                Assert.That(core.GetComponents<MonoBehaviour>(), Has.Length.EqualTo(3));
+                Assert.That(core.GetComponents<MonoBehaviour>(), Has.Length.EqualTo(4));
                 GameBootstrap owner = core.GetComponent<GameBootstrap>();
                 SceneLoader loader = core.GetComponent<SceneLoader>();
                 BootstrapSceneEntry startup = core.GetComponent<BootstrapSceneEntry>();
@@ -133,8 +134,8 @@ namespace HUSEscape.Core
                 Assert.That(owner.enabled && loader.enabled && startup.enabled, Is.True);
                 var serialized = new SerializedObject(startup);
                 Assert.That(serialized.FindProperty("bootstrap").objectReferenceValue, Is.SameAs(owner));
-                Assert.That(serialized.FindProperty("destinationScenePath").stringValue, Is.EqualTo(SamplePath));
-                Assert.That(serialized.FindProperty("destinationState").intValue, Is.EqualTo((int)GameState.Playing));
+                Assert.That(serialized.FindProperty("destinationScenePath").stringValue, Is.EqualTo(MenuPath));
+                Assert.That(serialized.FindProperty("destinationState").intValue, Is.EqualTo((int)GameState.Ready));
                 Assert.That(startup.TryValidateConfiguration(out _), Is.True);
                 Assert.That(core.GetComponentsInChildren<Camera>(), Is.Empty);
             }
