@@ -1,0 +1,6 @@
+Temporary branch: mutation/vt105-restore-authorization
+0b7fe74d2407eb3c6428fcf6358c6e83dc44761a mutation: remove restore authorization guard
+79cd7a837f71cc08b8a7e7a82d33c50bdd203dfa experiment: unmutated production snapshot
+Submission source SHA256 before: fa7c6a67848ecc49fe022c7f1cdb75ff6b8d7ab67a94d8c9dc167ee7e0ca1b26
+Submission source SHA256 after: fa7c6a67848ecc49fe022c7f1cdb75ff6b8d7ab67a94d8c9dc167ee7e0ca1b26
+Temporary repository removed at experiment completion.

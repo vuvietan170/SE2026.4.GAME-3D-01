@@ -111,7 +111,11 @@ internal static class Program
         tests.Add(("TC14-config-file", async () => {
             var config = JsonSerializer.Deserialize<Dictionary<string, int>>(File.ReadAllText("tools/VT105/policy.json"));
             Check(config.Count == 1 && config.ContainsKey("RestoreRetentionHours"), "Unexpected policy configuration");
-            var r = Seed(TimeSpan.Zero); await Restored(r, Service(r, config["RestoreRetentionHours"]));
+            // 25h-old save changes outcome when only policy.json changes 24 -> 48.
+            int hours = config["RestoreRetentionHours"];
+            var r = Seed(TimeSpan.FromHours(25));
+            if (hours >= 25) await Restored(r, Service(r, hours));
+            else await Denied<InvalidOperationException>(r, Service(r, hours));
         }));
         tests.Add(("TC15-owner-check-before-conflict", async () => {
             var r = Seed(); r.Storage[1].IsDeleted = false; await Denied<UnauthorizedAccessException>(r, Service(r), "intruder");

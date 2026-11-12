@@ -12,9 +12,16 @@ namespace CampusEscape.SaveSystem {
 
     public class SaveSlotService {
         private readonly ISaveSlotRepository _repository;
+        private readonly SaveSlotPolicy _policy;
+        private readonly Func<DateTime> _utcNow;
 
-        public SaveSlotService(ISaveSlotRepository repository) {
-            _repository = repository;
+        public SaveSlotService(ISaveSlotRepository repository)
+            : this(repository, new SaveSlotPolicy(), () => DateTime.UtcNow) { }
+
+        public SaveSlotService(ISaveSlotRepository repository, SaveSlotPolicy policy, Func<DateTime> utcNow) {
+            _repository = repository ?? throw new ArgumentNullException(nameof(repository));
+            _policy = policy ?? throw new ArgumentNullException(nameof(policy));
+            _utcNow = utcNow ?? throw new ArgumentNullException(nameof(utcNow));
         }
 
         /// <summary>
@@ -57,7 +64,7 @@ namespace CampusEscape.SaveSystem {
             }
 
             // Guard Clause: Xác thực sở hữu
-            if (slot.UserId != currentUserId) {
+            if (string.IsNullOrWhiteSpace(currentUserId) || slot.UserId != currentUserId) {
                 throw new UnauthorizedAccessException($"User {currentUserId} is not authorized to restore slot {slotId}.");
             }
 
@@ -65,11 +72,24 @@ namespace CampusEscape.SaveSystem {
                 throw new InvalidOperationException($"Save slot {slotId} is not in deleted state (Conflict).");
             }
 
-            slot.IsDeleted = false;
-            slot.DeletedAt = null;
-            slot.UpdatedAt = DateTime.UtcNow;
+            var now = _utcNow();
+            if (!slot.DeletedAt.HasValue || slot.DeletedAt.Value > now ||
+                now - slot.DeletedAt.Value > TimeSpan.FromHours(_policy.RestoreRetentionHours)) {
+                throw new InvalidOperationException($"Save slot {slotId} is outside the restore retention window.");
+            }
 
-            bool saveResult = await _repository.SaveAsync(slot);
+            // Do not mutate the repository's read object before persistence succeeds.
+            var restoredSlot = new SaveSlot {
+                Id = slot.Id,
+                UserId = slot.UserId,
+                SaveName = slot.SaveName,
+                GameDataJson = slot.GameDataJson,
+                IsDeleted = false,
+                DeletedAt = null,
+                UpdatedAt = now
+            };
+
+            bool saveResult = await _repository.SaveAsync(restoredSlot);
             if (!saveResult) {
                 throw new InvalidOperationException("Persistence layer failed to restore state.");
             }
