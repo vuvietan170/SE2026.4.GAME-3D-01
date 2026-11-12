@@ -1,0 +1,6 @@
+FAIL TC05-cross-owner: Exception: Expected UnauthorizedAccessException
+FAIL TC06-blank-identity: Exception: Expected UnauthorizedAccessException
+FAIL TC15-owner-check-before-conflict: InvalidOperationException: Save slot 1 is not in deleted state (Conflict).
+RESULT total=3 passed=0 failed=3
+
+EXIT_CODE=1

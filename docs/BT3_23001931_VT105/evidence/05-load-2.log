@@ -1,0 +1,3 @@
+{"concurrentTasks":150,"successfulRestores":50,"deniedOwnership":50,"deniedExpired":50,"fakeIoDelayMs":10,"p95Ms":76.6649,"maxMs":78.4121,"targetMs":4000,"passed":true}
+
+EXIT_CODE=0

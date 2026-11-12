@@ -1,0 +1,15 @@
+diff --git a/Assets/Scripts/SaveSystem/SaveSlotService.cs b/Assets/Scripts/SaveSystem/SaveSlotService.cs
+index 7dd53c3..7583b1c 100644
+--- a/Assets/Scripts/SaveSystem/SaveSlotService.cs
++++ b/Assets/Scripts/SaveSystem/SaveSlotService.cs
+@@ -64,9 +64,7 @@ namespace CampusEscape.SaveSystem {
+             }
+ 
+             // Guard Clause: Xác thực sở hữu
+-            if (string.IsNullOrWhiteSpace(currentUserId) || slot.UserId != currentUserId) {
+-                throw new UnauthorizedAccessException($"User {currentUserId} is not authorized to restore slot {slotId}.");
+-            }
++            // MUTATION: restore authorization removed.
+ 
+             if (!slot.IsDeleted) {
+                 throw new InvalidOperationException($"Save slot {slotId} is not in deleted state (Conflict).");

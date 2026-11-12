@@ -1,0 +1,26 @@
+An issue was encountered verifying workloads. For more information, run "dotnet workload update".
+FAIL TC01-default-policy: Exception: Missing central SaveSlotPolicy
+FAIL TC02-config-0: Exception: Expected ArgumentOutOfRangeException
+FAIL TC02-config-1: Exception: Restore state/timestamp wrong
+FAIL TC02-config-2: Exception: Restore state/timestamp wrong
+FAIL TC02-config-719: Exception: Restore state/timestamp wrong
+FAIL TC02-config-720: Exception: Restore state/timestamp wrong
+FAIL TC02-config-721: Exception: Expected ArgumentOutOfRangeException
+FAIL TC03-expiry--1: Exception: Restore state/timestamp wrong
+FAIL TC03-expiry-0: Exception: Restore state/timestamp wrong
+FAIL TC03-expiry-1: Exception: Expected InvalidOperationException
+FAIL TC04-config-changes-outcome: Exception: Expected InvalidOperationException
+PASS TC05-cross-owner
+FAIL TC06-blank-identity: Exception: Expected UnauthorizedAccessException
+FAIL TC07-null-deletion-time: Exception: Expected InvalidOperationException
+FAIL TC08-future-deletion-time: Exception: Expected InvalidOperationException
+PASS TC09-not-deleted
+PASS TC10-not-found
+FAIL TC11-save-false: Exception: Failed persistence changed stored object
+FAIL TC12-save-throws: Exception: Thrown persistence changed stored object
+PASS TC13-delete-regression
+FAIL TC14-config-file: Exception: Restore state/timestamp wrong
+PASS TC15-owner-check-before-conflict
+RESULT total=22 passed=5 failed=17
+
+EXIT_CODE=1
