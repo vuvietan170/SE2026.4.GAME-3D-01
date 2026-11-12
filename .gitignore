@@ -85,3 +85,8 @@ crashlytics-build.properties
 /HUS_Escape/[Uu]ser[Ss]ettings/
 /HUS_Escape/[Mm]emoryCaptures/
 /HUS_Escape/[Rr]ecordings/
+
+# VT-105 standalone harness (project file is deliberate source, not Unity output).
+!/tools/VT105/Harness.csproj
+/tools/VT105/bin/
+/tools/VT105/obj/
