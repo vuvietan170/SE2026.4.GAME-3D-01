@@ -1,0 +1,9 @@
+PASS 8/8
+PASS ContinueRejectedKeepsCommittedState
+PASS NewGameRejectedKeepsMemories
+PASS AcceptedFailureKeepsCommittedState
+PASS SameSceneRestoreFailureKeepsSession
+PASS ObserverExceptionDoesNotUndoCommittedRestore
+PASS MissingVersionIsRejected
+PASS MissingBooleanIsRejected
+PASS UnloadedSourceExposesRecovery

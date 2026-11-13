@@ -106,7 +106,7 @@ namespace HUSEscape.Core
         public void BuildSettings_HaveBootstrapMenuThenPreservedSampleScene()
         {
             EditorBuildSettingsScene[] scenes = EditorBuildSettings.scenes;
-            Assert.That(scenes.Select(scene => scene.path), Is.EqualTo(new[] { BootstrapPath, MenuPath, SamplePath, "Assets/_Project/Scenes/Floor01_Prototype.unity", "Assets/_Project/Scenes/Campus_Prototype.unity" }));
+            Assert.That(scenes.Select(scene => scene.path), Is.EqualTo(new[] { BootstrapPath, MenuPath, SamplePath, "Assets/_Project/Scenes/Floor01_Prototype.unity", "Assets/_Project/Scenes/Campus_Prototype.unity", "Assets/_Project/Scenes/TrainingOffice_Prototype.unity" }));
             Assert.That(scenes.All(scene => scene.enabled), Is.True);
             Assert.That(AssetDatabase.AssetPathToGUID(SamplePath), Is.EqualTo("99c9720ab356a0642a771bea13969a05"));
             Assert.That(AssetDatabase.AssetPathToGUID(BootstrapPath), Has.Length.EqualTo(32));

@@ -1,0 +1,839 @@
+[UnityConnectServicesConfig] Local config successfully read: "/usr/share/unity3d/config/services-config.json"
+[UnityConnectServicesConfig] Service configuration:
+    "servicesConfigBaseUrl": "",
+    "disableServicesWindow": false,
+    "disableUserLogin": false,
+    "entitlementCacheTimeoutInSeconds": 60,
+    "clientConnectTimeoutSec": 60,
+    "clientHandshakeTimeoutSec": 30,
+    "clientResolveEntitlementsTimeoutSec": 30,
+    "clientUpdateLicenseTimeoutSec": 30,
+    "licensingServiceBaseUrl": "",
+    "enableProxyAutoconfig": "false"
+
+Unity Editor version:    6000.6.5f1 (3ff58d469c8a)
+Branch:                  6000.6/staging
+Build type:              Release
+Batch mode:              YES
+System name:             Linux
+Distro version:          #1 SMP PREEMPT_DYNAMIC Fri, 23 Oct 2026 15:03:58 +0000
+Kernel version:          7.3.0-4-cachyos
+Architecture:            x86_64
+Window Protocol:         Wayland (XWayland)
+Available memory:        15593 MB
+Date:                    2026-11-13T12:27:39Z
+VBCSCompilerPreWarmer: watching VBCSCompiler (PID 2980430)
+VBCSCompilerPreWarmer: pre-warm launched (dotnet PID 2980432)
+VBCSCompiler prewarm took 5.83 ms
+Initialize udev device monitor.
+[Licensing::Module] Trying to connect to existing licensing client channel...
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-satan170" at "2026-11-13T12:27:39.454838Z"
+[SignatureVerifier] Application signature verification not supported on this platform.
+
+COMMAND LINE ARGUMENTS:
+/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Unity
+-batchmode
+-nographics
+-projectPath
+/tmp/hus-integration-validation
+-executeMethod
+TransactionValidation.Run
+-logFile
+/tmp/hus-transactions-verified-final.log
+Successfully changed project path to: /tmp/hus-integration-validation
+[Licensing::Client] Error: HandshakeResponse reported an error:
+	ResponseCode: 505
+	ResponseStatus: Unsupported protocol version '1.18.3'.
+[Licensing::Module] Error: Failed to handshake to channel: "LicenseClient-satan170"
+[Licensing::IpcConnector] LicenseClient-satan170 channel disconnected successfully.
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-satan170-6000.6.5" at "2026-11-13T12:27:39.45632Z"
+[SignatureVerifier] Application signature verification not supported on this platform.
+/tmp/hus-integration-validation
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-remapper-allocator-initial-capacity=32768"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-main-allocator-mimalloc-enabled=1"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.18.3+d7ffd15
+  Session Id:              83f1ffc249ee4383a44af55847be39dc
+  Correlation Id:          c7313e9528c7a27333c01bef0e016964
+  External correlation Id: 4253361232522598077
+  Machine Id:              h0m3r0ZHzCnltAfP+GhbvQVVU3U=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-satan170-6000.6.5" (connect: 0.00s, validation: 0.00s, handshake: 0.00s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-satan170-6000.6.5-notifications" at "2026-11-13T12:27:39.457444Z"
+[Licensing::Module] Error: Access token is unavailable; failed to update
+Logging is directed to a specific file, skipping project log.
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: 18968527826561-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+Player connection [140444457532160]  Target information:
+
+Player connection [140444457532160]  * "[IP] 192.168.1.10 [Port] 55505 [Flags] 2 [Guid] 3860077278 [EditorId] 3860077278 [Version] 1048832 [Id] LinuxEditor(16,192.168.1.10) [Debug] 1 [PackageName] LinuxEditor [ProjectName] Editor"
+
+Player connection [140444457532160]  * "[IP] 172.17.0.1 [Port] 55505 [Flags] 2 [Guid] 3860077278 [EditorId] 3860077278 [Version] 1048832 [Id] LinuxEditor(16,192.168.1.10) [Debug] 1 [PackageName] LinuxEditor [ProjectName] Editor"
+
+Player connection [140444457532160]  * "[IP] 172.21.0.1 [Port] 55505 [Flags] 2 [Guid] 3860077278 [EditorId] 3860077278 [Version] 1048832 [Id] LinuxEditor(16,192.168.1.10) [Debug] 1 [PackageName] LinuxEditor [ProjectName] Editor"
+
+Player connection [140444457532160]  * "[IP] 172.18.0.1 [Port] 55505 [Flags] 2 [Guid] 3860077278 [EditorId] 3860077278 [Version] 1048832 [Id] LinuxEditor(16,192.168.1.10) [Debug] 1 [PackageName] LinuxEditor [ProjectName] Editor"
+
+Player connection [140444457532160]  * "[IP] 172.20.0.1 [Port] 55505 [Flags] 2 [Guid] 3860077278 [EditorId] 3860077278 [Version] 1048832 [Id] LinuxEditor(16,192.168.1.10) [Debug] 1 [PackageName] LinuxEditor [ProjectName] Editor"
+
+Player connection [140444457532160]  * "[IP] 172.19.0.1 [Port] 55505 [Flags] 2 [Guid] 3860077278 [EditorId] 3860077278 [Version] 1048832 [Id] LinuxEditor(16,192.168.1.10) [Debug] 1 [PackageName] LinuxEditor [ProjectName] Editor"
+
+Player connection [140444457532160] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [140444457532160] Host joined alternative multi-casting on [225.0.0.222:34997]...
+[Licensing::Client] Successfully updated license, isAsync: True, time: 0.00
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] Licensing Background thread has ended after 0.00s
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+Initialising UDS system complete:
+  - System type: Client
+  - Resource namespace: 3572caddb86abff138a9661510982905
+  - Shared memory size: 1073741824
+  - Command buffer id: 1052624
+  - Command buffer size: 8192
+  - Hashmap size: 4194304
+  - Service connected: false
+[Package Manager] Connected to IPC stream "Upm-2980415" after 0.2 seconds.
+[Licensing::Client] Successfully resolved entitlement details
+Library Redirect Path: Library/
+Launching Unity Data Store - /home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Tools/Unity.DataStore
+Unity Data Store artifact dir = Library/DataStore, working dir = /tmp/hus-integration-validationUnity Data Store running and initialised
+[Physics::Module] Selected backend (deferred post-plugins).
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Initialize engine version: 6000.6.5f1 (3ff58d469c8a)
+[EntityIdStore] init: VM path (explicit commit), pageSize=4096, blockCount=1048576, entitiesPerBlock=256, slots reserved=4294967296 bytes
+[Subsystems] Discovering subsystems at path /home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path /tmp/hus-integration-validation/Assets
+Forcing GfxDevice: Null
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+NullGfxDevice:
+    Version:  NULL 1.0 [1.0]
+    Renderer: Null Device
+    Vendor:   Unity Technologies
+Initialize mono
+Mono path[0] = '/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed'
+Mono path[1] = '/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/BCLExtensions/runtime/netstandard2.1'
+Mono path[2] = '/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-linux'
+Mono config path = '/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56415
+CodeReloadManager initialized
+ImportWorker Server TCP listen port: 0
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: /home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: /home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+[Licensing::Client] Successfully resolved entitlement details
+Register platform support module: /home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: /home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll
+Registered in 0.001846 seconds.
+Native extension for LinuxStandalone target not found
+Package Manager log level set to [2]
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Licensing::Client] Successfully resolved entitlement details
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:False
+Scripting: successfully reloaded assembly
+- Finished resetting the current domain, in  2.787 seconds
+Domain Reload Profiling: 3329ms
+	BeginReloadAssembly (88ms)
+		CreateAndSetChildDomain (8ms)
+	RebuildCommonClasses (5ms)
+	RebuildNativeTypeToScriptingClass (14ms)
+	initialDomainReloadingComplete (76ms)
+	LoadAllAssembliesAndSetupDomain (358ms)
+		LoadAssemblies (80ms)
+		TypeCache.Refresh (241ms)
+			TypeCache.ScanAssembly (225ms)
+		AnalyzeDomain (1ms)
+	FinalizeReload (2788ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (53ms)
+			BeforeProcessingInitializeOnLoad (120ms)
+			ProcessInitializeOnLoadAttributes (100ms)
+			ProcessInitializeOnLoadMethodAttributes (2316ms)
+[Licensing::Client] Successfully resolved entitlement details
+Application.AssetDatabase Initial Refresh Start
+[Package Manager] Restoring resolved packages state from cache
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Registered 61 packages:
+  Packages from [https://packages.unity.com]:
+    com.unity.collab-proxy@2.13.6 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.collab-proxy@4628d2ba6ea4)
+    com.unity.ide.rider@3.0.40 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.ide.rider@e4950c6d131b)
+    com.unity.ide.visualstudio@2.0.28 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.ide.visualstudio@b5edea5f33f4)
+    com.unity.inputsystem@1.20.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.inputsystem@7a4e1a2a8194)
+    com.unity.sdk.linux-arm64@1.1.1 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.sdk.linux-arm64@5043731cb64f)
+    com.unity.sdk.linux-x86_64@1.1.1 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.sdk.linux-x86_64@920bc08129cd)
+    com.unity.toolchain.linux-x86_64-linux@1.1.1 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.toolchain.linux-x86_64-linux@95ffda8fe8d9)
+    com.unity.sysroot.base@1.1.1 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.sysroot.base@0a249da1e1ab)
+    com.unity.searcher@4.9.5 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.searcher@a463122f2c00)
+    com.unity.profiling.core@1.0.3 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.profiling.core@8a49f7027d06)
+    com.unity.nuget.mono-cecil@1.11.6 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.nuget.mono-cecil@ecb9724e46ff)
+  Built-in packages:
+    com.unity.animation.rigging@6.6.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.animation.rigging@32b8083f6de1)
+    com.unity.render-pipelines.universal@17.6.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.render-pipelines.universal@04f531cc132c)
+    com.unity.ugui@2.6.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.ugui@00142237b460)
+    com.unity.modules.accessibility@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.accessibility)
+    com.unity.modules.adaptiveperformance@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.adaptiveperformance)
+    com.unity.modules.ai@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.ai)
+    com.unity.modules.androidjni@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.androidjni)
+    com.unity.modules.animation@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.animation)
+    com.unity.modules.assetbundle@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.assetbundle)
+    com.unity.modules.audio@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.audio)
+    com.unity.modules.cloth@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.cloth)
+    com.unity.modules.director@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.director)
+    com.unity.modules.imageconversion@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.imageconversion)
+    com.unity.modules.imgui@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.imgui)
+    com.unity.modules.jsonserialize@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.jsonserialize)
+    com.unity.modules.particlesystem@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.particlesystem)
+    com.unity.modules.physics@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.physics)
+    com.unity.modules.physics2d@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.physics2d)
+    com.unity.modules.physicscore2d@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.physicscore2d)
+    com.unity.modules.screencapture@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.screencapture)
+    com.unity.modules.terrain@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.terrain)
+    com.unity.modules.terrainphysics@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.terrainphysics)
+    com.unity.modules.tetgen@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.tetgen)
+    com.unity.modules.tilemap@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.tilemap)
+    com.unity.modules.timelinefoundation@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.timelinefoundation)
+    com.unity.modules.ui@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.ui)
+    com.unity.modules.uielements@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.uielements)
+    com.unity.modules.umbra@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.umbra)
+    com.unity.modules.unityanalytics@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.unityanalytics)
+    com.unity.modules.unitywebrequest@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.unitywebrequest)
+    com.unity.modules.unitywebrequestassetbundle@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.unitywebrequestassetbundle)
+    com.unity.modules.unitywebrequestaudio@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.unitywebrequestaudio)
+    com.unity.modules.unitywebrequesttexture@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.unitywebrequesttexture)
+    com.unity.modules.unitywebrequestwww@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.unitywebrequestwww)
+    com.unity.modules.vectorgraphics@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.vectorgraphics)
+    com.unity.modules.vehicles@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.vehicles)
+    com.unity.modules.video@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.video)
+    com.unity.modules.wind@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.wind)
+    com.unity.modules.xr@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.xr)
+    com.unity.modules.subsystems@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.subsystems)
+    com.unity.modules.hierarchycore@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.hierarchycore)
+    com.unity.render-pipelines.core@17.6.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.render-pipelines.core@514690c4e8b0)
+    com.unity.shadergraph@17.6.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.shadergraph@03900dfca927)
+    com.unity.render-pipelines.universal-config@17.6.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.render-pipelines.universal-config@b1357eef5cd3)
+    com.unity.test-framework@1.8.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.test-framework@33f8a1e9aefd)
+    com.unity.ext.nunit@2.1.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.ext.nunit@508b95ff9afe)
+    com.unity.burst@2.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.burst@c3ed5b778d56)
+    com.unity.graph-authoring@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.graph-authoring@f8926ccf2c8f)
+    com.unity.collections@6.6.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.collections@431b1d558060)
+    com.unity.test-framework.performance@6.6.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.test-framework.performance@5a3a02a0169f)
+[Subsystems] No new subsystems found in resolved package list.
+[Package Manager] Done registering packages in 0.00 seconds
+[ScriptCompilation] Requested script compilation because: AssetDatabase observed changes in script compilation related files
+Starting: /home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Tools/BuildPipeline/bee_backend --ipc --defer-dag-verification --dagfile="Library/Bee/2400b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: /tmp/hus-integration-validation
+warn: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Assembly system.runtime.interopservices.windowsruntime has duplicate hint path. Ignoring "/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Runtime.InteropServices.WindowsRuntime.dll" in favor of "/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/Extensions/2.0.0/System.Runtime.InteropServices.WindowsRuntime.dll"
+warn: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Assembly system.componentmodel.composition has duplicate hint path. Ignoring "/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/System.ComponentModel.Composition.dll" in favor of "/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.ComponentModel.Composition.dll"
+DisplayProgressbar: Compiling Scripts
+ExitCode: 3 Duration: 0s705ms
+[668/881    0s] ILPP-Configuration Library/ilpp-configuration.nevergeneratedoutput
+[873/881    0s] Csc Library/Bee/artifacts/2400b0aE.dag/Assembly-CSharp.dll (+2 others)
+##### CommandLine
+"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/DotNetSdk/dotnet" exec "/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/DotNetSdk/sdk/8.0.318/Roslyn/bincore/csc.dll" /nostdlib /noconfig /shared "@Library/Bee/artifacts/2400b0aE.dag/Assembly-CSharp.rsp" "@Library/Bee/artifacts/2400b0aE.dag/Assembly-CSharp.rsp2"
+##### Contents of Library/Bee/artifacts/2400b0aE.dag/Assembly-CSharp.rsp
+-target:library
+-out:"Library/Bee/artifacts/2400b0aE.dag/Assembly-CSharp.dll"
+-refout:"Library/Bee/artifacts/2400b0aE.dag/Assembly-CSharp.ref.dll"
+-define:UNITY_6000_6_5
+-define:UNITY_6000_6
+-define:UNITY_6000
+-define:UNITY_5_3_OR_NEWER
+-define:UNITY_5_4_OR_NEWER
+-define:UNITY_5_5_OR_NEWER
+-define:UNITY_5_6_OR_NEWER
+-define:UNITY_2017_1_OR_NEWER
+-define:UNITY_2017_2_OR_NEWER
+-define:UNITY_2017_3_OR_NEWER
+-define:UNITY_2017_4_OR_NEWER
+-define:UNITY_2018_1_OR_NEWER
+-define:UNITY_2018_2_OR_NEWER
+-define:UNITY_2018_3_OR_NEWER
+-define:UNITY_2018_4_OR_NEWER
+-define:UNITY_2019_1_OR_NEWER
+-define:UNITY_2019_2_OR_NEWER
+-define:UNITY_2019_3_OR_NEWER
+-define:UNITY_2019_4_OR_NEWER
+-define:UNITY_2020_1_OR_NEWER
+-define:UNITY_2020_2_OR_NEWER
+-define:UNITY_2020_3_OR_NEWER
+-define:UNITY_2021_1_OR_NEWER
+-define:UNITY_2021_2_OR_NEWER
+-define:UNITY_2021_3_OR_NEWER
+-define:UNITY_2022_1_OR_NEWER
+-define:UNITY_2022_2_OR_NEWER
+-define:UNITY_2022_3_OR_NEWER
+-define:UNITY_2023_1_OR_NEWER
+-define:UNITY_2023_2_OR_NEWER
+-define:UNITY_2023_3_OR_NEWER
+-define:UNITY_6000_0_OR_NEWER
+-define:UNITY_6000_1_OR_NEWER
+-define:UNITY_6000_2_OR_NEWER
+-define:UNITY_6000_3_OR_NEWER
+-define:UNITY_6000_4_OR_NEWER
+-define:UNITY_6000_5_OR_NEWER
+-define:UNITY_6000_6_OR_NEWER
+-define:PLATFORM_ARCH_64
+-define:UNITY_64
+-define:UNITY_INCLUDE_TESTS
+-define:UNITY_ENABLE_CLOUD_SERVICES_ENGINE_DIAGNOSTICS_MANAGED
+-define:ENABLE_AUDIO
+-define:ENABLE_AUDIO_SCRIPTABLE_PIPELINE
+-define:ENABLE_BURST
+-define:ENABLE_CACHING
+-define:ENABLE_CLOTH
+-define:ENABLE_MICROPHONE
+-define:ENABLE_MULTIPLE_DISPLAYS
+-define:ENABLE_PHYSICS
+-define:ENABLE_TEXTURE_STREAMING
+-define:ENABLE_VIRTUALTEXTURING
+-define:ENABLE_LZMA
+-define:ENABLE_UNITYEVENTS
+-define:ENABLE_VR
+-define:ENABLE_WEBCAM
+-define:ENABLE_UNITYWEBREQUEST
+-define:ENABLE_WWW
+-define:ENABLE_CLOUD_SERVICES
+-define:ENABLE_CLOUD_SERVICES_ADS
+-define:ENABLE_CLOUD_SERVICES_USE_WEBREQUEST
+-define:ENABLE_UNITY_CONSENT
+-define:ENABLE_UNITY_CLOUD_IDENTIFIERS
+-define:ENABLE_CLOUD_SERVICES_CRASH_REPORTING
+-define:ENABLE_CLOUD_SERVICES_PURCHASING
+-define:ENABLE_CLOUD_SERVICES_ANALYTICS
+-define:ENABLE_CLOUD_SERVICES_BUILD
+-define:ENABLE_EDITOR_GAME_SERVICES
+-define:ENABLE_UNITY_GAME_SERVICES_ANALYTICS_SUPPORT
+-define:ENABLE_CLOUD_LICENSE
+-define:ENABLE_EDITOR_HUB_LICENSE
+-define:ENABLE_WEBSOCKET_CLIENT
+-define:ENABLE_GENERATE_NATIVE_PLUGINS_FOR_ASSEMBLIES_API
+-define:ENABLE_DIRECTOR_AUDIO
+-define:ENABLE_DIRECTOR_TEXTURE
+-define:ENABLE_MANAGED_JOBS
+-define:ENABLE_MANAGED_TRANSFORM_JOBS
+-define:ENABLE_MANAGED_ANIMATION_JOBS
+-define:ENABLE_MANAGED_AUDIO_JOBS
+-define:ENABLE_MANAGED_UNITYTLS
+-define:INCLUDE_DYNAMIC_GI
+-define:ENABLE_SCRIPTING_GC_WBARRIERS
+-define:PLATFORM_SUPPORTS_MONO
+-define:RENDER_SOFTWARE_CURSOR
+-define:ENABLE_MARSHALLING_TESTS
+-define:ENABLE_VIDEO
+-define:ENABLE_NAVIGATION_OFFMESHLINK_TO_NAVMESHLINK
+-define:ENABLE_ACCELERATOR_CLIENT_DEBUGGING
+-define:TEXTCORE_1_0_OR_NEWER
+-define:EDITOR_ONLY_NAVMESH_BUILDER_DEPRECATED
+-define:INCLUDE_UNIFIED_RAYTRACING_COMPUTE_BACKEND
+-define:INCLUDE_UNIFIED_RAYTRACING_HARDWARE_BACKEND
+-define:PLATFORM_STANDALONE_LINUX
+-define:PLATFORM_STANDALONE
+-define:UNITY_STANDALONE_LINUX
+-define:UNITY_STANDALONE
+-define:UNITY_STANDALONE_LINUX_API
+-define:ENABLE_RUNTIME_GI
+-define:ENABLE_MOVIES
+-define:ENABLE_NETWORK
+-define:ENABLE_CRUNCH_TEXTURE_COMPRESSION
+-define:ENABLE_CLUSTER_SYNC
+-define:ENABLE_CLUSTERINPUT
+-define:ENABLE_SPATIALTRACKING
+-define:ENABLE_MODULAR_UNITYENGINE_ASSEMBLIES
+-define:PLATFORM_SUPPORTS_SPLIT_GRAPHICS_JOBS
+-define:PLATFORM_USES_EXPLICIT_MEMORY_MANAGER_INITIALIZER
+-define:PLATFORM_SUPPORTS_DISPLAYINFO_API
+-define:ENABLE_MONO
+-define:NET_STANDARD_2_0
+-define:NET_STANDARD
+-define:NET_STANDARD_2_1
+-define:NETSTANDARD
+-define:NETSTANDARD2_1
+-define:ENABLE_PROFILER
+-define:UNITY_INCLUDE_INSTRUMENTATION
+-define:DEBUG
+-define:TRACE
+-define:UNITY_ASSERTIONS
+-define:UNITY_ENABLE_CHECKS
+-define:UNITY_EDITOR
+-define:UNITY_EDITOR_64
+-define:UNITY_EDITOR_LINUX
+-define:ENABLE_UNITY_COLLECTIONS_CHECKS
+-define:ENABLE_BURST_AOT
+-define:UNITY_TEAM_LICENSE
+-define:ENABLE_CUSTOM_RENDER_TEXTURE
+-define:ENABLE_DIRECTOR
+-define:ENABLE_LOCALIZATION
+-define:ENABLE_SPRITES
+-define:ENABLE_TERRAIN
+-define:ENABLE_TILEMAP
+-define:ENABLE_TIMELINE
+-define:ENABLE_INPUT_SYSTEM
+-define:TEXTCORE_FONT_ENGINE_1_5_OR_NEWER
+-define:TEXTCORE_TEXT_ENGINE_1_5_OR_NEWER
+-define:TEXTCORE_FONT_ENGINE_1_6_OR_NEWER
+-define:CSHARP_7_OR_LATER
+-define:CSHARP_7_3_OR_NEWER
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/BCLExtensions/TargetingPacks/netstandard2.1/ref/Microsoft.Bcl.AsyncInterfaces.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/BCLExtensions/TargetingPacks/netstandard2.1/ref/Microsoft.Extensions.DependencyInjection.Abstractions.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/BCLExtensions/TargetingPacks/netstandard2.1/ref/Microsoft.Extensions.Logging.Abstractions.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/BCLExtensions/TargetingPacks/netstandard2.1/ref/System.Collections.Immutable.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/BCLExtensions/TargetingPacks/netstandard2.1/ref/System.Diagnostics.DiagnosticSource.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/BCLExtensions/TargetingPacks/netstandard2.1/ref/System.IO.Hashing.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/BCLExtensions/TargetingPacks/netstandard2.1/ref/System.Reflection.Metadata.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/BCLExtensions/TargetingPacks/netstandard2.1/ref/System.Runtime.CompilerServices.Unsafe.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/BCLExtensions/TargetingPacks/netstandard2.1/ref/System.Text.Encodings.Web.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/BCLExtensions/TargetingPacks/netstandard2.1/ref/System.Text.Json.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/Bootstrap/Unity.Scripting.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.AIModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.AccessibilityModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.AdaptivePerformanceModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.AnimationWindowModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.AssetComplianceModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.BuildAnalysisModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.BuildProfileModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.BurstModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.ClothModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.ContentLoadModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreBusinessMetricsModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.DeviceSimulatorModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.DiagnosticsModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.EditorToolbarModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.EmbreeModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.GIModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.GenericRemoteModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.GraphToolkitModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.GraphViewModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.GraphicsStateCollectionSerializerModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.GridAndSnapModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.GridModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.HierarchyModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.LightingModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.MathematicsModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.MediaModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.MultiplayerModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.Physics2DModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.PhysicsCore2DModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.PhysicsModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.PlayModeModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.PresetsUIModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.ProjectAuditorModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.PropertiesModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.QuickInstallModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.QuickSearchModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.SafeModeModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.SceneTemplateModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.SceneViewModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.ShaderBuildSettingsModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.ShaderCompilationModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.ShaderFoundryModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.ShaderPreprocessorModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.SketchUpModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.SpriteMaskModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.SpriteShapeModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.SubstanceModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.SyntaxTreeModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.TerrainModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.TextCoreFontEngineModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.TextCoreTextEngineModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.TextRenderingModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.TilemapModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.TimelineFoundationModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.TreeModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.U2DModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.UIAutomationModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.UIBuilderModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.UIElementsModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.UIElementsSamplesModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.UIToolkitAuthoringModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.UmbraModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.VFXModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.VectorGraphicsModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.VideoModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.XRModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEditor.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.AccessibilityModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.AdaptivePerformanceModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.AndroidJNIModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.AnimationModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.AssetBundleModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.AudioModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.BurstModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClothModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterInputModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterRendererModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.ContentLoadModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.CoreModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.CrashReportingModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.DSPGraphModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.DirectorModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.GIModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.GameCenterModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.GraphicsStateCollectionSerializerModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.GridModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.HierarchyCoreModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.HotReloadModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.IMGUIModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.IdentifiersModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.ImageConversionModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.InputForUIModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.InputLegacyModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.InputModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.JSONSerializeModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.LocalizationModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.ManagedKernelModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.MarshallingModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.MathematicsModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.MultiplayerModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.ParticleSystemModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.PerformanceReportingModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.Physics2DModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.PhysicsBackendPhysXModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.PhysicsCore2DModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.PhysicsModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.PropertiesModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.RenderAs2DModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.ScreenCaptureModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.ScriptingModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.ShaderVariantAnalyticsModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.SpriteMaskModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.SpriteShapeModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.StreamingModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.SubstanceModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.SubsystemsModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.TLSModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.TerrainModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.TerrainPhysicsModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.TetgenModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.TextCoreFontEngineModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.TextCoreTextEngineModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.TextRenderingModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.TilemapModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.TimelineFoundationModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.U2DRuntimeModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.UIElementsModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.UIModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.UmbraModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityAnalyticsCommonModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityAnalyticsModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityConnectModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityConsentModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityCurlModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestAssetBundleModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestAudioModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestTextureModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestWWWModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.VFXModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.VectorGraphicsModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.VehiclesModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.VideoModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.VirtualTexturingModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.WindModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/Extensions/2.0.0/System.Runtime.InteropServices.WindowsRuntime.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.ComponentModel.Composition.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Core.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Data.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Drawing.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.IO.Compression.FileSystem.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Net.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Numerics.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Runtime.Serialization.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.ServiceModel.Web.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Transactions.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Web.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Windows.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Xml.Linq.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Xml.Serialization.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Xml.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/mscorlib.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/Microsoft.Win32.Primitives.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.AppContext.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Buffers.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Collections.Concurrent.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Collections.NonGeneric.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Collections.Specialized.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Collections.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.ComponentModel.EventBasedAsync.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.ComponentModel.Primitives.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.ComponentModel.TypeConverter.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.ComponentModel.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Console.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Data.Common.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Diagnostics.Contracts.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Diagnostics.Debug.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Diagnostics.FileVersionInfo.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Diagnostics.Process.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Diagnostics.StackTrace.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Diagnostics.TextWriterTraceListener.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Diagnostics.Tools.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Diagnostics.TraceSource.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Diagnostics.Tracing.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Drawing.Primitives.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Dynamic.Runtime.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Globalization.Calendars.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Globalization.Extensions.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Globalization.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.IO.Compression.ZipFile.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.IO.Compression.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.IO.FileSystem.DriveInfo.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.IO.FileSystem.Primitives.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.IO.FileSystem.Watcher.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.IO.FileSystem.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.IO.IsolatedStorage.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.IO.MemoryMappedFiles.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.IO.Pipes.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.IO.UnmanagedMemoryStream.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.IO.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Linq.Expressions.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Linq.Parallel.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Linq.Queryable.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Linq.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Memory.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Net.Http.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Net.NameResolution.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Net.NetworkInformation.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Net.Ping.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Net.Primitives.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Net.Requests.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Net.Security.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Net.Sockets.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Net.WebHeaderCollection.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Net.WebSockets.Client.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Net.WebSockets.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Numerics.Vectors.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.ObjectModel.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Reflection.DispatchProxy.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Reflection.Emit.ILGeneration.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Reflection.Emit.Lightweight.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Reflection.Emit.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Reflection.Extensions.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Reflection.Primitives.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Reflection.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Resources.Reader.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Resources.ResourceManager.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Resources.Writer.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Runtime.CompilerServices.VisualC.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Runtime.Extensions.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Runtime.Handles.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Runtime.InteropServices.RuntimeInformation.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Runtime.InteropServices.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Runtime.Numerics.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Runtime.Serialization.Formatters.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Runtime.Serialization.Json.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Runtime.Serialization.Primitives.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Runtime.Serialization.Xml.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Runtime.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Security.Claims.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Security.Cryptography.Algorithms.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Security.Cryptography.Csp.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Security.Cryptography.Encoding.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Security.Cryptography.Primitives.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Security.Cryptography.X509Certificates.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Security.Principal.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Security.SecureString.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Text.Encoding.Extensions.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Text.Encoding.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Text.RegularExpressions.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Threading.Overlapped.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Threading.Tasks.Extensions.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Threading.Tasks.Parallel.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Threading.Tasks.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Threading.Thread.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Threading.ThreadPool.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Threading.Timer.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Threading.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.ValueTuple.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Xml.ReaderWriter.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Xml.XDocument.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Xml.XPath.XDocument.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Xml.XPath.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Xml.XmlDocument.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Xml.XmlSerializer.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/ref/2.1.0/netstandard.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/PlaybackEngines/AndroidPlayer/Unity.Android.Gradle.dll"
+-r:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/PlaybackEngines/AndroidPlayer/Unity.Android.Types.dll"
+-r:"Library/PackageCache/com.unity.collections@431b1d558060/Unity.Collections.LowLevel.ILSupport/Unity.Collections.LowLevel.ILSupport.dll"
+-r:"Library/PackageCache/com.unity.ext.nunit@508b95ff9afe/net472/unity-custom/nunit.framework.dll"
+-r:"Library/PackageCache/com.unity.nuget.mono-cecil@ecb9724e46ff/Mono.Cecil.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/HUSEscape.Core.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/HUSEscape.Player.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/HUSEscape.UI.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.Animation.Rigging.Editor.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.Animation.Rigging.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.Burst.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.Collections.Editor.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.Collections.Tests.CoreCLR.InternalJobNestedPrivate.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.Collections.Tests.CoreCLR.PrivateJobNested.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.Collections.Tests.CoreCLR.ProtectedJobNested.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.Collections.Tests.CoreCLR.PublicJobPrivateGeneric.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.Collections.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.GraphAuthoring.Editor.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.InputSystem.ForUI.Editor.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.InputSystem.ForUI.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.InputSystem.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.InternalAPIEditorBridge.ShaderGraph.Editor.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.InternalAPIEngineBridge.004.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.InternalAPIEngineBridge.ObjectDispatcher.Runtime.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.InternalAPIEngineBridge.RenderPipelines.Core.Editor.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.InternalAPIEngineBridge.RenderPipelines.Core.Runtime.Shared.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.PathTracing.Editor.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.PathTracing.Runtime.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.PlasticSCM.Editor.Assistant.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.PlasticSCM.Editor.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.Profiling.Core.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.RenderPipeline.Universal.ShaderLibrary.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.RenderPipelines.Core.Editor.Shared.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.RenderPipelines.Core.Editor.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.RenderPipelines.Core.Runtime.Shared.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.RenderPipelines.Core.Runtime.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.RenderPipelines.Core.ShaderLibrary.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.RenderPipelines.GPUDriven.Runtime.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.RenderPipelines.Universal.2D.Editor.Overrides.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.RenderPipelines.Universal.2D.Runtime.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.RenderPipelines.Universal.Config.Runtime.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.RenderPipelines.Universal.Editor.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.RenderPipelines.Universal.Runtime.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.RenderPipelines.Universal.Shaders.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.Rendering.LightTransport.Editor.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.Rider.Editor.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.Searcher.Editor.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.ShaderGraph.Editor.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.SurfaceCache.Runtime.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.Sysroot.Linux_arm64.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.Sysroot.Linux_x86_64.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.SysrootPackage.Editor.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.TextMeshPro.Editor.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.TextMeshPro.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.Toolchain.Linux-x86_64-Linux.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.UnifiedRayTracing.Runtime.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/Unity.VisualStudio.Editor.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/UnityEditor.UI.Analytics.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/UnityEditor.UI.ref.dll"
+-r:"Library/Bee/artifacts/2400b0aE.dag/UnityEngine.UI.ref.dll"
+-analyzer:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/BCLExtensions/TargetingPacks/netstandard2.1/analyzers/dotnet/roslyn4.0/cs/Microsoft.Extensions.Logging.Generators.dll"
+-analyzer:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/BCLExtensions/TargetingPacks/netstandard2.1/analyzers/dotnet/roslyn4.0/cs/System.Text.Json.SourceGeneration.dll"
+-analyzer:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Tools/BuildPipeline/Unity.Analyzers.Common/Unity.Analyzers.Common.dll"
+-analyzer:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Tools/BuildPipeline/Unity.Analyzers.LongLiving/Unity.Analyzers.LongLiving.dll"
+-analyzer:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Tools/BuildPipeline/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
+-analyzer:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Tools/BuildPipeline/Unity.SourceGenerators/Unity.SourceGenerators.dll"
+-analyzer:"/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Tools/BuildPipeline/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll"
+"Assets/TransactionProbe.cs"
+"Assets/TransactionValidation.cs"
+"Assets/TutorialInfo/Readme.cs"
+"Assets/_Project/Scripts/AI/CampusStealthHUD.cs"
+"Assets/_Project/Scripts/AI/PatrolGuard.cs"
+"Assets/_Project/Scripts/Interaction/BuildingExit.cs"
+"Assets/_Project/Scripts/Interaction/DoorHandleIK.cs"
+"Assets/_Project/Scripts/Interaction/DoorInteraction.cs"
+"Assets/_Project/Scripts/Interaction/ElevatorUnavailable.cs"
+"Assets/_Project/Scripts/Interaction/InteractionSelection.cs"
+"Assets/_Project/Scripts/Interaction/PickupItem.cs"
+"Assets/_Project/Scripts/Interaction/TrainingOfficeEntrance.cs"
+"Assets/_Project/Scripts/Inventory/InventoryUI.cs"
+"Assets/_Project/Scripts/Inventory/PlayerInventory.cs"
+"Assets/_Project/Scripts/Puzzle/CampusDiscovery.cs"
+"Assets/_Project/Scripts/Puzzle/ClueNote.cs"
+"Assets/_Project/Scripts/Puzzle/CodeLockCabinet.cs"
+"Assets/_Project/Scripts/Puzzle/LabInteractable.cs"
+"Assets/_Project/Scripts/Puzzle/LabRestoreSystem.cs"
+"Assets/_Project/Scripts/Puzzle/OfficeDiscovery.cs"
+"Assets/_Project/Scripts/Puzzle/QuestManager.cs"
+"Assets/_Project/Scripts/Puzzle/QuestPuzzleUI.cs"
+"Assets/_Project/Scripts/Puzzle/QuestRoomTrigger.cs"
+"Assets/_Project/Scripts/Puzzle/SequenceLockPanel.cs"
+"Assets/_Project/Scripts/Utilities/Floor01SaveSystem.cs"
+"Assets/_Project/Scripts/Utilities/JourneySceneEntry.cs"
+"Assets/_Project/Scripts/Utilities/JourneySession.cs"
+"Assets/_Project/Scripts/Utilities/SaveJson.cs"
+-langversion:9.0
+/deterministic
+/optimize+
+/debug:portable
+/nologo
+/RuntimeMetadataVersion:v4.0.30319
+/nowarn:0169
+/nowarn:0649
+/nowarn:0282
+/nowarn:1701
+/nowarn:1702
+/utf8output
+/preferreduilang:en-US
+/additionalfile:"Library/Bee/artifacts/2400b0aE.dag/Assembly-CSharp.UnityAdditionalFile.txt"
+##### Custom Environment Variables
+DOTNET_HOST_PATH=/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/DotNetSdk/dotnet
+DOTNET_MULTILEVEL_LOOKUP=0
+DOTNET_SYSTEM_GLOBALIZATION_USENLS=1
+##### ExitCode
+1
+##### Output
+Assets/TransactionProbe.cs(571,28): error CS1061: 'CharacterController' does not contain a definition for 'isActiveAndEnabled' and no accessible extension method 'isActiveAndEnabled' accepting a first argument of type 'CharacterController' could be found (are you missing a using directive or an assembly reference?)
+*** Tundra build failed (0.69 seconds), 2 items updated, 881 evaluated
+## Script Compilation Error for: Csc Library/Bee/artifacts/2400b0aE.dag/Assembly-CSharp.dll (+2 others)
+## CmdLine: "/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/DotNetSdk/dotnet" exec "/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/DotNetSdk/sdk/8.0.318/Roslyn/bincore/csc.dll" /nostdlib /noconfig /shared "@Library/Bee/artifacts/2400b0aE.dag/Assembly-CSharp.rsp" "@Library/Bee/artifacts/2400b0aE.dag/Assembly-CSharp.rsp2"
+## Output:
+Assets/TransactionProbe.cs(571,28): error CS1061: 'CharacterController' does not contain a definition for 'isActiveAndEnabled' and no accessible extension method 'isActiveAndEnabled' accepting a first argument of type 'CharacterController' could be found (are you missing a using directive or an assembly reference?)
+
+Assets/TransactionProbe.cs(571,28): error CS1061: 'CharacterController' does not contain a definition for 'isActiveAndEnabled' and no accessible extension method 'isActiveAndEnabled' accepting a first argument of type 'CharacterController' could be found (are you missing a using directive or an assembly reference?)
+AssetDatabase: script compilation time: 1.118236s
+Total cache size 235823064
+Total cache size after purge 235823064, took 00:00:00.0932892
+Scripts have compiler errors.
+[ExitDontLaunchBugReporter] Exiting without the bug reporter. Application will exit with return code 1
+VBCSCompilerPreWarmer: requested VBCSCompiler shutdown

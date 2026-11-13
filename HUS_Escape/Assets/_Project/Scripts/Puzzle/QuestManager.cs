@@ -57,6 +57,11 @@ namespace HUSEscape.Quests
             foreach (string fact in facts) observed.Add(fact);
             CampusActive = true;
         }
+        internal void RestoreAreas(string[] campusFacts, bool campusActive, string[] officeFacts, bool officeActive)
+        {
+            RestoreCampus(campusFacts); CampusActive = campusActive;
+            RestoreOffice(officeFacts, officeActive);
+        }
         /// <summary>One notification per newly recorded fact; silent restore never invokes this event.</summary>
         public event Action<string, int, int> ProgressRecorded;
 
