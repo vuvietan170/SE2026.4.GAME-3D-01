@@ -24,6 +24,7 @@ namespace HUSEscape.Quests
             informationTitle = title; informationContent = content; Open(QuestModal.Information);
         }
         private bool presentationRestored;
+        internal bool CanBindJourney(QuestManager expectedQuests, GameplayInputGate expectedGate) => quests == expectedQuests && inputGate == expectedGate;
         /// <summary>Binds only the active scene to its instance-owned travel coordinator.</summary>
         public void BindJourney(JourneySession session) { journey = session; }
         private readonly Queue<string> notices = new Queue<string>();

@@ -1,0 +1,25 @@
+FAIL 0/8
+FAIL ContinueRejectedKeepsCommittedState: System.Exception: Rejected Continue mutated committed floor/memories
+  at TransactionProbe+<ContinueRejectedKeepsCommittedState>d__31.MoveNext () [0x000af] in /tmp/hus-integration-validation/Assets/TransactionProbe.cs:131
+  at TransactionProbe.Update () [0x000a7] in /tmp/hus-integration-validation/Assets/TransactionProbe.cs:62
+FAIL NewGameRejectedKeepsMemories: System.Exception: Rejected New Game erased committed memories
+  at TransactionProbe+<NewGameRejectedKeepsMemories>d__32.MoveNext () [0x000a9] in /tmp/hus-integration-validation/Assets/TransactionProbe.cs:138
+  at TransactionProbe.Update () [0x000a7] in /tmp/hus-integration-validation/Assets/TransactionProbe.cs:62
+FAIL AcceptedFailureKeepsCommittedState: System.Exception: Load failure retained proposed memories
+  at TransactionProbe+<AcceptedFailureKeepsCommittedState>d__33.MoveNext () [0x000ac] in /tmp/hus-integration-validation/Assets/TransactionProbe.cs:146
+  at TransactionProbe.Update () [0x000a7] in /tmp/hus-integration-validation/Assets/TransactionProbe.cs:62
+FAIL SameSceneRestoreFailureKeepsSession: System.Exception: Failed Attach committed candidate
+  at TransactionProbe+<SameSceneRestoreFailureKeepsSession>d__34.MoveNext () [0x00233] in /tmp/hus-integration-validation/Assets/TransactionProbe.cs:159
+  at TransactionProbe.Update () [0x000a7] in /tmp/hus-integration-validation/Assets/TransactionProbe.cs:62
+FAIL ObserverExceptionDoesNotUndoCommittedRestore: System.Exception: Committed restore reported failure due to observer
+  at TransactionProbe+<ObserverExceptionDoesNotUndoCommittedRestore>d__35.MoveNext () [0x000e5] in /tmp/hus-integration-validation/Assets/TransactionProbe.cs:167
+  at TransactionProbe.Update () [0x000a7] in /tmp/hus-integration-validation/Assets/TransactionProbe.cs:62
+FAIL MissingVersionIsRejected: System.Exception: Missing Journey version accepted
+  at TransactionProbe+<MissingVersionIsRejected>d__36.MoveNext () [0x000b9] in /tmp/hus-integration-validation/Assets/TransactionProbe.cs:177
+  at TransactionProbe.Update () [0x000a7] in /tmp/hus-integration-validation/Assets/TransactionProbe.cs:62
+FAIL MissingBooleanIsRejected: System.Exception: Missing required LAB boolean accepted as false
+  at TransactionProbe+<MissingBooleanIsRejected>d__37.MoveNext () [0x000e3] in /tmp/hus-integration-validation/Assets/TransactionProbe.cs:187
+  at TransactionProbe.Update () [0x000a7] in /tmp/hus-integration-validation/Assets/TransactionProbe.cs:62
+FAIL UnloadedSourceExposesRecovery: System.Exception: Missing explicit recoverable error after source unload
+  at TransactionProbe+<UnloadedSourceExposesRecovery>d__38.MoveNext () [0x00111] in /tmp/hus-integration-validation/Assets/TransactionProbe.cs:196
+  at TransactionProbe.Update () [0x000a7] in /tmp/hus-integration-validation/Assets/TransactionProbe.cs:62

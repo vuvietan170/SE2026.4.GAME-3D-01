@@ -36,17 +36,20 @@ namespace HUSEscape.Persistence
         [SerializeField] private LabRestoreSystem lab;
         private Vector3 spawn;
         private float spawnYaw;
+        private bool restoring;
         internal string StorageDirectoryOverride { get; set; }
         public string SavePath => Path.Combine(StorageDirectoryOverride ?? Application.persistentDataPath, "floor01-v1.json");
         public bool HasSaveFile => File.Exists(SavePath);
         public string LastMessage { get; private set; } = "Chưa tải hoặc ghi tiến trình trong phiên này.";
         public bool LastLoadUsedFallback { get; private set; }
         public int RestoreCount { get; private set; }
+        public bool RecoveryRequired { get; private set; }
         public event Action<bool> Restored;
         private void Awake() { spawn = player.transform.position; spawnYaw = player.transform.eulerAngles.y; }
 
         private bool Stable()
         {
+            if (restoring || RecoveryRequired) { LastMessage = "Đang khôi phục hoặc cần tải lại khu vực."; return false; }
             if (quests == null || inventory == null || player == null || cabinet == null || sequence == null || lab == null ||
                 doors == null || doors.Length != 3 || pickups == null || pickups.Length != 3 || doors.Any(d => d == null) || pickups.Any(p => p == null))
                 throw new InvalidOperationException("Liên kết Save/Load tầng 1 chưa đầy đủ.");
@@ -83,12 +86,12 @@ namespace HUSEscape.Persistence
                 if (!Stable()) return false;
                 if (!HasSaveFile) { LastMessage = "Chưa có bản lưu. Bạn có thể chọn New Game; không có dữ liệu nào bị ghi đè."; return false; }
                 if (new FileInfo(SavePath).Length > 1024 * 1024) throw new InvalidDataException("Bản lưu quá lớn.");
-                var data = JsonUtility.FromJson<Floor01SaveData>(File.ReadAllText(SavePath, new System.Text.UTF8Encoding(false, true)));
+                var data = SaveJson.Read<Floor01SaveData>(File.ReadAllText(SavePath, new System.Text.UTF8Encoding(false, true)));
                 Validate(data); RestoreWithRollback(data, false);
                 LastMessage = LastLoadUsedFallback ? "Đã tải tiến trình; vị trí cũ không an toàn nên Player trở về điểm xuất phát." : "Đã tải tiến trình; không phát lại phần thưởng hoặc animation.";
                 return true;
             }
-            catch (Exception e) { LastMessage = "Không thể Continue: " + e.Message + " Phiên hiện tại và file lưu được giữ nguyên."; return false; }
+            catch (Exception e) { LastMessage = "Không thể Continue: " + e.Message + (RecoveryRequired ? " Cần tải lại khu vực để phục hồi." : " Phiên hiện tại và file lưu được giữ nguyên."); return false; }
         }
 
         /// <summary>Starts a fresh session only after confirmation; never deletes or overwrites a save.</summary>
@@ -98,12 +101,28 @@ namespace HUSEscape.Persistence
             try
             {
                 if (!Stable()) return false;
-                var fresh = new Floor01SaveData { version = 1, scene = "Floor01_Prototype", questIds = quests.Definitions.Select(q => q.Id).ToArray(),
-                    facts = Array.Empty<string>(), inventory = Array.Empty<string>(), doors = doors.Select(d => new SavedDoor { keyId = d.RequiredKeyId, locked = true }).ToArray(),
-                    lab = new SavedLab(), playerPosition = spawn, playerYaw = spawnYaw };
-                RestoreWithRollback(fresh, true); LastMessage = "New Game đã bắt đầu. Bản lưu cũ vẫn có thể Continue; lưu đè cần xác nhận riêng."; return true;
+                RestoreFreshForTravel(); LastMessage = "New Game đã bắt đầu. Bản lưu cũ vẫn có thể Continue; lưu đè cần xác nhận riêng."; return true;
             }
             catch (Exception e) { LastMessage = "Không thể bắt đầu phiên mới: " + e.Message; return false; }
+        }
+
+        internal bool TryRestoreCheckpoint(Floor01SaveData data)
+        {
+            try
+            {
+                if (!Stable()) return false;
+                Validate(data); RestoreWithRollback(data, false);
+                LastMessage = "Đã khôi phục checkpoint; không phát lại phần thưởng."; return true;
+            }
+            catch (Exception error) { LastMessage = "Không thể khôi phục checkpoint: " + error.Message; return false; }
+        }
+
+        internal void RestoreFreshForTravel()
+        {
+            var data = new Floor01SaveData { version = 1, scene = "Floor01_Prototype", questIds = quests.Definitions.Select(q => q.Id).ToArray(),
+                facts = Array.Empty<string>(), inventory = Array.Empty<string>(), doors = doors.Select(d => new SavedDoor { keyId = d.RequiredKeyId, locked = true }).ToArray(),
+                lab = new SavedLab(), playerPosition = spawn, playerYaw = spawnYaw };
+            RestoreWithRollback(data, true);
         }
 
         private Floor01SaveData Capture()
@@ -175,14 +194,40 @@ namespace HUSEscape.Persistence
                 .Any(c => !c.transform.IsChildOf(player.transform))) return false;
             return Physics.SphereCast(center - offset, radius, Vector3.down, out _, .3f, ~0, QueryTriggerInteraction.Ignore);
         }
+        internal Floor01SaveData CaptureForRestore() => Capture();
+
         private void RestoreWithRollback(Floor01SaveData data, bool newGame)
         {
+            Validate(data);
+            if (restoring) throw new InvalidOperationException("Restore is already in progress.");
             var previous = Capture();
-            try { Apply(data); }
-            catch { Apply(previous); throw; }
-            RestoreCount++; Restored?.Invoke(newGame);
+            restoring = true;
+            try
+            {
+                bool fallback = LastLoadUsedFallback;
+                try { Apply(data); }
+                catch (Exception restoreError)
+                {
+                    // Rollback restores the exact prior pose, even if that pose is now obstructed.
+                    // It must not use the failed checkpoint's spawn-fallback policy.
+                    try { Apply(previous, true); LastLoadUsedFallback = fallback; }
+                    catch (Exception rollbackError)
+                    {
+                        RecoveryRequired = true;
+                        throw new AggregateException("Khôi phục và rollback đều thất bại; cần tải lại khu vực.", restoreError, rollbackError);
+                    }
+                    throw;
+                }
+                RecoveryRequired = false;
+                RestoreCount++;
+                // Observers run after commit. Their errors cannot turn a committed restore into false.
+                if (Restored != null) foreach (Action<bool> handler in Restored.GetInvocationList())
+                    try { handler(newGame); }
+                    catch (Exception error) { Debug.LogWarning("Save restored; observer failed: " + error.Message, this); }
+            }
+            finally { restoring = false; }
         }
-        private void Apply(Floor01SaveData data)
+        private void Apply(Floor01SaveData data, bool rollback = false)
         {
             bool controllerEnabled = player.enabled; player.enabled = false;
             try
@@ -192,9 +237,9 @@ namespace HUSEscape.Persistence
                 foreach (var pickup in pickups) pickup.RestoreState(inventory.HasItem(pickup.ItemId), pickup.ItemId == "Key_A101");
                 cabinet.RestoreState(data.cabinetUnlocked); sequence.RestoreState(data.sequenceSolved);
                 lab.RestoreState(data.lab.power, data.lab.instructions, data.lab.connected, data.lab.data, data.lab.complete);
-                Physics.SyncTransforms(); LastLoadUsedFallback = !SafePosition(data.playerPosition);
+                Physics.SyncTransforms(); LastLoadUsedFallback = !rollback && !SafePosition(data.playerPosition);
                 Vector3 position = LastLoadUsedFallback ? spawn : data.playerPosition;
-                if (!SafePosition(position)) throw new InvalidDataException("Không tìm thấy vị trí đứng an toàn.");
+                if (!rollback && !SafePosition(position)) throw new InvalidDataException("Không tìm thấy vị trí đứng an toàn.");
                 player.transform.SetPositionAndRotation(position, Quaternion.Euler(0, LastLoadUsedFallback ? spawnYaw : data.playerYaw, 0));
                 Physics.SyncTransforms();
             }

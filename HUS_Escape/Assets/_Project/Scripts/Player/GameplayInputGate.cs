@@ -11,6 +11,18 @@ namespace HUSEscape.Player
     {
         [SerializeField] private InputActionAsset inputActions;
         [SerializeField] private ThirdPersonCameraFollow cameraFollow;
+        public sealed class Snapshot
+        {
+            internal Snapshot() { }
+            internal GameplayInputGate Owner;
+            internal bool Blocked, CameraEnabled, CameraPending, CameraWasEnabled, Visible, PreviousVisible;
+            internal float Scale, PreviousScale;
+            internal CursorLockMode Cursor, PreviousCursor;
+            internal InputAction[] Actions, Suspended;
+            internal bool[] Enabled;
+            internal int ReleaseDelay, ResumeDelay;
+        }
+        private Coroutine cameraResume;
         private readonly List<InputAction> suspended = new List<InputAction>();
         private float previousTimeScale;
         private int releaseFrame = -1;
@@ -20,6 +32,44 @@ namespace HUSEscape.Player
         private bool previousCursorVisible;
         /// <summary>Whether gameplay input is blocked, including the closing-frame grace period.</summary>
         public bool IsBlocked { get; private set; }
+        /// <summary>Captures this gate's lease and actual action enablement before a travel request.</summary>
+        public Snapshot CaptureSnapshot()
+        {
+            var actions = new List<InputAction>();
+            var map = inputActions != null ? inputActions.FindActionMap("Player", false) : null;
+            if (map != null) foreach (var action in map.actions) actions.Add(action);
+            var enabled = new bool[actions.Count];
+            for (int i = 0; i < actions.Count; i++) enabled[i] = actions[i].enabled;
+            return new Snapshot {
+                Owner = this, Blocked = IsBlocked, Scale = Time.timeScale, PreviousScale = previousTimeScale,
+                CameraEnabled = cameraFollow != null && cameraFollow.enabled, CameraPending = cameraResume != null, CameraWasEnabled = cameraWasEnabled,
+                Cursor = Cursor.lockState, Visible = Cursor.visible, PreviousCursor = previousCursorLock, PreviousVisible = previousCursorVisible,
+                Actions = actions.ToArray(), Enabled = enabled, Suspended = suspended.ToArray(),
+                ReleaseDelay = releaseFrame < 0 ? -1 : Mathf.Max(0, releaseFrame - Time.frameCount),
+                ResumeDelay = resumeFrame < 0 ? -1 : Mathf.Max(0, resumeFrame - Time.frameCount)
+            };
+        }
+        /// <summary>Restores an existing scene after a failed destination disabled shared input actions.</summary>
+        public void RestoreSnapshot(Snapshot snapshot)
+        {
+            if (snapshot == null || snapshot.Owner != this) throw new System.ArgumentException("Input snapshot belongs to another gate.");
+            if (cameraResume != null && cameraFollow != null) cameraFollow.StopCoroutine(cameraResume);
+            cameraResume = null;
+            IsBlocked = snapshot.Blocked; Time.timeScale = snapshot.Scale; previousTimeScale = snapshot.PreviousScale;
+            cameraWasEnabled = snapshot.CameraWasEnabled; previousCursorLock = snapshot.PreviousCursor; previousCursorVisible = snapshot.PreviousVisible;
+            releaseFrame = snapshot.ReleaseDelay < 0 ? -1 : Time.frameCount + snapshot.ReleaseDelay;
+            resumeFrame = snapshot.ResumeDelay < 0 ? -1 : Time.frameCount + snapshot.ResumeDelay;
+            suspended.Clear(); suspended.AddRange(snapshot.Suspended);
+            Cursor.lockState = snapshot.Cursor; Cursor.visible = snapshot.Visible;
+            // Set the camera first: its OnDisable changes Player/Look too.
+            if (cameraFollow != null)
+            {
+                cameraFollow.enabled = snapshot.CameraEnabled && Time.deltaTime > 0;
+                if ((snapshot.CameraEnabled || snapshot.CameraPending) && !cameraFollow.enabled) cameraResume = cameraFollow.StartCoroutine(ResumeCamera(cameraFollow));
+            }
+            for (int i = 0; i < snapshot.Actions.Length; i++)
+                if (snapshot.Enabled[i]) snapshot.Actions[i].Enable(); else snapshot.Actions[i].Disable();
+        }
         /// <summary>Pauses gameplay without disabling or resetting the player/camera components.</summary>
         public void Block()
         {
@@ -43,6 +93,8 @@ namespace HUSEscape.Player
             { Time.timeScale = previousTimeScale; resumeFrame = Time.frameCount + 1; }
             if (resumeFrame >= 0 && Time.frameCount >= resumeFrame) Restore();
         }
+        /// <summary>Ends the source scene's pause lease after loading, before destination actors activate.</summary>
+        public void ReleaseImmediately() => Restore();
         private void Restore()
         {
             if (!IsBlocked) return;
@@ -53,7 +105,7 @@ namespace HUSEscape.Player
             if (cameraWasEnabled && cameraFollow != null)
             {
                 if (Time.deltaTime > 0 || !cameraFollow.gameObject.activeInHierarchy) cameraFollow.enabled = true;
-                else cameraFollow.StartCoroutine(ResumeCamera(cameraFollow));
+                else cameraResume = cameraFollow.StartCoroutine(ResumeCamera(cameraFollow));
             }
         }
         private IEnumerator ResumeCamera(ThirdPersonCameraFollow follow)
@@ -62,6 +114,7 @@ namespace HUSEscape.Player
             yield return null;
             while (IsBlocked || Time.deltaTime <= 0) yield return null;
             if (follow != null) follow.enabled = true;
+            cameraResume = null;
         }
         private void OnDisable() => Restore();
         private void OnDestroy() => Restore();

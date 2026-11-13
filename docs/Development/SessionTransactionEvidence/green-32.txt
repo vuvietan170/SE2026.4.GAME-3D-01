@@ -1,0 +1,46 @@
+PASS 32/32
+PASS ContinueRejectedKeepsCommittedState
+PASS NewGameRejectedKeepsMemories
+PASS AcceptedFailureKeepsCommittedState
+PASS SameSceneRestoreFailureKeepsSession
+PASS ObserverExceptionDoesNotUndoCommittedRestore
+PASS MissingVersionIsRejected
+PASS MissingBooleanIsRejected
+PASS UnloadedSourceExposesRecovery
+PASS AcceptedNewGameFailureKeepsState
+PASS ModalFailurePreservesCursorAndPause
+PASS PendingRequestsCannotReplaceProposal
+PASS RepeatedContinueIsSilentAndUnique
+PASS LegacyCampusV1StillLoads
+PASS MissingDestinationKeepsSurvivingSource
+PASS BadDestinationBindingKeepsSource
+PASS LostSceneCanActuallyRecover
+PASS DestructiveAttachFailureCanRecover
+PASS FloorUnsafePoseFallsBack
+PASS FloorFailedRestoreRollsBackMetadataAndPose
+PASS FloorDoubleFailureRequiresRecovery
+PASS FloorRepeatedContinueDoesNotReplayRewards
+PASS ObserverReentryCannotStartSecondRestore
+PASS MalformedInputsAndIoDoNotChangeState
+PASS WriteFailureKeepsExistingFloorSlot
+PASS WriteFailureKeepsExistingCampusSlot
+PASS SessionObserverCannotTravelDuringLocalCommit
+PASS BadUiBindingDoesNotCommitDestination
+PASS NativeSingleTravelAndRecovery
+PASS UnsafeDestinationKeepsSourceInput
+PASS NativeNewGameCommitsOnlyAfterFreshScene
+PASS InitialEntryWaitsForCoreCompletion
+PASS ClosingModalDuringFailedLoadRestoresControl
+RUNTIME ERRORS
+
+KNOWN EDITOR ERRORS
+ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+System.Collections.Generic.List`1[T].get_Item (System.Int32 index) (at <fe1d7a670f4f4d078f963f4439913bcb>:0)
+UnityEditor.Search.SearchDatabase+<EnumerateAll>d__78.MoveNext () (at /home/bokken/build/output/unity/unity/Modules/QuickSearch/Editor/Indexing/SearchDatabase.cs:351)
+System.Linq.Enumerable.TryGetFirst[TSource] (System.Collections.Generic.IEnumerable`1[T] source, System.Boolean& found) (at <ada5ca24c2414cbb9aa0f67c3255a013>:0)
+System.Linq.Enumerable.First[TSource] (System.Collections.Generic.IEnumerable`1[T] source) (at <ada5ca24c2414cbb9aa0f67c3255a013>:0)
+UnityEditor.Search.SearchDatabase.GetDefaultSearchDatabase () (at /home/bokken/build/output/unity/unity/Modules/QuickSearch/Editor/Indexing/SearchDatabase.cs:325)
+UnityEditor.Search.SearchInit.IndexationOnStartup () (at /home/bokken/build/output/unity/unity/Modules/QuickSearch/Editor/SearchInit.cs:109)
+UnityEditor.EditorApplication.Internal_CallDelayFunctions () (at /home/bokken/build/output/unity/unity/Editor/Mono/EditorApplication.cs:427)
+UnityEngine.StackTraceUtility:ExtractStringFromExceptionInternal(Object, String&, String&) (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:50)

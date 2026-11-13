@@ -1,5 +1,7 @@
 # Stage 13 — Campus foundation and scene transition
 
+Current transaction, rollback and recovery contract: [JOURNEY_SAVE_TRANSACTIONS.md](JOURNEY_SAVE_TRANSACTIONS.md).
+
 Stage 13.1 replaces the end-wall portal with a walkable ground-level exit
 vestibule. See [T3_EXIT_VESTIBULE.md](T3_EXIT_VESTIBULE.md) for its inspection,
 layout, save compatibility and current verification. Historical Stage 13 counts

@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using System.Collections;
 using HUSEscape.Core;
 using HUSEscape.Inventory;
 using HUSEscape.Player;
@@ -29,17 +30,40 @@ namespace HUSEscape.World
         public PatrolGuard[] guards = Array.Empty<PatrolGuard>();
         public JourneySession Session { get; private set; }
         public GameplayInputGate Gate => player.GetComponent<GameplayInputGate>();
-        private void Start()
+        private IEnumerator Start()
         {
-            var sessions = FindObjectsByType<JourneySession>();
-            if (sessions.Length > 1) { Debug.LogError("Multiple journey owners; scene binding refused."); return; }
+            // A native scene can run Start before SceneLoader commits Playing. Keep
+            // actors gated until completion; never create another Core to bypass Loading.
+            if (!isActiveAndEnabled || Session != null) yield break; // Completion may already have attached or rejected us.
+            if (actorRoot == null || actorRoot.activeInHierarchy) Gate.Block();
+            var cores = FindObjectsByType<GameBootstrap>(FindObjectsInactive.Include)
+                .Where(b => b.IsInitialized).ToArray();
+            if (cores.Length > 1) { Debug.LogError("Multiple Core owners.", this); yield break; }
+            var core = cores.SingleOrDefault();
+            if (core == null)
+            {
+                if (FindObjectsByType<GameBootstrap>(FindObjectsInactive.Include).Length != 0)
+                { Debug.LogError("Existing Core owner is unavailable.", this); yield break; }
+                core = new GameObject("Gameplay_Core").AddComponent<GameBootstrap>();
+            }
+            // An existing travel owns both success and failure binding. Do not retry
+            // Attach from a delayed Start after Loaded has rejected this destination.
+            var inFlight = FindObjectsByType<JourneySession>(FindObjectsInactive.Include)
+                .FirstOrDefault(s => s.Loader == core.Loader && (s.IsLoading || s.RecoveryRequired));
+            if (inFlight != null) { Session = inFlight; yield break; }
+            while (core != null && core.Loader != null && core.Loader.IsLoading) yield return null;
+            if (Session != null) yield break; // Session.Loaded owns travel restoration.
+            if (core == null || !core.TryGetServices(out var manager, out _)
+                || (manager.CurrentState != GameState.Ready && manager.CurrentState != GameState.Playing))
+            { Debug.LogError("Journey requires an available, stable Core owner.", this); yield break; }
+
+            var sessions = FindObjectsByType<JourneySession>(FindObjectsInactive.Include);
+            if (sessions.Length > 1) { Debug.LogError("Multiple journey owners; scene binding refused.", this); yield break; }
             if (sessions.Length == 1) Session = sessions[0];
             else
             {
-                var cores = FindObjectsByType<GameBootstrap>().Where(b => b.IsInitialized).ToArray();
-                if (cores.Length > 1) { Debug.LogError("Multiple Core owners."); return; }
-                var core = cores.Length == 1 ? cores[0] : new GameObject("Gameplay_Core").AddComponent<GameBootstrap>();
-                Session = new GameObject("Journey_Session").AddComponent<JourneySession>(); Session.Initialize(core);
+                Session = new GameObject("Journey_Session").AddComponent<JourneySession>();
+                Session.Initialize(core);
             }
             Session.Attach(this);
         }

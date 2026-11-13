@@ -1,0 +1,31 @@
+{
+  "transactions": {
+    "exit_code": 0,
+    "result": "PASS 34/34"
+  },
+  "EditMode": {
+    "exit_code": 0,
+    "result": "Passed",
+    "total": "110",
+    "passed": "110",
+    "failed": "0",
+    "skipped": "0"
+  },
+  "PlayMode": {
+    "exit_code": 0,
+    "result": "Passed",
+    "total": "33",
+    "passed": "33",
+    "failed": "0",
+    "skipped": "0"
+  },
+  "unity": "6000.6.5f1",
+  "base": "f933595",
+  "branch": "fix/journey-checkpoint-transactions",
+  "unexpected_runtime_errors": 0,
+  "known_editor_search_exceptions": 1,
+  "save_version": 1,
+  "native_single_cases": 3,
+  "console_completely_clean": false,
+  "compile_exit_code": 0
+}

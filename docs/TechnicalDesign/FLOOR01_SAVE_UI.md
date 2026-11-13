@@ -1,5 +1,7 @@
 # Floor 01 polish and Save/Load V1 — Stage 12
 
+Current transaction, rollback and recovery contract: [JOURNEY_SAVE_TRANSACTIONS.md](JOURNEY_SAVE_TRANSACTIONS.md).
+
 This change extends the accepted A101/A102/LAB content in
 `Assets/_Project/Scenes/Floor01_Prototype.unity`. It does not introduce another
 Inventory, QuestManager, input framework or camera system. All 17 serialized
