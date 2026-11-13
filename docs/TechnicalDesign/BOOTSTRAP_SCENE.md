@@ -1,5 +1,7 @@
 # Bootstrap scene entry point (FO-003A)
 
+Current gameplay integration: [JOURNEY_INTEGRATION.md](JOURNEY_INTEGRATION.md).
+
 ## Scope
 
 Unity 6000.6.5f1 / URP 17.6.0. The Bootstrap scene connects the completed FO-002
@@ -38,21 +40,24 @@ needed for this single authored root.
 | `destinationScenePath` | `Assets/_Project/Scenes/MainMenu/MainMenu.unity` |
 | `destinationState` | `Ready` |
 
-All three scenes are enabled in the global Build Settings:
+All six scenes are enabled in the global Build Settings:
 
 | Index | Scene |
 | --- | --- |
 | 0 | `Assets/_Project/Scenes/Bootstrap/Bootstrap.unity` |
 | 1 | `Assets/_Project/Scenes/MainMenu/MainMenu.unity` |
 | 2 | `Assets/Scenes/SampleScene.unity` |
+| 3 | `Assets/_Project/Scenes/Floor01_Prototype.unity` |
+| 4 | `Assets/_Project/Scenes/Campus_Prototype.unity` |
+| 5 | `Assets/_Project/Scenes/TrainingOffice_Prototype.unity` |
 
 SampleScene remains at its original path, with GUID
 `99c9720ab356a0642a771bea13969a05` and unchanged content. The Input System config
 object in EditorBuildSettings is preserved. No other ProjectSettings are changed.
 
 MainMenu uses the existing entry contract with its enabled full path and Ready
-destination. Its Start action loads SampleScene/Playing through the same loader.
-SampleScene is a temporary development destination, not a final gameplay scene.
+destination. Its Start action loads Floor01_Prototype/Playing through the same loader.
+SampleScene remains enabled for existing native loader tests.
 The release platform remains TBD.
 
 ## Initialization and transition flow
@@ -73,11 +78,11 @@ The release platform remains TBD.
 6. Core finalizes `Ready`, releases the reservation, and publishes completion.
    The entry records successful completion, removes both handlers, and disables
    itself. No further scene request is issued automatically. MainMenuFlow binds
-   the scene-owned view; only a Start action requests SampleScene/Playing.
+   the scene-owned view; only a Start action requests Floor01_Prototype/Playing.
 
 ```text
 Initializing -> Ready -> Loading -> Ready -> Start -> Loading -> Playing
-Bootstrap scene       ->           MainMenu       ->            SampleScene
+Bootstrap scene       ->           MainMenu       ->            Floor01_Prototype
           BootstrapCore persists across the replacement
 ```
 

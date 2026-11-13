@@ -17,7 +17,7 @@ namespace HUSEscape.UI
     {
         internal delegate bool SceneRequest(string path, GameState destination, out string error);
         [SerializeField] private GameBootstrap bootstrap = null;
-        [SerializeField] private string playScenePath = "Assets/Scenes/SampleScene.unity";
+        [SerializeField] private string playScenePath = "Assets/_Project/Scenes/Floor01_Prototype.unity";
         private GameManager manager;
         private SceneLoader loader;
         private SceneRequest requestScene;
