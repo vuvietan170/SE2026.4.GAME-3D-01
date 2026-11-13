@@ -119,6 +119,8 @@ namespace HUSEscape.UI
             SetRequest((string path, GameState state, out string error) =>
             {
                 requests++;
+                Assert.That(path, Is.EqualTo("Assets/_Project/Scenes/Floor01_Prototype.unity"));
+                Assert.That(state, Is.EqualTo(GameState.Playing));
                 feedbackBeforeRequest = !view.CanStart && view.Status == "Loading...";
                 error = null;
                 manager.TryChangeState(GameState.Loading);
@@ -156,7 +158,7 @@ namespace HUSEscape.UI
             // Deliver the real instance event's subscriber snapshot. Core tests separately verify
             // native-boundary failure publication; this verifies UI recovery without a Single load.
             var failureListeners = (Action<string, string>)Field(loader, "SceneLoadFailed");
-            failureListeners("Assets/Scenes/SampleScene.unity", "Synthetic completion failure");
+            failureListeners("Assets/_Project/Scenes/Floor01_Prototype.unity", "Synthetic completion failure");
             Assert.That(flow.IsLoading, Is.False);
             Assert.That(manager.CurrentState, Is.EqualTo(GameState.Ready));
             Assert.That(flow.LastError, Is.EqualTo("Synthetic completion failure"));

@@ -1,5 +1,7 @@
 # Main Menu foundation (FO-003B)
 
+Current gameplay integration and validation: [JOURNEY_INTEGRATION.md](JOURNEY_INTEGRATION.md).
+
 ## Scope and scene flow
 
 Unity 6000.6.5f1 / URP 17.6.0. This feature adds a Start-only menu with mouse and
@@ -13,11 +15,14 @@ Enabled Build Settings order:
 | --- | --- | --- |
 | 0 | `Assets/_Project/Scenes/Bootstrap/Bootstrap.unity` | Startup source |
 | 1 | `Assets/_Project/Scenes/MainMenu/MainMenu.unity` | `Ready` |
-| 2 | `Assets/Scenes/SampleScene.unity` | `Playing` |
+| 2 | `Assets/Scenes/SampleScene.unity` | Test content |
+| 3 | `Assets/_Project/Scenes/Floor01_Prototype.unity` | Start / `Playing` |
+| 4 | `Assets/_Project/Scenes/Campus_Prototype.unity` | Travel / `Playing` |
+| 5 | `Assets/_Project/Scenes/TrainingOffice_Prototype.unity` | Travel / `Playing` |
 
 ```text
 Bootstrap -> Loading -> MainMenu / Ready
-MainMenu -> Start -> Loading -> SampleScene / Playing
+MainMenu -> Start -> Loading -> Floor01_Prototype / Playing
              BootstrapCore and its services persist
 ```
 

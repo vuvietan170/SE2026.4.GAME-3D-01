@@ -1,0 +1,24 @@
+{
+  "unity": "6000.6.5f1",
+  "base": "f933595",
+  "compile_exit": 0,
+  "native_exit": 0,
+  "native_assertions": 49,
+  "gameplay_errors": 0,
+  "known_editor_search_errors": 1,
+  "console_completely_clean": false,
+  "EditMode": {
+    "result": "Passed",
+    "total": "110",
+    "passed": "110",
+    "failed": "0",
+    "skipped": "0"
+  },
+  "PlayMode": {
+    "result": "Passed",
+    "total": "33",
+    "passed": "33",
+    "failed": "0",
+    "skipped": "0"
+  }
+}

@@ -21,6 +21,7 @@ namespace HUSEscape.World
     }
 
     /// <summary>Instance-owned travel and one explicit Campus save slot. Only pure checkpoint data survives scene unload.</summary>
+    [DisallowMultipleComponent]
     public sealed class JourneySession : MonoBehaviour
     {
         private GameManager manager;
@@ -52,14 +53,22 @@ namespace HUSEscape.World
 
         internal void Initialize(GameBootstrap core)
         {
-            if (!core.TryGetServices(out manager, out loader)) throw new InvalidOperationException("Core services unavailable.");
-            if (manager.CurrentState == GameState.Ready) manager.TryChangeState(GameState.Playing);
+            if (loader != null) return; // One subscription pair for this session's lifetime.
+            if (FindObjectsByType<JourneySession>(FindObjectsInactive.Include).Any(s => s != this))
+                throw new InvalidOperationException("A JourneySession already owns this journey.");
+            if (!core.TryGetServices(out var services, out var sceneLoader) || sceneLoader.IsLoading ||
+                (services.CurrentState != GameState.Ready && services.CurrentState != GameState.Playing))
+                throw new InvalidOperationException("Core services must finish loading before journey initialization.");
+            if (services.CurrentState == GameState.Ready && !services.TryChangeState(GameState.Playing))
+                throw new InvalidOperationException("Core could not enter Playing.");
+            manager = services; loader = sceneLoader;
             loader.SceneLoaded += Loaded; loader.SceneLoadFailed += Failed; DontDestroyOnLoad(gameObject);
         }
         internal void Detach(JourneySceneEntry entry) { if (current == entry) current = null; if (source == entry) source = null; }
         internal void Attach(JourneySceneEntry entry)
         {
-            if (IsLoading) return; // Native completion owns binding, not destination Start ordering.
+            if (IsLoading || loader == null || loader.IsLoading || manager.CurrentState != GameState.Playing) return;
+            // Native completion owns binding, not destination Start ordering.
             if (current == entry) return;
             current = entry; floorPath = entry.floorPath; campusPath = entry.campusPath; officePath = entry.officePath; entry.Bind(this);
             if (entry.actorRoot != null) entry.actorRoot.SetActive(true);

@@ -85,12 +85,12 @@ namespace HUSEscape.UI
                 Assert.That(root.GetComponents<MonoBehaviour>(), Has.Length.EqualTo(4));
                 var serialized = new SerializedObject(flow);
                 Assert.That(serialized.FindProperty("bootstrap").objectReferenceValue, Is.SameAs(bootstrap));
-                Assert.That(serialized.FindProperty("playScenePath").stringValue, Is.EqualTo("Assets/Scenes/SampleScene.unity"));
+                Assert.That(serialized.FindProperty("playScenePath").stringValue, Is.EqualTo("Assets/_Project/Scenes/Floor01_Prototype.unity"));
                 var startup = new SerializedObject(root.GetComponent<BootstrapSceneEntry>());
                 Assert.That(startup.FindProperty("destinationScenePath").stringValue, Is.EqualTo(MenuPath));
                 Assert.That(startup.FindProperty("destinationState").intValue, Is.EqualTo((int)GameState.Ready));
             });
-            Assert.That(EditorBuildSettings.scenes.Select(scene => scene.path), Is.EqualTo(new[] { BootstrapPath, MenuPath, "Assets/Scenes/SampleScene.unity", "Assets/_Project/Scenes/Floor01_Prototype.unity", "Assets/_Project/Scenes/Campus_Prototype.unity" }));
+            Assert.That(EditorBuildSettings.scenes.Select(scene => scene.path), Is.EqualTo(new[] { BootstrapPath, MenuPath, "Assets/Scenes/SampleScene.unity", "Assets/_Project/Scenes/Floor01_Prototype.unity", "Assets/_Project/Scenes/Campus_Prototype.unity", "Assets/_Project/Scenes/TrainingOffice_Prototype.unity" }));
             Assert.That(EditorBuildSettings.scenes.All(scene => scene.enabled), Is.True);
         }
 

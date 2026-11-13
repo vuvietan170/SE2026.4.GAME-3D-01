@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Name:
   m_EditorClassIdentifier: HUSEscape.UI::HUSEscape.UI.MainMenuFlow
   bootstrap: {fileID: 819219542}
-  playScenePath: Assets/Scenes/SampleScene.unity
+  playScenePath: Assets/_Project/Scenes/Floor01_Prototype.unity
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
