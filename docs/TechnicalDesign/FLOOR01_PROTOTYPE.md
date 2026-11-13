@@ -4,7 +4,7 @@ Open `HUS_Escape/Assets/_Project/Scenes/Floor01_Prototype.unity` in the existing
 Unity 6000.6.5f1 project and press Play. The scene is already authored and saved;
 no runtime builder or setup command is required. SampleScene, Bootstrap, MainMenu,
 Build Settings, existing prefabs, and gameplay source files remain unchanged by
-this level-authoring task. MainMenu Start still loads SampleScene.
+this level-authoring task. MainMenu Start now loads Floor01_Prototype; see [JOURNEY_INTEGRATION.md](JOURNEY_INTEGRATION.md) for current startup and validation.
 
 ## Layout and route
 

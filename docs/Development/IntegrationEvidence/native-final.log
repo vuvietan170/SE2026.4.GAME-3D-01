@@ -1,0 +1,675 @@
+[UnityConnectServicesConfig] Local config successfully read: "/usr/share/unity3d/config/services-config.json"
+[UnityConnectServicesConfig] Service configuration:
+    "servicesConfigBaseUrl": "",
+    "disableServicesWindow": false,
+    "disableUserLogin": false,
+    "entitlementCacheTimeoutInSeconds": 60,
+    "clientConnectTimeoutSec": 60,
+    "clientHandshakeTimeoutSec": 30,
+    "clientResolveEntitlementsTimeoutSec": 30,
+    "clientUpdateLicenseTimeoutSec": 30,
+    "licensingServiceBaseUrl": "",
+    "enableProxyAutoconfig": "false"
+
+Unity Editor version:    6000.6.5f1 (3ff58d469c8a)
+Branch:                  6000.6/staging
+Build type:              Release
+Batch mode:              YES
+System name:             Linux
+Distro version:          #1 SMP PREEMPT_DYNAMIC Fri, 23 Oct 2026 15:03:58 +0000
+Kernel version:          7.3.0-4-cachyos
+Architecture:            x86_64
+Window Protocol:         Wayland (XWayland)
+Available memory:        15593 MB
+Date:                    2026-11-13T09:37:13Z
+VBCSCompilerPreWarmer: watching VBCSCompiler (PID 2835793)
+VBCSCompilerPreWarmer: pre-warm launched (dotnet PID 2835795)
+VBCSCompiler prewarm took 8.32 ms
+Initialize udev device monitor.
+[Licensing::Module] Trying to connect to existing licensing client channel...
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-satan170" at "2026-11-13T09:37:13.839782Z"
+[SignatureVerifier] Application signature verification not supported on this platform.
+
+COMMAND LINE ARGUMENTS:
+/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Unity
+-batchmode
+-nographics
+-projectPath
+/tmp/hus-integration-validation
+-executeMethod
+JourneyIntegrationValidation.Run
+-logFile
+/tmp/hus-integration-native-deterministic.log
+Successfully changed project path to: /tmp/hus-integration-validation
+[Licensing::Client] Error: HandshakeResponse reported an error:
+	ResponseCode: 505
+	ResponseStatus: Unsupported protocol version '1.18.3'.
+[Licensing::Module] Error: Failed to handshake to channel: "LicenseClient-satan170"
+[Licensing::IpcConnector] LicenseClient-satan170 channel disconnected successfully.
+[Licensing::IpcConnector] Channel LicenseClient-satan170-6000.6.5 doesn't exist
+[Licensing::Module] Successfully launched the LicensingClient (PId: 2835804)
+/tmp/hus-integration-validation
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-remapper-allocator-initial-capacity=32768"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-main-allocator-mimalloc-enabled=1"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+Logging is directed to a specific file, skipping project log.
+Player connection [140027066559232]  Target information:
+
+Player connection [140027066559232]  * "[IP] 172.16.197.227 [Port] 55504 [Flags] 2 [Guid] 1893166793 [EditorId] 1893166793 [Version] 1048832 [Id] LinuxEditor(16,172.16.197.227) [Debug] 1 [PackageName] LinuxEditor [ProjectName] Editor"
+
+Player connection [140027066559232]  * "[IP] 172.17.0.1 [Port] 55504 [Flags] 2 [Guid] 1893166793 [EditorId] 1893166793 [Version] 1048832 [Id] LinuxEditor(16,172.16.197.227) [Debug] 1 [PackageName] LinuxEditor [ProjectName] Editor"
+
+Player connection [140027066559232]  * "[IP] 172.21.0.1 [Port] 55504 [Flags] 2 [Guid] 1893166793 [EditorId] 1893166793 [Version] 1048832 [Id] LinuxEditor(16,172.16.197.227) [Debug] 1 [PackageName] LinuxEditor [ProjectName] Editor"
+
+Player connection [140027066559232]  * "[IP] 172.18.0.1 [Port] 55504 [Flags] 2 [Guid] 1893166793 [EditorId] 1893166793 [Version] 1048832 [Id] LinuxEditor(16,172.16.197.227) [Debug] 1 [PackageName] LinuxEditor [ProjectName] Editor"
+
+Player connection [140027066559232]  * "[IP] 172.20.0.1 [Port] 55504 [Flags] 2 [Guid] 1893166793 [EditorId] 1893166793 [Version] 1048832 [Id] LinuxEditor(16,172.16.197.227) [Debug] 1 [PackageName] LinuxEditor [ProjectName] Editor"
+
+Player connection [140027066559232]  * "[IP] 172.19.0.1 [Port] 55504 [Flags] 2 [Guid] 1893166793 [EditorId] 1893166793 [Version] 1048832 [Id] LinuxEditor(16,172.16.197.227) [Debug] 1 [PackageName] LinuxEditor [ProjectName] Editor"
+
+Player connection [140027066559232] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [140027066559232] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-satan170-6000.6.5" at "2026-11-13T09:37:14.221217Z"
+[SignatureVerifier] Application signature verification not supported on this platform.
+[Package Manager] Connected to IPC stream "Upm-2835778" after 0.5 seconds.
+[Licensing::Module] Licensing is not yet initialized.
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.18.3+d7ffd15
+  Session Id:              b008eab473d243f984ab7e821141e277
+  Correlation Id:          f764aa058c99ecb3756a03b4405db471
+  External correlation Id: 5209311290334719618
+  Machine Id:              h0m3r0ZHzCnltAfP+GhbvQVVU3U=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-satan170-6000.6.5" (connect: 0.38s, validation: 0.33s, handshake: 0.00s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-satan170-6000.6.5-notifications" at "2026-11-13T09:37:14.556344Z"
+[Licensing::Module] Connected to LicensingClient (PId: 2835804, launch time: 0.00, total connection time: 0.71s)
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: 18968527826561-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+[Licensing::Client] Successfully updated license, isAsync: True, time: 0.06
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] Licensing Background thread has ended after 1.07s
+[Licensing::Module] Licensing is initialized (took 0.50s).
+[Licensing::Client] Successfully resolved entitlement details
+Library Redirect Path: Library/
+Initialising UDS system complete:
+  - System type: Client
+  - Resource namespace: 3572caddb86abff138a9661510982905
+  - Shared memory size: 1073741824
+  - Command buffer id: 1052624
+  - Command buffer size: 8192
+  - Hashmap size: 4194304
+  - Service connected: false
+Launching Unity Data Store - /home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Tools/Unity.DataStore
+Unity Data Store artifact dir = Library/DataStore, working dir = /tmp/hus-integration-validationUnity Data Store running and initialised
+[Physics::Module] Selected backend (deferred post-plugins).
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Initialize engine version: 6000.6.5f1 (3ff58d469c8a)
+[EntityIdStore] init: VM path (explicit commit), pageSize=4096, blockCount=1048576, entitiesPerBlock=256, slots reserved=4294967296 bytes
+[Subsystems] Discovering subsystems at path /home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path /tmp/hus-integration-validation/Assets
+Forcing GfxDevice: Null
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+NullGfxDevice:
+    Version:  NULL 1.0 [1.0]
+    Renderer: Null Device
+    Vendor:   Unity Technologies
+Initialize mono
+Mono path[0] = '/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed'
+Mono path[1] = '/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/BCLExtensions/runtime/netstandard2.1'
+Mono path[2] = '/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-linux'
+Mono config path = '/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56778
+CodeReloadManager initialized
+ImportWorker Server TCP listen port: 0
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: /home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: /home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+[Licensing::Client] Successfully resolved entitlement details
+Register platform support module: /home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: /home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll
+Registered in 0.014132 seconds.
+Native extension for LinuxStandalone target not found
+Package Manager log level set to [2]
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Licensing::Client] Successfully resolved entitlement details
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:False
+Scripting: successfully reloaded assembly
+- Finished resetting the current domain, in  5.057 seconds
+Domain Reload Profiling: 6563ms
+	BeginReloadAssembly (592ms)
+		CreateAndSetChildDomain (17ms)
+	RebuildCommonClasses (25ms)
+	RebuildNativeTypeToScriptingClass (69ms)
+	initialDomainReloadingComplete (106ms)
+	LoadAllAssembliesAndSetupDomain (711ms)
+		LoadAssemblies (577ms)
+		TypeCache.Refresh (556ms)
+			TypeCache.ScanAssembly (525ms)
+		AnalyzeDomain (2ms)
+	FinalizeReload (5060ms)
+		SetupLoadedEditorAssemblies (0ms)
+			LogAssemblyErrors (3ms)
+			InitializePlatformSupportModulesInManaged (73ms)
+			BeforeProcessingInitializeOnLoad (164ms)
+			ProcessInitializeOnLoadAttributes (150ms)
+			ProcessInitializeOnLoadMethodAttributes (4383ms)
+[Licensing::Client] Successfully resolved entitlement details
+Application.AssetDatabase Initial Refresh Start
+[Package Manager] Restoring resolved packages state from cache
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Registered 61 packages:
+  Packages from [https://packages.unity.com]:
+    com.unity.collab-proxy@2.13.6 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.collab-proxy@4628d2ba6ea4)
+    com.unity.ide.rider@3.0.40 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.ide.rider@e4950c6d131b)
+    com.unity.ide.visualstudio@2.0.28 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.ide.visualstudio@b5edea5f33f4)
+    com.unity.inputsystem@1.20.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.inputsystem@7a4e1a2a8194)
+    com.unity.sdk.linux-arm64@1.1.1 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.sdk.linux-arm64@5043731cb64f)
+    com.unity.sdk.linux-x86_64@1.1.1 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.sdk.linux-x86_64@920bc08129cd)
+    com.unity.toolchain.linux-x86_64-linux@1.1.1 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.toolchain.linux-x86_64-linux@95ffda8fe8d9)
+    com.unity.sysroot.base@1.1.1 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.sysroot.base@0a249da1e1ab)
+    com.unity.searcher@4.9.5 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.searcher@a463122f2c00)
+    com.unity.profiling.core@1.0.3 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.profiling.core@8a49f7027d06)
+    com.unity.nuget.mono-cecil@1.11.6 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.nuget.mono-cecil@ecb9724e46ff)
+  Built-in packages:
+    com.unity.animation.rigging@6.6.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.animation.rigging@32b8083f6de1)
+    com.unity.render-pipelines.universal@17.6.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.render-pipelines.universal@04f531cc132c)
+    com.unity.ugui@2.6.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.ugui@00142237b460)
+    com.unity.modules.accessibility@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.accessibility)
+    com.unity.modules.adaptiveperformance@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.adaptiveperformance)
+    com.unity.modules.ai@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.ai)
+    com.unity.modules.androidjni@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.androidjni)
+    com.unity.modules.animation@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.animation)
+    com.unity.modules.assetbundle@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.assetbundle)
+    com.unity.modules.audio@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.audio)
+    com.unity.modules.cloth@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.cloth)
+    com.unity.modules.director@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.director)
+    com.unity.modules.imageconversion@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.imageconversion)
+    com.unity.modules.imgui@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.imgui)
+    com.unity.modules.jsonserialize@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.jsonserialize)
+    com.unity.modules.particlesystem@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.particlesystem)
+    com.unity.modules.physics@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.physics)
+    com.unity.modules.physics2d@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.physics2d)
+    com.unity.modules.physicscore2d@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.physicscore2d)
+    com.unity.modules.screencapture@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.screencapture)
+    com.unity.modules.terrain@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.terrain)
+    com.unity.modules.terrainphysics@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.terrainphysics)
+    com.unity.modules.tetgen@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.tetgen)
+    com.unity.modules.tilemap@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.tilemap)
+    com.unity.modules.timelinefoundation@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.timelinefoundation)
+    com.unity.modules.ui@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.ui)
+    com.unity.modules.uielements@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.uielements)
+    com.unity.modules.umbra@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.umbra)
+    com.unity.modules.unityanalytics@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.unityanalytics)
+    com.unity.modules.unitywebrequest@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.unitywebrequest)
+    com.unity.modules.unitywebrequestassetbundle@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.unitywebrequestassetbundle)
+    com.unity.modules.unitywebrequestaudio@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.unitywebrequestaudio)
+    com.unity.modules.unitywebrequesttexture@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.unitywebrequesttexture)
+    com.unity.modules.unitywebrequestwww@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.unitywebrequestwww)
+    com.unity.modules.vectorgraphics@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.vectorgraphics)
+    com.unity.modules.vehicles@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.vehicles)
+    com.unity.modules.video@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.video)
+    com.unity.modules.wind@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.wind)
+    com.unity.modules.xr@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.xr)
+    com.unity.modules.subsystems@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.subsystems)
+    com.unity.modules.hierarchycore@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.modules.hierarchycore)
+    com.unity.render-pipelines.core@17.6.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.render-pipelines.core@514690c4e8b0)
+    com.unity.shadergraph@17.6.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.shadergraph@03900dfca927)
+    com.unity.render-pipelines.universal-config@17.6.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.render-pipelines.universal-config@b1357eef5cd3)
+    com.unity.test-framework@1.8.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.test-framework@33f8a1e9aefd)
+    com.unity.ext.nunit@2.1.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.ext.nunit@508b95ff9afe)
+    com.unity.burst@2.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.burst@c3ed5b778d56)
+    com.unity.graph-authoring@1.0.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.graph-authoring@f8926ccf2c8f)
+    com.unity.collections@6.6.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.collections@431b1d558060)
+    com.unity.test-framework.performance@6.6.0 (location: /tmp/hus-integration-validation/Library/PackageCache/com.unity.test-framework.performance@5a3a02a0169f)
+[Subsystems] No new subsystems found in resolved package list.
+[Package Manager] Done registering packages in 0.01 seconds
+[ScriptCompilation] Requested script compilation because: AssetDatabase observed changes in script compilation related files
+Starting: /home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Tools/BuildPipeline/bee_backend --ipc --defer-dag-verification --dagfile="Library/Bee/2400b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: /tmp/hus-integration-validation
+warn: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Assembly system.runtime.interopservices.windowsruntime has duplicate hint path. Ignoring "/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Runtime.InteropServices.WindowsRuntime.dll" in favor of "/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/Extensions/2.0.0/System.Runtime.InteropServices.WindowsRuntime.dll"
+warn: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Assembly system.componentmodel.composition has duplicate hint path. Ignoring "/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/System.ComponentModel.Composition.dll" in favor of "/home/satan170/Unity/Hub/Editor/6000.6.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.ComponentModel.Composition.dll"
+DisplayProgressbar: Compiling Scripts
+ExitCode: 0 Duration: 1s77ms
+[668/881    0s] ILPP-Configuration Library/ilpp-configuration.nevergeneratedoutput
+[873/881    0s] Csc Library/Bee/artifacts/2400b0aE.dag/Assembly-CSharp.dll (+2 others)
+[875/881    0s] ILPostProcess Library/Bee/artifacts/2400b0aE.dag/post-processed/Assembly-CSharp.dll (+pdb)
+Processing assembly Library/Bee/artifacts/2400b0aE.dag/Assembly-CSharp.dll, with 139 defines and 345 references
+processors: Unity.Jobs.CodeGen.JobsILPostProcessor, zzzUnity.Burst.CodeGen.BurstILPostProcessor
+1 processor(s) skipped this assembly
+running Unity.Jobs.CodeGen.JobsILPostProcessor
+[876/881    0s] ILPostProcess Library/Bee/artifacts/2400b0aE.dag/post-processed/Assembly-CSharp-Editor.dll (+pdb)
+Processing assembly Library/Bee/artifacts/2400b0aE.dag/Assembly-CSharp-Editor.dll, with 137 defines and 369 references
+processors: Unity.Jobs.CodeGen.JobsILPostProcessor, zzzUnity.Burst.CodeGen.BurstILPostProcessor
+1 processor(s) skipped this assembly
+running Unity.Jobs.CodeGen.JobsILPostProcessor
+[879/881    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp.pdb
+[880/881    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp.dll
+*** Tundra build success (1.05 seconds), 6 items updated, 881 evaluated
+AssetDatabase: script compilation time: 1.584301s
+Total cache size 215571688
+Total cache size after purge 215571688, took 00:00:00.1361668
+Begin MonoManager ReloadAssembly
+'Packages/com.unity.render-pipelines.core/Editor/Deprecated.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+'Packages/com.unity.render-pipelines.core/Editor/Deprecated.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+Native extension for LinuxStandalone target not found
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+UpdateMenuTitleForLanguage: 10
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-HUS_Escape
+ScheduleIndexationOnStartup MainProcess:True IndexOnStartup:True
+Scripting: successfully reloaded assembly
+- Finished resetting the current domain, in  1.421 seconds
+Domain Reload Profiling: 2610ms
+	BeginReloadAssembly (302ms)
+		DisableScriptedObjects (27ms)
+		CreateAndSetChildDomain (76ms)
+	RebuildCommonClasses (14ms)
+	RebuildNativeTypeToScriptingClass (16ms)
+	initialDomainReloadingComplete (65ms)
+	LoadAllAssembliesAndSetupDomain (791ms)
+		LoadAssemblies (444ms)
+		TypeCache.Refresh (182ms)
+			TypeCache.ScanAssembly (155ms)
+		AnalyzeDomain (61ms)
+			BuildScriptInfoCaches (54ms)
+			ResolveRequiredComponents (6ms)
+	FinalizeReload (1422ms)
+		SetupLoadedEditorAssemblies (0ms)
+			LogAssemblyErrors (4ms)
+			InitializePlatformSupportModulesInManaged (28ms)
+			BeforeProcessingInitializeOnLoad (201ms)
+			ProcessInitializeOnLoadAttributes (545ms)
+			ProcessInitializeOnLoadMethodAttributes (75ms)
+			AfterProcessingInitializeOnLoad (4ms)
+		AwakeInstancesAfterBackupRestoration (27ms)
+Starting new worker id: 0 with log in /tmp/hus-integration-validation/Logs/AssetImportWorkerHW0.log
+[UnityConnectServicesConfig] Local config successfully read: "/usr/share/unity3d/config/services-config.json"
+[UnityConnectServicesConfig] Service configuration:
+    "servicesConfigBaseUrl": "",
+    "disableServicesWindow": false,
+    "disableUserLogin": false,
+    "entitlementCacheTimeoutInSeconds": 60,
+    "clientConnectTimeoutSec": 60,
+    "clientHandshakeTimeoutSec": 30,
+    "clientResolveEntitlementsTimeoutSec": 30,
+    "clientUpdateLicenseTimeoutSec": 30,
+    "licensingServiceBaseUrl": "",
+    "enableProxyAutoconfig": "false"
+
+
+Asset Pipeline Refresh (id=c8208c0e5d8d1305ca0ebaff2d293f00): Total: 5.451 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+	(Values over 0.05ms)
+	Summary:
+		Imports: total=0 (actual=0, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=2317 ms
+		Asset DB Callback time: managed=237 ms, native=26 ms
+		Scripting: domain reloads=1, domain reload time=1234 ms, compile time=1586 ms, other=48 ms
+		Project Asset Count: scripts=1188, non-scripts=2151
+		Asset File Changes: new=0, changed=1, moved=0, deleted=0
+		Scan Filter Count: 1
+	InvokePackagesCallback: 22.193ms
+	ApplyChangesToAssetFolders: 0.944ms
+	Scan: 427.866ms
+	Collect global state as custom dependencies: 27.729ms
+	OnSourceAssetsModified: 0.649ms
+	CategorizeScriptCompilationAssets: 35.907ms
+	ProcessAssetsWithTransientArtifactChanges: 76.938ms
+	CategorizeAssets: 64.194ms
+	CompileScripts: 1586.292ms
+	ImportOutOfDateAssets: 1497.341ms (1428.187ms without children)
+		UnloadImportedAssets: 4.828ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 1.013ms
+		ImportSchedulerStart: 63.275ms
+	PostProcessAllAssets: 238.966ms
+		VCAutoAddAssetPostprocess 1.101ms
+		XRBuildSystem.XRAssetImported 0.450ms
+		MonoPostProcessAllAssets: 236.858ms
+			AssetPostprocessor.OnPostprocessAllAssets 102.572ms
+			StyleCatalogPostProcessor.OnPostprocessAllAssets 30.421ms
+			UniversalRenderPipelineGlobalSettingsPostprocessor.OnPostprocessAllAssets 27.018ms
+			SyncVS.PostprocessSyncProject 19.755ms
+			BuilderAssetPostprocessor.OnPostprocessAllAssets 11.199ms
+			AssetChangedListener.OnPostprocessAllAssets 3.625ms
+			WindowAssetPostprocessingWatcher.OnPostprocessAllAssets 3.255ms
+			SpeedTree9Postprocessor.OnPostprocessAllAssets 3.111ms
+			RetainedModeAssetPostprocessor.OnPostprocessAllAssets 2.912ms
+			ShaderGraphAssetPostProcessor.OnPostprocessAllAssets 2.732ms
+			EditModeScopePostprocessor.OnPostprocessAllAssets 1.629ms
+			MaterialPostprocessor.OnPostprocessAllAssets 1.313ms
+			RenderPipelineGlobalSettingsPostprocessor.OnPostprocessAllAssets 1.058ms
+			ShaderReflectionAssetPostProcessor.OnPostprocessAllAssets 1.055ms
+			ArtifactBrowserPostProcessor.OnPostprocessAllAssets 0.875ms
+			UVCSAssetPostprocessor.OnPostprocessAllAssets 0.602ms
+			PostProcessor.OnPostprocessAllAssets 0.586ms
+			ReferencedClipsPostProcessor.OnPostprocessAllAssets 0.522ms
+			TextAssetPostProcessor.OnPostprocessAllAssets 0.519ms
+			AudioMixerPostprocessor.OnPostprocessAllAssets 0.499ms
+			InputActionAssetPostprocessor.OnPostprocessAllAssets 0.476ms
+			TMPro_TexturePostProcessor.OnPostprocessAllAssets 0.465ms
+			AssetEvents.OnPostprocessAllAssets 0.387ms
+			InputActionJsonNameModifierAssetProcessor.OnPostprocessAllAssets 0.333ms
+			ConfigAssetsTracker.OnPostprocessAllAssets 0.328ms
+			AssetDatabaseCallbacks.OnPostprocessAllAssets 0.298ms
+			TerrainToolbarOverlayPostProcessor.OnPostprocessAllAssets 0.292ms
+			SpeedTreePostProcessor.OnPostprocessAllAssets 0.269ms
+			ScenarioDriftAssetsTracker.OnPostprocessAllAssets 0.228ms
+			ProjectSettingsPostprocessor.OnPostprocessAllAssets 0.226ms
+			AssetReloadNotifier.OnPostprocessAllAssets 0.214ms
+			ThemePostprocessor.OnPostprocessAllAssets 0.189ms
+			AudioContainerPostProcessor.OnPostprocessAllAssets 0.117ms
+	PostAssetChangesProfiler: 2.774ms
+	UnloadStreamsBegin: 7.910ms
+	PersistCurrentRevisions: 0.158ms
+	GenerateScriptTypeHashes: 1.768ms
+	GenerateScriptTypeSerializationHashes: 3.218ms
+	Untracked: 1459.700ms
+
+Application.AssetDatabase Initial Refresh End
+Shader Hidden/ChartRasterizerHardware is not supported: GPU does not support conservative rasterization
+Shader Hidden/ChartRasterizerHardware is not supported: GPU does not support conservative rasterization
+Scanning for USB devices : 3.715ms
+Initializing Unity extensions:
+Unloading 68 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 4833 unused Assets / (6.4 MB). Loaded Objects now: 5848.
+Memory consumption went from 214.5 MB to 208.1 MB.
+Total: 13.758897 ms (FindLiveObjects: 0.685652 ms CreateObjectMapping: 0.427017 ms MarkObjects: 8.624531 ms  DeleteObjects: 3.696912 ms)
+
+Opening scene 'Assets/_Project/Scenes/Bootstrap/Bootstrap.unity'
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/_Project/Scenes/Bootstrap/Bootstrap.unity'
+	Deserialize:            0.901 ms
+	Integration:            9.910 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.032 ms
+	Total Operation Time:   10.844 ms
+Unloading 1 unused Assets / (2.5 KB). Loaded Objects now: 5856.
+Memory consumption went from 205.0 MB to 205.0 MB.
+Total: 9.617717 ms (FindLiveObjects: 0.454744 ms CreateObjectMapping: 0.262402 ms MarkObjects: 8.582853 ms  DeleteObjects: 0.023814 ms)
+
+Opening scene 'Assets/_Project/Scenes/MainMenu/MainMenu.unity'
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/_Project/Scenes/MainMenu/MainMenu.unity'
+	Deserialize:            8.102 ms
+	Integration:            24.361 ms
+	Integration of assets:  0.005 ms
+	Thread Wait Time:       0.037 ms
+	Total Operation Time:   32.505 ms
+Unloading 1 unused Assets / (2.5 KB). Loaded Objects now: 5891.
+Memory consumption went from 205.1 MB to 205.1 MB.
+Total: 10.012771 ms (FindLiveObjects: 0.564564 ms CreateObjectMapping: 0.461599 ms MarkObjects: 8.661394 ms  DeleteObjects: 0.030701 ms)
+
+Opening scene 'Assets/Scenes/SampleScene.unity'
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Worker ready: AssetImportWorkerHW0 0
+[Warning] Evict-before-extend: reclaimed cold content for 116974776-byte alloc
+Asset 'HUS_Player_Animator': Transition 'AnyState -> Run' in state 'AnyState' doesn't have an Exit Time or any condition, transition will be ignored
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:23)
+UnityEditor.SceneManagement.EditorSceneManager:OpenScene (string,UnityEditor.SceneManagement.OpenSceneMode)
+JourneyIntegrationValidation:Run () (at Assets/JourneyIntegrationValidation.cs:34)
+
+[Assets/JourneyIntegrationValidation.cs line 34]
+
+Loaded scene 'Assets/Scenes/SampleScene.unity'
+	Deserialize:            8.414 ms
+	Integration:            2667.756 ms
+	Integration of assets:  0.007 ms
+	Thread Wait Time:       0.000 ms
+	Total Operation Time:   2676.177 ms
+Unloading 4 unused Assets / (223.0 KB). Loaded Objects now: 6279.
+Memory consumption went from 321.3 MB to 321.1 MB.
+Total: 10.069345 ms (FindLiveObjects: 0.420010 ms CreateObjectMapping: 0.241160 ms MarkObjects: 9.083563 ms  DeleteObjects: 0.031544 ms)
+
+Opening scene 'Assets/_Project/Scenes/Floor01_Prototype.unity'
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/_Project/Scenes/Floor01_Prototype.unity'
+	Deserialize:            70.326 ms
+	Integration:            20.125 ms
+	Integration of assets:  0.048 ms
+	Thread Wait Time:       -0.039 ms
+	Total Operation Time:   90.460 ms
+Unloading 3 unused Assets / (6.2 KB). Loaded Objects now: 10021.
+Memory consumption went from 324.0 MB to 324.0 MB.
+Total: 10.675838 ms (FindLiveObjects: 0.789286 ms CreateObjectMapping: 0.238355 ms MarkObjects: 9.226890 ms  DeleteObjects: 0.031136 ms)
+
+Opening scene 'Assets/_Project/Scenes/Campus_Prototype.unity'
+Unloading 21 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/_Project/Scenes/Campus_Prototype.unity'
+	Deserialize:            12.069 ms
+	Integration:            7.578 ms
+	Integration of assets:  0.007 ms
+	Thread Wait Time:       0.033 ms
+	Total Operation Time:   19.686 ms
+Unloading 27 unused Assets / (1.4 MB). Loaded Objects now: 6885.
+Memory consumption went from 328.9 MB to 327.4 MB.
+Total: 11.145810 ms (FindLiveObjects: 0.493367 ms CreateObjectMapping: 0.255649 ms MarkObjects: 9.988677 ms  DeleteObjects: 0.102510 ms)
+
+Opening scene 'Assets/_Project/Scenes/TrainingOffice_Prototype.unity'
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/_Project/Scenes/TrainingOffice_Prototype.unity'
+	Deserialize:            5.940 ms
+	Integration:            6.567 ms
+	Integration of assets:  0.005 ms
+	Thread Wait Time:       0.071 ms
+	Total Operation Time:   12.583 ms
+Unloading 5 unused Assets / (1.0 MB). Loaded Objects now: 6438.
+Memory consumption went from 321.9 MB to 320.8 MB.
+Total: 10.323663 ms (FindLiveObjects: 0.504776 ms CreateObjectMapping: 0.233438 ms MarkObjects: 9.205478 ms  DeleteObjects: 0.072905 ms)
+
+Opening scene 'Assets/_Project/Scenes/Bootstrap/Bootstrap.unity'
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/_Project/Scenes/Bootstrap/Bootstrap.unity'
+	Deserialize:            0.368 ms
+	Integration:            6.390 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.032 ms
+	Total Operation Time:   6.792 ms
+Unloading 213 unused Assets / (0.8 MB). Loaded Objects now: 5861.
+Memory consumption went from 320.8 MB to 320.0 MB.
+Total: 10.059070 ms (FindLiveObjects: 0.490338 ms CreateObjectMapping: 0.218642 ms MarkObjects: 8.792904 ms  DeleteObjects: 0.267962 ms)
+
+
+(process:2835778): Gtk-CRITICAL **: 16:37:31.429: gtk_widget_hide: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(process:2835778): Gtk-CRITICAL **: 16:37:31.429: gtk_widget_destroy: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(process:2835778): GLib-GObject-CRITICAL **: 16:37:31.429: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+Disable old input system
+[Project] Loading completed in 17.626 seconds
+	Project init time: 				14.241 seconds
+		Template init time: 		0.000 seconds
+		Package Manager init time: 		0.988 seconds
+		Asset Database init time: 		0.309 seconds
+		Global illumination init time: 	0.003 seconds
+		Assemblies load time: 			6.868 seconds
+		Unity extensions init time: 	0.020 seconds
+		Asset Database refresh time: 	5.451 seconds
+	Scene opening time: 			3.349 seconds
+##utp:{"type":"ProjectInfo","version":2,"phase":"Immediate","time":1794562651451,"processId":2835778,"projectLoad":17.625923655,"projectInit":14.240724885,"templateInit":0.0,"packageManagerInit":0.987792991,"assetDatabaseInit":0.309262008,"globalIlluminationInit":0.002761399,"assembliesLoad":6.868362793,"unityExtensionsInit":0.020197842,"assetDatabaseRefresh":5.451089166,"sceneOpening":3.348894714}
+##utp:{"type":"EditorInfo","version":2,"phase":"Immediate","time":1794562651451,"processId":2835778,"editorVersion":"6000.6.5f1 (3ff58d469c8a)","branch":"6000.6/staging","buildType":"Release","platform":"Linux"}
+Entering Playmode with Reload Domain disabled.
+If you experience any issues, please disable "Enter Play Mode Options" in Editor Settings
+Loaded scene 'Temp/__Backupscenes/1.backup'
+	Deserialize:            0.348 ms
+	Integration:            139.012 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.008 ms
+	Total Operation Time:   139.369 ms
+Loaded scene 'Temp/__Backupscenes/0.backup'
+	Deserialize:            0.244 ms
+	Integration:            2.059 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       138.790 ms
+	Total Operation Time:   141.095 ms
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+[UnityConnectServicesConfig] Service configuration:
+    "servicesConfigBaseUrl": "",
+    "disableServicesWindow": false,
+    "disableUserLogin": false,
+    "entitlementCacheTimeoutInSeconds": 60,
+    "clientConnectTimeoutSec": 60,
+    "clientHandshakeTimeoutSec": 30,
+    "clientResolveEntitlementsTimeoutSec": 30,
+    "clientUpdateLicenseTimeoutSec": 30,
+    "licensingServiceBaseUrl": "",
+    "enableProxyAutoconfig": "false"
+
+[Licensing::Client] Successfully resolved entitlement details
+Start Indexing on Editor startup
+ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+  at System.Collections.Generic.List`1[T].get_Item (System.Int32 index) [0x00009] in <fe1d7a670f4f4d078f963f4439913bcb>:0
+  at UnityEditor.Search.SearchDatabase+<EnumerateAll>d__78.MoveNext () [0x00089] in /home/bokken/build/output/unity/unity/Modules/QuickSearch/Editor/Indexing/SearchDatabase.cs:351
+  at System.Linq.Enumerable.TryGetFirst[TSource] (System.Collections.Generic.IEnumerable`1[T] source, System.Boolean& found) [0x00045] in <ada5ca24c2414cbb9aa0f67c3255a013>:0
+  at System.Linq.Enumerable.First[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x00000] in <ada5ca24c2414cbb9aa0f67c3255a013>:0
+  at UnityEditor.Search.SearchDatabase.GetDefaultSearchDatabase () [0x00000] in /home/bokken/build/output/unity/unity/Modules/QuickSearch/Editor/Indexing/SearchDatabase.cs:325
+  at UnityEditor.Search.SearchInit.IndexationOnStartup () [0x0000a] in /home/bokken/build/output/unity/unity/Modules/QuickSearch/Editor/SearchInit.cs:109
+  at UnityEditor.EditorApplication.Internal_CallDelayFunctions () [0x00029] in /home/bokken/build/output/unity/unity/Editor/Mono/EditorApplication.cs:427
+UnityEngine.StackTraceUtility:ExtractStringFromExceptionInternal(Object, String&, String&) (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:50)
+
+(Filename: /home/bokken/build/output/unity/unity/Modules/QuickSearch/Editor/Indexing/SearchDatabase.cs Line: 351)
+
+Created GICache directory at /home/satan170/.cache/unity3d/GiCache. Took: 0.007s, timestamps: [17.832 - 17.838]
+UnloadTime: 0.337482 ms
+Loaded scene 'Assets/_Project/Scenes/MainMenu/MainMenu.unity'
+	Deserialize:            1.137 ms
+	Integration:            14.777 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       307.711 ms
+	Total Operation Time:   323.627 ms
+[Licensing::Client] Successfully resolved entitlement details
+Unloading 5 unused Assets / (71.5 KB). Loaded Objects now: 6066.
+Memory consumption went from 217.7 MB to 217.6 MB.
+Total: 11.885251 ms (FindLiveObjects: 0.487333 ms CreateObjectMapping: 0.195785 ms MarkObjects: 10.585663 ms  DeleteObjects: 0.293042 ms)
+
+Unloading 40 Unused Serialized files (Serialized files now loaded: 0)
+[Licensing::Client] Successfully resolved entitlement details
+UnloadTime: 2.356758 ms
+Asset 'HUS_Player_Animator': Transition 'AnyState -> Run' in state 'AnyState' doesn't have an Exit Time or any condition, transition will be ignored
+Loaded scene 'Assets/_Project/Scenes/Floor01_Prototype.unity'
+	Deserialize:            276.553 ms
+	Integration:            81.136 ms
+	Integration of assets:  1.948 ms
+	Thread Wait Time:       4.974 ms
+	Total Operation Time:   364.611 ms
+[Licensing::Client] Successfully resolved entitlement details
+Unloading 29 unused Assets / (24.3 KB). Loaded Objects now: 10190.
+Memory consumption went from 329.2 MB to 329.2 MB.
+Total: 12.241217 ms (FindLiveObjects: 0.732722 ms CreateObjectMapping: 0.289679 ms MarkObjects: 10.769469 ms  DeleteObjects: 0.091603 ms)
+
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 9.632688 ms
+Loaded scene 'Assets/_Project/Scenes/Campus_Prototype.unity'
+	Deserialize:            11.644 ms
+	Integration:            18.018 ms
+	Integration of assets:  0.012 ms
+	Thread Wait Time:       0.818 ms
+	Total Operation Time:   30.493 ms
+Unloading 11 unused Assets / (93.1 KB). Loaded Objects now: 7063.
+Memory consumption went from 325.4 MB to 325.3 MB.
+Total: 11.754476 ms (FindLiveObjects: 0.546409 ms CreateObjectMapping: 0.496283 ms MarkObjects: 10.211812 ms  DeleteObjects: 0.116242 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.155945 ms
+Loaded scene 'Assets/_Project/Scenes/TrainingOffice_Prototype.unity'
+	Deserialize:            5.244 ms
+	Integration:            8.934 ms
+	Integration of assets:  0.012 ms
+	Thread Wait Time:       0.650 ms
+	Total Operation Time:   14.839 ms
+Unloading 5 unused Assets / (16.7 KB). Loaded Objects now: 6616.
+Memory consumption went from 324.8 MB to 324.8 MB.
+Total: 11.246690 ms (FindLiveObjects: 0.463289 ms CreateObjectMapping: 0.224207 ms MarkObjects: 10.231921 ms  DeleteObjects: 0.046018 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.717680 ms
+Loaded scene 'Assets/_Project/Scenes/Campus_Prototype.unity'
+	Deserialize:            11.423 ms
+	Integration:            8.472 ms
+	Integration of assets:  0.028 ms
+	Thread Wait Time:       1.193 ms
+	Total Operation Time:   21.117 ms
+Unloading 2 unused Assets / (6.2 KB). Loaded Objects now: 7063.
+Memory consumption went from 325.3 MB to 325.3 MB.
+Total: 11.278208 ms (FindLiveObjects: 0.541038 ms CreateObjectMapping: 0.225228 ms MarkObjects: 10.178018 ms  DeleteObjects: 0.034660 ms)
+
+MonoPathRemapper: Attempts to remap: 14314; Successful remaps: 2
+Serialized file version minimum: 23, current 23
+Killing ADB server in 0.057669 seconds.
+[Physics::Module] Cleanup current backend.
+[Physics::Module] Id: 0xf2b8ea05
+Input System module state changed to: ShutdownInProgress.
+Input Polling Thread exited.
+Input System module state changed to: Shutdown.
+[Licensing::IpcConnector] LicenseClient-satan170-6000.6.5-notifications channel disconnected successfully.
+[Licensing::IpcConnector] LicenseClient-satan170-6000.6.5 channel disconnected successfully.
+Lingering sessions upon destruction of worker manager
+Unity Data Store service was successfully shut down
+UDS shutting down local client system
+Shut down UDS service system complete
+AcceleratorClientConnectionCallback - disconnected - :0
+Cleanup mono
+CodeReloadManager destroyed
+debugger-agent: Unable to listen on 36
+VBCSCompilerPreWarmer: requested VBCSCompiler shutdown
+Checking for leaked weakptr:
+  Found no leaked weakptrs.
+[Package Manager] Server process was shutdown
+##utp:{"type":"MemoryLeaks","version":2,"phase":"Immediate","time":1794562663027,"processId":2835778,"allocatedMemory":10936319,"memoryLabels":[{"Default":216685},{"Permanent":16152},{"Thread":1052296},{"Manager":26993},{"VertexData":8},{"Geometry":408},{"Texture":24},{"Shader":849495},{"Material":132},{"GfxDevice":36104},{"FreeType":8},{"FontEngine":736},{"Physics":1970},{"Physics2D":16},{"Serialization":18328},{"Input":60256},{"JobScheduler":256},{"TextLib":336},{"Mono":80},{"MonoCode":96},{"ScriptingNativeRuntime":155088},{"BaseObject":55304},{"Resource":1268},{"Renderer":2496},{"Transform":4717},{"File":22086},{"WebCam":80},{"Culling":32},{"Terrain":11346},{"Wind":24},{"String":599391},{"StaticString":3808},{"Utility":2675952},{"Curl":2511},{"PoolAlloc":2056},{"AI":80},{"TypeTree":24685},{"ScriptManager":12656},{"CodeReload":448},{"RuntimeInitializeOnLoadManager":64},{"Sprites":102},{"SpriteAtlas":120},{"GI":7408},{"Director":6792},{"CloudService":7568},{"WebRequest":629},{"VR":49554},{"SceneManager":640},{"Video":64},{"LazyScriptCache":32},{"NativeArray":540},{"Camera":729},{"Secure":2377},{"SerializationCache":9256},{"APIUpdating":10320},{"Subsystems":336},{"VirtualTexturing":57552},{"StaticSafetyDebugInfo":278528},{"Analytics":800},{"Hierarchy":1436},{"UIElements":40},{"CoreStats":14456},{"Identifiers":7152},{"Gui":160},{"EditorUtility":78550},{"VersionControl":8},{"Undo":963},{"AssetDatabase":4490699},{"AssetImporter":40},{"EditorGi":328},{"UnityConnect":40473},{"Upm":1760},{"UpmDiagnostics":8},{"AssetCompliance":96},{"DrivenProperties":72},{"LocalIPC":160},{"ProfilerEditor":9746},{"CoreBusinessMetrics":2530},{"Windowing":480},{"Licensing":1128},{"AssetReference":32},{"IPCStream":32}]}

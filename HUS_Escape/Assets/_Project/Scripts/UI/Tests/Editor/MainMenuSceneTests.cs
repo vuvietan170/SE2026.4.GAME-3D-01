@@ -85,7 +85,7 @@ namespace HUSEscape.UI
                 Assert.That(root.GetComponents<MonoBehaviour>(), Has.Length.EqualTo(4));
                 var serialized = new SerializedObject(flow);
                 Assert.That(serialized.FindProperty("bootstrap").objectReferenceValue, Is.SameAs(bootstrap));
-                Assert.That(serialized.FindProperty("playScenePath").stringValue, Is.EqualTo("Assets/Scenes/SampleScene.unity"));
+                Assert.That(serialized.FindProperty("playScenePath").stringValue, Is.EqualTo("Assets/_Project/Scenes/Floor01_Prototype.unity"));
                 var startup = new SerializedObject(root.GetComponent<BootstrapSceneEntry>());
                 Assert.That(startup.FindProperty("destinationScenePath").stringValue, Is.EqualTo(MenuPath));
                 Assert.That(startup.FindProperty("destinationState").intValue, Is.EqualTo((int)GameState.Ready));

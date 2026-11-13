@@ -1,0 +1,31 @@
+FAIL
+Bootstrap reaches a bound Ready menu
+Forced destination Start while native loader is Loading
+Early Start waits and gates input without creating a session
+Floor01: same Core Playing
+Floor01: one persistent session
+Floor01: same Core loader
+Floor01: input and time restored
+Floor01: one active finite camera
+Floor01: camera targets scene-local player
+Floor01: authored spawn
+Repeated Start produces one Floor01 load
+Incomplete Floor01 cannot leave
+Invalid destination is rejected before native load
+Rejected travel releases source input
+ERRORS
+System.Exception: Completed Floor01 starts native Campus travel: Hãy đứng trên sàn và chờ cửa/nhặt đồ/IK hoàn tất. Đóng bảng này nếu cần tiếp tục animation.
+  at JourneyIntegrationProbe.Check (System.Boolean ok, System.String description) [0x00016] in /tmp/hus-integration-validation/Assets/JourneyIntegrationProbe.cs:154
+  at JourneyIntegrationProbe+<Run>d__21.MoveNext () [0x0042d] in /tmp/hus-integration-validation/Assets/JourneyIntegrationProbe.cs:116
+  at JourneyIntegrationProbe.Update () [0x0002e] in /tmp/hus-integration-validation/Assets/JourneyIntegrationProbe.cs:74
+KNOWN EDITOR SEARCH ERRORS (1)
+ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+System.Collections.Generic.List`1[T].get_Item (System.Int32 index) (at <fe1d7a670f4f4d078f963f4439913bcb>:0)
+UnityEditor.Search.SearchDatabase+<EnumerateAll>d__78.MoveNext () (at /home/bokken/build/output/unity/unity/Modules/QuickSearch/Editor/Indexing/SearchDatabase.cs:351)
+System.Linq.Enumerable.TryGetFirst[TSource] (System.Collections.Generic.IEnumerable`1[T] source, System.Boolean& found) (at <ada5ca24c2414cbb9aa0f67c3255a013>:0)
+System.Linq.Enumerable.First[TSource] (System.Collections.Generic.IEnumerable`1[T] source) (at <ada5ca24c2414cbb9aa0f67c3255a013>:0)
+UnityEditor.Search.SearchDatabase.GetDefaultSearchDatabase () (at /home/bokken/build/output/unity/unity/Modules/QuickSearch/Editor/Indexing/SearchDatabase.cs:325)
+UnityEditor.Search.SearchInit.IndexationOnStartup () (at /home/bokken/build/output/unity/unity/Modules/QuickSearch/Editor/SearchInit.cs:109)
+UnityEditor.EditorApplication.Internal_CallDelayFunctions () (at /home/bokken/build/output/unity/unity/Editor/Mono/EditorApplication.cs:427)
+UnityEngine.StackTraceUtility:ExtractStringFromExceptionInternal(Object, String&, String&) (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:50)

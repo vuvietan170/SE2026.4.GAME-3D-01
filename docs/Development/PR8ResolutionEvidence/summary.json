@@ -1,0 +1,35 @@
+{
+  "compile": {
+    "exit_code": 0
+  },
+  "EditMode": {
+    "exit_code": 0,
+    "result": "Passed",
+    "total": "110",
+    "passed": "110",
+    "failed": "0",
+    "skipped": "0"
+  },
+  "PlayMode": {
+    "exit_code": 0,
+    "result": "Passed",
+    "total": "33",
+    "passed": "33",
+    "failed": "0",
+    "skipped": "0"
+  },
+  "integration": {
+    "exit_code": 0,
+    "result": "PASS",
+    "assertions": 49
+  },
+  "transactions": {
+    "exit_code": 0,
+    "result": "PASS 34/34"
+  },
+  "base": "c76cd823d59e5aab52948221ccce0129b72d5b97",
+  "supersedes_pr": 8,
+  "preserves_pr": 9,
+  "unity": "6000.6.5f1",
+  "journey_files_identical_to_dev": true
+}
