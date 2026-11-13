@@ -90,7 +90,7 @@ namespace HUSEscape.UI
                 Assert.That(startup.FindProperty("destinationScenePath").stringValue, Is.EqualTo(MenuPath));
                 Assert.That(startup.FindProperty("destinationState").intValue, Is.EqualTo((int)GameState.Ready));
             });
-            Assert.That(EditorBuildSettings.scenes.Select(scene => scene.path), Is.EqualTo(new[] { BootstrapPath, MenuPath, "Assets/Scenes/SampleScene.unity" }));
+            Assert.That(EditorBuildSettings.scenes.Select(scene => scene.path), Is.EqualTo(new[] { BootstrapPath, MenuPath, "Assets/Scenes/SampleScene.unity", "Assets/_Project/Scenes/Floor01_Prototype.unity", "Assets/_Project/Scenes/Campus_Prototype.unity" }));
             Assert.That(EditorBuildSettings.scenes.All(scene => scene.enabled), Is.True);
         }
 

@@ -21,6 +21,16 @@ public class PickupItem : MonoBehaviour
     private PlayerInventory inventory;
     private bool isPickingUp;
     private bool collected;
+    public string ItemId => itemId;
+    public bool IsCollected => collected;
+    public bool IsBusy => isPickingUp && !collected;
+
+    /// <summary>Restores a validated pickup flag without triggering animation or adding inventory items.</summary>
+    public void RestoreState(bool wasCollected, bool available)
+    {
+        StopAllCoroutines(); collected = wasCollected; isPickingUp = false;
+        gameObject.SetActive(available && !collected);
+    }
 
     private void Start()
     {

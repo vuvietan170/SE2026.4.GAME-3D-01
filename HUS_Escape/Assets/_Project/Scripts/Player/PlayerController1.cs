@@ -54,7 +54,6 @@ namespace HUSEscape.Player
 
         private float verticalVelocity;
         private bool isCrouching;
-        private bool isJumping;
 
         private void Awake()
         {
@@ -123,11 +122,12 @@ namespace HUSEscape.Player
 
             verticalVelocity = 0f;
             isCrouching = false;
-            isJumping = false;
         }
 
         private void Update()
         {
+            if (TryGetComponent<GameplayInputGate>(out var inputGate) && inputGate.IsBlocked)
+                return;
             if (characterController == null || moveAction == null)
                 return;
 
@@ -164,7 +164,6 @@ namespace HUSEscape.Player
             if (grounded && verticalVelocity < 0f)
             {
                 verticalVelocity = -groundedStickForce;
-                isJumping = false;
             }
 
             // SPACE: Jump
@@ -176,7 +175,6 @@ namespace HUSEscape.Player
                 verticalVelocity =
                     Mathf.Sqrt(jumpHeight * -2f * gravity);
 
-                isJumping = true;
 
                 if (animator != null)
                     animator.SetTrigger(JumpHash);

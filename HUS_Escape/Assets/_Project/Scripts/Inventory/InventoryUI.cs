@@ -23,6 +23,7 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] private List<ItemVisual> itemVisuals = new();
 
     private bool isOpen;
+    public bool IsOpen => isOpen;
 
     private const int Columns = 4;
     private const int Rows = 3;
@@ -35,6 +36,7 @@ public class InventoryUI : MonoBehaviour
 
     private void Update()
     {
+        if (TryGetComponent<HUSEscape.Player.GameplayInputGate>(out var gate) && gate.IsBlocked) return;
         if (Keyboard.current != null &&
             Keyboard.current.tabKey.wasPressedThisFrame)
         {
@@ -55,6 +57,7 @@ public class InventoryUI : MonoBehaviour
 
     private void OnGUI()
     {
+        if (TryGetComponent<HUSEscape.Player.GameplayInputGate>(out var gate) && gate.IsBlocked) return;
         if (!isOpen || inventory == null)
             return;
 

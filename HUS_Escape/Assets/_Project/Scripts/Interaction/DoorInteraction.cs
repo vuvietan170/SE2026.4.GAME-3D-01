@@ -37,6 +37,18 @@ public class DoorInteraction : MonoBehaviour
 
     private string currentMessage = "";
     private float messageEndTime;
+    public bool IsOpen => isOpen;
+    public bool IsLocked => isLocked;
+    public string RequiredKeyId => requiredKeyId;
+    public bool IsBusy => isInteracting || Quaternion.Angle(transform.localRotation, isOpen ? openedRotation : closedRotation) > .2f;
+
+    /// <summary>Applies validated persistence state without animation, key consumption or gameplay events.</summary>
+    public void RestoreState(bool locked, bool open)
+    {
+        StopAllCoroutines(); isLocked = locked; isOpen = open; isInteracting = false;
+        currentMessage = ""; messageEndTime = 0;
+        transform.localRotation = open ? openedRotation : closedRotation;
+    }
 
     private void Awake()
     {

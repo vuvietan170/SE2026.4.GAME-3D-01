@@ -14,5 +14,14 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/_Project/Scenes/Floor01_Prototype.unity
+    guid: 3a4907b3041a2cc4f9b5a0ba4d8976e9
+  - enabled: 1
+    path: Assets/_Project/Scenes/Campus_Prototype.unity
+    guid: d9b0f4ccf629713478259e72c1e5307c
+  - enabled: 1
+    path: Assets/_Project/Scenes/TrainingOffice_Prototype.unity
+    guid: 58444f286cce14e4eba3128f51e32de7
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

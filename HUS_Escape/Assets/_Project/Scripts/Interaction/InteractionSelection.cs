@@ -27,6 +27,7 @@ internal static class InteractionSelection
         }
 
         if (inventory == null || !inventory.isActiveAndEnabled || player == null || !player.gameObject.activeInHierarchy) { return false; }
+        if (inventory.TryGetComponent<HUSEscape.Player.GameplayInputGate>(out var gate) && gate.IsBlocked) { return false; }
         if (animator == null) { animator = inventory.GetComponentInChildren<Animator>(); }
         return true;
     }
