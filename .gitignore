@@ -2,7 +2,7 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=unity
 
 ### Unity ###
-# This .gitignore file should be placed at the root of your Unity project directory
+# Repository root; nested HUS_Escape project exclusions are listed below.
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 /[Ll]ibrary/
@@ -90,3 +90,15 @@ crashlytics-build.properties
 !/tools/VT105/Harness.csproj
 /tools/VT105/bin/
 /tools/VT105/obj/
+
+# Local editor configuration and Unity 6 generated solution files.
+*.slnx
+/HUS_Escape/.vscode/
+/.vscode/
+
+# Reproducible validation/build output; evidence summaries are explicitly kept in docs.
+/artifacts/
+/assignments/**/bin/
+/assignments/**/obj/
+__pycache__/
+*.pyc

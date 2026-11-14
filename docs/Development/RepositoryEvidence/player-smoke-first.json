@@ -1,0 +1,8 @@
+{
+    "passed": false,
+    "unityVersion": "6000.6.5f1",
+    "stage": "menu-again",
+    "error": "System.Exception: Menu retained gameplay session\n  at BuildSmokeProbe.Update () [0x000ea] in /tmp/hus-repository-validation/Assets/BuildSmokeProbe.cs:42 ",
+    "coreOwners": 1,
+    "journeyOwners": 1
+}

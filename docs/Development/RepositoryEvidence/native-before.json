@@ -1,0 +1,20 @@
+{
+    "passed": false,
+    "assets": 122,
+    "scenes": 6,
+    "prefabs": 2,
+    "resolvedGuidReferences": 285,
+    "errors": [
+        "Unresolved GUID e5c6678ed2aaa91408dd3df699057aae",
+        "Unresolved GUID 03cfc4915c15d504a9ed85ecc404e607",
+        "Unresolved GUID 53a11f4ebaebf4049b3638ef78dc9664",
+        "Unresolved GUID 8f96cd657dc40064aa21efcc7e50a2e7",
+        "Unresolved GUID 57d7c4c16e2765b47a4d2069b311bffe",
+        "Unresolved GUID 24ec0e140fb444a44ab96ee80844e18e",
+        "Unresolved GUID b9a23f869c4fd45f19c5ada54dd82176",
+        "Unresolved GUID 60f3b30c03e6ba64d9a27dc9dba8f28d",
+        "Unresolved GUID 0fd9ee276a1023e439cf7a9c393195fa",
+        "Unresolved GUID 5a00a63fdd6bd2a45ab1f2d869305ffd",
+        "Unresolved GUID 74955a4b0b4243bc87231e8b59ed9140"
+    ]
+}
