@@ -1,0 +1,2 @@
+Newer admission pending: release old before draining both.
+Durable after both writes: 22

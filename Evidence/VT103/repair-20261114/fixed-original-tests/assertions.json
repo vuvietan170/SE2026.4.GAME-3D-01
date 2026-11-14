@@ -1,0 +1,74 @@
+[
+    {
+        "name":  "HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I01_NewQuestProgressCreatesValidatedFloorDraft",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I02_RepeatedFactAndIdleFramesDoNotCommitAgain",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I03_ReversedCapturedRequestsCannotRegressDiskRevision",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I04_AutosavePreservesAllManualSlotsByteForByte",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I05_PersistenceFailurePreservesTheActiveSession",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I06_FloorSceneAutomaticallyComposesOneAutosaveOwner",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I07_NewGameCancelsPendingProgressWithoutAutosavingRestoredState",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I08_UnsafeAirborneCaptureDefersThenRetriesAfterGrounding",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I09_ReenableDoesNotDuplicateEventSubscriptions",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I10_CorruptDraftIsPreservedAndDoesNotLoadIntoGameplay",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I11_ExistingHeadSeedsRevisionWithoutRestoringItsPayload",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I12_ManualContinueRestoresOnlyManualSlotAndDoesNotAutosave",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    }
+]

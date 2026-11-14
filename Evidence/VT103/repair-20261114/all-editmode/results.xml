@@ -1,0 +1,974 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="125" result="Passed" total="125" passed="125" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-14 10:27:58Z" end-time="2026-11-14 10:27:59Z" duration="0,6035912">
+  <test-suite type="TestSuite" id="1000" name="HUS_Escape" fullname="HUS_Escape" runstate="Runnable" testcasecount="125" result="Passed" start-time="2026-11-14 10:27:58Z" end-time="2026-11-14 10:27:59Z" duration="0.603591" total="125" passed="125" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <test-suite type="Assembly" id="1119" name="HUSEscape.Core.EditModeTests.dll" fullname="D:/Game3D-01/VT103_Work/Temp/VT103Verify/Library/ScriptAssemblies/HUSEscape.Core.EditModeTests.dll" runstate="Runnable" testcasecount="98" result="Passed" start-time="2026-11-14 10:27:58Z" end-time="2026-11-14 10:27:59Z" duration="0.171550" total="98" passed="98" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="40524" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestSuite" id="1120" name="HUSEscape" fullname="HUSEscape" runstate="Runnable" testcasecount="98" result="Passed" start-time="2026-11-14 10:27:58Z" end-time="2026-11-14 10:27:59Z" duration="0.171038" total="98" passed="98" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1121" name="Core" fullname="HUSEscape.Core" runstate="Runnable" testcasecount="98" result="Passed" start-time="2026-11-14 10:27:58Z" end-time="2026-11-14 10:27:59Z" duration="0.170824" total="98" passed="98" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestFixture" id="1002" name="BootstrapSceneEntryTests" fullname="HUSEscape.Core.BootstrapSceneEntryTests" classname="HUSEscape.Core.BootstrapSceneEntryTests" runstate="Runnable" testcasecount="17" result="Passed" start-time="2026-11-14 10:27:58Z" end-time="2026-11-14 10:27:59Z" duration="0.091734" total="17" passed="17" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1022" name="AuthoredScene_HasOneBoundActivePersistentCoreRoot" fullname="HUSEscape.Core.BootstrapSceneEntryTests.AuthoredScene_HasOneBoundActivePersistentCoreRoot" methodname="AuthoredScene_HasOneBoundActivePersistentCoreRoot" classname="HUSEscape.Core.BootstrapSceneEntryTests" runstate="Runnable" seed="1963617279" result="Passed" start-time="2026-11-14 10:27:58Z" end-time="2026-11-14 10:27:59Z" duration="0.039770" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1021" name="BuildSettings_HaveBootstrapMenuThenPreservedSampleScene" fullname="HUSEscape.Core.BootstrapSceneEntryTests.BuildSettings_HaveBootstrapMenuThenPreservedSampleScene" methodname="BuildSettings_HaveBootstrapMenuThenPreservedSampleScene" classname="HUSEscape.Core.BootstrapSceneEntryTests" runstate="Runnable" seed="1700424650" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.003356" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1012" name="InvalidPathFormat_IsRejected" fullname="HUSEscape.Core.BootstrapSceneEntryTests.InvalidPathFormat_IsRejected" classname="HUSEscape.Core.BootstrapSceneEntryTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.012507" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1006" name="InvalidPathFormat_IsRejected(null)" fullname="HUSEscape.Core.BootstrapSceneEntryTests.InvalidPathFormat_IsRejected(null)" methodname="InvalidPathFormat_IsRejected" classname="HUSEscape.Core.BootstrapSceneEntryTests" runstate="Runnable" seed="336723897" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.002174" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1007" name="InvalidPathFormat_IsRejected(&quot;&quot;)" fullname="HUSEscape.Core.BootstrapSceneEntryTests.InvalidPathFormat_IsRejected(&quot;&quot;)" methodname="InvalidPathFormat_IsRejected" classname="HUSEscape.Core.BootstrapSceneEntryTests" runstate="Runnable" seed="2017474466" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000479" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1008" name="InvalidPathFormat_IsRejected(&quot; &quot;)" fullname="HUSEscape.Core.BootstrapSceneEntryTests.InvalidPathFormat_IsRejected(&quot; &quot;)" methodname="InvalidPathFormat_IsRejected" classname="HUSEscape.Core.BootstrapSceneEntryTests" runstate="Runnable" seed="498098475" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000533" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1009" name="InvalidPathFormat_IsRejected(&quot;SampleScene&quot;)" fullname="HUSEscape.Core.BootstrapSceneEntryTests.InvalidPathFormat_IsRejected(&quot;SampleScene&quot;)" methodname="InvalidPathFormat_IsRejected" classname="HUSEscape.Core.BootstrapSceneEntryTests" runstate="Runnable" seed="282911297" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000332" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1010" name="InvalidPathFormat_IsRejected(&quot;assets/Scenes/SampleScene.unity&quot;)" fullname="HUSEscape.Core.BootstrapSceneEntryTests.InvalidPathFormat_IsRejected(&quot;assets/Scenes/SampleScene.unity&quot;)" methodname="InvalidPathFormat_IsRejected" classname="HUSEscape.Core.BootstrapSceneEntryTests" runstate="Runnable" seed="1022349154" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000271" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1011" name="InvalidPathFormat_IsRejected(&quot;Assets/Scenes/SampleScene.UNITY&quot;)" fullname="HUSEscape.Core.BootstrapSceneEntryTests.InvalidPathFormat_IsRejected(&quot;Assets/Scenes/SampleScene.UNITY&quot;)" methodname="InvalidPathFormat_IsRejected" classname="HUSEscape.Core.BootstrapSceneEntryTests" runstate="Runnable" seed="247122982" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000348" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-case id="1019" name="MissingAndForeignBootstrapReferences_AreRejected" fullname="HUSEscape.Core.BootstrapSceneEntryTests.MissingAndForeignBootstrapReferences_AreRejected" methodname="MissingAndForeignBootstrapReferences_AreRejected" classname="HUSEscape.Core.BootstrapSceneEntryTests" runstate="Runnable" seed="360716184" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000637" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1013" name="SelfDestination_IsRejected" fullname="HUSEscape.Core.BootstrapSceneEntryTests.SelfDestination_IsRejected" methodname="SelfDestination_IsRejected" classname="HUSEscape.Core.BootstrapSceneEntryTests" runstate="Runnable" seed="2050060025" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000431" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1020" name="UnavailableServices_FinishOnceWithoutChangingCore" fullname="HUSEscape.Core.BootstrapSceneEntryTests.UnavailableServices_FinishOnceWithoutChangingCore" methodname="UnavailableServices_FinishOnceWithoutChangingCore" classname="HUSEscape.Core.BootstrapSceneEntryTests" runstate="Runnable" seed="1446230816" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.003538" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[Bootstrap startup failed: The referenced bootstrap is not the active initialized Core owner.
+]]></output>
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1018" name="UnsupportedDestinationState_IsRejected" fullname="HUSEscape.Core.BootstrapSceneEntryTests.UnsupportedDestinationState_IsRejected" classname="HUSEscape.Core.BootstrapSceneEntryTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.007213" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1014" name="UnsupportedDestinationState_IsRejected(Initializing)" fullname="HUSEscape.Core.BootstrapSceneEntryTests.UnsupportedDestinationState_IsRejected(Initializing)" methodname="UnsupportedDestinationState_IsRejected" classname="HUSEscape.Core.BootstrapSceneEntryTests" runstate="Runnable" seed="1642661528" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000957" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1015" name="UnsupportedDestinationState_IsRejected(Loading)" fullname="HUSEscape.Core.BootstrapSceneEntryTests.UnsupportedDestinationState_IsRejected(Loading)" methodname="UnsupportedDestinationState_IsRejected" classname="HUSEscape.Core.BootstrapSceneEntryTests" runstate="Runnable" seed="692416793" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000433" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1016" name="UnsupportedDestinationState_IsRejected(Paused)" fullname="HUSEscape.Core.BootstrapSceneEntryTests.UnsupportedDestinationState_IsRejected(Paused)" methodname="UnsupportedDestinationState_IsRejected" classname="HUSEscape.Core.BootstrapSceneEntryTests" runstate="Runnable" seed="4520367" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000334" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1017" name="UnsupportedDestinationState_IsRejected(99)" fullname="HUSEscape.Core.BootstrapSceneEntryTests.UnsupportedDestinationState_IsRejected(99)" methodname="UnsupportedDestinationState_IsRejected" classname="HUSEscape.Core.BootstrapSceneEntryTests" runstate="Runnable" seed="249751729" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000285" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="ParameterizedMethod" id="1005" name="ValidConfiguration_DoesNotInitializeOrLoad" fullname="HUSEscape.Core.BootstrapSceneEntryTests.ValidConfiguration_DoesNotInitializeOrLoad" classname="HUSEscape.Core.BootstrapSceneEntryTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.007364" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1003" name="ValidConfiguration_DoesNotInitializeOrLoad(Ready)" fullname="HUSEscape.Core.BootstrapSceneEntryTests.ValidConfiguration_DoesNotInitializeOrLoad(Ready)" methodname="ValidConfiguration_DoesNotInitializeOrLoad" classname="HUSEscape.Core.BootstrapSceneEntryTests" runstate="Runnable" seed="798744950" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000774" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1004" name="ValidConfiguration_DoesNotInitializeOrLoad(Playing)" fullname="HUSEscape.Core.BootstrapSceneEntryTests.ValidConfiguration_DoesNotInitializeOrLoad(Playing)" methodname="ValidConfiguration_DoesNotInitializeOrLoad" classname="HUSEscape.Core.BootstrapSceneEntryTests" runstate="Runnable" seed="485195459" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000388" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+          </test-suite>
+          <test-suite type="TestFixture" id="1023" name="GameBootstrapTests" fullname="HUSEscape.Core.GameBootstrapTests" classname="HUSEscape.Core.GameBootstrapTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.004966" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1026" name="OwnershipSelection_ExcludesDisabledInactiveAndNestedCandidates" fullname="HUSEscape.Core.GameBootstrapTests.OwnershipSelection_ExcludesDisabledInactiveAndNestedCandidates" methodname="OwnershipSelection_ExcludesDisabledInactiveAndNestedCandidates" classname="HUSEscape.Core.GameBootstrapTests" runstate="Runnable" seed="1832990409" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.002704" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1025" name="OwnershipSelection_IsIndependentOfCandidateOrder" fullname="HUSEscape.Core.GameBootstrapTests.OwnershipSelection_IsIndependentOfCandidateOrder" methodname="OwnershipSelection_IsIndependentOfCandidateOrder" classname="HUSEscape.Core.GameBootstrapTests" runstate="Runnable" seed="522172000" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000535" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1024" name="Services_AreUnavailableBeforeInitialization" fullname="HUSEscape.Core.GameBootstrapTests.Services_AreUnavailableBeforeInitialization" methodname="Services_AreUnavailableBeforeInitialization" classname="HUSEscape.Core.GameBootstrapTests" runstate="Runnable" seed="1653549938" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000400" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1027" name="GameManagerTests" fullname="HUSEscape.Core.GameManagerTests" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" testcasecount="46" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.033029" total="46" passed="46" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1029" name="Initialize_CommitsReadyAndNotifiesOnce" fullname="HUSEscape.Core.GameManagerTests.Initialize_CommitsReadyAndNotifiesOnce" methodname="Initialize_CommitsReadyAndNotifiesOnce" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" seed="345380449" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.002632" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1078" name="Initialize_RejectsReentrantCallsDuringInitialNotification" fullname="HUSEscape.Core.GameManagerTests.Initialize_RejectsReentrantCallsDuringInitialNotification" methodname="Initialize_RejectsReentrantCallsDuringInitialNotification" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" seed="431245830" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000453" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1072" name="Managers_HaveIndependentStateAndEvents" fullname="HUSEscape.Core.GameManagerTests.Managers_HaveIndependentStateAndEvents" methodname="Managers_HaveIndependentStateAndEvents" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" seed="177457063" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000500" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1028" name="NewManager_StartsUninitialized" fullname="HUSEscape.Core.GameManagerTests.NewManager_StartsUninitialized" methodname="NewManager_StartsUninitialized" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" seed="552375881" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000186" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1070" name="SceneLoad_CompletionCommitsOnceAndReleasesReservation" fullname="HUSEscape.Core.GameManagerTests.SceneLoad_CompletionCommitsOnceAndReleasesReservation" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.001536" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1067" name="SceneLoad_CompletionCommitsOnceAndReleasesReservation(Ready)" fullname="HUSEscape.Core.GameManagerTests.SceneLoad_CompletionCommitsOnceAndReleasesReservation(Ready)" methodname="SceneLoad_CompletionCommitsOnceAndReleasesReservation" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" seed="1476367040" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000716" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1068" name="SceneLoad_CompletionCommitsOnceAndReleasesReservation(Playing)" fullname="HUSEscape.Core.GameManagerTests.SceneLoad_CompletionCommitsOnceAndReleasesReservation(Playing)" methodname="SceneLoad_CompletionCommitsOnceAndReleasesReservation" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" seed="897212317" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000138" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1069" name="SceneLoad_CompletionCommitsOnceAndReleasesReservation(Paused)" fullname="HUSEscape.Core.GameManagerTests.SceneLoad_CompletionCommitsOnceAndReleasesReservation(Paused)" methodname="SceneLoad_CompletionCommitsOnceAndReleasesReservation" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" seed="146834100" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000108" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-case id="1071" name="SceneLoad_InvalidCompletionPreservesReservation" fullname="HUSEscape.Core.GameManagerTests.SceneLoad_InvalidCompletionPreservesReservation" methodname="SceneLoad_InvalidCompletionPreservesReservation" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" seed="681249682" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000237" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1077" name="SceneLoad_RejectedDestinationCanRecoverUsingOwnedToken" fullname="HUSEscape.Core.GameManagerTests.SceneLoad_RejectedDestinationCanRecoverUsingOwnedToken" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.001192" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1074" name="SceneLoad_RejectedDestinationCanRecoverUsingOwnedToken(Ready)" fullname="HUSEscape.Core.GameManagerTests.SceneLoad_RejectedDestinationCanRecoverUsingOwnedToken(Ready)" methodname="SceneLoad_RejectedDestinationCanRecoverUsingOwnedToken" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" seed="1633253577" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000498" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1075" name="SceneLoad_RejectedDestinationCanRecoverUsingOwnedToken(Playing)" fullname="HUSEscape.Core.GameManagerTests.SceneLoad_RejectedDestinationCanRecoverUsingOwnedToken(Playing)" methodname="SceneLoad_RejectedDestinationCanRecoverUsingOwnedToken" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" seed="746281821" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000102" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1076" name="SceneLoad_RejectedDestinationCanRecoverUsingOwnedToken(Paused)" fullname="HUSEscape.Core.GameManagerTests.SceneLoad_RejectedDestinationCanRecoverUsingOwnedToken(Paused)" methodname="SceneLoad_RejectedDestinationCanRecoverUsingOwnedToken" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" seed="200338748" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000061" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="ParameterizedMethod" id="1066" name="SceneLoad_ReservesTransitionsUntilCompletion" fullname="HUSEscape.Core.GameManagerTests.SceneLoad_ReservesTransitionsUntilCompletion" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.001028" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1063" name="SceneLoad_ReservesTransitionsUntilCompletion(Ready)" fullname="HUSEscape.Core.GameManagerTests.SceneLoad_ReservesTransitionsUntilCompletion(Ready)" methodname="SceneLoad_ReservesTransitionsUntilCompletion" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" seed="1290853442" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000464" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1064" name="SceneLoad_ReservesTransitionsUntilCompletion(Playing)" fullname="HUSEscape.Core.GameManagerTests.SceneLoad_ReservesTransitionsUntilCompletion(Playing)" methodname="SceneLoad_ReservesTransitionsUntilCompletion" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" seed="299710290" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000077" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1065" name="SceneLoad_ReservesTransitionsUntilCompletion(Paused)" fullname="HUSEscape.Core.GameManagerTests.SceneLoad_ReservesTransitionsUntilCompletion(Paused)" methodname="SceneLoad_ReservesTransitionsUntilCompletion" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" seed="871883341" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000071" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-case id="1073" name="SceneLoad_StaleOrForeignTokensCannotReleaseNewReservation" fullname="HUSEscape.Core.GameManagerTests.SceneLoad_StaleOrForeignTokensCannotReleaseNewReservation" methodname="SceneLoad_StaleOrForeignTokensCannotReleaseNewReservation" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" seed="1954036340" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000395" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1060" name="StateChanged_ObservesCommittedStateAndSupportsUnsubscription" fullname="HUSEscape.Core.GameManagerTests.StateChanged_ObservesCommittedStateAndSupportsUnsubscription" methodname="StateChanged_ObservesCommittedStateAndSupportsUnsubscription" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" seed="857811443" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000343" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1061" name="StateChanged_ReentrantTransitionsAndInitializationAreRejected" fullname="HUSEscape.Core.GameManagerTests.StateChanged_ReentrantTransitionsAndInitializationAreRejected" methodname="StateChanged_ReentrantTransitionsAndInitializationAreRejected" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" seed="1393822597" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000253" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1062" name="StateChanged_ThrowingSubscriberDoesNotBlockOtherSubscribers" fullname="HUSEscape.Core.GameManagerTests.StateChanged_ThrowingSubscriberDoesNotBlockOtherSubscribers" methodname="StateChanged_ThrowingSubscriberDoesNotBlockOtherSubscribers" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" seed="395599935" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.014553" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[InvalidOperationException: Expected listener failure
+HUSEscape.Core.GameManagerTests+<>c.<StateChanged_ThrowingSubscriberDoesNotBlockOtherSubscribers>b__9_0 (HUSEscape.Core.GameState _, HUSEscape.Core.GameState __) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/Tests/Editor/GameManagerTests.cs:170)
+HUSEscape.Core.GameManager.CommitState (HUSEscape.Core.GameState nextState) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/GameManager.cs:150)
+UnityEngine.Debug:LogException(Exception)
+HUSEscape.Core.GameManager:CommitState(GameState) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/GameManager.cs:154)
+HUSEscape.Core.GameManager:TryChangeState(GameState) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/GameManager.cs:72)
+HUSEscape.Core.GameManagerTests:StateChanged_ThrowingSubscriberDoesNotBlockOtherSubscribers() (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/Tests/Editor/GameManagerTests.cs:174)
+System.Reflection.MethodBase:Invoke(Object, Object[])
+NUnit.Framework.Internal.Reflect:InvokeMethod(MethodInfo, Object, Object[])
+NUnit.Framework.Internal.MethodWrapper:Invoke(Object, Object[])
+NUnit.Framework.Internal.Commands.TestMethodCommand:RunNonAsyncTestMethod(ITestExecutionContext)
+NUnit.Framework.Internal.Commands.TestMethodCommand:RunTestMethod(ITestExecutionContext)
+NUnit.Framework.Internal.Commands.TestMethodCommand:Execute(ITestExecutionContext)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions()
+
+]]></output>
+            </test-case>
+            <test-case id="1079" name="StateChanged_UsesSubscriberSnapshot" fullname="HUSEscape.Core.GameManagerTests.StateChanged_UsesSubscriberSnapshot" methodname="StateChanged_UsesSubscriberSnapshot" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" seed="1770279500" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000538" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1035" name="StateChanges_BeforeInitializationAreRejected" fullname="HUSEscape.Core.GameManagerTests.StateChanges_BeforeInitializationAreRejected" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.001442" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1030" name="StateChanges_BeforeInitializationAreRejected(Initializing)" fullname="HUSEscape.Core.GameManagerTests.StateChanges_BeforeInitializationAreRejected(Initializing)" methodname="StateChanges_BeforeInitializationAreRejected" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" seed="421736931" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000347" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1031" name="StateChanges_BeforeInitializationAreRejected(Ready)" fullname="HUSEscape.Core.GameManagerTests.StateChanges_BeforeInitializationAreRejected(Ready)" methodname="StateChanges_BeforeInitializationAreRejected" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" seed="1819322887" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000090" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1032" name="StateChanges_BeforeInitializationAreRejected(Loading)" fullname="HUSEscape.Core.GameManagerTests.StateChanges_BeforeInitializationAreRejected(Loading)" methodname="StateChanges_BeforeInitializationAreRejected" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" seed="2090700801" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000061" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1033" name="StateChanges_BeforeInitializationAreRejected(Playing)" fullname="HUSEscape.Core.GameManagerTests.StateChanges_BeforeInitializationAreRejected(Playing)" methodname="StateChanges_BeforeInitializationAreRejected" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" seed="1680231399" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000056" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1034" name="StateChanges_BeforeInitializationAreRejected(Paused)" fullname="HUSEscape.Core.GameManagerTests.StateChanges_BeforeInitializationAreRejected(Paused)" methodname="StateChanges_BeforeInitializationAreRejected" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" seed="727294490" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000073" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="ParameterizedMethod" id="1056" name="TransitionMatrix_IsEnforced" fullname="HUSEscape.Core.GameManagerTests.TransitionMatrix_IsEnforced" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" testcasecount="20" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.004318" total="20" passed="20" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1036" name="TransitionMatrix_IsEnforced(Ready,Initializing,False)" fullname="HUSEscape.Core.GameManagerTests.TransitionMatrix_IsEnforced(Ready,Initializing,False)" methodname="TransitionMatrix_IsEnforced" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" seed="1686167611" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000760" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1037" name="TransitionMatrix_IsEnforced(Ready,Ready,False)" fullname="HUSEscape.Core.GameManagerTests.TransitionMatrix_IsEnforced(Ready,Ready,False)" methodname="TransitionMatrix_IsEnforced" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" seed="734823989" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000135" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1038" name="TransitionMatrix_IsEnforced(Ready,Loading,True)" fullname="HUSEscape.Core.GameManagerTests.TransitionMatrix_IsEnforced(Ready,Loading,True)" methodname="TransitionMatrix_IsEnforced" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" seed="1960369327" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000542" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1039" name="TransitionMatrix_IsEnforced(Ready,Playing,True)" fullname="HUSEscape.Core.GameManagerTests.TransitionMatrix_IsEnforced(Ready,Playing,True)" methodname="TransitionMatrix_IsEnforced" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" seed="308591758" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000114" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1040" name="TransitionMatrix_IsEnforced(Ready,Paused,False)" fullname="HUSEscape.Core.GameManagerTests.TransitionMatrix_IsEnforced(Ready,Paused,False)" methodname="TransitionMatrix_IsEnforced" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" seed="720221954" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000063" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1041" name="TransitionMatrix_IsEnforced(Loading,Initializing,False)" fullname="HUSEscape.Core.GameManagerTests.TransitionMatrix_IsEnforced(Loading,Initializing,False)" methodname="TransitionMatrix_IsEnforced" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" seed="1235259501" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000054" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1042" name="TransitionMatrix_IsEnforced(Loading,Ready,True)" fullname="HUSEscape.Core.GameManagerTests.TransitionMatrix_IsEnforced(Loading,Ready,True)" methodname="TransitionMatrix_IsEnforced" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" seed="1948792911" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000122" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1043" name="TransitionMatrix_IsEnforced(Loading,Loading,False)" fullname="HUSEscape.Core.GameManagerTests.TransitionMatrix_IsEnforced(Loading,Loading,False)" methodname="TransitionMatrix_IsEnforced" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" seed="984052807" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000069" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1044" name="TransitionMatrix_IsEnforced(Loading,Playing,True)" fullname="HUSEscape.Core.GameManagerTests.TransitionMatrix_IsEnforced(Loading,Playing,True)" methodname="TransitionMatrix_IsEnforced" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" seed="610784502" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000075" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1045" name="TransitionMatrix_IsEnforced(Loading,Paused,True)" fullname="HUSEscape.Core.GameManagerTests.TransitionMatrix_IsEnforced(Loading,Paused,True)" methodname="TransitionMatrix_IsEnforced" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" seed="284981222" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000068" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1046" name="TransitionMatrix_IsEnforced(Playing,Initializing,False)" fullname="HUSEscape.Core.GameManagerTests.TransitionMatrix_IsEnforced(Playing,Initializing,False)" methodname="TransitionMatrix_IsEnforced" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" seed="1622079785" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000051" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1047" name="TransitionMatrix_IsEnforced(Playing,Ready,False)" fullname="HUSEscape.Core.GameManagerTests.TransitionMatrix_IsEnforced(Playing,Ready,False)" methodname="TransitionMatrix_IsEnforced" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" seed="1176742119" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000047" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1048" name="TransitionMatrix_IsEnforced(Playing,Loading,True)" fullname="HUSEscape.Core.GameManagerTests.TransitionMatrix_IsEnforced(Playing,Loading,True)" methodname="TransitionMatrix_IsEnforced" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" seed="1514570592" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000067" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1049" name="TransitionMatrix_IsEnforced(Playing,Playing,False)" fullname="HUSEscape.Core.GameManagerTests.TransitionMatrix_IsEnforced(Playing,Playing,False)" methodname="TransitionMatrix_IsEnforced" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" seed="606854449" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000048" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1050" name="TransitionMatrix_IsEnforced(Playing,Paused,True)" fullname="HUSEscape.Core.GameManagerTests.TransitionMatrix_IsEnforced(Playing,Paused,True)" methodname="TransitionMatrix_IsEnforced" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" seed="1733924831" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000062" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1051" name="TransitionMatrix_IsEnforced(Paused,Initializing,False)" fullname="HUSEscape.Core.GameManagerTests.TransitionMatrix_IsEnforced(Paused,Initializing,False)" methodname="TransitionMatrix_IsEnforced" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" seed="1065808139" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000047" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1052" name="TransitionMatrix_IsEnforced(Paused,Ready,False)" fullname="HUSEscape.Core.GameManagerTests.TransitionMatrix_IsEnforced(Paused,Ready,False)" methodname="TransitionMatrix_IsEnforced" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" seed="790039033" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000046" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1053" name="TransitionMatrix_IsEnforced(Paused,Loading,True)" fullname="HUSEscape.Core.GameManagerTests.TransitionMatrix_IsEnforced(Paused,Loading,True)" methodname="TransitionMatrix_IsEnforced" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" seed="1057217557" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000064" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1054" name="TransitionMatrix_IsEnforced(Paused,Playing,True)" fullname="HUSEscape.Core.GameManagerTests.TransitionMatrix_IsEnforced(Paused,Playing,True)" methodname="TransitionMatrix_IsEnforced" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" seed="1174219064" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000066" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1055" name="TransitionMatrix_IsEnforced(Paused,Paused,False)" fullname="HUSEscape.Core.GameManagerTests.TransitionMatrix_IsEnforced(Paused,Paused,False)" methodname="TransitionMatrix_IsEnforced" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" seed="627343906" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000086" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="ParameterizedMethod" id="1059" name="UnknownEnumValues_AreRejected" fullname="HUSEscape.Core.GameManagerTests.UnknownEnumValues_AreRejected" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000902" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1057" name="UnknownEnumValues_AreRejected(-1)" fullname="HUSEscape.Core.GameManagerTests.UnknownEnumValues_AreRejected(-1)" methodname="UnknownEnumValues_AreRejected" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" seed="705865278" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000435" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1058" name="UnknownEnumValues_AreRejected(99)" fullname="HUSEscape.Core.GameManagerTests.UnknownEnumValues_AreRejected(99)" methodname="UnknownEnumValues_AreRejected" classname="HUSEscape.Core.GameManagerTests" runstate="Runnable" seed="1297037564" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000072" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+          </test-suite>
+          <test-suite type="TestFixture" id="1080" name="SceneLoaderTests" fullname="HUSEscape.Core.SceneLoaderTests" classname="HUSEscape.Core.SceneLoaderTests" runstate="Runnable" testcasecount="32" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.039795" total="32" passed="32" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-suite type="ParameterizedMethod" id="1104" name="ActivationFailure_RestoresPausedState" fullname="HUSEscape.Core.SceneLoaderTests.ActivationFailure_RestoresPausedState" classname="HUSEscape.Core.SceneLoaderTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.011603" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1102" name="ActivationFailure_RestoresPausedState(False)" fullname="HUSEscape.Core.SceneLoaderTests.ActivationFailure_RestoresPausedState(False)" methodname="ActivationFailure_RestoresPausedState" classname="HUSEscape.Core.SceneLoaderTests" runstate="Runnable" seed="1220410500" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.010168" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[Unity completed loading without activating the requested scene: Assets/Scenes/SampleScene.unity
+]]></output>
+              </test-case>
+              <test-case id="1103" name="ActivationFailure_RestoresPausedState(True)" fullname="HUSEscape.Core.SceneLoaderTests.ActivationFailure_RestoresPausedState(True)" methodname="ActivationFailure_RestoresPausedState" classname="HUSEscape.Core.SceneLoaderTests" runstate="Runnable" seed="875445387" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000935" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[Could not verify scene activation: activation failed
+]]></output>
+              </test-case>
+            </test-suite>
+            <test-case id="1112" name="AlreadyCompletedOperation_IsFinalized" fullname="HUSEscape.Core.SceneLoaderTests.AlreadyCompletedOperation_IsFinalized" methodname="AlreadyCompletedOperation_IsFinalized" classname="HUSEscape.Core.SceneLoaderTests" runstate="Runnable" seed="1901514163" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000596" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1111" name="CompletionDuringNotification_RemainsBusyUntilProductionUpdateFinalizes" fullname="HUSEscape.Core.SceneLoaderTests.CompletionDuringNotification_RemainsBusyUntilProductionUpdateFinalizes" methodname="CompletionDuringNotification_RemainsBusyUntilProductionUpdateFinalizes" classname="HUSEscape.Core.SceneLoaderTests" runstate="Runnable" seed="1781229206" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000733" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1114" name="CompletionListener_CanStartAnotherRequest" fullname="HUSEscape.Core.SceneLoaderTests.CompletionListener_CanStartAnotherRequest" methodname="CompletionListener_CanStartAnotherRequest" classname="HUSEscape.Core.SceneLoaderTests" runstate="Runnable" seed="571935511" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000664" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1118" name="IndependentLoaders_DoNotShareBackendsOrReservations" fullname="HUSEscape.Core.SceneLoaderTests.IndependentLoaders_DoNotShareBackendsOrReservations" methodname="IndependentLoaders_DoNotShareBackendsOrReservations" classname="HUSEscape.Core.SceneLoaderTests" runstate="Runnable" seed="118625104" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000502" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1095" name="Initialize_RejectsNullAndRepeatedDependencies" fullname="HUSEscape.Core.SceneLoaderTests.Initialize_RejectsNullAndRepeatedDependencies" methodname="Initialize_RejectsNullAndRepeatedDependencies" classname="HUSEscape.Core.SceneLoaderTests" runstate="Runnable" seed="1409181435" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.002325" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1093" name="InvalidDestinations_AreRejected" fullname="HUSEscape.Core.SceneLoaderTests.InvalidDestinations_AreRejected" classname="HUSEscape.Core.SceneLoaderTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.002221" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1089" name="InvalidDestinations_AreRejected(Initializing)" fullname="HUSEscape.Core.SceneLoaderTests.InvalidDestinations_AreRejected(Initializing)" methodname="InvalidDestinations_AreRejected" classname="HUSEscape.Core.SceneLoaderTests" runstate="Runnable" seed="2118626724" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000335" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1090" name="InvalidDestinations_AreRejected(Loading)" fullname="HUSEscape.Core.SceneLoaderTests.InvalidDestinations_AreRejected(Loading)" methodname="InvalidDestinations_AreRejected" classname="HUSEscape.Core.SceneLoaderTests" runstate="Runnable" seed="1425538656" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000200" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1091" name="InvalidDestinations_AreRejected(Paused)" fullname="HUSEscape.Core.SceneLoaderTests.InvalidDestinations_AreRejected(Paused)" methodname="InvalidDestinations_AreRejected" classname="HUSEscape.Core.SceneLoaderTests" runstate="Runnable" seed="1645908455" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000202" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1092" name="InvalidDestinations_AreRejected(99)" fullname="HUSEscape.Core.SceneLoaderTests.InvalidDestinations_AreRejected(99)" methodname="InvalidDestinations_AreRejected" classname="HUSEscape.Core.SceneLoaderTests" runstate="Runnable" seed="1961201600" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000216" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="ParameterizedMethod" id="1088" name="InvalidPaths_AreRejectedWithoutStartingOrChangingState" fullname="HUSEscape.Core.SceneLoaderTests.InvalidPaths_AreRejectedWithoutStartingOrChangingState" classname="HUSEscape.Core.SceneLoaderTests" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.003950" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1081" name="InvalidPaths_AreRejectedWithoutStartingOrChangingState(null)" fullname="HUSEscape.Core.SceneLoaderTests.InvalidPaths_AreRejectedWithoutStartingOrChangingState(null)" methodname="InvalidPaths_AreRejectedWithoutStartingOrChangingState" classname="HUSEscape.Core.SceneLoaderTests" runstate="Runnable" seed="442393126" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.001266" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1082" name="InvalidPaths_AreRejectedWithoutStartingOrChangingState(&quot;&quot;)" fullname="HUSEscape.Core.SceneLoaderTests.InvalidPaths_AreRejectedWithoutStartingOrChangingState(&quot;&quot;)" methodname="InvalidPaths_AreRejectedWithoutStartingOrChangingState" classname="HUSEscape.Core.SceneLoaderTests" runstate="Runnable" seed="1482247312" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000201" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1083" name="InvalidPaths_AreRejectedWithoutStartingOrChangingState(&quot; &quot;)" fullname="HUSEscape.Core.SceneLoaderTests.InvalidPaths_AreRejectedWithoutStartingOrChangingState(&quot; &quot;)" methodname="InvalidPaths_AreRejectedWithoutStartingOrChangingState" classname="HUSEscape.Core.SceneLoaderTests" runstate="Runnable" seed="220815359" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000166" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1084" name="InvalidPaths_AreRejectedWithoutStartingOrChangingState(&quot;SampleScene&quot;)" fullname="HUSEscape.Core.SceneLoaderTests.InvalidPaths_AreRejectedWithoutStartingOrChangingState(&quot;SampleScene&quot;)" methodname="InvalidPaths_AreRejectedWithoutStartingOrChangingState" classname="HUSEscape.Core.SceneLoaderTests" runstate="Runnable" seed="1732074935" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000183" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1085" name="InvalidPaths_AreRejectedWithoutStartingOrChangingState(&quot;Assets/Scenes/Missing.unity&quot;)" fullname="HUSEscape.Core.SceneLoaderTests.InvalidPaths_AreRejectedWithoutStartingOrChangingState(&quot;Assets/Scenes/Missing.unity&quot;)" methodname="InvalidPaths_AreRejectedWithoutStartingOrChangingState" classname="HUSEscape.Core.SceneLoaderTests" runstate="Runnable" seed="1013243339" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000181" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1086" name="InvalidPaths_AreRejectedWithoutStartingOrChangingState(&quot;assets/Scenes/SampleScene.unity&quot;)" fullname="HUSEscape.Core.SceneLoaderTests.InvalidPaths_AreRejectedWithoutStartingOrChangingState(&quot;assets/Scenes/SampleScene.unity&quot;)" methodname="InvalidPaths_AreRejectedWithoutStartingOrChangingState" classname="HUSEscape.Core.SceneLoaderTests" runstate="Runnable" seed="2090311285" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000143" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1087" name="InvalidPaths_AreRejectedWithoutStartingOrChangingState(&quot;Assets/Scenes/SampleScene.UNITY&quot;)" fullname="HUSEscape.Core.SceneLoaderTests.InvalidPaths_AreRejectedWithoutStartingOrChangingState(&quot;Assets/Scenes/SampleScene.UNITY&quot;)" methodname="InvalidPaths_AreRejectedWithoutStartingOrChangingState" classname="HUSEscape.Core.SceneLoaderTests" runstate="Runnable" seed="1461974581" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000163" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-case id="1109" name="LostReservation_CannotReleaseReplacementAndDoesNotReportIdle" fullname="HUSEscape.Core.SceneLoaderTests.LostReservation_CannotReleaseReplacementAndDoesNotReportIdle" methodname="LostReservation_CannotReleaseReplacementAndDoesNotReportIdle" classname="HUSEscape.Core.SceneLoaderTests" runstate="Runnable" seed="1964638047" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000870" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[Scene load completion no longer owns its manager reservation.
+]]></output>
+            </test-case>
+            <test-case id="1096" name="OverlappingAndReentrantRequests_AreRejected" fullname="HUSEscape.Core.SceneLoaderTests.OverlappingAndReentrantRequests_AreRejected" methodname="OverlappingAndReentrantRequests_AreRejected" classname="HUSEscape.Core.SceneLoaderTests" runstate="Runnable" seed="1459496666" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000554" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1110" name="RejectedCompletion_RecoversOwnedReservationBeforeBecomingIdle" fullname="HUSEscape.Core.SceneLoaderTests.RejectedCompletion_RecoversOwnedReservationBeforeBecomingIdle" methodname="RejectedCompletion_RecoversOwnedReservationBeforeBecomingIdle" classname="HUSEscape.Core.SceneLoaderTests" runstate="Runnable" seed="659968912" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000899" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[The manager rejected the scene load completion state.
+]]></output>
+            </test-case>
+            <test-case id="1108" name="StaleCallback_CannotReleaseNewRequest" fullname="HUSEscape.Core.SceneLoaderTests.StaleCallback_CannotReleaseNewRequest" methodname="StaleCallback_CannotReleaseNewRequest" classname="HUSEscape.Core.SceneLoaderTests" runstate="Runnable" seed="470658071" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000550" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1101" name="StartupFailure_RestoresStateAndPublishesFailure" fullname="HUSEscape.Core.SceneLoaderTests.StartupFailure_RestoresStateAndPublishesFailure" classname="HUSEscape.Core.SceneLoaderTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.004842" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1097" name="StartupFailure_RestoresStateAndPublishesFailure(Ready,False)" fullname="HUSEscape.Core.SceneLoaderTests.StartupFailure_RestoresStateAndPublishesFailure(Ready,False)" methodname="StartupFailure_RestoresStateAndPublishesFailure" classname="HUSEscape.Core.SceneLoaderTests" runstate="Runnable" seed="541441738" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.001474" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[Could not start scene load for Assets/Scenes/SampleScene.unity: startup failed
+]]></output>
+              </test-case>
+              <test-case id="1098" name="StartupFailure_RestoresStateAndPublishesFailure(Playing,False)" fullname="HUSEscape.Core.SceneLoaderTests.StartupFailure_RestoresStateAndPublishesFailure(Playing,False)" methodname="StartupFailure_RestoresStateAndPublishesFailure" classname="HUSEscape.Core.SceneLoaderTests" runstate="Runnable" seed="930487673" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000671" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[Could not start scene load for Assets/Scenes/SampleScene.unity: startup failed
+]]></output>
+              </test-case>
+              <test-case id="1099" name="StartupFailure_RestoresStateAndPublishesFailure(Paused,False)" fullname="HUSEscape.Core.SceneLoaderTests.StartupFailure_RestoresStateAndPublishesFailure(Paused,False)" methodname="StartupFailure_RestoresStateAndPublishesFailure" classname="HUSEscape.Core.SceneLoaderTests" runstate="Runnable" seed="1136476548" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000680" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[Could not start scene load for Assets/Scenes/SampleScene.unity: startup failed
+]]></output>
+              </test-case>
+              <test-case id="1100" name="StartupFailure_RestoresStateAndPublishesFailure(Ready,True)" fullname="HUSEscape.Core.SceneLoaderTests.StartupFailure_RestoresStateAndPublishesFailure(Ready,True)" methodname="StartupFailure_RestoresStateAndPublishesFailure" classname="HUSEscape.Core.SceneLoaderTests" runstate="Runnable" seed="742327778" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000652" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[Could not start scene load for Assets/Scenes/SampleScene.unity: Unity returned no scene loading operation.
+]]></output>
+              </test-case>
+            </test-suite>
+            <test-suite type="ParameterizedMethod" id="1107" name="Success_FinalizesBeforeNotifyingAndPublishesOnce" fullname="HUSEscape.Core.SceneLoaderTests.Success_FinalizesBeforeNotifyingAndPublishesOnce" classname="HUSEscape.Core.SceneLoaderTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.001968" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1105" name="Success_FinalizesBeforeNotifyingAndPublishesOnce(Ready)" fullname="HUSEscape.Core.SceneLoaderTests.Success_FinalizesBeforeNotifyingAndPublishesOnce(Ready)" methodname="Success_FinalizesBeforeNotifyingAndPublishesOnce" classname="HUSEscape.Core.SceneLoaderTests" runstate="Runnable" seed="274837824" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000755" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1106" name="Success_FinalizesBeforeNotifyingAndPublishesOnce(Playing)" fullname="HUSEscape.Core.SceneLoaderTests.Success_FinalizesBeforeNotifyingAndPublishesOnce(Playing)" methodname="Success_FinalizesBeforeNotifyingAndPublishesOnce" classname="HUSEscape.Core.SceneLoaderTests" runstate="Runnable" seed="1821946313" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000286" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="ParameterizedMethod" id="1117" name="ThrowingCompletionSubscriber_DoesNotBlockLaterSubscribers" fullname="HUSEscape.Core.SceneLoaderTests.ThrowingCompletionSubscriber_DoesNotBlockLaterSubscribers" classname="HUSEscape.Core.SceneLoaderTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.004636" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1115" name="ThrowingCompletionSubscriber_DoesNotBlockLaterSubscribers(False)" fullname="HUSEscape.Core.SceneLoaderTests.ThrowingCompletionSubscriber_DoesNotBlockLaterSubscribers(False)" methodname="ThrowingCompletionSubscriber_DoesNotBlockLaterSubscribers" classname="HUSEscape.Core.SceneLoaderTests" runstate="Runnable" seed="1764723702" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.001837" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[InvalidOperationException: expected completion listener failure
+HUSEscape.Core.SceneLoaderTests+<>c.<ThrowingCompletionSubscriber_DoesNotBlockLaterSubscribers>b__24_2 (System.String _) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/Tests/Editor/SceneLoaderTests.cs:333)
+HUSEscape.Core.SceneLoader.PublishCompletion (HUSEscape.Core.SceneLoader+LoadRequest completed) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/SceneLoader.cs:258)
+UnityEngine.Debug:LogException(Exception)
+HUSEscape.Core.SceneLoader:PublishCompletion(LoadRequest) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/SceneLoader.cs:267)
+HUSEscape.Core.SceneLoader:Finish(LoadRequest) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/SceneLoader.cs:231)
+HUSEscape.Core.SceneLoader:ObserveCompletion(LoadRequest) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/SceneLoader.cs:167)
+HUSEscape.Core.<>c__DisplayClass21_0:<TryLoadScene>b__0() (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/SceneLoader.cs:136)
+HUSEscape.Core.FakeOperation:Complete() (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/Tests/Editor/SceneLoaderTests.cs:28)
+HUSEscape.Core.SceneLoaderTests:ThrowingCompletionSubscriber_DoesNotBlockLaterSubscribers(Boolean) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/Tests/Editor/SceneLoaderTests.cs:338)
+System.Reflection.MethodBase:Invoke(Object, Object[])
+NUnit.Framework.Internal.Reflect:InvokeMethod(MethodInfo, Object, Object[])
+NUnit.Framework.Internal.MethodWrapper:Invoke(Object, Object[])
+NUnit.Framework.Internal.Commands.TestMethodCommand:RunNonAsyncTestMethod(ITestExecutionContext)
+NUnit.Framework.Internal.Commands.TestMethodCommand:RunTestMethod(ITestExecutionContext)
+NUnit.Framework.Internal.Commands.TestMethodCommand:Execute(ITestExecutionContext)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions()
+
+]]></output>
+              </test-case>
+              <test-case id="1116" name="ThrowingCompletionSubscriber_DoesNotBlockLaterSubscribers(True)" fullname="HUSEscape.Core.SceneLoaderTests.ThrowingCompletionSubscriber_DoesNotBlockLaterSubscribers(True)" methodname="ThrowingCompletionSubscriber_DoesNotBlockLaterSubscribers" classname="HUSEscape.Core.SceneLoaderTests" runstate="Runnable" seed="182574967" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.001898" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+                <output><![CDATA[Unity completed loading without activating the requested scene: Assets/Scenes/SampleScene.unity
+InvalidOperationException: expected completion listener failure
+HUSEscape.Core.SceneLoaderTests+<>c.<ThrowingCompletionSubscriber_DoesNotBlockLaterSubscribers>b__24_0 (System.String _, System.String __) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/Tests/Editor/SceneLoaderTests.cs:327)
+HUSEscape.Core.SceneLoader.PublishCompletion (HUSEscape.Core.SceneLoader+LoadRequest completed) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/SceneLoader.cs:262)
+UnityEngine.Debug:LogException(Exception)
+HUSEscape.Core.SceneLoader:PublishCompletion(LoadRequest) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/SceneLoader.cs:267)
+HUSEscape.Core.SceneLoader:Finish(LoadRequest) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/SceneLoader.cs:231)
+HUSEscape.Core.SceneLoader:ObserveCompletion(LoadRequest) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/SceneLoader.cs:167)
+HUSEscape.Core.<>c__DisplayClass21_0:<TryLoadScene>b__0() (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/SceneLoader.cs:136)
+HUSEscape.Core.FakeOperation:Complete() (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/Tests/Editor/SceneLoaderTests.cs:28)
+HUSEscape.Core.SceneLoaderTests:ThrowingCompletionSubscriber_DoesNotBlockLaterSubscribers(Boolean) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/Tests/Editor/SceneLoaderTests.cs:338)
+System.Reflection.MethodBase:Invoke(Object, Object[])
+NUnit.Framework.Internal.Reflect:InvokeMethod(MethodInfo, Object, Object[])
+NUnit.Framework.Internal.MethodWrapper:Invoke(Object, Object[])
+NUnit.Framework.Internal.Commands.TestMethodCommand:RunNonAsyncTestMethod(ITestExecutionContext)
+NUnit.Framework.Internal.Commands.TestMethodCommand:RunTestMethod(ITestExecutionContext)
+NUnit.Framework.Internal.Commands.TestMethodCommand:Execute(ITestExecutionContext)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions()
+
+]]></output>
+              </test-case>
+            </test-suite>
+            <test-case id="1094" name="UninitializedOrDisabledLoader_RejectsRequests" fullname="HUSEscape.Core.SceneLoaderTests.UninitializedOrDisabledLoader_RejectsRequests" methodname="UninitializedOrDisabledLoader_RejectsRequests" classname="HUSEscape.Core.SceneLoaderTests" runstate="Runnable" seed="1374725389" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000438" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1113" name="ValidationException_DoesNotReserveState" fullname="HUSEscape.Core.SceneLoaderTests.ValidationException_DoesNotReserveState" methodname="ValidationException_DoesNotReserveState" classname="HUSEscape.Core.SceneLoaderTests" runstate="Runnable" seed="1234277241" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000276" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+    <test-suite type="Assembly" id="1136" name="HUSEscape.UI.EditModeTests.dll" fullname="D:/Game3D-01/VT103_Work/Temp/VT103Verify/Library/ScriptAssemblies/HUSEscape.UI.EditModeTests.dll" runstate="Runnable" testcasecount="12" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.067989" total="12" passed="12" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="40524" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestSuite" id="1137" name="HUSEscape" fullname="HUSEscape" runstate="Runnable" testcasecount="12" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.067268" total="12" passed="12" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1138" name="UI" fullname="HUSEscape.UI" runstate="Runnable" testcasecount="12" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.067016" total="12" passed="12" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestFixture" id="1122" name="MainMenuSceneTests" fullname="HUSEscape.UI.MainMenuSceneTests" classname="HUSEscape.UI.MainMenuSceneTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.044064" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1125" name="Bootstrap_WiresOnlyForwardUiDependencyAndReadyDestination" fullname="HUSEscape.UI.MainMenuSceneTests.Bootstrap_WiresOnlyForwardUiDependencyAndReadyDestination" methodname="Bootstrap_WiresOnlyForwardUiDependencyAndReadyDestination" classname="HUSEscape.UI.MainMenuSceneTests" runstate="Runnable" seed="1272346293" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.003426" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1124" name="InputModule_ReferencesExistingExactUiActions" fullname="HUSEscape.UI.MainMenuSceneTests.InputModule_ReferencesExistingExactUiActions" methodname="InputModule_ReferencesExistingExactUiActions" classname="HUSEscape.UI.MainMenuSceneTests" runstate="Runnable" seed="110758889" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.033738" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1123" name="MenuScene_HasOneUnboundViewAndOneInputSystemEventSystem" fullname="HUSEscape.UI.MainMenuSceneTests.MenuScene_HasOneUnboundViewAndOneInputSystemEventSystem" methodname="MenuScene_HasOneUnboundViewAndOneInputSystemEventSystem" classname="HUSEscape.UI.MainMenuSceneTests" runstate="Runnable" seed="1049011416" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.006022" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1126" name="MainMenuViewTests" fullname="HUSEscape.UI.MainMenuViewTests" classname="HUSEscape.UI.MainMenuViewTests" runstate="Runnable" testcasecount="9" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.022610" total="9" passed="9" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1128" name="BoundReadyView_EnablesStartAndSelectsIt" fullname="HUSEscape.UI.MainMenuViewTests.BoundReadyView_EnablesStartAndSelectsIt" methodname="BoundReadyView_EnablesStartAndSelectsIt" classname="HUSEscape.UI.MainMenuViewTests" runstate="Runnable" seed="828339622" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.006844" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1134" name="Destroying_NotifiesOnceAndClearsEventReferences" fullname="HUSEscape.UI.MainMenuViewTests.Destroying_NotifiesOnceAndClearsEventReferences" methodname="Destroying_NotifiesOnceAndClearsEventReferences" classname="HUSEscape.UI.MainMenuViewTests" runstate="Runnable" seed="1194022091" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.001031" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1133" name="DisabledView_RejectsDirectButtonInvocations" fullname="HUSEscape.UI.MainMenuViewTests.DisabledView_RejectsDirectButtonInvocations" methodname="DisabledView_RejectsDirectButtonInvocations" classname="HUSEscape.UI.MainMenuViewTests" runstate="Runnable" seed="153869893" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.004383" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1129" name="LoadingState_DisablesStartAndShowsFeedback" fullname="HUSEscape.UI.MainMenuViewTests.LoadingState_DisablesStartAndShowsFeedback" methodname="LoadingState_DisablesStartAndShowsFeedback" classname="HUSEscape.UI.MainMenuViewTests" runstate="Runnable" seed="206526232" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000809" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1130" name="RepeatedClick_IsLatchedBeforeNotifyingListeners" fullname="HUSEscape.UI.MainMenuViewTests.RepeatedClick_IsLatchedBeforeNotifyingListeners" methodname="RepeatedClick_IsLatchedBeforeNotifyingListeners" classname="HUSEscape.UI.MainMenuViewTests" runstate="Runnable" seed="1639140014" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000819" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1131" name="RepeatedEnable_DoesNotDuplicateButtonSubscriptions" fullname="HUSEscape.UI.MainMenuViewTests.RepeatedEnable_DoesNotDuplicateButtonSubscriptions" methodname="RepeatedEnable_DoesNotDuplicateButtonSubscriptions" classname="HUSEscape.UI.MainMenuViewTests" runstate="Runnable" seed="2036989491" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000869" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1135" name="ThrowingSubscriber_DoesNotPreventOtherSubscribers" fullname="HUSEscape.UI.MainMenuViewTests.ThrowingSubscriber_DoesNotPreventOtherSubscribers" methodname="ThrowingSubscriber_DoesNotPreventOtherSubscribers" classname="HUSEscape.UI.MainMenuViewTests" runstate="Runnable" seed="257563825" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.002119" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[InvalidOperationException: expected UI listener failure
+HUSEscape.UI.MainMenuViewTests+<>c.<ThrowingSubscriber_DoesNotPreventOtherSubscribers>b__15_0 (HUSEscape.UI.MainMenuView _) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/UI/Tests/Editor/MainMenuViewTests.cs:149)
+HUSEscape.UI.MainMenuView.Raise (System.Action`1[T] listeners) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/UI/MainMenuView.cs:111)
+UnityEngine.Debug:LogException(Exception)
+HUSEscape.UI.MainMenuView:Raise(Action`1) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/UI/MainMenuView.cs:112)
+HUSEscape.UI.MainMenuView:OnStartClicked() (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/UI/MainMenuView.cs:87)
+UnityEngine.Events.UnityEvent:Invoke()
+HUSEscape.UI.MainMenuViewTests:ThrowingSubscriber_DoesNotPreventOtherSubscribers() (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/UI/Tests/Editor/MainMenuViewTests.cs:154)
+System.Reflection.MethodBase:Invoke(Object, Object[])
+NUnit.Framework.Internal.Reflect:InvokeMethod(MethodInfo, Object, Object[])
+NUnit.Framework.Internal.MethodWrapper:Invoke(Object, Object[])
+NUnit.Framework.Internal.Commands.TestMethodCommand:RunNonAsyncTestMethod(ITestExecutionContext)
+NUnit.Framework.Internal.Commands.TestMethodCommand:RunTestMethod(ITestExecutionContext)
+NUnit.Framework.Internal.Commands.TestMethodCommand:Execute(ITestExecutionContext)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions()
+
+]]></output>
+            </test-case>
+            <test-case id="1132" name="Unbind_ClearsSelectionAndPreventsRequests" fullname="HUSEscape.UI.MainMenuViewTests.Unbind_ClearsSelectionAndPreventsRequests" methodname="Unbind_ClearsSelectionAndPreventsRequests" classname="HUSEscape.UI.MainMenuViewTests" runstate="Runnable" seed="358182125" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.001056" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1127" name="UnboundView_CannotEmitStartEvenWhenAvailabilityIsRequested" fullname="HUSEscape.UI.MainMenuViewTests.UnboundView_CannotEmitStartEvenWhenAvailabilityIsRequested" methodname="UnboundView_CannotEmitStartEvenWhenAvailabilityIsRequested" classname="HUSEscape.UI.MainMenuViewTests" runstate="Runnable" seed="701904305" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000660" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+    <test-suite type="Assembly" id="1165" name="VT103.Autosave.EditModeTests.dll" fullname="D:/Game3D-01/VT103_Work/Temp/VT103Verify/Library/ScriptAssemblies/VT103.Autosave.EditModeTests.dll" runstate="Runnable" testcasecount="15" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.352530" total="15" passed="15" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="40524" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestSuite" id="1166" name="HUSEscape" fullname="HUSEscape" runstate="Runnable" testcasecount="15" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.348142" total="15" passed="15" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1167" name="Persistence" fullname="HUSEscape.Persistence" runstate="Runnable" testcasecount="15" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.348002" total="15" passed="15" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestSuite" id="1168" name="Autosave" fullname="HUSEscape.Persistence.Autosave" runstate="Runnable" testcasecount="15" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.347923" total="15" passed="15" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-suite type="TestSuite" id="1169" name="Tests" fullname="HUSEscape.Persistence.Autosave.Tests" runstate="Runnable" testcasecount="15" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.347809" total="15" passed="15" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-suite type="TestFixture" id="1147" name="DraftStoreIntegrationSafetyTests" fullname="HUSEscape.Persistence.Autosave.Tests.DraftStoreIntegrationSafetyTests" classname="HUSEscape.Persistence.Autosave.Tests.DraftStoreIntegrationSafetyTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.185614" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1148" name="S01_ReservationsExceedDiskAndOtherInstancesWithoutWriting" fullname="HUSEscape.Persistence.Autosave.Tests.DraftStoreIntegrationSafetyTests.S01_ReservationsExceedDiskAndOtherInstancesWithoutWriting" methodname="S01_ReservationsExceedDiskAndOtherInstancesWithoutWriting" classname="HUSEscape.Persistence.Autosave.Tests.DraftStoreIntegrationSafetyTests" runstate="Runnable" seed="317523166" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.105965" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1149" name="S02_CancelAfterRealStagingPreservesHeadAndCleansOwnPendingFile" fullname="HUSEscape.Persistence.Autosave.Tests.DraftStoreIntegrationSafetyTests.S02_CancelAfterRealStagingPreservesHeadAndCleansOwnPendingFile" methodname="S02_CancelAfterRealStagingPreservesHeadAndCleansOwnPendingFile" classname="HUSEscape.Persistence.Autosave.Tests.DraftStoreIntegrationSafetyTests" runstate="Runnable" seed="1980403962" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.051681" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1150" name="S03_RestoreFenceBlocksWriterAcrossInstancesUntilDisposed" fullname="HUSEscape.Persistence.Autosave.Tests.DraftStoreIntegrationSafetyTests.S03_RestoreFenceBlocksWriterAcrossInstancesUntilDisposed" methodname="S03_RestoreFenceBlocksWriterAcrossInstancesUntilDisposed" classname="HUSEscape.Persistence.Autosave.Tests.DraftStoreIntegrationSafetyTests" runstate="Runnable" seed="226361739" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.027026" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+              </test-suite>
+              <test-suite type="TestFixture" id="1151" name="DraftStoreRedTests" fullname="HUSEscape.Persistence.Autosave.Tests.DraftStoreRedTests" classname="HUSEscape.Persistence.Autosave.Tests.DraftStoreRedTests" runstate="Runnable" testcasecount="8" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.155073" total="8" passed="8" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties>
+                  <property name="Category" value="VT103" />
+                </properties>
+                <test-case id="1152" name="VT103_T01_NewerRevisionPersistsItsOwnPayload" fullname="HUSEscape.Persistence.Autosave.Tests.DraftStoreRedTests.VT103_T01_NewerRevisionPersistsItsOwnPayload" methodname="VT103_T01_NewerRevisionPersistsItsOwnPayload" classname="HUSEscape.Persistence.Autosave.Tests.DraftStoreRedTests" runstate="Runnable" seed="1597263931" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.038776" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1153" name="VT103_T02_LateOlderRequestIsExplicitlyRejectedWithoutOverwrite" fullname="HUSEscape.Persistence.Autosave.Tests.DraftStoreRedTests.VT103_T02_LateOlderRequestIsExplicitlyRejectedWithoutOverwrite" methodname="VT103_T02_LateOlderRequestIsExplicitlyRejectedWithoutOverwrite" classname="HUSEscape.Persistence.Autosave.Tests.DraftStoreRedTests" runstate="Runnable" seed="222742220" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.003598" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1154" name="VT103_T03_RetrySameIdentityAcknowledgesDuplicateWithoutAnotherCommit" fullname="HUSEscape.Persistence.Autosave.Tests.DraftStoreRedTests.VT103_T03_RetrySameIdentityAcknowledgesDuplicateWithoutAnotherCommit" methodname="VT103_T03_RetrySameIdentityAcknowledgesDuplicateWithoutAnotherCommit" classname="HUSEscape.Persistence.Autosave.Tests.DraftStoreRedTests" runstate="Runnable" seed="594231434" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.015733" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1155" name="VT103_T04_TwoConcurrentRequestsLeaveMaximumRevisionOnDisk" fullname="HUSEscape.Persistence.Autosave.Tests.DraftStoreRedTests.VT103_T04_TwoConcurrentRequestsLeaveMaximumRevisionOnDisk" methodname="VT103_T04_TwoConcurrentRequestsLeaveMaximumRevisionOnDisk" classname="HUSEscape.Persistence.Autosave.Tests.DraftStoreRedTests" runstate="Runnable" seed="2074834662" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.035261" asserts="0">
+                  <properties>
+                    <property name="Timeout" value="15000" />
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1156" name="VT103_T05_SameIdentityDifferentPayloadIsConflict" fullname="HUSEscape.Persistence.Autosave.Tests.DraftStoreRedTests.VT103_T05_SameIdentityDifferentPayloadIsConflict" methodname="VT103_T05_SameIdentityDifferentPayloadIsConflict" classname="HUSEscape.Persistence.Autosave.Tests.DraftStoreRedTests" runstate="Runnable" seed="590204888" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.003857" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1157" name="VT103_T06_SameRevisionDifferentIdentityIsConflict" fullname="HUSEscape.Persistence.Autosave.Tests.DraftStoreRedTests.VT103_T06_SameRevisionDifferentIdentityIsConflict" methodname="VT103_T06_SameRevisionDifferentIdentityIsConflict" classname="HUSEscape.Persistence.Autosave.Tests.DraftStoreRedTests" runstate="Runnable" seed="1222402021" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.003663" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1158" name="VT103_T07_InjectedCommitFailurePreservesHeadAndRetry" fullname="HUSEscape.Persistence.Autosave.Tests.DraftStoreRedTests.VT103_T07_InjectedCommitFailurePreservesHeadAndRetry" methodname="VT103_T07_InjectedCommitFailurePreservesHeadAndRetry" classname="HUSEscape.Persistence.Autosave.Tests.DraftStoreRedTests" runstate="Runnable" seed="1092667646" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.022444" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1159" name="VT103_T08_ControlledInterleavingCannotRegressRevision" fullname="HUSEscape.Persistence.Autosave.Tests.DraftStoreRedTests.VT103_T08_ControlledInterleavingCannotRegressRevision" methodname="VT103_T08_ControlledInterleavingCannotRegressRevision" classname="HUSEscape.Persistence.Autosave.Tests.DraftStoreRedTests" runstate="Runnable" seed="807005925" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.029130" asserts="0">
+                  <properties>
+                    <property name="Timeout" value="20000" />
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+              </test-suite>
+              <test-suite type="TestFixture" id="1160" name="ManualAcceptanceIsolationTests" fullname="HUSEscape.Persistence.Autosave.Tests.ManualAcceptanceIsolationTests" classname="HUSEscape.Persistence.Autosave.Tests.ManualAcceptanceIsolationTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.006680" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1164" name="DisabledManualHelperDoesNotCreateSessionOnEnteringPlayMode" fullname="HUSEscape.Persistence.Autosave.Tests.ManualAcceptanceIsolationTests.DisabledManualHelperDoesNotCreateSessionOnEnteringPlayMode" methodname="DisabledManualHelperDoesNotCreateSessionOnEnteringPlayMode" classname="HUSEscape.Persistence.Autosave.Tests.ManualAcceptanceIsolationTests" runstate="Runnable" seed="1736461726" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.001838" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1161" name="ExplicitFixtureStorageCannotBeRedirectedByManualHelper" fullname="HUSEscape.Persistence.Autosave.Tests.ManualAcceptanceIsolationTests.ExplicitFixtureStorageCannotBeRedirectedByManualHelper" methodname="ExplicitFixtureStorageCannotBeRedirectedByManualHelper" classname="HUSEscape.Persistence.Autosave.Tests.ManualAcceptanceIsolationTests" runstate="Runnable" seed="1428216234" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.001431" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1162" name="ManualHelperCanClaimUnownedStorageAndRecognizeItsOwnPath" fullname="HUSEscape.Persistence.Autosave.Tests.ManualAcceptanceIsolationTests.ManualHelperCanClaimUnownedStorageAndRecognizeItsOwnPath" methodname="ManualHelperCanClaimUnownedStorageAndRecognizeItsOwnPath" classname="HUSEscape.Persistence.Autosave.Tests.ManualAcceptanceIsolationTests" runstate="Runnable" seed="2010602173" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.000983" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1163" name="TestRunnerRevokesManualOptInBeforePlayMode" fullname="HUSEscape.Persistence.Autosave.Tests.ManualAcceptanceIsolationTests.TestRunnerRevokesManualOptInBeforePlayMode" methodname="TestRunnerRevokesManualOptInBeforePlayMode" classname="HUSEscape.Persistence.Autosave.Tests.ManualAcceptanceIsolationTests" runstate="Runnable" seed="110787406" result="Passed" start-time="2026-11-14 10:27:59Z" end-time="2026-11-14 10:27:59Z" duration="0.001048" asserts="0">
+                  <properties>
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                  <output><![CDATA[Saving results to: C:/Users/ASUS/AppData/LocalLow/DefaultCompany/HUS_Escape\TestResults.xml
+]]></output>
+                </test-case>
+              </test-suite>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

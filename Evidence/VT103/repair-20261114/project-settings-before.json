@@ -1,0 +1,114 @@
+[
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\HUS_Escape\\ProjectSettings\\AudioManager.asset",
+        "sha256":  "282586EACD02FCA9B7B803B93641647ABEE5A9D1A7369381025546F0C9808CCF"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\HUS_Escape\\ProjectSettings\\ClusterInputManager.asset",
+        "sha256":  "06A192320121E445DCFF1AE8DDAD2A948FF671CA134603C043D9F4E920427EA9"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\HUS_Escape\\ProjectSettings\\DynamicsManager.asset",
+        "sha256":  "3693B831298FC0E49A59254961C0F5C70F77D1031F584AF4BB3D56D425BB4DC4"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\HUS_Escape\\ProjectSettings\\EditorBuildSettings.asset",
+        "sha256":  "5D872F5CD01643B7AE70F664C693B0447CA4231DB3008AEA56CEF8B40BD057A1"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\HUS_Escape\\ProjectSettings\\EditorSettings.asset",
+        "sha256":  "EA5226D4F65433CB95908BE809C91EA8090DA1F290883E7B39B8BB0359D19F0D"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\HUS_Escape\\ProjectSettings\\GraphicsSettings.asset",
+        "sha256":  "3D3C110EDD4B63DCAA88B734C010D8140BA0622040EC5362650B07AB7E0757C8"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\HUS_Escape\\ProjectSettings\\InputManager.asset",
+        "sha256":  "776C8B6C71E1101973E1F3AB569CF9058B857372A8A19210B50B3C1C6A1A42A6"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\HUS_Escape\\ProjectSettings\\MemorySettings.asset",
+        "sha256":  "A660CB9890D880DF92F3B80FA40723F183CC5EF2CB3ECC850B366191F05834C7"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\HUS_Escape\\ProjectSettings\\MultiplayerManager.asset",
+        "sha256":  "83DED116CA3ED35A6ACAC9B0FED830F04DFE5C008C185BE50B1C132C88AEA505"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\HUS_Escape\\ProjectSettings\\NavMeshAreas.asset",
+        "sha256":  "DECA65F3094943A1AF148CF64FD6C0DEB503219D12DE0E172B7F948D07A8E6A8"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\HUS_Escape\\ProjectSettings\\PackageManagerSettings.asset",
+        "sha256":  "86840E1C75D283833FCF6DDD36398F82080C9C7B4C914969708FCB2A0D984657"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\HUS_Escape\\ProjectSettings\\Physics2DSettings.asset",
+        "sha256":  "502F68770D5E38D371909EB4D89BE7EC89A583A1464194DE57DF63591EDA45B2"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\HUS_Escape\\ProjectSettings\\PhysicsCoreProjectSettings2D.asset",
+        "sha256":  "6356FF823CF80282A698FE03796EA05F52EA16D948027399A638082E07469558"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\HUS_Escape\\ProjectSettings\\PresetManager.asset",
+        "sha256":  "6BA879310E2BE2E5BA18702578CDA93B26B030ECD88E883FEF22AB456A9F9697"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\HUS_Escape\\ProjectSettings\\ProjectAuditorSettings.asset",
+        "sha256":  "9E68444B9BDA981E2927A98DF9EDF69EA88362F0C6B7F3C81B39B9D515D2A416"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\HUS_Escape\\ProjectSettings\\ProjectSettings.asset",
+        "sha256":  "D571E68EC973FCA7117E2ECC74CD5A18D3D386C5541717DA741A4A5D6A7B9988"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\HUS_Escape\\ProjectSettings\\ProjectVersion.txt",
+        "sha256":  "842E40D6D7C2763128C272109FD51C6233891C2692BDA34594BF9E7E52D85B24"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\HUS_Escape\\ProjectSettings\\QualitySettings.asset",
+        "sha256":  "7FA3E21095B718CECEA9E9BEFEB6D56ACED5ECA369A1C5844214FC3E1ED7F415"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\HUS_Escape\\ProjectSettings\\SceneTemplateSettings.json",
+        "sha256":  "E0CBB98BD0AA9449840CE663A4B81751AB0828F5D8D2BD37923644FEE7095E62"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\HUS_Escape\\ProjectSettings\\ShaderGraphSettings.asset",
+        "sha256":  "A0B37628E34D4AB97DCC1A26369B7C7E773C55C4CD2A86CD3F5FA37E88543FF0"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\HUS_Escape\\ProjectSettings\\Switch2PlayerSettings.asset",
+        "sha256":  "8584334E31DC1FC351C1CBC4598C02AB93270528A343BBBEE2B4671AE3259F92"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\HUS_Escape\\ProjectSettings\\TagManager.asset",
+        "sha256":  "7A14B6F084609B7639FBAC8BED702C3516661ECAD739C815A76712C5DE84C0FC"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\HUS_Escape\\ProjectSettings\\TimeManager.asset",
+        "sha256":  "6C320EE59AE1E55AA74558F012437F63CB9DE59D69FDA62FC321C4F1971C52CB"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\HUS_Escape\\ProjectSettings\\UnityConnectSettings.asset",
+        "sha256":  "F99726C8DC612595DADBA9F3F3A31C80C1CA6CFBA03D30B05A080BAEAD1D5952"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\HUS_Escape\\ProjectSettings\\URPProjectSettings.asset",
+        "sha256":  "1EC0876DBC4E63003BCE05D1A648602EE63601336EA5A8DE5564449918B3E617"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\HUS_Escape\\ProjectSettings\\VersionControlSettings.asset",
+        "sha256":  "B693342EB84FB0378D21CD2A4557D900777709AD00C2FF5041C2D8451B6DA246"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\HUS_Escape\\ProjectSettings\\VFXManager.asset",
+        "sha256":  "A8950860670C6FA8F83A43E37DEB966BEACFD7B535721C4CD9C2A7E5B46305E8"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\HUS_Escape\\ProjectSettings\\XRSettings.asset",
+        "sha256":  "71F175773593BA28D42BF1AF0543B2A465E0316D3B8F435AEBF48EA66B31B621"
+    }
+]

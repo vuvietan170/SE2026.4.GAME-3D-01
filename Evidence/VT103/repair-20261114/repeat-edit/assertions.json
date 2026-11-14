@@ -1,0 +1,752 @@
+[
+    {
+        "name":  "HUSEscape.Core.BootstrapSceneEntryTests.AuthoredScene_HasOneBoundActivePersistentCoreRoot",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.BootstrapSceneEntryTests.BuildSettings_HaveBootstrapMenuThenPreservedSampleScene",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.BootstrapSceneEntryTests.InvalidPathFormat_IsRejected(null)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.BootstrapSceneEntryTests.InvalidPathFormat_IsRejected(\"\")",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.BootstrapSceneEntryTests.InvalidPathFormat_IsRejected(\" \")",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.BootstrapSceneEntryTests.InvalidPathFormat_IsRejected(\"SampleScene\")",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.BootstrapSceneEntryTests.InvalidPathFormat_IsRejected(\"assets/Scenes/SampleScene.unity\")",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.BootstrapSceneEntryTests.InvalidPathFormat_IsRejected(\"Assets/Scenes/SampleScene.UNITY\")",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.BootstrapSceneEntryTests.MissingAndForeignBootstrapReferences_AreRejected",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.BootstrapSceneEntryTests.SelfDestination_IsRejected",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.BootstrapSceneEntryTests.UnavailableServices_FinishOnceWithoutChangingCore",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.BootstrapSceneEntryTests.UnsupportedDestinationState_IsRejected(Initializing)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.BootstrapSceneEntryTests.UnsupportedDestinationState_IsRejected(Loading)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.BootstrapSceneEntryTests.UnsupportedDestinationState_IsRejected(Paused)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.BootstrapSceneEntryTests.UnsupportedDestinationState_IsRejected(99)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.BootstrapSceneEntryTests.ValidConfiguration_DoesNotInitializeOrLoad(Ready)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.BootstrapSceneEntryTests.ValidConfiguration_DoesNotInitializeOrLoad(Playing)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.GameBootstrapTests.OwnershipSelection_ExcludesDisabledInactiveAndNestedCandidates",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.GameBootstrapTests.OwnershipSelection_IsIndependentOfCandidateOrder",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.GameBootstrapTests.Services_AreUnavailableBeforeInitialization",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.GameManagerTests.Initialize_CommitsReadyAndNotifiesOnce",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.GameManagerTests.Initialize_RejectsReentrantCallsDuringInitialNotification",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.GameManagerTests.Managers_HaveIndependentStateAndEvents",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.GameManagerTests.NewManager_StartsUninitialized",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.GameManagerTests.SceneLoad_CompletionCommitsOnceAndReleasesReservation(Ready)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.GameManagerTests.SceneLoad_CompletionCommitsOnceAndReleasesReservation(Playing)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.GameManagerTests.SceneLoad_CompletionCommitsOnceAndReleasesReservation(Paused)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.GameManagerTests.SceneLoad_InvalidCompletionPreservesReservation",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.GameManagerTests.SceneLoad_RejectedDestinationCanRecoverUsingOwnedToken(Ready)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.GameManagerTests.SceneLoad_RejectedDestinationCanRecoverUsingOwnedToken(Playing)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.GameManagerTests.SceneLoad_RejectedDestinationCanRecoverUsingOwnedToken(Paused)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.GameManagerTests.SceneLoad_ReservesTransitionsUntilCompletion(Ready)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.GameManagerTests.SceneLoad_ReservesTransitionsUntilCompletion(Playing)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.GameManagerTests.SceneLoad_ReservesTransitionsUntilCompletion(Paused)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.GameManagerTests.SceneLoad_StaleOrForeignTokensCannotReleaseNewReservation",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.GameManagerTests.StateChanged_ObservesCommittedStateAndSupportsUnsubscription",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.GameManagerTests.StateChanged_ReentrantTransitionsAndInitializationAreRejected",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.GameManagerTests.StateChanged_ThrowingSubscriberDoesNotBlockOtherSubscribers",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.GameManagerTests.StateChanged_UsesSubscriberSnapshot",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.GameManagerTests.StateChanges_BeforeInitializationAreRejected(Initializing)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.GameManagerTests.StateChanges_BeforeInitializationAreRejected(Ready)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.GameManagerTests.StateChanges_BeforeInitializationAreRejected(Loading)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.GameManagerTests.StateChanges_BeforeInitializationAreRejected(Playing)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.GameManagerTests.StateChanges_BeforeInitializationAreRejected(Paused)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.GameManagerTests.TransitionMatrix_IsEnforced(Ready,Initializing,False)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.GameManagerTests.TransitionMatrix_IsEnforced(Ready,Ready,False)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.GameManagerTests.TransitionMatrix_IsEnforced(Ready,Loading,True)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.GameManagerTests.TransitionMatrix_IsEnforced(Ready,Playing,True)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.GameManagerTests.TransitionMatrix_IsEnforced(Ready,Paused,False)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.GameManagerTests.TransitionMatrix_IsEnforced(Loading,Initializing,False)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.GameManagerTests.TransitionMatrix_IsEnforced(Loading,Ready,True)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.GameManagerTests.TransitionMatrix_IsEnforced(Loading,Loading,False)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.GameManagerTests.TransitionMatrix_IsEnforced(Loading,Playing,True)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.GameManagerTests.TransitionMatrix_IsEnforced(Loading,Paused,True)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.GameManagerTests.TransitionMatrix_IsEnforced(Playing,Initializing,False)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.GameManagerTests.TransitionMatrix_IsEnforced(Playing,Ready,False)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.GameManagerTests.TransitionMatrix_IsEnforced(Playing,Loading,True)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.GameManagerTests.TransitionMatrix_IsEnforced(Playing,Playing,False)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.GameManagerTests.TransitionMatrix_IsEnforced(Playing,Paused,True)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.GameManagerTests.TransitionMatrix_IsEnforced(Paused,Initializing,False)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.GameManagerTests.TransitionMatrix_IsEnforced(Paused,Ready,False)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.GameManagerTests.TransitionMatrix_IsEnforced(Paused,Loading,True)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.GameManagerTests.TransitionMatrix_IsEnforced(Paused,Playing,True)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.GameManagerTests.TransitionMatrix_IsEnforced(Paused,Paused,False)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.GameManagerTests.UnknownEnumValues_AreRejected(-1)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.GameManagerTests.UnknownEnumValues_AreRejected(99)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.SceneLoaderTests.ActivationFailure_RestoresPausedState(False)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.SceneLoaderTests.ActivationFailure_RestoresPausedState(True)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.SceneLoaderTests.AlreadyCompletedOperation_IsFinalized",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.SceneLoaderTests.CompletionDuringNotification_RemainsBusyUntilProductionUpdateFinalizes",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.SceneLoaderTests.CompletionListener_CanStartAnotherRequest",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.SceneLoaderTests.IndependentLoaders_DoNotShareBackendsOrReservations",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.SceneLoaderTests.Initialize_RejectsNullAndRepeatedDependencies",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.SceneLoaderTests.InvalidDestinations_AreRejected(Initializing)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.SceneLoaderTests.InvalidDestinations_AreRejected(Loading)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.SceneLoaderTests.InvalidDestinations_AreRejected(Paused)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.SceneLoaderTests.InvalidDestinations_AreRejected(99)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.SceneLoaderTests.InvalidPaths_AreRejectedWithoutStartingOrChangingState(null)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.SceneLoaderTests.InvalidPaths_AreRejectedWithoutStartingOrChangingState(\"\")",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.SceneLoaderTests.InvalidPaths_AreRejectedWithoutStartingOrChangingState(\" \")",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.SceneLoaderTests.InvalidPaths_AreRejectedWithoutStartingOrChangingState(\"SampleScene\")",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.SceneLoaderTests.InvalidPaths_AreRejectedWithoutStartingOrChangingState(\"Assets/Scenes/Missing.unity\")",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.SceneLoaderTests.InvalidPaths_AreRejectedWithoutStartingOrChangingState(\"assets/Scenes/SampleScene.unity\")",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.SceneLoaderTests.InvalidPaths_AreRejectedWithoutStartingOrChangingState(\"Assets/Scenes/SampleScene.UNITY\")",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.SceneLoaderTests.LostReservation_CannotReleaseReplacementAndDoesNotReportIdle",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.SceneLoaderTests.OverlappingAndReentrantRequests_AreRejected",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.SceneLoaderTests.RejectedCompletion_RecoversOwnedReservationBeforeBecomingIdle",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.SceneLoaderTests.StaleCallback_CannotReleaseNewRequest",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.SceneLoaderTests.StartupFailure_RestoresStateAndPublishesFailure(Ready,False)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.SceneLoaderTests.StartupFailure_RestoresStateAndPublishesFailure(Playing,False)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.SceneLoaderTests.StartupFailure_RestoresStateAndPublishesFailure(Paused,False)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.SceneLoaderTests.StartupFailure_RestoresStateAndPublishesFailure(Ready,True)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.SceneLoaderTests.Success_FinalizesBeforeNotifyingAndPublishesOnce(Ready)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.SceneLoaderTests.Success_FinalizesBeforeNotifyingAndPublishesOnce(Playing)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.SceneLoaderTests.ThrowingCompletionSubscriber_DoesNotBlockLaterSubscribers(False)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.SceneLoaderTests.ThrowingCompletionSubscriber_DoesNotBlockLaterSubscribers(True)",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.SceneLoaderTests.UninitializedOrDisabledLoader_RejectsRequests",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Core.SceneLoaderTests.ValidationException_DoesNotReserveState",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.UI.MainMenuSceneTests.Bootstrap_WiresOnlyForwardUiDependencyAndReadyDestination",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.UI.MainMenuSceneTests.InputModule_ReferencesExistingExactUiActions",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.UI.MainMenuSceneTests.MenuScene_HasOneUnboundViewAndOneInputSystemEventSystem",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.UI.MainMenuViewTests.BoundReadyView_EnablesStartAndSelectsIt",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.UI.MainMenuViewTests.Destroying_NotifiesOnceAndClearsEventReferences",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.UI.MainMenuViewTests.DisabledView_RejectsDirectButtonInvocations",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.UI.MainMenuViewTests.LoadingState_DisablesStartAndShowsFeedback",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.UI.MainMenuViewTests.RepeatedClick_IsLatchedBeforeNotifyingListeners",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.UI.MainMenuViewTests.RepeatedEnable_DoesNotDuplicateButtonSubscriptions",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.UI.MainMenuViewTests.ThrowingSubscriber_DoesNotPreventOtherSubscribers",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.UI.MainMenuViewTests.Unbind_ClearsSelectionAndPreventsRequests",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.UI.MainMenuViewTests.UnboundView_CannotEmitStartEvenWhenAvailabilityIsRequested",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Persistence.Autosave.Tests.DraftStoreIntegrationSafetyTests.S01_ReservationsExceedDiskAndOtherInstancesWithoutWriting",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Persistence.Autosave.Tests.DraftStoreIntegrationSafetyTests.S02_CancelAfterRealStagingPreservesHeadAndCleansOwnPendingFile",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Persistence.Autosave.Tests.DraftStoreIntegrationSafetyTests.S03_RestoreFenceBlocksWriterAcrossInstancesUntilDisposed",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Persistence.Autosave.Tests.DraftStoreRedTests.VT103_T01_NewerRevisionPersistsItsOwnPayload",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Persistence.Autosave.Tests.DraftStoreRedTests.VT103_T02_LateOlderRequestIsExplicitlyRejectedWithoutOverwrite",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Persistence.Autosave.Tests.DraftStoreRedTests.VT103_T03_RetrySameIdentityAcknowledgesDuplicateWithoutAnotherCommit",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Persistence.Autosave.Tests.DraftStoreRedTests.VT103_T04_TwoConcurrentRequestsLeaveMaximumRevisionOnDisk",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Persistence.Autosave.Tests.DraftStoreRedTests.VT103_T05_SameIdentityDifferentPayloadIsConflict",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Persistence.Autosave.Tests.DraftStoreRedTests.VT103_T06_SameRevisionDifferentIdentityIsConflict",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Persistence.Autosave.Tests.DraftStoreRedTests.VT103_T07_InjectedCommitFailurePreservesHeadAndRetry",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Persistence.Autosave.Tests.DraftStoreRedTests.VT103_T08_ControlledInterleavingCannotRegressRevision",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Persistence.Autosave.Tests.ManualAcceptanceIsolationTests.DisabledManualHelperDoesNotCreateSessionOnEnteringPlayMode",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Persistence.Autosave.Tests.ManualAcceptanceIsolationTests.ExplicitFixtureStorageCannotBeRedirectedByManualHelper",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Persistence.Autosave.Tests.ManualAcceptanceIsolationTests.ManualHelperCanClaimUnownedStorageAndRecognizeItsOwnPath",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Persistence.Autosave.Tests.ManualAcceptanceIsolationTests.TestRunnerRevokesManualOptInBeforePlayMode",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    }
+]

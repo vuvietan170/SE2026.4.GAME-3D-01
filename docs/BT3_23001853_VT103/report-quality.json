@@ -1,0 +1,169 @@
+{
+  "pdf": "D:\\Game3D-01\\VT103_Work\\docs\\BT3_23001853_VT103\\BT3_23001853_VT-103.pdf",
+  "mainPages": 8,
+  "appendixPages": 4,
+  "totalPages": 12,
+  "reflectionWhitespaceWordCount": 322,
+  "decisionTableRules": 15,
+  "testCaseRows": 17,
+  "individuallyListedTestCases": 13,
+  "testCaseRequiredColumns": 6,
+  "unicodeExtractionChecksPassed": true,
+  "noReplacementCharacters": true,
+  "noGeometryClipping": true,
+  "pages": [
+    {
+      "page": 1,
+      "main": true,
+      "fontBodyPt": 10.2,
+      "spareHeightPt": 156.9281005859375,
+      "scale": 1.0
+    },
+    {
+      "page": 2,
+      "main": true,
+      "fontBodyPt": 10.2,
+      "spareHeightPt": 116.9278564453125,
+      "scale": 1.0
+    },
+    {
+      "page": 3,
+      "main": true,
+      "fontBodyPt": 10.2,
+      "spareHeightPt": 99.89996337890625,
+      "scale": 1.0
+    },
+    {
+      "page": 4,
+      "main": true,
+      "fontBodyPt": 10.2,
+      "spareHeightPt": 56.87225341796875,
+      "scale": 1.0
+    },
+    {
+      "page": 5,
+      "main": true,
+      "fontBodyPt": 10.2,
+      "spareHeightPt": 176.24383544921875,
+      "scale": 1.0
+    },
+    {
+      "page": 6,
+      "main": true,
+      "fontBodyPt": 10.2,
+      "spareHeightPt": 94.94207763671875,
+      "scale": 1.0
+    },
+    {
+      "page": 7,
+      "main": true,
+      "fontBodyPt": 10.2,
+      "spareHeightPt": 50.90216064453125,
+      "scale": 1.0
+    },
+    {
+      "page": 8,
+      "main": true,
+      "fontBodyPt": 10.2,
+      "spareHeightPt": 243.56411743164062,
+      "scale": 1.0
+    },
+    {
+      "page": 9,
+      "main": false,
+      "fontBodyPt": 10.2,
+      "spareHeightPt": 201.296142578125,
+      "scale": 1.0
+    },
+    {
+      "page": 10,
+      "main": false,
+      "fontBodyPt": 10.2,
+      "spareHeightPt": 240.17202758789062,
+      "scale": 1.0
+    },
+    {
+      "page": 11,
+      "main": false,
+      "fontBodyPt": 10.2,
+      "spareHeightPt": 205.95013427734375,
+      "scale": 1.0
+    },
+    {
+      "page": 12,
+      "main": false,
+      "fontBodyPt": 10.2,
+      "spareHeightPt": 119.5699462890625,
+      "scale": 1.0
+    }
+  ],
+  "recomputedSamples": [
+    {
+      "scenario": "P01",
+      "round": 1,
+      "N": 120,
+      "p95Ms": 48.9508,
+      "peak": 120
+    },
+    {
+      "scenario": "P02",
+      "round": 1,
+      "N": 120,
+      "p95Ms": 45.1295,
+      "peak": 21
+    },
+    {
+      "scenario": "P02",
+      "round": 2,
+      "N": 120,
+      "p95Ms": 27.4977,
+      "peak": 20
+    },
+    {
+      "scenario": "P01",
+      "round": 2,
+      "N": 120,
+      "p95Ms": 70.8172,
+      "peak": 120
+    },
+    {
+      "scenario": "P01",
+      "round": 3,
+      "N": 120,
+      "p95Ms": 105.3751,
+      "peak": 120
+    },
+    {
+      "scenario": "P02",
+      "round": 3,
+      "N": 120,
+      "p95Ms": 23.3279,
+      "peak": 21
+    }
+  ],
+  "lineCoverage": "NOT AVAILABLE",
+  "branchCoverage": "NOT AVAILABLE",
+  "manualG01": "PARTIAL",
+  "manualG02": "PARTIAL",
+  "manualG03": "PASS within observed scope",
+  "manualG04": "PASS user reported; pair artifacts missing",
+  "manualG05": "NOT EXECUTED",
+  "manualG06": "NOT EXECUTED",
+  "manualG07": "NOT EXECUTED",
+  "githubBranch": "PENDING",
+  "pr": "PENDING",
+  "originalLecturerRubricAvailable": false,
+  "newTestsRunThisStep": 0,
+  "pdfSHA256": "67669a46cdad9748f7cee48d0421fb958bddfb32266ff0d10652e9821610ad18",
+  "protectedOldEvidenceCount": 1131,
+  "protectedOldEvidenceUnchanged": true,
+  "preExistingProjectFilesProtected": 401,
+  "preExistingProjectFilesChanged": [],
+  "mainGitStatusAndDiffUnchanged": true,
+  "visualReview": "Contact sheet all 12 pages; full-resolution pages 4, 6, 7. Performance table overlap found and corrected before final export.",
+  "wordOverlapWarnings": [],
+  "noGameplayScreenshotsAttached": true,
+  "rubricComparisonBasis": "User-supplied Step 8 requirements; original lecturer rubric not supplied.",
+  "checkedActualTableRows": 17,
+  "checkedActualTableColumns": 6
+}

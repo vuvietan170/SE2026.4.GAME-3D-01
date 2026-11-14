@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="12" result="Passed" total="12" passed="12" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-14 10:26:27Z" end-time="2026-11-14 10:26:40Z" duration="12,2544824">
+  <test-suite type="TestSuite" id="1065" name="HUS_Escape" fullname="HUS_Escape" runstate="Runnable" testcasecount="45" result="Passed" start-time="2026-11-14 10:26:27Z" end-time="2026-11-14 10:26:40Z" duration="12.254482" total="12" passed="12" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="PlayMode" />
+    </properties>
+    <test-suite type="Assembly" id="1125" name="VT103.Autosave.PlayModeTests.dll" fullname="D:/Game3D-01/VT103_Work/Temp/VT103Verify/Library/ScriptAssemblies/VT103.Autosave.PlayModeTests.dll" runstate="Runnable" testcasecount="12" result="Passed" start-time="2026-11-14 10:26:27Z" end-time="2026-11-14 10:26:40Z" duration="12.247609" total="12" passed="12" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="40312" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <test-suite type="TestSuite" id="1126" name="HUSEscape" fullname="HUSEscape" runstate="Runnable" testcasecount="12" result="Passed" start-time="2026-11-14 10:26:27Z" end-time="2026-11-14 10:26:40Z" duration="12.247082" total="12" passed="12" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1127" name="Persistence" fullname="HUSEscape.Persistence" runstate="Runnable" testcasecount="12" result="Passed" start-time="2026-11-14 10:26:27Z" end-time="2026-11-14 10:26:40Z" duration="12.246722" total="12" passed="12" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestSuite" id="1128" name="Autosave" fullname="HUSEscape.Persistence.Autosave" runstate="Runnable" testcasecount="12" result="Passed" start-time="2026-11-14 10:26:27Z" end-time="2026-11-14 10:26:40Z" duration="12.246383" total="12" passed="12" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-suite type="TestSuite" id="1129" name="Tests" fullname="HUSEscape.Persistence.Autosave.Tests" runstate="Runnable" testcasecount="12" result="Passed" start-time="2026-11-14 10:26:27Z" end-time="2026-11-14 10:26:40Z" duration="12.246026" total="12" passed="12" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-suite type="TestFixture" id="1112" name="Floor01AutosaveIntegrationTests" fullname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests" classname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests" runstate="Runnable" testcasecount="12" result="Passed" start-time="2026-11-14 10:26:27Z" end-time="2026-11-14 10:26:40Z" duration="12.244596" total="12" passed="12" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1113" name="I01_NewQuestProgressCreatesValidatedFloorDraft" fullname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I01_NewQuestProgressCreatesValidatedFloorDraft" methodname="I01_NewQuestProgressCreatesValidatedFloorDraft" classname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests" runstate="Runnable" seed="1598666187" result="Passed" start-time="2026-11-14 10:26:27Z" end-time="2026-11-14 10:26:33Z" duration="5.839359" asserts="0">
+                  <properties>
+                    <property name="_JOINTYPE" value="UnityCombinatorial" />
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                  <output><![CDATA[Asset 'HUS_Player_Animator': Transition 'AnyState -> Run' in state 'AnyState' doesn't have an Exit Time or any condition, transition will be ignored
+Da nhat: Key_A101
+]]></output>
+                </test-case>
+                <test-case id="1114" name="I02_RepeatedFactAndIdleFramesDoNotCommitAgain" fullname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I02_RepeatedFactAndIdleFramesDoNotCommitAgain" methodname="I02_RepeatedFactAndIdleFramesDoNotCommitAgain" classname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests" runstate="Runnable" seed="1296680257" result="Passed" start-time="2026-11-14 10:26:33Z" end-time="2026-11-14 10:26:34Z" duration="1.193740" asserts="0">
+                  <properties>
+                    <property name="_JOINTYPE" value="UnityCombinatorial" />
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                  <output><![CDATA[Da nhat: Key_A101
+]]></output>
+                </test-case>
+                <test-case id="1115" name="I03_ReversedCapturedRequestsCannotRegressDiskRevision" fullname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I03_ReversedCapturedRequestsCannotRegressDiskRevision" methodname="I03_ReversedCapturedRequestsCannotRegressDiskRevision" classname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests" runstate="Runnable" seed="114701793" result="Passed" start-time="2026-11-14 10:26:34Z" end-time="2026-11-14 10:26:35Z" duration="0.125089" asserts="0">
+                  <properties>
+                    <property name="_JOINTYPE" value="UnityCombinatorial" />
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1116" name="I04_AutosavePreservesAllManualSlotsByteForByte" fullname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I04_AutosavePreservesAllManualSlotsByteForByte" methodname="I04_AutosavePreservesAllManualSlotsByteForByte" classname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests" runstate="Runnable" seed="395338470" result="Passed" start-time="2026-11-14 10:26:35Z" end-time="2026-11-14 10:26:35Z" duration="0.394458" asserts="0">
+                  <properties>
+                    <property name="_JOINTYPE" value="UnityCombinatorial" />
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                  <output><![CDATA[Da nhat: Key_A101
+]]></output>
+                </test-case>
+                <test-case id="1117" name="I05_PersistenceFailurePreservesTheActiveSession" fullname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I05_PersistenceFailurePreservesTheActiveSession" methodname="I05_PersistenceFailurePreservesTheActiveSession" classname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests" runstate="Runnable" seed="1720914392" result="Passed" start-time="2026-11-14 10:26:35Z" end-time="2026-11-14 10:26:35Z" duration="0.415627" asserts="0">
+                  <properties>
+                    <property name="_JOINTYPE" value="UnityCombinatorial" />
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                  <output><![CDATA[Da nhat: Key_A101
+]]></output>
+                </test-case>
+                <test-case id="1118" name="I06_FloorSceneAutomaticallyComposesOneAutosaveOwner" fullname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I06_FloorSceneAutomaticallyComposesOneAutosaveOwner" methodname="I06_FloorSceneAutomaticallyComposesOneAutosaveOwner" classname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests" runstate="Runnable" seed="1616582505" result="Passed" start-time="2026-11-14 10:26:35Z" end-time="2026-11-14 10:26:35Z" duration="0.077394" asserts="0">
+                  <properties>
+                    <property name="_JOINTYPE" value="UnityCombinatorial" />
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1119" name="I07_NewGameCancelsPendingProgressWithoutAutosavingRestoredState" fullname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I07_NewGameCancelsPendingProgressWithoutAutosavingRestoredState" methodname="I07_NewGameCancelsPendingProgressWithoutAutosavingRestoredState" classname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests" runstate="Runnable" seed="1601918743" result="Passed" start-time="2026-11-14 10:26:35Z" end-time="2026-11-14 10:26:36Z" duration="0.880728" asserts="0">
+                  <properties>
+                    <property name="_JOINTYPE" value="UnityCombinatorial" />
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                  <output><![CDATA[Da nhat: Key_A101
+]]></output>
+                </test-case>
+                <test-case id="1120" name="I08_UnsafeAirborneCaptureDefersThenRetriesAfterGrounding" fullname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I08_UnsafeAirborneCaptureDefersThenRetriesAfterGrounding" methodname="I08_UnsafeAirborneCaptureDefersThenRetriesAfterGrounding" classname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests" runstate="Runnable" seed="1922549507" result="Passed" start-time="2026-11-14 10:26:36Z" end-time="2026-11-14 10:26:36Z" duration="0.143231" asserts="0">
+                  <properties>
+                    <property name="_JOINTYPE" value="UnityCombinatorial" />
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                  <output><![CDATA[Da nhat: Key_A101
+]]></output>
+                </test-case>
+                <test-case id="1121" name="I09_ReenableDoesNotDuplicateEventSubscriptions" fullname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I09_ReenableDoesNotDuplicateEventSubscriptions" methodname="I09_ReenableDoesNotDuplicateEventSubscriptions" classname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests" runstate="Runnable" seed="1707643288" result="Passed" start-time="2026-11-14 10:26:36Z" end-time="2026-11-14 10:26:38Z" duration="1.194079" asserts="0">
+                  <properties>
+                    <property name="_JOINTYPE" value="UnityCombinatorial" />
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                  <output><![CDATA[Da nhat: Key_A101
+]]></output>
+                </test-case>
+                <test-case id="1122" name="I10_CorruptDraftIsPreservedAndDoesNotLoadIntoGameplay" fullname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I10_CorruptDraftIsPreservedAndDoesNotLoadIntoGameplay" methodname="I10_CorruptDraftIsPreservedAndDoesNotLoadIntoGameplay" classname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests" runstate="Runnable" seed="1489649191" result="Passed" start-time="2026-11-14 10:26:38Z" end-time="2026-11-14 10:26:38Z" duration="0.380544" asserts="0">
+                  <properties>
+                    <property name="_JOINTYPE" value="UnityCombinatorial" />
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                  <output><![CDATA[Da nhat: Key_A101
+]]></output>
+                </test-case>
+                <test-case id="1123" name="I11_ExistingHeadSeedsRevisionWithoutRestoringItsPayload" fullname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I11_ExistingHeadSeedsRevisionWithoutRestoringItsPayload" methodname="I11_ExistingHeadSeedsRevisionWithoutRestoringItsPayload" classname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests" runstate="Runnable" seed="795658164" result="Passed" start-time="2026-11-14 10:26:38Z" end-time="2026-11-14 10:26:38Z" duration="0.399690" asserts="0">
+                  <properties>
+                    <property name="_JOINTYPE" value="UnityCombinatorial" />
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                  <output><![CDATA[Da nhat: Key_A101
+]]></output>
+                </test-case>
+                <test-case id="1124" name="I12_ManualContinueRestoresOnlyManualSlotAndDoesNotAutosave" fullname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I12_ManualContinueRestoresOnlyManualSlotAndDoesNotAutosave" methodname="I12_ManualContinueRestoresOnlyManualSlotAndDoesNotAutosave" classname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests" runstate="Runnable" seed="1323346572" result="Passed" start-time="2026-11-14 10:26:38Z" end-time="2026-11-14 10:26:40Z" duration="1.184344" asserts="0">
+                  <properties>
+                    <property name="_JOINTYPE" value="UnityCombinatorial" />
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                  <output><![CDATA[Da nhat: Key_A101
+Saving results to: C:/Users/ASUS/AppData/LocalLow/DefaultCompany/HUS_Escape\TestResults.xml
+]]></output>
+                </test-case>
+              </test-suite>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="45" result="Passed" total="45" passed="45" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-14 10:27:10Z" end-time="2026-11-14 10:27:27Z" duration="17,6746843">
+  <test-suite type="TestSuite" id="1065" name="HUS_Escape" fullname="HUS_Escape" runstate="Runnable" testcasecount="45" result="Passed" start-time="2026-11-14 10:27:10Z" end-time="2026-11-14 10:27:27Z" duration="17.674684" total="45" passed="45" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="PlayMode" />
+    </properties>
+    <test-suite type="Assembly" id="1089" name="HUSEscape.Core.PlayModeTests.dll" fullname="D:/Game3D-01/VT103_Work/Temp/VT103Verify/Library/ScriptAssemblies/HUSEscape.Core.PlayModeTests.dll" runstate="Runnable" testcasecount="20" result="Passed" start-time="2026-11-14 10:27:10Z" end-time="2026-11-14 10:27:19Z" duration="9.859933" total="20" passed="20" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="34084" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <test-suite type="TestSuite" id="1090" name="HUSEscape" fullname="HUSEscape" runstate="Runnable" testcasecount="20" result="Passed" start-time="2026-11-14 10:27:10Z" end-time="2026-11-14 10:27:19Z" duration="9.859360" total="20" passed="20" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1091" name="Core" fullname="HUSEscape.Core" runstate="Runnable" testcasecount="20" result="Passed" start-time="2026-11-14 10:27:10Z" end-time="2026-11-14 10:27:19Z" duration="9.859036" total="20" passed="20" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestFixture" id="1066" name="BootstrapSceneEntryPlayModeTests" fullname="HUSEscape.Core.BootstrapSceneEntryPlayModeTests" classname="HUSEscape.Core.BootstrapSceneEntryPlayModeTests" runstate="Runnable" testcasecount="12" result="Passed" start-time="2026-11-14 10:27:10Z" end-time="2026-11-14 10:27:10Z" duration="0.073281" total="12" passed="12" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1074" name="ActivationFailure_PreservesCoreRecoveryAndCleansHandlers" fullname="HUSEscape.Core.BootstrapSceneEntryPlayModeTests.ActivationFailure_PreservesCoreRecoveryAndCleansHandlers" methodname="ActivationFailure_PreservesCoreRecoveryAndCleansHandlers" classname="HUSEscape.Core.BootstrapSceneEntryPlayModeTests" runstate="Runnable" seed="60194453" result="Passed" start-time="2026-11-14 10:27:10Z" end-time="2026-11-14 10:27:10Z" duration="0.025296" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[Unity completed loading without activating the requested scene: Assets/Scenes/SampleScene.unity
+Bootstrap startup failed: Unity completed loading without activating the requested scene: Assets/Scenes/SampleScene.unity
+]]></output>
+            </test-case>
+            <test-case id="1078" name="CompletionUsesCapturedPathIfInspectorConfigurationChanges" fullname="HUSEscape.Core.BootstrapSceneEntryPlayModeTests.CompletionUsesCapturedPathIfInspectorConfigurationChanges" methodname="CompletionUsesCapturedPathIfInspectorConfigurationChanges" classname="HUSEscape.Core.BootstrapSceneEntryPlayModeTests" runstate="Runnable" seed="2104578107" result="Passed" start-time="2026-11-14 10:27:10Z" end-time="2026-11-14 10:27:10Z" duration="0.003327" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1076" name="DestroyedEntry_UnsubscribesWithoutCancellingCoreLoad" fullname="HUSEscape.Core.BootstrapSceneEntryPlayModeTests.DestroyedEntry_UnsubscribesWithoutCancellingCoreLoad" methodname="DestroyedEntry_UnsubscribesWithoutCancellingCoreLoad" classname="HUSEscape.Core.BootstrapSceneEntryPlayModeTests" runstate="Runnable" seed="1952481699" result="Passed" start-time="2026-11-14 10:27:10Z" end-time="2026-11-14 10:27:10Z" duration="0.002719" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1071" name="DisabledOwner_FailsSafelyWithoutRetryingWhenOwnerEnables" fullname="HUSEscape.Core.BootstrapSceneEntryPlayModeTests.DisabledOwner_FailsSafelyWithoutRetryingWhenOwnerEnables" methodname="DisabledOwner_FailsSafelyWithoutRetryingWhenOwnerEnables" classname="HUSEscape.Core.BootstrapSceneEntryPlayModeTests" runstate="Runnable" seed="1850316266" result="Passed" start-time="2026-11-14 10:27:10Z" end-time="2026-11-14 10:27:10Z" duration="0.003030" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[Bootstrap startup failed: The referenced bootstrap is not the active initialized Core owner.
+]]></output>
+            </test-case>
+            <test-case id="1075" name="DisabledPendingEntry_StillObservesCompletion" fullname="HUSEscape.Core.BootstrapSceneEntryPlayModeTests.DisabledPendingEntry_StillObservesCompletion" methodname="DisabledPendingEntry_StillObservesCompletion" classname="HUSEscape.Core.BootstrapSceneEntryPlayModeTests" runstate="Runnable" seed="46885805" result="Passed" start-time="2026-11-14 10:27:10Z" end-time="2026-11-14 10:27:10Z" duration="0.002140" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1072" name="DuplicateOwner_CannotStartAnotherStartupLoad" fullname="HUSEscape.Core.BootstrapSceneEntryPlayModeTests.DuplicateOwner_CannotStartAnotherStartupLoad" methodname="DuplicateOwner_CannotStartAnotherStartupLoad" classname="HUSEscape.Core.BootstrapSceneEntryPlayModeTests" runstate="Runnable" seed="1647883497" result="Passed" start-time="2026-11-14 10:27:10Z" end-time="2026-11-14 10:27:10Z" duration="0.002904" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[A GameBootstrap already owns Core initialization; this duplicate is disabled.
+Bootstrap startup failed: The referenced bootstrap is not the active initialized Core owner.
+]]></output>
+            </test-case>
+            <test-case id="1069" name="MissingReference_FailsWithoutLoading" fullname="HUSEscape.Core.BootstrapSceneEntryPlayModeTests.MissingReference_FailsWithoutLoading" methodname="MissingReference_FailsWithoutLoading" classname="HUSEscape.Core.BootstrapSceneEntryPlayModeTests" runstate="Runnable" seed="343055758" result="Passed" start-time="2026-11-14 10:27:10Z" end-time="2026-11-14 10:27:10Z" duration="0.003708" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[Bootstrap startup failed: Assign the GameBootstrap on this same root GameObject.
+]]></output>
+            </test-case>
+            <test-case id="1077" name="NonReadyCore_IsNotRedirectedByStartup" fullname="HUSEscape.Core.BootstrapSceneEntryPlayModeTests.NonReadyCore_IsNotRedirectedByStartup" methodname="NonReadyCore_IsNotRedirectedByStartup" classname="HUSEscape.Core.BootstrapSceneEntryPlayModeTests" runstate="Runnable" seed="1831346456" result="Passed" start-time="2026-11-14 10:27:10Z" end-time="2026-11-14 10:27:10Z" duration="0.002630" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[Bootstrap startup failed: Bootstrap startup requires the Ready state.
+]]></output>
+            </test-case>
+            <test-case id="1068" name="ReadyDestination_RemainsReadyAfterLoading" fullname="HUSEscape.Core.BootstrapSceneEntryPlayModeTests.ReadyDestination_RemainsReadyAfterLoading" methodname="ReadyDestination_RemainsReadyAfterLoading" classname="HUSEscape.Core.BootstrapSceneEntryPlayModeTests" runstate="Runnable" seed="174827722" result="Passed" start-time="2026-11-14 10:27:10Z" end-time="2026-11-14 10:27:10Z" duration="0.002191" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1067" name="Start_WaitsForCoreAndFinalizesSuccessfulStartupOnce" fullname="HUSEscape.Core.BootstrapSceneEntryPlayModeTests.Start_WaitsForCoreAndFinalizesSuccessfulStartupOnce" methodname="Start_WaitsForCoreAndFinalizesSuccessfulStartupOnce" classname="HUSEscape.Core.BootstrapSceneEntryPlayModeTests" runstate="Runnable" seed="1193392328" result="Passed" start-time="2026-11-14 10:27:10Z" end-time="2026-11-14 10:27:10Z" duration="0.003450" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1073" name="StartupException_FinishesOnceAfterCoreRecovers" fullname="HUSEscape.Core.BootstrapSceneEntryPlayModeTests.StartupException_FinishesOnceAfterCoreRecovers" methodname="StartupException_FinishesOnceAfterCoreRecovers" classname="HUSEscape.Core.BootstrapSceneEntryPlayModeTests" runstate="Runnable" seed="998931741" result="Passed" start-time="2026-11-14 10:27:10Z" end-time="2026-11-14 10:27:10Z" duration="0.003567" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[Could not start scene load for Assets/Scenes/SampleScene.unity: FO003A controlled startup failure
+Bootstrap startup failed: Could not start scene load for Assets/Scenes/SampleScene.unity: FO003A controlled startup failure
+]]></output>
+            </test-case>
+            <test-case id="1070" name="UnlistedDestination_FailsOnceAndUnsubscribes" fullname="HUSEscape.Core.BootstrapSceneEntryPlayModeTests.UnlistedDestination_FailsOnceAndUnsubscribes" methodname="UnlistedDestination_FailsOnceAndUnsubscribes" classname="HUSEscape.Core.BootstrapSceneEntryPlayModeTests" runstate="Runnable" seed="1521271194" result="Passed" start-time="2026-11-14 10:27:10Z" end-time="2026-11-14 10:27:10Z" duration="0.002725" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[Bootstrap startup failed: Scene path must exactly match an enabled build scene: Assets/Scenes/Missing.unity
+]]></output>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1079" name="GameBootstrapPlayModeTests" fullname="HUSEscape.Core.GameBootstrapPlayModeTests" classname="HUSEscape.Core.GameBootstrapPlayModeTests" runstate="Runnable" testcasecount="7" result="Passed" start-time="2026-11-14 10:27:10Z" end-time="2026-11-14 10:27:10Z" duration="0.039478" total="7" passed="7" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1082" name="DisabledOwner_RetainsOwnershipAndReenablesSameServices" fullname="HUSEscape.Core.GameBootstrapPlayModeTests.DisabledOwner_RetainsOwnershipAndReenablesSameServices" methodname="DisabledOwner_RetainsOwnershipAndReenablesSameServices" classname="HUSEscape.Core.GameBootstrapPlayModeTests" runstate="Runnable" seed="1534191036" result="Passed" start-time="2026-11-14 10:27:10Z" end-time="2026-11-14 10:27:10Z" duration="0.005249" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[A GameBootstrap already owns Core initialization; this duplicate is disabled.
+]]></output>
+            </test-case>
+            <test-case id="1081" name="Duplicate_IsRejectedAndCannotBeReenabled" fullname="HUSEscape.Core.GameBootstrapPlayModeTests.Duplicate_IsRejectedAndCannotBeReenabled" methodname="Duplicate_IsRejectedAndCannotBeReenabled" classname="HUSEscape.Core.GameBootstrapPlayModeTests" runstate="Runnable" seed="669196557" result="Passed" start-time="2026-11-14 10:27:10Z" end-time="2026-11-14 10:27:10Z" duration="0.003613" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[A GameBootstrap already owns Core initialization; this duplicate is disabled.
+This GameBootstrap did not initialize and cannot be enabled.
+]]></output>
+            </test-case>
+            <test-case id="1084" name="InactiveOwner_RetainsOwnershipAndRestoresAccess" fullname="HUSEscape.Core.GameBootstrapPlayModeTests.InactiveOwner_RetainsOwnershipAndRestoresAccess" methodname="InactiveOwner_RetainsOwnershipAndRestoresAccess" classname="HUSEscape.Core.GameBootstrapPlayModeTests" runstate="Runnable" seed="1995103650" result="Passed" start-time="2026-11-14 10:27:10Z" end-time="2026-11-14 10:27:10Z" duration="0.003722" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[A GameBootstrap already owns Core initialization; this duplicate is disabled.
+]]></output>
+            </test-case>
+            <test-case id="1080" name="Initialization_PublishesBoundReadyServicesAndPersistentRoot" fullname="HUSEscape.Core.GameBootstrapPlayModeTests.Initialization_PublishesBoundReadyServicesAndPersistentRoot" methodname="Initialization_PublishesBoundReadyServicesAndPersistentRoot" classname="HUSEscape.Core.GameBootstrapPlayModeTests" runstate="Runnable" seed="2005051303" result="Passed" start-time="2026-11-14 10:27:10Z" end-time="2026-11-14 10:27:10Z" duration="0.005439" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1083" name="InitiallyDisabledBootstrap_InitializesOnlyWhenEnabled" fullname="HUSEscape.Core.GameBootstrapPlayModeTests.InitiallyDisabledBootstrap_InitializesOnlyWhenEnabled" methodname="InitiallyDisabledBootstrap_InitializesOnlyWhenEnabled" classname="HUSEscape.Core.GameBootstrapPlayModeTests" runstate="Runnable" seed="33301767" result="Passed" start-time="2026-11-14 10:27:10Z" end-time="2026-11-14 10:27:10Z" duration="0.002530" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1086" name="NestedBootstrap_IsRejectedBeforeServicesBecomeAvailable" fullname="HUSEscape.Core.GameBootstrapPlayModeTests.NestedBootstrap_IsRejectedBeforeServicesBecomeAvailable" methodname="NestedBootstrap_IsRejectedBeforeServicesBecomeAvailable" classname="HUSEscape.Core.GameBootstrapPlayModeTests" runstate="Runnable" seed="2145279635" result="Passed" start-time="2026-11-14 10:27:10Z" end-time="2026-11-14 10:27:10Z" duration="0.005740" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[GameBootstrap requires a root GameObject and an enabled SceneLoader.
+]]></output>
+            </test-case>
+            <test-case id="1085" name="PersistentOwner_SurvivesSceneActivationAndSourceUnload" fullname="HUSEscape.Core.GameBootstrapPlayModeTests.PersistentOwner_SurvivesSceneActivationAndSourceUnload" methodname="PersistentOwner_SurvivesSceneActivationAndSourceUnload" classname="HUSEscape.Core.GameBootstrapPlayModeTests" runstate="Runnable" seed="1503563306" result="Passed" start-time="2026-11-14 10:27:10Z" end-time="2026-11-14 10:27:10Z" duration="0.010647" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1087" name="SceneLoaderPlayModeTests" fullname="HUSEscape.Core.SceneLoaderPlayModeTests" classname="HUSEscape.Core.SceneLoaderPlayModeTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-11-14 10:27:10Z" end-time="2026-11-14 10:27:19Z" duration="9.744671" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1088" name="NativeSampleScene_ActivatesWithoutUnloadingRunnerScenes" fullname="HUSEscape.Core.SceneLoaderPlayModeTests.NativeSampleScene_ActivatesWithoutUnloadingRunnerScenes" methodname="NativeSampleScene_ActivatesWithoutUnloadingRunnerScenes" classname="HUSEscape.Core.SceneLoaderPlayModeTests" runstate="Runnable" seed="2007158015" result="Passed" start-time="2026-11-14 10:27:10Z" end-time="2026-11-14 10:27:19Z" duration="9.743445" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[Asset 'HUS_Player_Animator': Transition 'AnyState -> Run' in state 'AnyState' doesn't have an Exit Time or any condition, transition will be ignored
+]]></output>
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+    <test-suite type="Assembly" id="1106" name="HUSEscape.UI.PlayModeTests.dll" fullname="D:/Game3D-01/VT103_Work/Temp/VT103Verify/Library/ScriptAssemblies/HUSEscape.UI.PlayModeTests.dll" runstate="Runnable" testcasecount="13" result="Passed" start-time="2026-11-14 10:27:19Z" end-time="2026-11-14 10:27:20Z" duration="0.807620" total="13" passed="13" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="34084" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <test-suite type="TestSuite" id="1107" name="HUSEscape" fullname="HUSEscape" runstate="Runnable" testcasecount="13" result="Passed" start-time="2026-11-14 10:27:19Z" end-time="2026-11-14 10:27:20Z" duration="0.805972" total="13" passed="13" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1108" name="UI" fullname="HUSEscape.UI" runstate="Runnable" testcasecount="13" result="Passed" start-time="2026-11-14 10:27:19Z" end-time="2026-11-14 10:27:20Z" duration="0.805514" total="13" passed="13" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestFixture" id="1092" name="MainMenuFlowPlayModeTests" fullname="HUSEscape.UI.MainMenuFlowPlayModeTests" classname="HUSEscape.UI.MainMenuFlowPlayModeTests" runstate="Runnable" testcasecount="13" result="Passed" start-time="2026-11-14 10:27:19Z" end-time="2026-11-14 10:27:20Z" duration="0.805030" total="13" passed="13" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1097" name="DisabledFlow_UnbindsAndReenablesWithoutDuplicatingListeners" fullname="HUSEscape.UI.MainMenuFlowPlayModeTests.DisabledFlow_UnbindsAndReenablesWithoutDuplicatingListeners" methodname="DisabledFlow_UnbindsAndReenablesWithoutDuplicatingListeners" classname="HUSEscape.UI.MainMenuFlowPlayModeTests" runstate="Runnable" seed="50405217" result="Passed" start-time="2026-11-14 10:27:19Z" end-time="2026-11-14 10:27:20Z" duration="0.551606" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1104" name="KeyboardNavigationAndSubmit_UseRealInputModule" fullname="HUSEscape.UI.MainMenuFlowPlayModeTests.KeyboardNavigationAndSubmit_UseRealInputModule" methodname="KeyboardNavigationAndSubmit_UseRealInputModule" classname="HUSEscape.UI.MainMenuFlowPlayModeTests" runstate="Runnable" seed="860954886" result="Passed" start-time="2026-11-14 10:27:20Z" end-time="2026-11-14 10:27:20Z" duration="0.103426" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1093" name="LateInitialization_BindsOnlyReadyCoreAndFocusesStart" fullname="HUSEscape.UI.MainMenuFlowPlayModeTests.LateInitialization_BindsOnlyReadyCoreAndFocusesStart" methodname="LateInitialization_BindsOnlyReadyCoreAndFocusesStart" classname="HUSEscape.UI.MainMenuFlowPlayModeTests" runstate="Runnable" seed="346827034" result="Passed" start-time="2026-11-14 10:27:20Z" end-time="2026-11-14 10:27:20Z" duration="0.007939" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1103" name="MissingOwner_IsRejectedWithoutFindingAnotherCore" fullname="HUSEscape.UI.MainMenuFlowPlayModeTests.MissingOwner_IsRejectedWithoutFindingAnotherCore" methodname="MissingOwner_IsRejectedWithoutFindingAnotherCore" classname="HUSEscape.UI.MainMenuFlowPlayModeTests" runstate="Runnable" seed="1297914940" result="Passed" start-time="2026-11-14 10:27:20Z" end-time="2026-11-14 10:27:20Z" duration="0.007991" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[MainMenuFlow requires its active initialized BootstrapCore owner.
+]]></output>
+            </test-case>
+            <test-case id="1105" name="MousePointAndClick_UseRealInputModuleAndStartOnce" fullname="HUSEscape.UI.MainMenuFlowPlayModeTests.MousePointAndClick_UseRealInputModuleAndStartOnce" methodname="MousePointAndClick_UseRealInputModuleAndStartOnce" classname="HUSEscape.UI.MainMenuFlowPlayModeTests" runstate="Runnable" seed="893568660" result="Passed" start-time="2026-11-14 10:27:20Z" end-time="2026-11-14 10:27:20Z" duration="0.058112" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1102" name="MultipleViews_AreRejectedWithoutGlobalFallback" fullname="HUSEscape.UI.MainMenuFlowPlayModeTests.MultipleViews_AreRejectedWithoutGlobalFallback" methodname="MultipleViews_AreRejectedWithoutGlobalFallback" classname="HUSEscape.UI.MainMenuFlowPlayModeTests" runstate="Runnable" seed="1812129623" result="Passed" start-time="2026-11-14 10:27:20Z" end-time="2026-11-14 10:27:20Z" duration="0.009881" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[A menu scene must contain exactly one MainMenuView.
+]]></output>
+            </test-case>
+            <test-case id="1099" name="NonReadyState_CannotEmitStart" fullname="HUSEscape.UI.MainMenuFlowPlayModeTests.NonReadyState_CannotEmitStart" methodname="NonReadyState_CannotEmitStart" classname="HUSEscape.UI.MainMenuFlowPlayModeTests" runstate="Runnable" seed="2110939087" result="Passed" start-time="2026-11-14 10:27:20Z" end-time="2026-11-14 10:27:20Z" duration="0.008716" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1098" name="OwnerAvailabilityChange_DisablesAndRestoresStart" fullname="HUSEscape.UI.MainMenuFlowPlayModeTests.OwnerAvailabilityChange_DisablesAndRestoresStart" methodname="OwnerAvailabilityChange_DisablesAndRestoresStart" classname="HUSEscape.UI.MainMenuFlowPlayModeTests" runstate="Runnable" seed="1244811154" result="Passed" start-time="2026-11-14 10:27:20Z" end-time="2026-11-14 10:27:20Z" duration="0.009272" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1096" name="RealLoaderRejection_ShowsSafeRetryFeedbackWithoutChangingScene" fullname="HUSEscape.UI.MainMenuFlowPlayModeTests.RealLoaderRejection_ShowsSafeRetryFeedbackWithoutChangingScene" methodname="RealLoaderRejection_ShowsSafeRetryFeedbackWithoutChangingScene" classname="HUSEscape.UI.MainMenuFlowPlayModeTests" runstate="Runnable" seed="1161223449" result="Passed" start-time="2026-11-14 10:27:20Z" end-time="2026-11-14 10:27:20Z" duration="0.012678" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[Main menu Start rejected: Scene path must exactly match an enabled build scene: Assets/Scenes/Missing.unity
+]]></output>
+            </test-case>
+            <test-case id="1094" name="RepeatedBinding_DoesNotDuplicateAnySubscription" fullname="HUSEscape.UI.MainMenuFlowPlayModeTests.RepeatedBinding_DoesNotDuplicateAnySubscription" methodname="RepeatedBinding_DoesNotDuplicateAnySubscription" classname="HUSEscape.UI.MainMenuFlowPlayModeTests" runstate="Runnable" seed="1437559410" result="Passed" start-time="2026-11-14 10:27:20Z" end-time="2026-11-14 10:27:20Z" duration="0.008636" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1100" name="SceneUnloading_ReleasesAllViewReferencesImmediately" fullname="HUSEscape.UI.MainMenuFlowPlayModeTests.SceneUnloading_ReleasesAllViewReferencesImmediately" methodname="SceneUnloading_ReleasesAllViewReferencesImmediately" classname="HUSEscape.UI.MainMenuFlowPlayModeTests" runstate="Runnable" seed="438029469" result="Passed" start-time="2026-11-14 10:27:20Z" end-time="2026-11-14 10:27:20Z" duration="0.007705" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1101" name="StaleViewDestroyCallback_CannotClearNewBinding" fullname="HUSEscape.UI.MainMenuFlowPlayModeTests.StaleViewDestroyCallback_CannotClearNewBinding" methodname="StaleViewDestroyCallback_CannotClearNewBinding" classname="HUSEscape.UI.MainMenuFlowPlayModeTests" runstate="Runnable" seed="711843681" result="Passed" start-time="2026-11-14 10:27:20Z" end-time="2026-11-14 10:27:20Z" duration="0.007968" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1095" name="StartCommand_IsAcceptedOnceAndShowsLoadingBeforeDispatch" fullname="HUSEscape.UI.MainMenuFlowPlayModeTests.StartCommand_IsAcceptedOnceAndShowsLoadingBeforeDispatch" methodname="StartCommand_IsAcceptedOnceAndShowsLoadingBeforeDispatch" classname="HUSEscape.UI.MainMenuFlowPlayModeTests" runstate="Runnable" seed="1733033631" result="Passed" start-time="2026-11-14 10:27:20Z" end-time="2026-11-14 10:27:20Z" duration="0.007811" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+    <test-suite type="Assembly" id="1125" name="VT103.Autosave.PlayModeTests.dll" fullname="D:/Game3D-01/VT103_Work/Temp/VT103Verify/Library/ScriptAssemblies/VT103.Autosave.PlayModeTests.dll" runstate="Runnable" testcasecount="12" result="Passed" start-time="2026-11-14 10:27:20Z" end-time="2026-11-14 10:27:27Z" duration="7.000535" total="12" passed="12" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="34084" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <test-suite type="TestSuite" id="1126" name="HUSEscape" fullname="HUSEscape" runstate="Runnable" testcasecount="12" result="Passed" start-time="2026-11-14 10:27:20Z" end-time="2026-11-14 10:27:27Z" duration="6.999651" total="12" passed="12" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1127" name="Persistence" fullname="HUSEscape.Persistence" runstate="Runnable" testcasecount="12" result="Passed" start-time="2026-11-14 10:27:20Z" end-time="2026-11-14 10:27:27Z" duration="6.999353" total="12" passed="12" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestSuite" id="1128" name="Autosave" fullname="HUSEscape.Persistence.Autosave" runstate="Runnable" testcasecount="12" result="Passed" start-time="2026-11-14 10:27:20Z" end-time="2026-11-14 10:27:27Z" duration="6.999115" total="12" passed="12" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-suite type="TestSuite" id="1129" name="Tests" fullname="HUSEscape.Persistence.Autosave.Tests" runstate="Runnable" testcasecount="12" result="Passed" start-time="2026-11-14 10:27:20Z" end-time="2026-11-14 10:27:27Z" duration="6.998826" total="12" passed="12" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-suite type="TestFixture" id="1112" name="Floor01AutosaveIntegrationTests" fullname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests" classname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests" runstate="Runnable" testcasecount="12" result="Passed" start-time="2026-11-14 10:27:20Z" end-time="2026-11-14 10:27:27Z" duration="6.998429" total="12" passed="12" failed="0" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <test-case id="1113" name="I01_NewQuestProgressCreatesValidatedFloorDraft" fullname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I01_NewQuestProgressCreatesValidatedFloorDraft" methodname="I01_NewQuestProgressCreatesValidatedFloorDraft" classname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests" runstate="Runnable" seed="1109631558" result="Passed" start-time="2026-11-14 10:27:20Z" end-time="2026-11-14 10:27:21Z" duration="0.701826" asserts="0">
+                  <properties>
+                    <property name="_JOINTYPE" value="UnityCombinatorial" />
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                  <output><![CDATA[Da nhat: Key_A101
+]]></output>
+                </test-case>
+                <test-case id="1114" name="I02_RepeatedFactAndIdleFramesDoNotCommitAgain" fullname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I02_RepeatedFactAndIdleFramesDoNotCommitAgain" methodname="I02_RepeatedFactAndIdleFramesDoNotCommitAgain" classname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests" runstate="Runnable" seed="158225477" result="Passed" start-time="2026-11-14 10:27:21Z" end-time="2026-11-14 10:27:22Z" duration="1.196951" asserts="0">
+                  <properties>
+                    <property name="_JOINTYPE" value="UnityCombinatorial" />
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                  <output><![CDATA[Da nhat: Key_A101
+]]></output>
+                </test-case>
+                <test-case id="1115" name="I03_ReversedCapturedRequestsCannotRegressDiskRevision" fullname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I03_ReversedCapturedRequestsCannotRegressDiskRevision" methodname="I03_ReversedCapturedRequestsCannotRegressDiskRevision" classname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests" runstate="Runnable" seed="1518663571" result="Passed" start-time="2026-11-14 10:27:22Z" end-time="2026-11-14 10:27:22Z" duration="0.106538" asserts="0">
+                  <properties>
+                    <property name="_JOINTYPE" value="UnityCombinatorial" />
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1116" name="I04_AutosavePreservesAllManualSlotsByteForByte" fullname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I04_AutosavePreservesAllManualSlotsByteForByte" methodname="I04_AutosavePreservesAllManualSlotsByteForByte" classname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests" runstate="Runnable" seed="528078940" result="Passed" start-time="2026-11-14 10:27:22Z" end-time="2026-11-14 10:27:23Z" duration="0.373948" asserts="0">
+                  <properties>
+                    <property name="_JOINTYPE" value="UnityCombinatorial" />
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                  <output><![CDATA[Da nhat: Key_A101
+]]></output>
+                </test-case>
+                <test-case id="1117" name="I05_PersistenceFailurePreservesTheActiveSession" fullname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I05_PersistenceFailurePreservesTheActiveSession" methodname="I05_PersistenceFailurePreservesTheActiveSession" classname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests" runstate="Runnable" seed="314287505" result="Passed" start-time="2026-11-14 10:27:23Z" end-time="2026-11-14 10:27:23Z" duration="0.396297" asserts="0">
+                  <properties>
+                    <property name="_JOINTYPE" value="UnityCombinatorial" />
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                  <output><![CDATA[Da nhat: Key_A101
+]]></output>
+                </test-case>
+                <test-case id="1118" name="I06_FloorSceneAutomaticallyComposesOneAutosaveOwner" fullname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I06_FloorSceneAutomaticallyComposesOneAutosaveOwner" methodname="I06_FloorSceneAutomaticallyComposesOneAutosaveOwner" classname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests" runstate="Runnable" seed="2145076489" result="Passed" start-time="2026-11-14 10:27:23Z" end-time="2026-11-14 10:27:23Z" duration="0.063153" asserts="0">
+                  <properties>
+                    <property name="_JOINTYPE" value="UnityCombinatorial" />
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                </test-case>
+                <test-case id="1119" name="I07_NewGameCancelsPendingProgressWithoutAutosavingRestoredState" fullname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I07_NewGameCancelsPendingProgressWithoutAutosavingRestoredState" methodname="I07_NewGameCancelsPendingProgressWithoutAutosavingRestoredState" classname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests" runstate="Runnable" seed="1229707098" result="Passed" start-time="2026-11-14 10:27:23Z" end-time="2026-11-14 10:27:24Z" duration="0.883990" asserts="0">
+                  <properties>
+                    <property name="_JOINTYPE" value="UnityCombinatorial" />
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                  <output><![CDATA[Da nhat: Key_A101
+]]></output>
+                </test-case>
+                <test-case id="1120" name="I08_UnsafeAirborneCaptureDefersThenRetriesAfterGrounding" fullname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I08_UnsafeAirborneCaptureDefersThenRetriesAfterGrounding" methodname="I08_UnsafeAirborneCaptureDefersThenRetriesAfterGrounding" classname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests" runstate="Runnable" seed="252378623" result="Passed" start-time="2026-11-14 10:27:24Z" end-time="2026-11-14 10:27:24Z" duration="0.138198" asserts="0">
+                  <properties>
+                    <property name="_JOINTYPE" value="UnityCombinatorial" />
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                  <output><![CDATA[Da nhat: Key_A101
+]]></output>
+                </test-case>
+                <test-case id="1121" name="I09_ReenableDoesNotDuplicateEventSubscriptions" fullname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I09_ReenableDoesNotDuplicateEventSubscriptions" methodname="I09_ReenableDoesNotDuplicateEventSubscriptions" classname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests" runstate="Runnable" seed="1213556856" result="Passed" start-time="2026-11-14 10:27:24Z" end-time="2026-11-14 10:27:25Z" duration="1.169706" asserts="0">
+                  <properties>
+                    <property name="_JOINTYPE" value="UnityCombinatorial" />
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                  <output><![CDATA[Da nhat: Key_A101
+]]></output>
+                </test-case>
+                <test-case id="1122" name="I10_CorruptDraftIsPreservedAndDoesNotLoadIntoGameplay" fullname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I10_CorruptDraftIsPreservedAndDoesNotLoadIntoGameplay" methodname="I10_CorruptDraftIsPreservedAndDoesNotLoadIntoGameplay" classname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests" runstate="Runnable" seed="61879936" result="Passed" start-time="2026-11-14 10:27:25Z" end-time="2026-11-14 10:27:26Z" duration="0.389198" asserts="0">
+                  <properties>
+                    <property name="_JOINTYPE" value="UnityCombinatorial" />
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                  <output><![CDATA[Da nhat: Key_A101
+]]></output>
+                </test-case>
+                <test-case id="1123" name="I11_ExistingHeadSeedsRevisionWithoutRestoringItsPayload" fullname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I11_ExistingHeadSeedsRevisionWithoutRestoringItsPayload" methodname="I11_ExistingHeadSeedsRevisionWithoutRestoringItsPayload" classname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests" runstate="Runnable" seed="786253429" result="Passed" start-time="2026-11-14 10:27:26Z" end-time="2026-11-14 10:27:26Z" duration="0.389476" asserts="0">
+                  <properties>
+                    <property name="_JOINTYPE" value="UnityCombinatorial" />
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                  <output><![CDATA[Da nhat: Key_A101
+]]></output>
+                </test-case>
+                <test-case id="1124" name="I12_ManualContinueRestoresOnlyManualSlotAndDoesNotAutosave" fullname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I12_ManualContinueRestoresOnlyManualSlotAndDoesNotAutosave" methodname="I12_ManualContinueRestoresOnlyManualSlotAndDoesNotAutosave" classname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests" runstate="Runnable" seed="1351408753" result="Passed" start-time="2026-11-14 10:27:26Z" end-time="2026-11-14 10:27:27Z" duration="1.185593" asserts="0">
+                  <properties>
+                    <property name="_JOINTYPE" value="UnityCombinatorial" />
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                  <output><![CDATA[Da nhat: Key_A101
+Saving results to: C:/Users/ASUS/AppData/LocalLow/DefaultCompany/HUS_Escape\TestResults.xml
+]]></output>
+                </test-case>
+              </test-suite>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>
