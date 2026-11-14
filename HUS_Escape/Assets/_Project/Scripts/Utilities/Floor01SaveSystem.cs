@@ -45,7 +45,17 @@ namespace HUSEscape.Persistence
         public int RestoreCount { get; private set; }
         public bool RecoveryRequired { get; private set; }
         public event Action<bool> Restored;
-        private void Awake() { spawn = player.transform.position; spawnYaw = player.transform.eulerAngles.y; }
+        /// <summary>True only while a validated snapshot is being applied or rolled back.</summary>
+        public bool IsRestoring => restoring;
+        private void Awake()
+        {
+            spawn = player.transform.position;
+            spawnYaw = player.transform.eulerAngles.y;
+
+            // Keep autosave scene-local; it never owns or replaces the manual save slot.
+            var autosave = GetComponent<Floor01Autosave>() ?? gameObject.AddComponent<Floor01Autosave>();
+            autosave.Bind(this, quests);
+        }
 
         private bool Stable()
         {
@@ -184,6 +194,14 @@ namespace HUSEscape.Persistence
             return data;
         }
 
+        /// <summary>Captures a background draft without changing manual-save menu feedback.</summary>
+        internal Floor01SaveData CaptureForAutosave()
+        {
+            string message = LastMessage;
+            try { return CaptureForTravel(); }
+            finally { LastMessage = message; }
+        }
+
         internal void RestoreForTravel(Floor01SaveData data) { Validate(data); RestoreWithRollback(data, false); }
 
         private bool SafePosition(Vector3 position)
@@ -201,6 +219,7 @@ namespace HUSEscape.Persistence
             Validate(data);
             if (restoring) throw new InvalidOperationException("Restore is already in progress.");
             var previous = Capture();
+            var autosaveLease = GetComponent<Floor01Autosave>()?.SuspendForRestore();
             restoring = true;
             try
             {
@@ -225,7 +244,7 @@ namespace HUSEscape.Persistence
                     try { handler(newGame); }
                     catch (Exception error) { Debug.LogWarning("Save restored; observer failed: " + error.Message, this); }
             }
-            finally { restoring = false; }
+            finally { restoring = false; autosaveLease?.Dispose(); }
         }
         private void Apply(Floor01SaveData data, bool rollback = false)
         {

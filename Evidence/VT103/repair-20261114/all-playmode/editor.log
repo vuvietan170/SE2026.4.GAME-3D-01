@@ -1,0 +1,1412 @@
+VBCSCompilerPreWarmer: watching VBCSCompiler (PID 15496)
+VBCSCompilerPreWarmer: pre-warm launched (dotnet PID 39896)
+VBCSCompiler prewarm took 15.09 ms
+[Licensing::Module] Trying to connect to existing licensing client channel...
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-ASUS" at "2026-11-14T10:26:58.4006503Z"
+Built from '6000.6/staging' branch; Version is '6000.6.5f1 (3ff58d469c8a) revision 4191629'; Using compiler version '194234433'; Build Type 'Release'
+OS: 'Windows 11  (10.0.26200) CoreSingleLanguage' Language: 'en' Physical Memory: 16003 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+System  architecture: x64
+Process architecture: x64
+Date: 2026-11-14T10:26:58Z
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\6000.6.5f1\Editor\Unity.exe
+-batchmode
+-nographics
+-projectPath
+D:\Game3D-01\VT103_Work\Temp\VT103Verify
+-giCustomCacheLocation
+D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\VT103RepairCache/GI
+-runTests
+-testPlatform
+PlayMode
+-testResults
+D:\Game3D-01\VT103_Work\Evidence\VT103\repair-20261114\all-playmode/results.xml
+-logFile
+D:\Game3D-01\VT103_Work\Evidence\VT103\repair-20261114\all-playmode/editor.log
+Successfully changed project path to: D:\Game3D-01\VT103_Work\Temp\VT103Verify
+D:/Game3D-01/VT103_Work/Temp/VT103Verify
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-remapper-allocator-initial-capacity=32768"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-main-allocator-mimalloc-enabled=1"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+Logging is directed to a specific file, skipping project log.
+Player connection [21228]  Target information:
+
+Player connection [21228]  * "[IP] 192.168.71.101 [Port] 55505 [Flags] 2 [Guid] 148333866 [EditorId] 148333866 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-RKCC68OE) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [21228] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [21228] Host joined alternative multi-casting on [225.0.0.222:34997]...
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 8220, path: "D:/Unity/Unity Hub/UnityLicensingClient_V1/Unity.Licensing.Client.exe")
+[Licensing::Module] LicensingClient has failed validation; ignoring
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.18.3+d7ffd15
+  Session Id:              9c3072e34f584eb6aa841ddbc37e9da4
+  Correlation Id:          26a324a05ab769c610cb5986177693e8
+  External correlation Id: 1520825376832142503
+  Machine Id:              hwoL251zZ5rzNlpJ/3nW0Cljdn8=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-ASUS" (connect: 0.00s, validation: 0.00s, handshake: 0.06s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-ASUS-notifications" at "2026-11-14T10:26:58.4657308Z"
+[Licensing::Module] Error: Access token is unavailable; failed to update
+Input System module state changed to: Initialized.
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: 18968521379845-unity_23001853-UnityProStuXXXX
+  Product: Unity Student
+  Type: Assigned
+  Expiration: 2027-10-17T02:43:06Z
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+[Licensing::Client] Successfully updated license, isAsync: True, time: 0.00
+[Licensing::Module] Licensing Background thread has ended after 0.07s
+[Package Manager] Connected to IPC stream "Upm-34084" after 0.3 seconds.
+[Licensing::Client] Successfully resolved entitlement details
+Library Redirect Path: Library/
+Launching Unity Data Store - C:/Program Files/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Tools/Unity.DataStore.exe 
+Unity Data Store artifact dir = Library/DataStore, working dir = D:/Game3D-01/VT103_Work/Temp/VT103VerifyUnity Data Store running and initialised
+[Physics::Module] Selected backend (deferred post-plugins).
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Initialize engine version: 6000.6.5f1 (3ff58d469c8a)
+[EntityIdStore] init: VM path (explicit commit), pageSize=4096, blockCount=1048576, entitiesPerBlock=256, slots reserved=4294967296 bytes
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Game3D-01/VT103_Work/Temp/VT103Verify/Assets
+Forcing GfxDevice: Null
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+NullGfxDevice:
+    Version:  NULL 1.0 [1.0]
+    Renderer: Null Device
+    Vendor:   Unity Technologies
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.6.5f1/Editor/Data/BCLExtensions/runtime/netstandard2.1'
+Mono path[2] = 'C:/Program Files/Unity/Hub/Editor/6000.6.5f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.6.5f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56084
+CodeReloadManager initialized
+ImportWorker Server TCP listen port: 0
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.6.5f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.6.5f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002032 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Package Manager log level set to [2]
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:False
+Scripting: successfully reloaded assembly
+- Finished resetting the current domain, in  0.916 seconds
+Domain Reload Profiling: 1525ms
+	BeginReloadAssembly (141ms)
+		CreateAndSetChildDomain (17ms)
+	RebuildCommonClasses (5ms)
+	RebuildNativeTypeToScriptingClass (15ms)
+	initialDomainReloadingComplete (71ms)
+	LoadAllAssembliesAndSetupDomain (377ms)
+		LoadAssemblies (121ms)
+		TypeCache.Refresh (246ms)
+			TypeCache.ScanAssembly (230ms)
+		AnalyzeDomain (1ms)
+	FinalizeReload (917ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (5ms)
+			BeforeProcessingInitializeOnLoad (140ms)
+			ProcessInitializeOnLoadAttributes (160ms)
+			ProcessInitializeOnLoadMethodAttributes (306ms)
+[Licensing::Client] Successfully resolved entitlement details
+Application.AssetDatabase Initial Refresh Start
+[Package Manager] Restoring resolved packages state from cache
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Registered 57 packages:
+  Packages from [https://packages.unity.com]:
+    com.unity.collab-proxy@2.13.6 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.collab-proxy@4628d2ba6ea4)
+    com.unity.ide.rider@3.0.40 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.ide.rider@e4950c6d131b)
+    com.unity.ide.visualstudio@2.0.28 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.ide.visualstudio@b5edea5f33f4)
+    com.unity.inputsystem@1.20.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.inputsystem@7a4e1a2a8194)
+    com.unity.searcher@4.9.5 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.searcher@a463122f2c00)
+    com.unity.profiling.core@1.0.3 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.profiling.core@8a49f7027d06)
+    com.unity.nuget.mono-cecil@1.11.6 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.nuget.mono-cecil@ecb9724e46ff)
+  Built-in packages:
+    com.unity.animation.rigging@6.6.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.animation.rigging@0adf8836e3b4)
+    com.unity.render-pipelines.universal@17.6.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.render-pipelines.universal@2309ae255609)
+    com.unity.ugui@2.6.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.ugui@42f0bd825000)
+    com.unity.modules.accessibility@1.0.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.modules.accessibility)
+    com.unity.modules.adaptiveperformance@1.0.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.modules.adaptiveperformance)
+    com.unity.modules.ai@1.0.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.modules.ai)
+    com.unity.modules.androidjni@1.0.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.modules.androidjni)
+    com.unity.modules.animation@1.0.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.modules.animation)
+    com.unity.modules.assetbundle@1.0.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.modules.assetbundle)
+    com.unity.modules.audio@1.0.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.modules.audio)
+    com.unity.modules.cloth@1.0.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.modules.cloth)
+    com.unity.modules.director@1.0.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.modules.director)
+    com.unity.modules.imageconversion@1.0.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.modules.imageconversion)
+    com.unity.modules.imgui@1.0.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.modules.imgui)
+    com.unity.modules.jsonserialize@1.0.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.modules.jsonserialize)
+    com.unity.modules.particlesystem@1.0.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.modules.particlesystem)
+    com.unity.modules.physics@1.0.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.modules.physics)
+    com.unity.modules.physics2d@1.0.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.modules.physics2d)
+    com.unity.modules.physicscore2d@1.0.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.modules.physicscore2d)
+    com.unity.modules.screencapture@1.0.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.modules.screencapture)
+    com.unity.modules.terrain@1.0.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.modules.terrain)
+    com.unity.modules.terrainphysics@1.0.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.modules.terrainphysics)
+    com.unity.modules.tetgen@1.0.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.modules.tetgen)
+    com.unity.modules.tilemap@1.0.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.modules.tilemap)
+    com.unity.modules.timelinefoundation@1.0.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.modules.timelinefoundation)
+    com.unity.modules.ui@1.0.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.modules.ui)
+    com.unity.modules.uielements@1.0.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.modules.uielements)
+    com.unity.modules.umbra@1.0.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.modules.umbra)
+    com.unity.modules.unityanalytics@1.0.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.modules.unityanalytics)
+    com.unity.modules.unitywebrequest@1.0.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.modules.unitywebrequest)
+    com.unity.modules.unitywebrequestassetbundle@1.0.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.modules.unitywebrequestassetbundle)
+    com.unity.modules.unitywebrequestaudio@1.0.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.modules.unitywebrequestaudio)
+    com.unity.modules.unitywebrequesttexture@1.0.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.modules.unitywebrequesttexture)
+    com.unity.modules.unitywebrequestwww@1.0.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.modules.unitywebrequestwww)
+    com.unity.modules.vectorgraphics@1.0.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.modules.vectorgraphics)
+    com.unity.modules.vehicles@1.0.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.modules.vehicles)
+    com.unity.modules.video@1.0.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.modules.video)
+    com.unity.modules.wind@1.0.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.modules.wind)
+    com.unity.modules.xr@1.0.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.modules.xr)
+    com.unity.modules.subsystems@1.0.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.modules.subsystems)
+    com.unity.modules.hierarchycore@1.0.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.modules.hierarchycore)
+    com.unity.render-pipelines.core@17.6.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.render-pipelines.core@285af6b8c83f)
+    com.unity.shadergraph@17.6.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.shadergraph@58bcb150677d)
+    com.unity.render-pipelines.universal-config@17.6.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.render-pipelines.universal-config@561422b74439)
+    com.unity.test-framework@1.8.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.test-framework@80f691d4262b)
+    com.unity.ext.nunit@2.1.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.ext.nunit@0198eae3b53e)
+    com.unity.burst@2.0.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.burst@626e66ab421b)
+    com.unity.graph-authoring@1.0.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.graph-authoring@cfd2588851ee)
+    com.unity.collections@6.6.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.collections@10fff0607388)
+    com.unity.test-framework.performance@6.6.0 (location: D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\PackageCache\com.unity.test-framework.performance@54c5bd86aedb)
+[Subsystems] No new subsystems found in resolved package list.
+[Package Manager] Done registering packages in 0.05 seconds
+[ScriptCompilation] Requested script compilation because: AssetDatabase observed changes in script compilation related files
+Starting: C:\Program Files\Unity\Hub\Editor\6000.6.5f1\Editor\Data\Tools\BuildPipeline\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: D:/Game3D-01/VT103_Work/Temp/VT103Verify
+DisplayProgressbar: Compiling Scripts
+ExitCode: 4 Duration: 0s738ms
+Rebuilding DAG because FileSignature timestamp changed: Library/Bee/1900b0aE-inputdata.json
+[725/934    0s] ILPP-Configuration Library/ilpp-configuration.nevergeneratedoutput
+[726/934    0s] Csc Library/Bee/artifacts/1900b0aE.dag/VT103.Autosave.PlayModeTests.dll (+2 others)
+Assets\_Project\Scripts\Utilities\Autosave\Tests\PlayMode\Floor01AutosaveIntegrationTests.cs(28,49): warning UAC0005: AppDomain.GetAssemblies() in Unity may return already unloaded assemblies and result in errors or leaks. Use Unity APIs instead, such as 'CurrentAssemblies.GetLoadedAssemblies()' or 'TypeCache.GetTypesDerivedFrom()'.
+*** Tundra requires additional run (0.70 seconds), 2 items updated, 724 evaluated
+Starting: C:\Program Files\Unity\Hub\Editor\6000.6.5f1\Editor\Data\DotNetSdk\dotnet.exe "C:\Program Files\Unity\Hub\Editor\6000.6.5f1\Editor\Data\Tools\BuildPipeline\ScriptCompilationBuildProgram.exe" "Library/Bee/1900b0aE.dag.json" "Library/Bee/1900b0aE-inputdata.json" "Library\Bee\buildprogram0.traceevents"
+WorkingDir: D:/Game3D-01/VT103_Work/Temp/VT103Verify
+ExitCode: 0 Duration: 1s214ms
+Starting: C:\Program Files\Unity\Hub\Editor\6000.6.5f1\Editor\Data\Tools\BuildPipeline\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --dagfilejson="Library\Bee\1900b0aE.dag.json" --profile="Library/Bee/backend2.traceevents" ScriptAssemblies
+WorkingDir: D:/Game3D-01/VT103_Work/Temp/VT103Verify
+ExitCode: 0 Duration: 1s124ms
+Finished compiling graph: 937 nodes, 17644 flattened edges (15060 ToBuild, 144 ToUse), maximum node priority 998
+[525/934    0s] WriteText Library/Bee/artifacts/1900b0aE.dag/VT103.Autosave.EditModeTests.rsp
+[725/934    0s] ILPP-Configuration Library/ilpp-configuration.nevergeneratedoutput
+[927/934    0s] ILPostProcess Library/Bee/artifacts/1900b0aE.dag/post-processed/VT103.Autosave.PlayModeTests.dll (+pdb)
+Processing assembly Library/Bee/artifacts/1900b0aE.dag/VT103.Autosave.PlayModeTests.dll, with 150 defines and 292 references
+
+processors: Unity.Jobs.CodeGen.JobsILPostProcessor, zzzUnity.Burst.CodeGen.BurstILPostProcessor
+
+1 processor(s) skipped this assembly
+
+running Unity.Jobs.CodeGen.JobsILPostProcessor
+[928/934    0s] CopyFiles Library/ScriptAssemblies/VT103.Autosave.PlayModeTests.pdb
+[929/934    0s] CopyFiles Library/ScriptAssemblies/VT103.Autosave.PlayModeTests.dll
+[930/934    0s] Csc Library/Bee/artifacts/1900b0aE.dag/VT103.Autosave.EditModeTests.dll (+2 others)
+Assets\_Project\Scripts\Utilities\Autosave\Tests\Editor\ManualAcceptanceIsolationTests.cs(14,31): warning UAC0005: AppDomain.GetAssemblies() in Unity may return already unloaded assemblies and result in errors or leaks. Use Unity APIs instead, such as 'CurrentAssemblies.GetLoadedAssemblies()' or 'TypeCache.GetTypesDerivedFrom()'.
+[931/934    0s] ILPostProcess Library/Bee/artifacts/1900b0aE.dag/post-processed/VT103.Autosave.EditModeTests.dll (+pdb)
+Processing assembly Library/Bee/artifacts/1900b0aE.dag/VT103.Autosave.EditModeTests.dll, with 148 defines and 301 references
+
+processors: Unity.Jobs.CodeGen.JobsILPostProcessor, zzzUnity.Burst.CodeGen.BurstILPostProcessor
+
+1 processor(s) skipped this assembly
+
+running Unity.Jobs.CodeGen.JobsILPostProcessor
+[932/934    0s] CopyFiles Library/ScriptAssemblies/VT103.Autosave.EditModeTests.pdb
+[933/934    0s] CopyFiles Library/ScriptAssemblies/VT103.Autosave.EditModeTests.dll
+*** Tundra build success (1.10 seconds), 9 items updated, 934 evaluated
+Assets\_Project\Scripts\Utilities\Autosave\Tests\PlayMode\Floor01AutosaveIntegrationTests.cs(28,49): warning UAC0005: AppDomain.GetAssemblies() in Unity may return already unloaded assemblies and result in errors or leaks. Use Unity APIs instead, such as 'CurrentAssemblies.GetLoadedAssemblies()' or 'TypeCache.GetTypesDerivedFrom()'.
+Assets\_Project\Scripts\Utilities\Autosave\Tests\Editor\ManualAcceptanceIsolationTests.cs(14,31): warning UAC0005: AppDomain.GetAssemblies() in Unity may return already unloaded assemblies and result in errors or leaks. Use Unity APIs instead, such as 'CurrentAssemblies.GetLoadedAssemblies()' or 'TypeCache.GetTypesDerivedFrom()'.
+AssetDatabase: script compilation time: 3.807499s
+Begin MonoManager ReloadAssembly
+'Packages/com.unity.render-pipelines.core/Editor/Deprecated.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+'Packages/com.unity.render-pipelines.core/Editor/Deprecated.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+Refreshing native plugins compatible for Editor in 2.43 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-HUS_Escape
+ScheduleIndexationOnStartup MainProcess:True IndexOnStartup:False
+Scripting: successfully reloaded assembly
+- Finished resetting the current domain, in  1.316 seconds
+Domain Reload Profiling: 2779ms
+	BeginReloadAssembly (449ms)
+		DisableScriptedObjects (67ms)
+		CreateAndSetChildDomain (164ms)
+	RebuildCommonClasses (11ms)
+	RebuildNativeTypeToScriptingClass (22ms)
+	initialDomainReloadingComplete (78ms)
+	LoadAllAssembliesAndSetupDomain (901ms)
+		LoadAssemblies (385ms)
+		TypeCache.Refresh (134ms)
+			TypeCache.ScanAssembly (122ms)
+		AnalyzeDomain (88ms)
+			BuildScriptInfoCaches (77ms)
+			ResolveRequiredComponents (8ms)
+	FinalizeReload (1317ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			BeforeProcessingInitializeOnLoad (133ms)
+			ProcessInitializeOnLoadAttributes (509ms)
+			ProcessInitializeOnLoadMethodAttributes (141ms)
+			AfterProcessingInitializeOnLoad (10ms)
+		AwakeInstancesAfterBackupRestoration (47ms)
+Starting new worker id: 0 with log in D:/Game3D-01/VT103_Work/Temp/VT103Verify/Logs/AssetImportWorkerHW0.log
+
+Asset Pipeline Refresh (id=f17c6436e946edb47987c04240e78915): Total: 7.649 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+	(Values over 0.05ms)
+	Summary:
+		Imports: total=0 (actual=0, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=1892 ms
+		Asset DB Callback time: managed=293 ms, native=56 ms
+		Scripting: domain reloads=1, domain reload time=1540 ms, compile time=3811 ms, other=55 ms
+		Project Asset Count: scripts=1172, non-scripts=2130
+		Asset File Changes: new=1, changed=2, moved=0, deleted=0
+		Scan Filter Count: 0
+	InvokePackagesCallback: 54.120ms
+	ApplyChangesToAssetFolders: 0.820ms
+	Scan: 169.975ms
+	Collect global state as custom dependencies: 27.195ms
+	OnSourceAssetsModified: 0.757ms
+	CategorizeScriptCompilationAssets: 30.593ms
+	ProcessAssetsWithTransientArtifactChanges: 75.374ms
+	CategorizeAssets: 72.488ms
+	CompileScripts: 3811.368ms
+	ImportOutOfDateAssets: 1342.135ms (1325.628ms without children)
+		ReloadNativeAssets: 0.053ms
+		UnloadImportedAssets: 2.406ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.862ms
+		ImportSchedulerStart: 13.181ms
+	PostProcessAllAssets: 293.997ms
+		VCAutoAddAssetPostprocess 1.418ms
+		XRBuildSystem.XRAssetImported 0.287ms
+		VersionControlSettings.HiddenFilePostprocess 0.050ms
+		MonoPostProcessAllAssets: 291.501ms
+			StyleCatalogPostProcessor.OnPostprocessAllAssets 158.180ms
+			AssetPostprocessor.OnPostprocessAllAssets 67.821ms
+			UniversalRenderPipelineGlobalSettingsPostprocessor.OnPostprocessAllAssets 19.172ms
+			BuilderAssetPostprocessor.OnPostprocessAllAssets 5.996ms
+			ShaderGraphAssetPostProcessor.OnPostprocessAllAssets 2.323ms
+			AssetChangedListener.OnPostprocessAllAssets 1.974ms
+			SpeedTree9Postprocessor.OnPostprocessAllAssets 1.968ms
+			WindowAssetPostprocessingWatcher.OnPostprocessAllAssets 1.845ms
+			EditModeScopePostprocessor.OnPostprocessAllAssets 1.591ms
+			RetainedModeAssetPostprocessor.OnPostprocessAllAssets 1.422ms
+			MaterialPostprocessor.OnPostprocessAllAssets 1.333ms
+			RenderPipelineGlobalSettingsPostprocessor.OnPostprocessAllAssets 0.793ms
+			ShaderReflectionAssetPostProcessor.OnPostprocessAllAssets 0.562ms
+			ArtifactBrowserPostProcessor.OnPostprocessAllAssets 0.480ms
+			UVCSAssetPostprocessor.OnPostprocessAllAssets 0.452ms
+			InputActionJsonNameModifierAssetProcessor.OnPostprocessAllAssets 0.432ms
+			PostProcessor.OnPostprocessAllAssets 0.412ms
+			TextAssetPostProcessor.OnPostprocessAllAssets 0.341ms
+			InputActionAssetPostprocessor.OnPostprocessAllAssets 0.341ms
+			AudioMixerPostprocessor.OnPostprocessAllAssets 0.339ms
+			ReferencedClipsPostProcessor.OnPostprocessAllAssets 0.324ms
+			TMPro_TexturePostProcessor.OnPostprocessAllAssets 0.320ms
+			AssetEvents.OnPostprocessAllAssets 0.291ms
+			ProjectSettingsPostprocessor.OnPostprocessAllAssets 0.202ms
+			TerrainToolbarOverlayPostProcessor.OnPostprocessAllAssets 0.195ms
+			SpeedTreePostProcessor.OnPostprocessAllAssets 0.182ms
+			SyncVS.PostprocessSyncProject 0.170ms
+			AssetDatabaseCallbacks.OnPostprocessAllAssets 0.160ms
+			ConfigAssetsTracker.OnPostprocessAllAssets 0.135ms
+			ThemePostprocessor.OnPostprocessAllAssets 0.135ms
+			ScenarioDriftAssetsTracker.OnPostprocessAllAssets 0.126ms
+			AssetReloadNotifier.OnPostprocessAllAssets 0.103ms
+			AudioContainerPostProcessor.OnPostprocessAllAssets 0.075ms
+	PostAssetChangesProfiler: 3.711ms
+	UnloadStreamsBegin: 1.870ms
+	PersistCurrentRevisions: 0.179ms
+	GenerateScriptTypeHashes: 2.585ms
+	GenerateScriptTypeSerializationHashes: 4.651ms
+	Untracked: 1727.829ms
+
+Application.AssetDatabase Initial Refresh End
+Shader Hidden/ChartRasterizerHardware is not supported: GPU does not support conservative rasterization
+Shader Hidden/ChartRasterizerHardware is not supported: GPU does not support conservative rasterization
+Scanning for USB devices : 2.519ms
+Initializing Unity extensions:
+Unloading 28 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 4793 unused Assets / (3.1 MB). Loaded Objects now: 5813.
+Memory consumption went from 375.7 MB to 372.6 MB.
+Total: 9.328700 ms (FindLiveObjects: 0.899400 ms CreateObjectMapping: 0.240300 ms MarkObjects: 6.835100 ms  DeleteObjects: 1.048500 ms)
+
+Microsoft Media Foundation video decoding to texture disabled: graphics device is Null, only Direct3D 11 and Direct3D 12 (only on desktop) are supported for hardware-accelerated video decoding.
+[Project] Loading completed in 10.699 seconds
+	Project init time: 				10.325 seconds
+		Template init time: 		0.000 seconds
+		Package Manager init time: 		0.283 seconds
+		Asset Database init time: 		0.398 seconds
+		Global illumination init time: 	0.003 seconds
+		Assemblies load time: 			1.574 seconds
+		Unity extensions init time: 	0.015 seconds
+		Asset Database refresh time: 	7.650 seconds
+	Scene opening time: 			0.111 seconds
+##utp:{"type":"ProjectInfo","version":2,"phase":"Immediate","time":1794652028905,"processId":34084,"projectLoad":10.6993797,"projectInit":10.3247225,"templateInit":0.0,"packageManagerInit":0.2833851,"assetDatabaseInit":0.3982102,"globalIlluminationInit":0.0025059,"assembliesLoad":1.573839,"unityExtensionsInit":0.0152188,"assetDatabaseRefresh":7.6496984,"sceneOpening":0.1108179}
+##utp:{"type":"EditorInfo","version":2,"phase":"Immediate","time":1794652028905,"processId":34084,"editorVersion":"6000.6.5f1 (3ff58d469c8a)","branch":"6000.6/staging","buildType":"Release","platform":"Windows"}
+[Licensing::Client] Successfully resolved entitlement details
+Running tests for ExecutionSettings with details:
+targetPlatform = 
+playerHeartbeatTimeout = 600
+filters[0] = 
+   Filter with settings:
+   testMode = PlayMode
+   targetPlatform = 
+   testNames = null
+   groupNames = null
+   categoryNames = null
+   assemblyNames = null
+ignoreTests = {}
+featureFlags = null
+
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEditor.TestTools.TestRunner.CommandLineTest.Executer:InitializeAndExecuteRun (string[]) (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEditor.TestRunner/CommandLineTest/Executer.cs:53)
+UnityEditor.TestTools.TestRunner.CommandLineTest.TestStarter:InitializeAndExecuteRun () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEditor.TestRunner/CommandLineTest/TestStarter.cs:64)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEditor.TestRunner/CommandLineTest/Executer.cs Line: 53)
+
+[UnityConnectServicesConfig] config is NOT valid, switching to default
+Created GICache directory at D:\Game3D-01\VT103_Work\Temp\VT103Verify\Library\VT103RepairCache/GI. Took: 0.005s, timestamps: [10.703 - 10.708]
+Unloading 8 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6 unused Assets / (214.8 KB). Loaded Objects now: 5965.
+Memory consumption went from 379.4 MB to 379.2 MB.
+Total: 8.233200 ms (FindLiveObjects: 0.365400 ms CreateObjectMapping: 0.103700 ms MarkObjects: 7.308300 ms  DeleteObjects: 0.199200 ms)
+
+Importing 'GUID: 8d4aad13eb891d6438dd5b16999f9324 - Path: Assets/InitTestScene56055176-a50c-4cdb-a2e9-8fd662c35b66.unity' with importer (DefaultImporter)
+Imported 'GUID: 8d4aad13eb891d6438dd5b16999f9324' -> (Import Result ID: 'd336d30eaccdc1177ad78f89802e95b5') in 0.004 seconds [static dependencies only]. Details - ImportResultOutputID=eb7f5726e267bff5958c0ba5e9bbc478 DependenciesID=a9baa5a6eee737179abcfba31e975de1 StaticDependenciesID=8ba0b0df919a062f1e576715211c8c6e 
+Asset Pipeline Refresh (id=48de97beac9a16c4fb8d92c61e20a32f): Total: 0.078 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Executing IPrebuildSetup for: Unity.PerformanceTesting.Editor.TestRunBuilder.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEditor.TestTools.TestRunner.TestRun.Tasks.BuildActionTaskBase`1/<ExecuteMethods>d__8<UnityEngine.TestTools.IPrebuildSetup>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEditor.TestRunner/TestRun/Tasks/BuildActionTaskBase.cs:48)
+UnityEditor.TestTools.TestRunner.TestRun.Tasks.BuildActionTaskBase`1/<Execute>d__7<UnityEngine.TestTools.IPrebuildSetup>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEditor.TestRunner/TestRun/Tasks/BuildActionTaskBase.cs:34)
+UnityEditor.TestTools.TestRunner.TestRun.TestJobRunner:ExecuteStep () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEditor.TestRunner/TestRun/TestJobRunner.cs:194)
+UnityEditor.TestTools.TestRunner.TestRun.TestJobRunner:ExecuteCallback () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEditor.TestRunner/TestRun/TestJobRunner.cs:129)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEditor.TestRunner/TestRun/Tasks/BuildActionTaskBase.cs Line: 48)
+
+Entering Playmode with Reload Domain disabled.
+If you experience any issues, please disable "Enter Play Mode Options" in Editor Settings
+Loaded scene 'Temp/__Backupscenes/0.backup'
+	Deserialize:            0.933 ms
+	Integration:            47.701 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.019 ms
+	Total Operation Time:   48.655 ms
+Unity completed loading without activating the requested scene: Assets/Scenes/SampleScene.unity
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+HUSEscape.Core.SceneLoader:PublishCompletion (HUSEscape.Core.SceneLoader/LoadRequest) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/SceneLoader.cs:243)
+HUSEscape.Core.SceneLoader:Finish (HUSEscape.Core.SceneLoader/LoadRequest) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/SceneLoader.cs:231)
+HUSEscape.Core.SceneLoader:ObserveCompletion (HUSEscape.Core.SceneLoader/LoadRequest) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/SceneLoader.cs:167)
+HUSEscape.Core.SceneLoader/<>c__DisplayClass21_0:<TryLoadScene>b__0 () (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/SceneLoader.cs:136)
+HUSEscape.Core.BootstrapSceneEntryPlayModeTests/DeferredOperation:Complete () (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/Tests/PlayMode/BootstrapSceneEntryPlayModeTests.cs:29)
+HUSEscape.Core.BootstrapSceneEntryPlayModeTests/<ActivationFailure_PreservesCoreRecoveryAndCleansHandlers>d__17:MoveNext () (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/Tests/PlayMode/BootstrapSceneEntryPlayModeTests.cs:173)
+UnityEngine.TestTools.TestEnumerator/<Execute>d__8:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Attributes/TestEnumerator.cs:52)
+UnityEngine.TestTools.EnumerableTestMethodCommand/<ExecuteEnumerableAndRecordExceptions>d__4:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:85)
+UnityEngine.TestTools.EnumerableTestMethodCommand:AdvanceEnumerator (System.Collections.IEnumerator) (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:64)
+UnityEngine.TestTools.EnumerableTestMethodCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:47)
+UnityEngine.TestRunner.NUnitExtensions.Runner.UnityLogCheckDelegatingCommand/<ExecuteEnumerable>d__4:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Runner/UnityLogCheckDelegatingCommand.cs:66)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<NUnit.Framework.ITestAction>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<System.Reflection.MethodInfo>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<System.Reflection.MethodInfo>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<UnityEngine.TestTools.IOuterUnityTestAction>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.RetryCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/RetryCommand.cs:37)
+UnityEngine.TestTools.RepeatCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/RepeatCommand.cs:36)
+UnityEngine.TestTools.IgnoreTestCommand/<ExecuteEnumerable>d__3:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/IgnoreTestCommand.cs:42)
+UnityEngine.TestTools.StrictCheckCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/StrictCheckCommand.cs:29)
+UnityEngine.TestTools.Utils.CoroutineRunner/<WrapEnumeratorForChecks>d__8:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/Utils/CoroutineRunner.cs:58)
+UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
+
+(Filename: D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/SceneLoader.cs Line: 243)
+
+Bootstrap startup failed: Unity completed loading without activating the requested scene: Assets/Scenes/SampleScene.unity
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object,UnityEngine.Object)
+UnityEngine.Debug:LogError (object,UnityEngine.Object)
+HUSEscape.Core.BootstrapSceneEntry:Finish (string) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/BootstrapSceneEntry.cs:131)
+HUSEscape.Core.BootstrapSceneEntry:OnSceneLoadFailed (string,string) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/BootstrapSceneEntry.cs:119)
+HUSEscape.Core.SceneLoader:PublishCompletion (HUSEscape.Core.SceneLoader/LoadRequest) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/SceneLoader.cs:262)
+HUSEscape.Core.SceneLoader:Finish (HUSEscape.Core.SceneLoader/LoadRequest) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/SceneLoader.cs:231)
+HUSEscape.Core.SceneLoader:ObserveCompletion (HUSEscape.Core.SceneLoader/LoadRequest) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/SceneLoader.cs:167)
+HUSEscape.Core.SceneLoader/<>c__DisplayClass21_0:<TryLoadScene>b__0 () (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/SceneLoader.cs:136)
+HUSEscape.Core.BootstrapSceneEntryPlayModeTests/DeferredOperation:Complete () (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/Tests/PlayMode/BootstrapSceneEntryPlayModeTests.cs:29)
+HUSEscape.Core.BootstrapSceneEntryPlayModeTests/<ActivationFailure_PreservesCoreRecoveryAndCleansHandlers>d__17:MoveNext () (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/Tests/PlayMode/BootstrapSceneEntryPlayModeTests.cs:173)
+UnityEngine.TestTools.TestEnumerator/<Execute>d__8:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Attributes/TestEnumerator.cs:52)
+UnityEngine.TestTools.EnumerableTestMethodCommand/<ExecuteEnumerableAndRecordExceptions>d__4:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:85)
+UnityEngine.TestTools.EnumerableTestMethodCommand:AdvanceEnumerator (System.Collections.IEnumerator) (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:64)
+UnityEngine.TestTools.EnumerableTestMethodCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:47)
+UnityEngine.TestRunner.NUnitExtensions.Runner.UnityLogCheckDelegatingCommand/<ExecuteEnumerable>d__4:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Runner/UnityLogCheckDelegatingCommand.cs:66)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<NUnit.Framework.ITestAction>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<System.Reflection.MethodInfo>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<System.Reflection.MethodInfo>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<UnityEngine.TestTools.IOuterUnityTestAction>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.RetryCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/RetryCommand.cs:37)
+UnityEngine.TestTools.RepeatCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/RepeatCommand.cs:36)
+UnityEngine.TestTools.IgnoreTestCommand/<ExecuteEnumerable>d__3:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/IgnoreTestCommand.cs:42)
+UnityEngine.TestTools.StrictCheckCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/StrictCheckCommand.cs:29)
+UnityEngine.TestTools.Utils.CoroutineRunner/<WrapEnumeratorForChecks>d__8:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/Utils/CoroutineRunner.cs:58)
+UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
+
+(Filename: D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/BootstrapSceneEntry.cs Line: 131)
+
+Bootstrap startup failed: The referenced bootstrap is not the active initialized Core owner.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object,UnityEngine.Object)
+UnityEngine.Debug:LogError (object,UnityEngine.Object)
+HUSEscape.Core.BootstrapSceneEntry:Finish (string) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/BootstrapSceneEntry.cs:131)
+HUSEscape.Core.BootstrapSceneEntry:TryBeginStartup (string&) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/BootstrapSceneEntry.cs:78)
+HUSEscape.Core.BootstrapSceneEntry:Start () (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/BootstrapSceneEntry.cs:32)
+
+(Filename: D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/BootstrapSceneEntry.cs Line: 131)
+
+A GameBootstrap already owns Core initialization; this duplicate is disabled.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object,UnityEngine.Object)
+UnityEngine.Debug:LogError (object,UnityEngine.Object)
+HUSEscape.Core.GameBootstrap:Reject (string) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/GameBootstrap.cs:142)
+HUSEscape.Core.GameBootstrap:InitializeCore () (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/GameBootstrap.cs:70)
+HUSEscape.Core.GameBootstrap:Awake () (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/GameBootstrap.cs:45)
+UnityEngine.GameObject:SetActive (bool)
+HUSEscape.Core.BootstrapSceneEntryPlayModeTests/<DuplicateOwner_CannotStartAnotherStartupLoad>d__15:MoveNext () (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/Tests/PlayMode/BootstrapSceneEntryPlayModeTests.cs:143)
+UnityEngine.TestTools.TestEnumerator/<Execute>d__8:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Attributes/TestEnumerator.cs:52)
+UnityEngine.TestTools.EnumerableTestMethodCommand/<ExecuteEnumerableAndRecordExceptions>d__4:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:85)
+UnityEngine.TestTools.EnumerableTestMethodCommand:AdvanceEnumerator (System.Collections.IEnumerator) (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:64)
+UnityEngine.TestTools.EnumerableTestMethodCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:47)
+UnityEngine.TestRunner.NUnitExtensions.Runner.UnityLogCheckDelegatingCommand/<ExecuteEnumerable>d__4:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Runner/UnityLogCheckDelegatingCommand.cs:66)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<NUnit.Framework.ITestAction>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<System.Reflection.MethodInfo>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<System.Reflection.MethodInfo>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<UnityEngine.TestTools.IOuterUnityTestAction>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.RetryCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/RetryCommand.cs:37)
+UnityEngine.TestTools.RepeatCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/RepeatCommand.cs:36)
+UnityEngine.TestTools.IgnoreTestCommand/<ExecuteEnumerable>d__3:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/IgnoreTestCommand.cs:42)
+UnityEngine.TestTools.StrictCheckCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/StrictCheckCommand.cs:29)
+UnityEngine.TestTools.Utils.CoroutineRunner/<WrapEnumeratorForChecks>d__8:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/Utils/CoroutineRunner.cs:58)
+UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
+
+(Filename: D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/GameBootstrap.cs Line: 142)
+
+Bootstrap startup failed: The referenced bootstrap is not the active initialized Core owner.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object,UnityEngine.Object)
+UnityEngine.Debug:LogError (object,UnityEngine.Object)
+HUSEscape.Core.BootstrapSceneEntry:Finish (string) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/BootstrapSceneEntry.cs:131)
+HUSEscape.Core.BootstrapSceneEntry:TryBeginStartup (string&) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/BootstrapSceneEntry.cs:78)
+HUSEscape.Core.BootstrapSceneEntry:Start () (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/BootstrapSceneEntry.cs:32)
+
+(Filename: D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/BootstrapSceneEntry.cs Line: 131)
+
+Bootstrap startup failed: Assign the GameBootstrap on this same root GameObject.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object,UnityEngine.Object)
+UnityEngine.Debug:LogError (object,UnityEngine.Object)
+HUSEscape.Core.BootstrapSceneEntry:Finish (string) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/BootstrapSceneEntry.cs:131)
+HUSEscape.Core.BootstrapSceneEntry:TryBeginStartup (string&) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/BootstrapSceneEntry.cs:71)
+HUSEscape.Core.BootstrapSceneEntry:Start () (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/BootstrapSceneEntry.cs:32)
+
+(Filename: D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/BootstrapSceneEntry.cs Line: 131)
+
+Bootstrap startup failed: Bootstrap startup requires the Ready state.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object,UnityEngine.Object)
+UnityEngine.Debug:LogError (object,UnityEngine.Object)
+HUSEscape.Core.BootstrapSceneEntry:Finish (string) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/BootstrapSceneEntry.cs:131)
+HUSEscape.Core.BootstrapSceneEntry:TryBeginStartup (string&) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/BootstrapSceneEntry.cs:85)
+HUSEscape.Core.BootstrapSceneEntry:Start () (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/BootstrapSceneEntry.cs:32)
+
+(Filename: D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/BootstrapSceneEntry.cs Line: 131)
+
+Could not start scene load for Assets/Scenes/SampleScene.unity: FO003A controlled startup failure
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+HUSEscape.Core.SceneLoader:PublishCompletion (HUSEscape.Core.SceneLoader/LoadRequest) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/SceneLoader.cs:243)
+HUSEscape.Core.SceneLoader:Finish (HUSEscape.Core.SceneLoader/LoadRequest) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/SceneLoader.cs:231)
+HUSEscape.Core.SceneLoader:TryLoadScene (string,HUSEscape.Core.GameState,string&) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/SceneLoader.cs:151)
+HUSEscape.Core.BootstrapSceneEntry:TryBeginStartup (string&) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/BootstrapSceneEntry.cs:93)
+HUSEscape.Core.BootstrapSceneEntry:Start () (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/BootstrapSceneEntry.cs:32)
+
+(Filename: D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/SceneLoader.cs Line: 243)
+
+Bootstrap startup failed: Could not start scene load for Assets/Scenes/SampleScene.unity: FO003A controlled startup failure
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object,UnityEngine.Object)
+UnityEngine.Debug:LogError (object,UnityEngine.Object)
+HUSEscape.Core.BootstrapSceneEntry:Finish (string) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/BootstrapSceneEntry.cs:131)
+HUSEscape.Core.BootstrapSceneEntry:OnSceneLoadFailed (string,string) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/BootstrapSceneEntry.cs:119)
+HUSEscape.Core.SceneLoader:PublishCompletion (HUSEscape.Core.SceneLoader/LoadRequest) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/SceneLoader.cs:262)
+HUSEscape.Core.SceneLoader:Finish (HUSEscape.Core.SceneLoader/LoadRequest) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/SceneLoader.cs:231)
+HUSEscape.Core.SceneLoader:TryLoadScene (string,HUSEscape.Core.GameState,string&) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/SceneLoader.cs:151)
+HUSEscape.Core.BootstrapSceneEntry:TryBeginStartup (string&) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/BootstrapSceneEntry.cs:93)
+HUSEscape.Core.BootstrapSceneEntry:Start () (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/BootstrapSceneEntry.cs:32)
+
+(Filename: D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/BootstrapSceneEntry.cs Line: 131)
+
+Bootstrap startup failed: Scene path must exactly match an enabled build scene: Assets/Scenes/Missing.unity
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object,UnityEngine.Object)
+UnityEngine.Debug:LogError (object,UnityEngine.Object)
+HUSEscape.Core.BootstrapSceneEntry:Finish (string) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/BootstrapSceneEntry.cs:131)
+HUSEscape.Core.BootstrapSceneEntry:TryBeginStartup (string&) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/BootstrapSceneEntry.cs:98)
+HUSEscape.Core.BootstrapSceneEntry:Start () (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/BootstrapSceneEntry.cs:32)
+
+(Filename: D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/BootstrapSceneEntry.cs Line: 131)
+
+A GameBootstrap already owns Core initialization; this duplicate is disabled.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object,UnityEngine.Object)
+UnityEngine.Debug:LogError (object,UnityEngine.Object)
+HUSEscape.Core.GameBootstrap:Reject (string) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/GameBootstrap.cs:142)
+HUSEscape.Core.GameBootstrap:InitializeCore () (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/GameBootstrap.cs:70)
+HUSEscape.Core.GameBootstrap:Awake () (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/GameBootstrap.cs:45)
+UnityEngine.GameObject:Internal_AddComponentWithType (System.Type)
+UnityEngine.GameObject:AddComponent (System.Type)
+UnityEngine.GameObject:AddComponent<HUSEscape.Core.GameBootstrap> ()
+HUSEscape.Core.GameBootstrapPlayModeTests:CreateBootstrap () (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/Tests/PlayMode/GameBootstrapPlayModeTests.cs:164)
+HUSEscape.Core.GameBootstrapPlayModeTests/<DisabledOwner_RetainsOwnershipAndReenablesSameServices>d__7:MoveNext () (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/Tests/PlayMode/GameBootstrapPlayModeTests.cs:86)
+UnityEngine.TestTools.TestEnumerator/<Execute>d__8:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Attributes/TestEnumerator.cs:52)
+UnityEngine.TestTools.EnumerableTestMethodCommand/<ExecuteEnumerableAndRecordExceptions>d__4:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:85)
+UnityEngine.TestTools.EnumerableTestMethodCommand:AdvanceEnumerator (System.Collections.IEnumerator) (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:64)
+UnityEngine.TestTools.EnumerableTestMethodCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:47)
+UnityEngine.TestRunner.NUnitExtensions.Runner.UnityLogCheckDelegatingCommand/<ExecuteEnumerable>d__4:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Runner/UnityLogCheckDelegatingCommand.cs:66)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<NUnit.Framework.ITestAction>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<System.Reflection.MethodInfo>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<System.Reflection.MethodInfo>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<UnityEngine.TestTools.IOuterUnityTestAction>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.RetryCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/RetryCommand.cs:37)
+UnityEngine.TestTools.RepeatCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/RepeatCommand.cs:36)
+UnityEngine.TestTools.IgnoreTestCommand/<ExecuteEnumerable>d__3:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/IgnoreTestCommand.cs:42)
+UnityEngine.TestTools.StrictCheckCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/StrictCheckCommand.cs:29)
+UnityEngine.TestTools.Utils.CoroutineRunner/<WrapEnumeratorForChecks>d__8:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/Utils/CoroutineRunner.cs:58)
+UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
+
+(Filename: D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/GameBootstrap.cs Line: 142)
+
+A GameBootstrap already owns Core initialization; this duplicate is disabled.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object,UnityEngine.Object)
+UnityEngine.Debug:LogError (object,UnityEngine.Object)
+HUSEscape.Core.GameBootstrap:Reject (string) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/GameBootstrap.cs:142)
+HUSEscape.Core.GameBootstrap:InitializeCore () (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/GameBootstrap.cs:70)
+HUSEscape.Core.GameBootstrap:Awake () (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/GameBootstrap.cs:45)
+UnityEngine.GameObject:Internal_AddComponentWithType (System.Type)
+UnityEngine.GameObject:AddComponent (System.Type)
+UnityEngine.GameObject:AddComponent<HUSEscape.Core.GameBootstrap> ()
+HUSEscape.Core.GameBootstrapPlayModeTests:CreateBootstrap () (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/Tests/PlayMode/GameBootstrapPlayModeTests.cs:164)
+HUSEscape.Core.GameBootstrapPlayModeTests/<Duplicate_IsRejectedAndCannotBeReenabled>d__6:MoveNext () (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/Tests/PlayMode/GameBootstrapPlayModeTests.cs:59)
+UnityEngine.TestTools.TestEnumerator/<Execute>d__8:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Attributes/TestEnumerator.cs:52)
+UnityEngine.TestTools.EnumerableTestMethodCommand/<ExecuteEnumerableAndRecordExceptions>d__4:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:85)
+UnityEngine.TestTools.EnumerableTestMethodCommand:AdvanceEnumerator (System.Collections.IEnumerator) (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:64)
+UnityEngine.TestTools.EnumerableTestMethodCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:47)
+UnityEngine.TestRunner.NUnitExtensions.Runner.UnityLogCheckDelegatingCommand/<ExecuteEnumerable>d__4:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Runner/UnityLogCheckDelegatingCommand.cs:66)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<NUnit.Framework.ITestAction>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<System.Reflection.MethodInfo>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<System.Reflection.MethodInfo>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<UnityEngine.TestTools.IOuterUnityTestAction>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.RetryCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/RetryCommand.cs:37)
+UnityEngine.TestTools.RepeatCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/RepeatCommand.cs:36)
+UnityEngine.TestTools.IgnoreTestCommand/<ExecuteEnumerable>d__3:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/IgnoreTestCommand.cs:42)
+UnityEngine.TestTools.StrictCheckCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/StrictCheckCommand.cs:29)
+UnityEngine.TestTools.Utils.CoroutineRunner/<WrapEnumeratorForChecks>d__8:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/Utils/CoroutineRunner.cs:58)
+UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
+
+(Filename: D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/GameBootstrap.cs Line: 142)
+
+This GameBootstrap did not initialize and cannot be enabled.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object,UnityEngine.Object)
+UnityEngine.Debug:LogError (object,UnityEngine.Object)
+HUSEscape.Core.GameBootstrap:Reject (string) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/GameBootstrap.cs:142)
+HUSEscape.Core.GameBootstrap:OnEnable () (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/GameBootstrap.cs:114)
+UnityEngine.Behaviour:set_enabled (bool)
+HUSEscape.Core.GameBootstrapPlayModeTests/<Duplicate_IsRejectedAndCannotBeReenabled>d__6:MoveNext () (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/Tests/PlayMode/GameBootstrapPlayModeTests.cs:67)
+UnityEngine.TestTools.TestEnumerator/<Execute>d__8:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Attributes/TestEnumerator.cs:52)
+UnityEngine.TestTools.EnumerableTestMethodCommand/<ExecuteEnumerableAndRecordExceptions>d__4:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:85)
+UnityEngine.TestTools.EnumerableTestMethodCommand:AdvanceEnumerator (System.Collections.IEnumerator) (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:64)
+UnityEngine.TestTools.EnumerableTestMethodCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:47)
+UnityEngine.TestRunner.NUnitExtensions.Runner.UnityLogCheckDelegatingCommand/<ExecuteEnumerable>d__4:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Runner/UnityLogCheckDelegatingCommand.cs:66)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<NUnit.Framework.ITestAction>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<System.Reflection.MethodInfo>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<System.Reflection.MethodInfo>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<UnityEngine.TestTools.IOuterUnityTestAction>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.RetryCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/RetryCommand.cs:37)
+UnityEngine.TestTools.RepeatCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/RepeatCommand.cs:36)
+UnityEngine.TestTools.IgnoreTestCommand/<ExecuteEnumerable>d__3:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/IgnoreTestCommand.cs:42)
+UnityEngine.TestTools.StrictCheckCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/StrictCheckCommand.cs:29)
+UnityEngine.TestTools.Utils.CoroutineRunner/<WrapEnumeratorForChecks>d__8:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/Utils/CoroutineRunner.cs:58)
+UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
+
+(Filename: D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/GameBootstrap.cs Line: 142)
+
+A GameBootstrap already owns Core initialization; this duplicate is disabled.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object,UnityEngine.Object)
+UnityEngine.Debug:LogError (object,UnityEngine.Object)
+HUSEscape.Core.GameBootstrap:Reject (string) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/GameBootstrap.cs:142)
+HUSEscape.Core.GameBootstrap:InitializeCore () (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/GameBootstrap.cs:70)
+HUSEscape.Core.GameBootstrap:Awake () (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/GameBootstrap.cs:45)
+UnityEngine.GameObject:Internal_AddComponentWithType (System.Type)
+UnityEngine.GameObject:AddComponent (System.Type)
+UnityEngine.GameObject:AddComponent<HUSEscape.Core.GameBootstrap> ()
+HUSEscape.Core.GameBootstrapPlayModeTests:CreateBootstrap () (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/Tests/PlayMode/GameBootstrapPlayModeTests.cs:164)
+HUSEscape.Core.GameBootstrapPlayModeTests/<InactiveOwner_RetainsOwnershipAndRestoresAccess>d__9:MoveNext () (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/Tests/PlayMode/GameBootstrapPlayModeTests.cs:119)
+UnityEngine.TestTools.TestEnumerator/<Execute>d__8:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Attributes/TestEnumerator.cs:52)
+UnityEngine.TestTools.EnumerableTestMethodCommand/<ExecuteEnumerableAndRecordExceptions>d__4:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:85)
+UnityEngine.TestTools.EnumerableTestMethodCommand:AdvanceEnumerator (System.Collections.IEnumerator) (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:64)
+UnityEngine.TestTools.EnumerableTestMethodCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:47)
+UnityEngine.TestRunner.NUnitExtensions.Runner.UnityLogCheckDelegatingCommand/<ExecuteEnumerable>d__4:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Runner/UnityLogCheckDelegatingCommand.cs:66)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<NUnit.Framework.ITestAction>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<System.Reflection.MethodInfo>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<System.Reflection.MethodInfo>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<UnityEngine.TestTools.IOuterUnityTestAction>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.RetryCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/RetryCommand.cs:37)
+UnityEngine.TestTools.RepeatCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/RepeatCommand.cs:36)
+UnityEngine.TestTools.IgnoreTestCommand/<ExecuteEnumerable>d__3:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/IgnoreTestCommand.cs:42)
+UnityEngine.TestTools.StrictCheckCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/StrictCheckCommand.cs:29)
+UnityEngine.TestTools.Utils.CoroutineRunner/<WrapEnumeratorForChecks>d__8:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/Utils/CoroutineRunner.cs:58)
+UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
+
+(Filename: D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/GameBootstrap.cs Line: 142)
+
+GameBootstrap requires a root GameObject and an enabled SceneLoader.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object,UnityEngine.Object)
+UnityEngine.Debug:LogError (object,UnityEngine.Object)
+HUSEscape.Core.GameBootstrap:Reject (string) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/GameBootstrap.cs:142)
+HUSEscape.Core.GameBootstrap:InitializeCore () (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/GameBootstrap.cs:59)
+HUSEscape.Core.GameBootstrap:Awake () (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/GameBootstrap.cs:45)
+UnityEngine.GameObject:Internal_AddComponentWithType (System.Type)
+UnityEngine.GameObject:AddComponent (System.Type)
+UnityEngine.GameObject:AddComponent<HUSEscape.Core.GameBootstrap> ()
+HUSEscape.Core.GameBootstrapPlayModeTests/<NestedBootstrap_IsRejectedBeforeServicesBecomeAvailable>d__11:MoveNext () (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/Tests/PlayMode/GameBootstrapPlayModeTests.cs:151)
+UnityEngine.TestTools.TestEnumerator/<Execute>d__8:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Attributes/TestEnumerator.cs:52)
+UnityEngine.TestTools.EnumerableTestMethodCommand/<ExecuteEnumerableAndRecordExceptions>d__4:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:85)
+UnityEngine.TestTools.EnumerableTestMethodCommand:AdvanceEnumerator (System.Collections.IEnumerator) (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:64)
+UnityEngine.TestTools.EnumerableTestMethodCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:47)
+UnityEngine.TestRunner.NUnitExtensions.Runner.UnityLogCheckDelegatingCommand/<ExecuteEnumerable>d__4:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Runner/UnityLogCheckDelegatingCommand.cs:66)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<NUnit.Framework.ITestAction>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<System.Reflection.MethodInfo>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<System.Reflection.MethodInfo>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<UnityEngine.TestTools.IOuterUnityTestAction>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.RetryCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/RetryCommand.cs:37)
+UnityEngine.TestTools.RepeatCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/RepeatCommand.cs:36)
+UnityEngine.TestTools.IgnoreTestCommand/<ExecuteEnumerable>d__3:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/IgnoreTestCommand.cs:42)
+UnityEngine.TestTools.StrictCheckCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/StrictCheckCommand.cs:29)
+UnityEngine.TestTools.Utils.CoroutineRunner/<WrapEnumeratorForChecks>d__8:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/Utils/CoroutineRunner.cs:58)
+UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
+
+(Filename: D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Core/GameBootstrap.cs Line: 142)
+
+Worker ready: AssetImportWorkerHW0 0
+Asset 'HUS_Player_Animator': Transition 'AnyState -> Run' in state 'AnyState' doesn't have an Exit Time or any condition, transition will be ignored
+Loaded scene 'Assets/Scenes/SampleScene.unity'
+	Deserialize:            3734.383 ms
+	Integration:            4182.352 ms
+	Integration of assets:  1785.094 ms
+	Thread Wait Time:       0.860 ms
+	Total Operation Time:   9702.689 ms
+Loaded scene 'Assets/_Project/Scenes/MainMenu/MainMenu.unity'
+	Deserialize:            22.668 ms
+	Integration:            34.466 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.906 ms
+	Total Operation Time:   58.042 ms
+Loaded scene 'Assets/_Project/Scenes/MainMenu/MainMenu.unity'
+	Deserialize:            1.885 ms
+	Integration:            0.986 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.449 ms
+	Total Operation Time:   3.322 ms
+Loaded scene 'Assets/_Project/Scenes/MainMenu/MainMenu.unity'
+	Deserialize:            1.474 ms
+	Integration:            0.611 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.439 ms
+	Total Operation Time:   2.525 ms
+Loaded scene 'Assets/_Project/Scenes/MainMenu/MainMenu.unity'
+	Deserialize:            1.390 ms
+	Integration:            0.735 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.346 ms
+	Total Operation Time:   2.473 ms
+MainMenuFlow requires its active initialized BootstrapCore owner.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object,UnityEngine.Object)
+UnityEngine.Debug:LogError (object,UnityEngine.Object)
+HUSEscape.UI.MainMenuFlow:Initialize () (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/UI/MainMenuFlow.cs:74)
+HUSEscape.UI.MainMenuFlow:Start () (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/UI/MainMenuFlow.cs:49)
+
+(Filename: D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/UI/MainMenuFlow.cs Line: 74)
+
+Loaded scene 'Assets/_Project/Scenes/MainMenu/MainMenu.unity'
+	Deserialize:            1.386 ms
+	Integration:            0.854 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       4.096 ms
+	Total Operation Time:   6.338 ms
+Loaded scene 'Assets/_Project/Scenes/MainMenu/MainMenu.unity'
+	Deserialize:            1.390 ms
+	Integration:            0.910 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.464 ms
+	Total Operation Time:   2.766 ms
+A menu scene must contain exactly one MainMenuView.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object,UnityEngine.Object)
+UnityEngine.Debug:LogError (object,UnityEngine.Object)
+HUSEscape.UI.MainMenuFlow:BindLoadedScene (UnityEngine.SceneManagement.Scene) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/UI/MainMenuFlow.cs:102)
+HUSEscape.UI.MainMenuFlowPlayModeTests/<MultipleViews_AreRejectedWithoutGlobalFallback>d__29:MoveNext () (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/UI/Tests/PlayMode/MainMenuFlowPlayModeTests.cs:243)
+UnityEngine.TestTools.TestEnumerator/<Execute>d__8:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Attributes/TestEnumerator.cs:52)
+UnityEngine.TestTools.EnumerableTestMethodCommand/<ExecuteEnumerableAndRecordExceptions>d__4:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:85)
+UnityEngine.TestTools.EnumerableTestMethodCommand:AdvanceEnumerator (System.Collections.IEnumerator) (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:64)
+UnityEngine.TestTools.EnumerableTestMethodCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:47)
+UnityEngine.TestRunner.NUnitExtensions.Runner.UnityLogCheckDelegatingCommand/<ExecuteEnumerable>d__4:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Runner/UnityLogCheckDelegatingCommand.cs:66)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<NUnit.Framework.ITestAction>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<System.Reflection.MethodInfo>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<System.Reflection.MethodInfo>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<UnityEngine.TestTools.IOuterUnityTestAction>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.RetryCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/RetryCommand.cs:37)
+UnityEngine.TestTools.RepeatCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/RepeatCommand.cs:36)
+UnityEngine.TestTools.IgnoreTestCommand/<ExecuteEnumerable>d__3:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/IgnoreTestCommand.cs:42)
+UnityEngine.TestTools.StrictCheckCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/StrictCheckCommand.cs:29)
+UnityEngine.TestTools.Utils.CoroutineRunner/<WrapEnumeratorForChecks>d__8:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/Utils/CoroutineRunner.cs:58)
+UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
+
+(Filename: D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/UI/MainMenuFlow.cs Line: 102)
+
+Loaded scene 'Assets/_Project/Scenes/MainMenu/MainMenu.unity'
+	Deserialize:            2.091 ms
+	Integration:            0.857 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.483 ms
+	Total Operation Time:   3.434 ms
+Loaded scene 'Assets/_Project/Scenes/MainMenu/MainMenu.unity'
+	Deserialize:            1.476 ms
+	Integration:            0.834 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.383 ms
+	Total Operation Time:   2.695 ms
+Loaded scene 'Assets/_Project/Scenes/MainMenu/MainMenu.unity'
+	Deserialize:            1.929 ms
+	Integration:            0.920 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.637 ms
+	Total Operation Time:   3.488 ms
+Main menu Start rejected: Scene path must exactly match an enabled build scene: Assets/Scenes/Missing.unity
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object,UnityEngine.Object)
+UnityEngine.Debug:LogError (object,UnityEngine.Object)
+HUSEscape.UI.MainMenuFlow:OnStartRequested (HUSEscape.UI.MainMenuView) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/UI/MainMenuFlow.cs:178)
+HUSEscape.UI.MainMenuView:Raise (System.Action`1<HUSEscape.UI.MainMenuView>) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/UI/MainMenuView.cs:111)
+HUSEscape.UI.MainMenuView:OnStartClicked () (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/UI/MainMenuView.cs:87)
+UnityEngine.Events.InvokableCall:Invoke ()
+UnityEngine.Events.UnityEvent:Invoke ()
+HUSEscape.UI.MainMenuFlowPlayModeTests/<RealLoaderRejection_ShowsSafeRetryFeedbackWithoutChangingScene>d__23:MoveNext () (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/UI/Tests/PlayMode/MainMenuFlowPlayModeTests.cs:144)
+UnityEngine.TestTools.TestEnumerator/<Execute>d__8:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Attributes/TestEnumerator.cs:52)
+UnityEngine.TestTools.EnumerableTestMethodCommand/<ExecuteEnumerableAndRecordExceptions>d__4:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:85)
+UnityEngine.TestTools.EnumerableTestMethodCommand:AdvanceEnumerator (System.Collections.IEnumerator) (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:64)
+UnityEngine.TestTools.EnumerableTestMethodCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:47)
+UnityEngine.TestRunner.NUnitExtensions.Runner.UnityLogCheckDelegatingCommand/<ExecuteEnumerable>d__4:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Runner/UnityLogCheckDelegatingCommand.cs:66)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<NUnit.Framework.ITestAction>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<System.Reflection.MethodInfo>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<System.Reflection.MethodInfo>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<UnityEngine.TestTools.IOuterUnityTestAction>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.RetryCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/RetryCommand.cs:37)
+UnityEngine.TestTools.RepeatCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/RepeatCommand.cs:36)
+UnityEngine.TestTools.IgnoreTestCommand/<ExecuteEnumerable>d__3:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/IgnoreTestCommand.cs:42)
+UnityEngine.TestTools.StrictCheckCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/StrictCheckCommand.cs:29)
+UnityEngine.TestTools.Utils.CoroutineRunner/<WrapEnumeratorForChecks>d__8:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/Utils/CoroutineRunner.cs:58)
+UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
+
+(Filename: D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/UI/MainMenuFlow.cs Line: 178)
+
+Loaded scene 'Assets/_Project/Scenes/MainMenu/MainMenu.unity'
+	Deserialize:            1.424 ms
+	Integration:            0.799 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.401 ms
+	Total Operation Time:   2.627 ms
+Loaded scene 'Assets/_Project/Scenes/MainMenu/MainMenu.unity'
+	Deserialize:            1.541 ms
+	Integration:            0.840 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.368 ms
+	Total Operation Time:   2.751 ms
+Loaded scene 'Assets/_Project/Scenes/MainMenu/MainMenu.unity'
+	Deserialize:            1.789 ms
+	Integration:            0.716 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.276 ms
+	Total Operation Time:   2.782 ms
+Loaded scene 'Assets/_Project/Scenes/MainMenu/MainMenu.unity'
+	Deserialize:            1.273 ms
+	Integration:            0.921 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.286 ms
+	Total Operation Time:   2.481 ms
+Loaded scene 'Assets/_Project/Scenes/Floor01_Prototype.unity'
+	Deserialize:            72.721 ms
+	Integration:            89.725 ms
+	Integration of assets:  0.168 ms
+	Thread Wait Time:       0.796 ms
+	Total Operation Time:   163.410 ms
+Da nhat: Key_A101
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HUSEscape.Inventory.PlayerInventory:AddItem (string) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Inventory/PlayerInventory.cs:41)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests:Call (object,string,object[]) (at Assets/_Project/Scripts/Utilities/Autosave/Tests/PlayMode/Floor01AutosaveIntegrationTests.cs:30)
+HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests:Progress () (at Assets/_Project/Scripts/Utilities/Autosave/Tests/PlayMode/Floor01AutosaveIntegrationTests.cs:73)
+HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests/<I01_NewQuestProgressCreatesValidatedFloorDraft>d__24:MoveNext () (at Assets/_Project/Scripts/Utilities/Autosave/Tests/PlayMode/Floor01AutosaveIntegrationTests.cs:96)
+UnityEngine.TestTools.TestEnumerator/<Execute>d__8:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Attributes/TestEnumerator.cs:52)
+UnityEngine.TestTools.EnumerableTestMethodCommand/<ExecuteEnumerableAndRecordExceptions>d__4:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:85)
+UnityEngine.TestTools.EnumerableTestMethodCommand:AdvanceEnumerator (System.Collections.IEnumerator) (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:64)
+UnityEngine.TestTools.EnumerableTestMethodCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:47)
+UnityEngine.TestRunner.NUnitExtensions.Runner.UnityLogCheckDelegatingCommand/<ExecuteEnumerable>d__4:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Runner/UnityLogCheckDelegatingCommand.cs:66)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<NUnit.Framework.ITestAction>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<System.Reflection.MethodInfo>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<System.Reflection.MethodInfo>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<UnityEngine.TestTools.IOuterUnityTestAction>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.RetryCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/RetryCommand.cs:37)
+UnityEngine.TestTools.RepeatCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/RepeatCommand.cs:36)
+UnityEngine.TestTools.IgnoreTestCommand/<ExecuteEnumerable>d__3:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/IgnoreTestCommand.cs:42)
+UnityEngine.TestTools.StrictCheckCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/StrictCheckCommand.cs:29)
+UnityEngine.TestTools.Utils.CoroutineRunner/<WrapEnumeratorForChecks>d__8:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/Utils/CoroutineRunner.cs:58)
+UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
+
+(Filename: D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Inventory/PlayerInventory.cs Line: 41)
+
+Loaded scene 'Assets/_Project/Scenes/Floor01_Prototype.unity'
+	Deserialize:            48.762 ms
+	Integration:            7.830 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.584 ms
+	Total Operation Time:   57.177 ms
+Da nhat: Key_A101
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HUSEscape.Inventory.PlayerInventory:AddItem (string) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Inventory/PlayerInventory.cs:41)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests:Call (object,string,object[]) (at Assets/_Project/Scripts/Utilities/Autosave/Tests/PlayMode/Floor01AutosaveIntegrationTests.cs:30)
+HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests:Progress () (at Assets/_Project/Scripts/Utilities/Autosave/Tests/PlayMode/Floor01AutosaveIntegrationTests.cs:73)
+HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests/<I02_RepeatedFactAndIdleFramesDoNotCommitAgain>d__25:MoveNext () (at Assets/_Project/Scripts/Utilities/Autosave/Tests/PlayMode/Floor01AutosaveIntegrationTests.cs:118)
+UnityEngine.TestTools.TestEnumerator/<Execute>d__8:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Attributes/TestEnumerator.cs:52)
+UnityEngine.TestTools.EnumerableTestMethodCommand/<ExecuteEnumerableAndRecordExceptions>d__4:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:85)
+UnityEngine.TestTools.EnumerableTestMethodCommand:AdvanceEnumerator (System.Collections.IEnumerator) (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:64)
+UnityEngine.TestTools.EnumerableTestMethodCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:47)
+UnityEngine.TestRunner.NUnitExtensions.Runner.UnityLogCheckDelegatingCommand/<ExecuteEnumerable>d__4:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Runner/UnityLogCheckDelegatingCommand.cs:66)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<NUnit.Framework.ITestAction>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<System.Reflection.MethodInfo>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<System.Reflection.MethodInfo>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<UnityEngine.TestTools.IOuterUnityTestAction>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.RetryCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/RetryCommand.cs:37)
+UnityEngine.TestTools.RepeatCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/RepeatCommand.cs:36)
+UnityEngine.TestTools.IgnoreTestCommand/<ExecuteEnumerable>d__3:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/IgnoreTestCommand.cs:42)
+UnityEngine.TestTools.StrictCheckCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/StrictCheckCommand.cs:29)
+UnityEngine.TestTools.Utils.CoroutineRunner/<WrapEnumeratorForChecks>d__8:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/Utils/CoroutineRunner.cs:58)
+UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
+
+(Filename: D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Inventory/PlayerInventory.cs Line: 41)
+
+Loaded scene 'Assets/_Project/Scenes/Floor01_Prototype.unity'
+	Deserialize:            55.436 ms
+	Integration:            12.127 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.614 ms
+	Total Operation Time:   68.179 ms
+Loaded scene 'Assets/_Project/Scenes/Floor01_Prototype.unity'
+	Deserialize:            46.193 ms
+	Integration:            7.328 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.550 ms
+	Total Operation Time:   54.072 ms
+Da nhat: Key_A101
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HUSEscape.Inventory.PlayerInventory:AddItem (string) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Inventory/PlayerInventory.cs:41)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests:Call (object,string,object[]) (at Assets/_Project/Scripts/Utilities/Autosave/Tests/PlayMode/Floor01AutosaveIntegrationTests.cs:30)
+HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests:Progress () (at Assets/_Project/Scripts/Utilities/Autosave/Tests/PlayMode/Floor01AutosaveIntegrationTests.cs:73)
+HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests/<I04_AutosavePreservesAllManualSlotsByteForByte>d__27:MoveNext () (at Assets/_Project/Scripts/Utilities/Autosave/Tests/PlayMode/Floor01AutosaveIntegrationTests.cs:141)
+UnityEngine.TestTools.TestEnumerator/<Execute>d__8:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Attributes/TestEnumerator.cs:52)
+UnityEngine.TestTools.EnumerableTestMethodCommand/<ExecuteEnumerableAndRecordExceptions>d__4:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:85)
+UnityEngine.TestTools.EnumerableTestMethodCommand:AdvanceEnumerator (System.Collections.IEnumerator) (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:64)
+UnityEngine.TestTools.EnumerableTestMethodCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:47)
+UnityEngine.TestRunner.NUnitExtensions.Runner.UnityLogCheckDelegatingCommand/<ExecuteEnumerable>d__4:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Runner/UnityLogCheckDelegatingCommand.cs:66)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<NUnit.Framework.ITestAction>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<System.Reflection.MethodInfo>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<System.Reflection.MethodInfo>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<UnityEngine.TestTools.IOuterUnityTestAction>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.RetryCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/RetryCommand.cs:37)
+UnityEngine.TestTools.RepeatCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/RepeatCommand.cs:36)
+UnityEngine.TestTools.IgnoreTestCommand/<ExecuteEnumerable>d__3:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/IgnoreTestCommand.cs:42)
+UnityEngine.TestTools.StrictCheckCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/StrictCheckCommand.cs:29)
+UnityEngine.TestTools.Utils.CoroutineRunner/<WrapEnumeratorForChecks>d__8:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/Utils/CoroutineRunner.cs:58)
+UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
+
+(Filename: D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Inventory/PlayerInventory.cs Line: 41)
+
+Loaded scene 'Assets/_Project/Scenes/Floor01_Prototype.unity'
+	Deserialize:            51.292 ms
+	Integration:            8.802 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.520 ms
+	Total Operation Time:   60.616 ms
+Da nhat: Key_A101
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HUSEscape.Inventory.PlayerInventory:AddItem (string) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Inventory/PlayerInventory.cs:41)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests:Call (object,string,object[]) (at Assets/_Project/Scripts/Utilities/Autosave/Tests/PlayMode/Floor01AutosaveIntegrationTests.cs:30)
+HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests:Progress () (at Assets/_Project/Scripts/Utilities/Autosave/Tests/PlayMode/Floor01AutosaveIntegrationTests.cs:73)
+HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests/<I05_PersistenceFailurePreservesTheActiveSession>d__28:MoveNext () (at Assets/_Project/Scripts/Utilities/Autosave/Tests/PlayMode/Floor01AutosaveIntegrationTests.cs:151)
+UnityEngine.TestTools.TestEnumerator/<Execute>d__8:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Attributes/TestEnumerator.cs:52)
+UnityEngine.TestTools.EnumerableTestMethodCommand/<ExecuteEnumerableAndRecordExceptions>d__4:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:85)
+UnityEngine.TestTools.EnumerableTestMethodCommand:AdvanceEnumerator (System.Collections.IEnumerator) (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:64)
+UnityEngine.TestTools.EnumerableTestMethodCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:47)
+UnityEngine.TestRunner.NUnitExtensions.Runner.UnityLogCheckDelegatingCommand/<ExecuteEnumerable>d__4:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Runner/UnityLogCheckDelegatingCommand.cs:66)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<NUnit.Framework.ITestAction>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<System.Reflection.MethodInfo>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<System.Reflection.MethodInfo>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<UnityEngine.TestTools.IOuterUnityTestAction>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.RetryCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/RetryCommand.cs:37)
+UnityEngine.TestTools.RepeatCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/RepeatCommand.cs:36)
+UnityEngine.TestTools.IgnoreTestCommand/<ExecuteEnumerable>d__3:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/IgnoreTestCommand.cs:42)
+UnityEngine.TestTools.StrictCheckCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/StrictCheckCommand.cs:29)
+UnityEngine.TestTools.Utils.CoroutineRunner/<WrapEnumeratorForChecks>d__8:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/Utils/CoroutineRunner.cs:58)
+UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
+
+(Filename: D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Inventory/PlayerInventory.cs Line: 41)
+
+Loaded scene 'Assets/_Project/Scenes/Floor01_Prototype.unity'
+	Deserialize:            42.269 ms
+	Integration:            5.805 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.496 ms
+	Total Operation Time:   48.573 ms
+Loaded scene 'Assets/_Project/Scenes/Floor01_Prototype.unity'
+	Deserialize:            40.847 ms
+	Integration:            8.703 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.511 ms
+	Total Operation Time:   50.063 ms
+Da nhat: Key_A101
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HUSEscape.Inventory.PlayerInventory:AddItem (string) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Inventory/PlayerInventory.cs:41)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests:Call (object,string,object[]) (at Assets/_Project/Scripts/Utilities/Autosave/Tests/PlayMode/Floor01AutosaveIntegrationTests.cs:30)
+HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests:Progress () (at Assets/_Project/Scripts/Utilities/Autosave/Tests/PlayMode/Floor01AutosaveIntegrationTests.cs:73)
+HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests/<I07_NewGameCancelsPendingProgressWithoutAutosavingRestoredState>d__30:MoveNext () (at Assets/_Project/Scripts/Utilities/Autosave/Tests/PlayMode/Floor01AutosaveIntegrationTests.cs:172)
+UnityEngine.TestTools.TestEnumerator/<Execute>d__8:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Attributes/TestEnumerator.cs:52)
+UnityEngine.TestTools.EnumerableTestMethodCommand/<ExecuteEnumerableAndRecordExceptions>d__4:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:85)
+UnityEngine.TestTools.EnumerableTestMethodCommand:AdvanceEnumerator (System.Collections.IEnumerator) (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:64)
+UnityEngine.TestTools.EnumerableTestMethodCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:47)
+UnityEngine.TestRunner.NUnitExtensions.Runner.UnityLogCheckDelegatingCommand/<ExecuteEnumerable>d__4:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Runner/UnityLogCheckDelegatingCommand.cs:66)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<NUnit.Framework.ITestAction>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<System.Reflection.MethodInfo>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<System.Reflection.MethodInfo>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<UnityEngine.TestTools.IOuterUnityTestAction>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.RetryCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/RetryCommand.cs:37)
+UnityEngine.TestTools.RepeatCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/RepeatCommand.cs:36)
+UnityEngine.TestTools.IgnoreTestCommand/<ExecuteEnumerable>d__3:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/IgnoreTestCommand.cs:42)
+UnityEngine.TestTools.StrictCheckCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/StrictCheckCommand.cs:29)
+UnityEngine.TestTools.Utils.CoroutineRunner/<WrapEnumeratorForChecks>d__8:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/Utils/CoroutineRunner.cs:58)
+UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
+
+(Filename: D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Inventory/PlayerInventory.cs Line: 41)
+
+Loaded scene 'Assets/_Project/Scenes/Floor01_Prototype.unity'
+	Deserialize:            50.059 ms
+	Integration:            6.177 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.535 ms
+	Total Operation Time:   56.773 ms
+Da nhat: Key_A101
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HUSEscape.Inventory.PlayerInventory:AddItem (string) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Inventory/PlayerInventory.cs:41)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests:Call (object,string,object[]) (at Assets/_Project/Scripts/Utilities/Autosave/Tests/PlayMode/Floor01AutosaveIntegrationTests.cs:30)
+HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests:Progress () (at Assets/_Project/Scripts/Utilities/Autosave/Tests/PlayMode/Floor01AutosaveIntegrationTests.cs:73)
+HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests/<I08_UnsafeAirborneCaptureDefersThenRetriesAfterGrounding>d__31:MoveNext () (at Assets/_Project/Scripts/Utilities/Autosave/Tests/PlayMode/Floor01AutosaveIntegrationTests.cs:190)
+UnityEngine.TestTools.TestEnumerator/<Execute>d__8:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Attributes/TestEnumerator.cs:52)
+UnityEngine.TestTools.EnumerableTestMethodCommand/<ExecuteEnumerableAndRecordExceptions>d__4:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:85)
+UnityEngine.TestTools.EnumerableTestMethodCommand:AdvanceEnumerator (System.Collections.IEnumerator) (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:64)
+UnityEngine.TestTools.EnumerableTestMethodCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:47)
+UnityEngine.TestRunner.NUnitExtensions.Runner.UnityLogCheckDelegatingCommand/<ExecuteEnumerable>d__4:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Runner/UnityLogCheckDelegatingCommand.cs:66)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<NUnit.Framework.ITestAction>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<System.Reflection.MethodInfo>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<System.Reflection.MethodInfo>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<UnityEngine.TestTools.IOuterUnityTestAction>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.RetryCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/RetryCommand.cs:37)
+UnityEngine.TestTools.RepeatCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/RepeatCommand.cs:36)
+UnityEngine.TestTools.IgnoreTestCommand/<ExecuteEnumerable>d__3:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/IgnoreTestCommand.cs:42)
+UnityEngine.TestTools.StrictCheckCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/StrictCheckCommand.cs:29)
+UnityEngine.TestTools.Utils.CoroutineRunner/<WrapEnumeratorForChecks>d__8:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/Utils/CoroutineRunner.cs:58)
+UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
+
+(Filename: D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Inventory/PlayerInventory.cs Line: 41)
+
+Loaded scene 'Assets/_Project/Scenes/Floor01_Prototype.unity'
+	Deserialize:            40.869 ms
+	Integration:            5.839 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.549 ms
+	Total Operation Time:   47.259 ms
+Da nhat: Key_A101
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HUSEscape.Inventory.PlayerInventory:AddItem (string) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Inventory/PlayerInventory.cs:41)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests:Call (object,string,object[]) (at Assets/_Project/Scripts/Utilities/Autosave/Tests/PlayMode/Floor01AutosaveIntegrationTests.cs:30)
+HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests:Progress () (at Assets/_Project/Scripts/Utilities/Autosave/Tests/PlayMode/Floor01AutosaveIntegrationTests.cs:73)
+HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests/<I09_ReenableDoesNotDuplicateEventSubscriptions>d__32:MoveNext () (at Assets/_Project/Scripts/Utilities/Autosave/Tests/PlayMode/Floor01AutosaveIntegrationTests.cs:205)
+UnityEngine.TestTools.TestEnumerator/<Execute>d__8:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Attributes/TestEnumerator.cs:52)
+UnityEngine.TestTools.EnumerableTestMethodCommand/<ExecuteEnumerableAndRecordExceptions>d__4:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:85)
+UnityEngine.TestTools.EnumerableTestMethodCommand:AdvanceEnumerator (System.Collections.IEnumerator) (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:64)
+UnityEngine.TestTools.EnumerableTestMethodCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:47)
+UnityEngine.TestRunner.NUnitExtensions.Runner.UnityLogCheckDelegatingCommand/<ExecuteEnumerable>d__4:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Runner/UnityLogCheckDelegatingCommand.cs:66)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<NUnit.Framework.ITestAction>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<System.Reflection.MethodInfo>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<System.Reflection.MethodInfo>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<UnityEngine.TestTools.IOuterUnityTestAction>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.RetryCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/RetryCommand.cs:37)
+UnityEngine.TestTools.RepeatCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/RepeatCommand.cs:36)
+UnityEngine.TestTools.IgnoreTestCommand/<ExecuteEnumerable>d__3:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/IgnoreTestCommand.cs:42)
+UnityEngine.TestTools.StrictCheckCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/StrictCheckCommand.cs:29)
+UnityEngine.TestTools.Utils.CoroutineRunner/<WrapEnumeratorForChecks>d__8:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/Utils/CoroutineRunner.cs:58)
+UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
+
+(Filename: D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Inventory/PlayerInventory.cs Line: 41)
+
+Loaded scene 'Assets/_Project/Scenes/Floor01_Prototype.unity'
+	Deserialize:            41.224 ms
+	Integration:            6.638 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       6.585 ms
+	Total Operation Time:   54.449 ms
+Da nhat: Key_A101
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HUSEscape.Inventory.PlayerInventory:AddItem (string) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Inventory/PlayerInventory.cs:41)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests:Call (object,string,object[]) (at Assets/_Project/Scripts/Utilities/Autosave/Tests/PlayMode/Floor01AutosaveIntegrationTests.cs:30)
+HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests:Progress () (at Assets/_Project/Scripts/Utilities/Autosave/Tests/PlayMode/Floor01AutosaveIntegrationTests.cs:73)
+HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests/<I10_CorruptDraftIsPreservedAndDoesNotLoadIntoGameplay>d__33:MoveNext () (at Assets/_Project/Scripts/Utilities/Autosave/Tests/PlayMode/Floor01AutosaveIntegrationTests.cs:218)
+UnityEngine.TestTools.TestEnumerator/<Execute>d__8:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Attributes/TestEnumerator.cs:52)
+UnityEngine.TestTools.EnumerableTestMethodCommand/<ExecuteEnumerableAndRecordExceptions>d__4:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:85)
+UnityEngine.TestTools.EnumerableTestMethodCommand:AdvanceEnumerator (System.Collections.IEnumerator) (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:64)
+UnityEngine.TestTools.EnumerableTestMethodCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:47)
+UnityEngine.TestRunner.NUnitExtensions.Runner.UnityLogCheckDelegatingCommand/<ExecuteEnumerable>d__4:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Runner/UnityLogCheckDelegatingCommand.cs:66)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<NUnit.Framework.ITestAction>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<System.Reflection.MethodInfo>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<System.Reflection.MethodInfo>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<UnityEngine.TestTools.IOuterUnityTestAction>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.RetryCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/RetryCommand.cs:37)
+UnityEngine.TestTools.RepeatCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/RepeatCommand.cs:36)
+UnityEngine.TestTools.IgnoreTestCommand/<ExecuteEnumerable>d__3:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/IgnoreTestCommand.cs:42)
+UnityEngine.TestTools.StrictCheckCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/StrictCheckCommand.cs:29)
+UnityEngine.TestTools.Utils.CoroutineRunner/<WrapEnumeratorForChecks>d__8:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/Utils/CoroutineRunner.cs:58)
+UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
+
+(Filename: D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Inventory/PlayerInventory.cs Line: 41)
+
+Loaded scene 'Assets/_Project/Scenes/Floor01_Prototype.unity'
+	Deserialize:            40.577 ms
+	Integration:            5.894 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.538 ms
+	Total Operation Time:   47.011 ms
+Da nhat: Key_A101
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HUSEscape.Inventory.PlayerInventory:AddItem (string) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Inventory/PlayerInventory.cs:41)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests:Call (object,string,object[]) (at Assets/_Project/Scripts/Utilities/Autosave/Tests/PlayMode/Floor01AutosaveIntegrationTests.cs:30)
+HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests:Progress () (at Assets/_Project/Scripts/Utilities/Autosave/Tests/PlayMode/Floor01AutosaveIntegrationTests.cs:73)
+HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests/<I11_ExistingHeadSeedsRevisionWithoutRestoringItsPayload>d__34:MoveNext () (at Assets/_Project/Scripts/Utilities/Autosave/Tests/PlayMode/Floor01AutosaveIntegrationTests.cs:232)
+UnityEngine.TestTools.TestEnumerator/<Execute>d__8:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Attributes/TestEnumerator.cs:52)
+UnityEngine.TestTools.EnumerableTestMethodCommand/<ExecuteEnumerableAndRecordExceptions>d__4:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:85)
+UnityEngine.TestTools.EnumerableTestMethodCommand:AdvanceEnumerator (System.Collections.IEnumerator) (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:64)
+UnityEngine.TestTools.EnumerableTestMethodCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:47)
+UnityEngine.TestRunner.NUnitExtensions.Runner.UnityLogCheckDelegatingCommand/<ExecuteEnumerable>d__4:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Runner/UnityLogCheckDelegatingCommand.cs:66)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<NUnit.Framework.ITestAction>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<System.Reflection.MethodInfo>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<System.Reflection.MethodInfo>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<UnityEngine.TestTools.IOuterUnityTestAction>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.RetryCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/RetryCommand.cs:37)
+UnityEngine.TestTools.RepeatCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/RepeatCommand.cs:36)
+UnityEngine.TestTools.IgnoreTestCommand/<ExecuteEnumerable>d__3:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/IgnoreTestCommand.cs:42)
+UnityEngine.TestTools.StrictCheckCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/StrictCheckCommand.cs:29)
+UnityEngine.TestTools.Utils.CoroutineRunner/<WrapEnumeratorForChecks>d__8:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/Utils/CoroutineRunner.cs:58)
+UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
+
+(Filename: D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Inventory/PlayerInventory.cs Line: 41)
+
+Loaded scene 'Assets/_Project/Scenes/Floor01_Prototype.unity'
+	Deserialize:            43.329 ms
+	Integration:            8.131 ms
+	Integration of assets:  0.002 ms
+	Thread Wait Time:       0.755 ms
+	Total Operation Time:   52.217 ms
+Da nhat: Key_A101
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HUSEscape.Inventory.PlayerInventory:AddItem (string) (at D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Inventory/PlayerInventory.cs:41)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests:Call (object,string,object[]) (at Assets/_Project/Scripts/Utilities/Autosave/Tests/PlayMode/Floor01AutosaveIntegrationTests.cs:30)
+HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests:Progress () (at Assets/_Project/Scripts/Utilities/Autosave/Tests/PlayMode/Floor01AutosaveIntegrationTests.cs:73)
+HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests/<I12_ManualContinueRestoresOnlyManualSlotAndDoesNotAutosave>d__35:MoveNext () (at Assets/_Project/Scripts/Utilities/Autosave/Tests/PlayMode/Floor01AutosaveIntegrationTests.cs:242)
+UnityEngine.TestTools.TestEnumerator/<Execute>d__8:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Attributes/TestEnumerator.cs:52)
+UnityEngine.TestTools.EnumerableTestMethodCommand/<ExecuteEnumerableAndRecordExceptions>d__4:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:85)
+UnityEngine.TestTools.EnumerableTestMethodCommand:AdvanceEnumerator (System.Collections.IEnumerator) (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:64)
+UnityEngine.TestTools.EnumerableTestMethodCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/EnumerableTestMethodCommand.cs:47)
+UnityEngine.TestRunner.NUnitExtensions.Runner.UnityLogCheckDelegatingCommand/<ExecuteEnumerable>d__4:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Runner/UnityLogCheckDelegatingCommand.cs:66)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<NUnit.Framework.ITestAction>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<System.Reflection.MethodInfo>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<System.Reflection.MethodInfo>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.BeforeAfterTestCommandBase`1/<ExecuteEnumerable>d__16<UnityEngine.TestTools.IOuterUnityTestAction>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/BeforeAfterTestCommandBase.cs:213)
+UnityEngine.TestTools.RetryCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/RetryCommand.cs:37)
+UnityEngine.TestTools.RepeatCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/RepeatCommand.cs:36)
+UnityEngine.TestTools.IgnoreTestCommand/<ExecuteEnumerable>d__3:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/IgnoreTestCommand.cs:42)
+UnityEngine.TestTools.StrictCheckCommand/<ExecuteEnumerable>d__2:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/NUnitExtensions/Commands/StrictCheckCommand.cs:29)
+UnityEngine.TestTools.Utils.CoroutineRunner/<WrapEnumeratorForChecks>d__8:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEngine.TestRunner/Utils/CoroutineRunner.cs:58)
+UnityEngine.SetupCoroutine:InvokeMoveNext (System.Collections.IEnumerator,intptr)
+
+(Filename: D:/Game3D-01/VT103_Work/HUS_Escape/Assets/_Project/Scripts/Inventory/PlayerInventory.cs Line: 41)
+
+Saving results to: C:/Users/ASUS/AppData/LocalLow/DefaultCompany/HUS_Escape\TestResults.xml
+Saving results to: D:\Game3D-01\VT103_Work\Evidence\VT103\repair-20261114\all-playmode/results.xml
+Unloading 58 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Temp/__Backupscenes/0.backup'
+	Deserialize:            0.494 ms
+	Integration:            6.100 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.009 ms
+	Total Operation Time:   6.604 ms
+Unloading 413 unused Assets / (4.0 MB). Loaded Objects now: 5978.
+Memory consumption went from 0.51 GB to 0.50 GB.
+Total: 8.793200 ms (FindLiveObjects: 0.570000 ms CreateObjectMapping: 0.139800 ms MarkObjects: 6.599200 ms  DeleteObjects: 1.253300 ms)
+
+Executing IPostBuildCleanup for: Unity.PerformanceTesting.Editor.TestRunBuilder.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEditor.TestTools.TestRunner.TestRun.Tasks.BuildActionTaskBase`1/<ExecuteMethods>d__8<UnityEngine.TestTools.IPostBuildCleanup>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEditor.TestRunner/TestRun/Tasks/BuildActionTaskBase.cs:48)
+UnityEditor.TestTools.TestRunner.TestRun.Tasks.BuildActionTaskBase`1/<Execute>d__7<UnityEngine.TestTools.IPostBuildCleanup>:MoveNext () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEditor.TestRunner/TestRun/Tasks/BuildActionTaskBase.cs:34)
+UnityEditor.TestTools.TestRunner.TestRun.TestJobRunner:ExecuteStep () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEditor.TestRunner/TestRun/TestJobRunner.cs:194)
+UnityEditor.TestTools.TestRunner.TestRun.TestJobRunner:ExecuteCallback () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEditor.TestRunner/TestRun/TestJobRunner.cs:129)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEditor.TestRunner/TestRun/Tasks/BuildActionTaskBase.cs Line: 48)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 0 unused Assets / (Unknown). Loaded Objects now: 5983.
+Memory consumption went from 402.8 MB to 402.8 MB.
+Total: 7.523900 ms (FindLiveObjects: 0.421000 ms CreateObjectMapping: 0.107700 ms MarkObjects: 6.754000 ms  DeleteObjects: 0.008600 ms)
+
+Asset Pipeline Refresh (id=b63979d555650804e80c796ddb2c4a22): Total: 0.051 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+DisplayProgressbar: Undo
+Test run completed. Exiting with code 0 (Ok). Run completed.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEditor.TestTools.TestRunner.CommandLineTest.Executer:ExitApplication (UnityEditor.TestTools.TestRunner.CommandLineTest.Executer/ReturnCodes,string) (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEditor.TestRunner/CommandLineTest/Executer.cs:81)
+UnityEditor.TestTools.TestRunner.CommandLineTest.Executer:ExitIfRunIsCompleted () (at ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEditor.TestRunner/CommandLineTest/Executer.cs:74)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: ./Library/PackageCache/com.unity.test-framework@80f691d4262b/UnityEditor.TestRunner/CommandLineTest/Executer.cs Line: 81)
+
+MonoPathRemapper: Attempts to remap: 12043; Successful remaps: 1010
+Serialized file version minimum: 22, current 23
+Importing 'GUID: 00000000000000004000000000000000 - Path: ProjectSettings/ProjectSettings.asset' with importer (LibraryAssetImporter)
+Imported 'GUID: 00000000000000004000000000000000' -> (Import Result ID: 'b40d4ca345878244fad51056cb817da3') in 0.003 seconds [static dependencies only]. Details - ImportResultOutputID=054c890a8f4b6dddbea933bc5e4b7df4 DependenciesID=97b9c096cd8f2ffc4af9d484004b74c8 StaticDependenciesID=1f5d8a14d0d6f50f0cf00f4297ad0b8a 
+Asset Pipeline Refresh (id=5149398895e0f1445a7d25e606216e06): Total: 0.021 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[Physics::Module] Cleanup current backend.
+[Physics::Module] Id: 0xf2b8ea05
+Input System module state changed to: ShutdownInProgress.
+Input Polling Thread exited.
+Input System module state changed to: Shutdown.
+[Licensing::IpcConnector] LicenseClient-ASUS-notifications channel disconnected successfully.
+[Licensing::IpcConnector] LicenseClient-ASUS channel disconnected successfully.
+Lingering sessions upon destruction of worker manager
+Unity Data Store service was successfully shut down
+UDS shutting down local client system
+AcceleratorClientConnectionCallback - disconnected - :0
+Cleanup mono
+CodeReloadManager destroyed
+VBCSCompilerPreWarmer: requested VBCSCompiler shutdown
+Checking for leaked weakptr:
+  Found no leaked weakptrs.
+[Package Manager] Server process was shutdown
+##utp:{"type":"MemoryLeaks","version":2,"phase":"Immediate","time":1794652049820,"processId":34084,"allocatedMemory":15791439,"memoryLabels":[{"Default":179134},{"Permanent":15516},{"NewDelete":70111},{"Thread":4197944},{"Manager":36509},{"VertexData":8},{"Geometry":816},{"Texture":24},{"Shader":849007},{"Material":132},{"GfxDevice":55968},{"FreeType":8},{"FontEngine":736},{"Physics":1970},{"Physics2D":16},{"Serialization":36832},{"Input":42840},{"JobScheduler":256},{"TextLib":336},{"Mono":48},{"MonoCode":64},{"ScriptingNativeRuntime":1304736},{"BaseObject":59248},{"Resource":1444},{"Renderer":2504},{"Transform":4685},{"File":22246},{"WebCam":616},{"Culling":32},{"Terrain":11442},{"Wind":24},{"STL":40},{"String":1076326},{"StaticString":3808},{"Utility":2675350},{"Curl":2559},{"PoolAlloc":2264},{"AI":80},{"TypeTree":17165},{"ScriptManager":12656},{"CodeReload":448},{"RuntimeInitializeOnLoadManager":64},{"Sprites":102},{"SpriteAtlas":120},{"GI":7816},{"Director":5072},{"CloudService":288},{"WebRequest":552},{"VR":49650},{"SceneManager":608},{"Video":64},{"LazyScriptCache":32},{"Camera":729},{"Secure":2377},{"SerializationCache":9256},{"APIUpdating":10320},{"Subsystems":336},{"VirtualTexturing":57888},{"StaticSafetyDebugInfo":278528},{"Analytics":464},{"Hierarchy":1188},{"UIElements":40},{"CoreStats":14456},{"Identifiers":7152},{"Gui":128},{"EditorUtility":118734},{"VersionControl":8},{"Undo":931},{"AssetDatabase":4489955},{"AssetImporter":40},{"EditorGi":328},{"UnityConnect":40465},{"Upm":1912},{"UpmDiagnostics":8},{"AssetCompliance":96},{"DrivenProperties":72},{"LocalIPC":210},{"ProfilerEditor":9746},{"CoreBusinessMetrics":3300},{"Windowing":456},{"Licensing":696},{"AssetReference":32},{"IPCStream":32}]}

@@ -1,0 +1,38 @@
+[
+    {
+        "file":  "Assets/_Project/Scripts/Utilities/Floor01Autosave.cs",
+        "sha256":  "FE0AE382E8E64215BC7D75EC06FA6469F3BB14185CE1792BF391D0D34C98A62B",
+        "testedSha256":  "FE0AE382E8E64215BC7D75EC06FA6469F3BB14185CE1792BF391D0D34C98A62B",
+        "match":  true
+    },
+    {
+        "file":  "Assets/_Project/Scripts/Utilities/Floor01SaveSystem.cs",
+        "sha256":  "BBF755C7D94CE108C43FDB26DDA00F9340647374CDB30498D845556FF2FB79F5",
+        "testedSha256":  "BBF755C7D94CE108C43FDB26DDA00F9340647374CDB30498D845556FF2FB79F5",
+        "match":  true
+    },
+    {
+        "file":  "Assets/_Project/Scripts/Utilities/Autosave/DraftStore.cs",
+        "sha256":  "EF4A1DBE22FA476FDDBB1E0A802AC193034AAA2E657FAF3B5A54D4A953A94FE1",
+        "testedSha256":  "EF4A1DBE22FA476FDDBB1E0A802AC193034AAA2E657FAF3B5A54D4A953A94FE1",
+        "match":  true
+    },
+    {
+        "file":  "Assets/Editor/VT103ManualAcceptanceSandbox.cs",
+        "sha256":  "866679CCA208AEE86F1274889662AA846C1A0A1125FD021DB146B5A4D00AD8AF",
+        "testedSha256":  "866679CCA208AEE86F1274889662AA846C1A0A1125FD021DB146B5A4D00AD8AF",
+        "match":  true
+    },
+    {
+        "file":  "Assets/_Project/Scripts/Utilities/Autosave/Tests/PlayMode/Floor01AutosaveIntegrationTests.cs",
+        "sha256":  "D972C3BFB628DD5C2B46633D08900E4B807E4C070D4C5849609BC08078A884D3",
+        "testedSha256":  "D972C3BFB628DD5C2B46633D08900E4B807E4C070D4C5849609BC08078A884D3",
+        "match":  true
+    },
+    {
+        "file":  "Assets/_Project/Scripts/Utilities/Autosave/Tests/Editor/ManualAcceptanceIsolationTests.cs",
+        "sha256":  "68C7957C6D1F81F0506B25B45919F40014C6D91BC0C8E3AD3E14600875B2A0E4",
+        "testedSha256":  "68C7957C6D1F81F0506B25B45919F40014C6D91BC0C8E3AD3E14600875B2A0E4",
+        "match":  true
+    }
+]

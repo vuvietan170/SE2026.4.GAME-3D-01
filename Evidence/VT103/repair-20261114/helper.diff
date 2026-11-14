@@ -1,0 +1,105 @@
+diff --git a/Evidence/VT103/repair-20261114/before/Assets/Editor/VT103ManualAcceptanceSandbox.cs b/HUS_Escape/Assets/Editor/VT103ManualAcceptanceSandbox.cs
+index 147a611..a3799bb 100644
+--- a/Evidence/VT103/repair-20261114/before/Assets/Editor/VT103ManualAcceptanceSandbox.cs
++++ b/HUS_Escape/Assets/Editor/VT103ManualAcceptanceSandbox.cs
+@@ -5,6 +5,7 @@ using System.IO;
+ using System.Linq;
+ using System.Reflection;
+ using UnityEditor;
++using UnityEditor.TestTools.TestRunner.Api;
+ using UnityEngine;
+ using UnityEngine.SceneManagement;
+ 
+@@ -16,7 +17,8 @@ using UnityEngine.SceneManagement;
+ [InitializeOnLoad]
+ internal static class VT103ManualAcceptanceSandbox
+ {
+-    private const string SandboxParent = @"D:\Game3D-01\VT103_ManualAcceptance";
++    private const string SandboxParent = @"D:\Game3D-01\VT103_Work\Evidence\VT103\manual-acceptance";
++    private const string EnabledKey = "VT103.ManualAcceptance.Enabled";
+     private static readonly BindingFlags InstanceFlags =
+         BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
+ 
+@@ -33,12 +35,37 @@ internal static class VT103ManualAcceptanceSandbox
+     {
+         EditorApplication.playModeStateChanged -= OnPlayModeChanged;
+         EditorApplication.playModeStateChanged += OnPlayModeChanged;
++        TestRunnerApi.RegisterTestCallback(new TestIsolation());
++    }
++
++    // Explicit opt-in lasts only for this Editor session. A test run revokes it before
++    // entering Play Mode, including runs launched from the Test Runner window.
++    [MenuItem("Tools/VT103/Toggle manual acceptance sandbox")]
++    private static void ToggleSandbox()
++    {
++        if (EditorApplication.isPlayingOrWillChangePlaymode) return;
++        bool enabled = !SessionState.GetBool(EnabledKey, false);
++        SessionState.SetBool(EnabledKey, enabled);
++        Debug.Log("[VT103 SANDBOX] Manual acceptance " + (enabled ? "enabled for this Editor session." : "disabled."));
++    }
++
++    private sealed class TestIsolation : ICallbacks
++    {
++        public void RunStarted(ITestAdaptor testsToRun)
++        {
++            SessionState.SetBool(EnabledKey, false);
++            OnPlayModeChanged(PlayModeStateChange.ExitingPlayMode);
++        }
++        public void RunFinished(ITestResultAdaptor result) { }
++        public void TestStarted(ITestAdaptor test) { }
++        public void TestFinished(ITestResultAdaptor result) { }
+     }
+ 
+     private static void OnPlayModeChanged(PlayModeStateChange state)
+     {
+         if (state == PlayModeStateChange.EnteredPlayMode)
+         {
++            if (Application.isBatchMode || !SessionState.GetBool(EnabledKey, false)) return;
+             sessionRoot = Path.Combine(
+                 SandboxParent,
+                 DateTime.Now.ToString("yyyyMMdd_HHmmss") + "_" + Guid.NewGuid().ToString("N").Substring(0, 8));
+@@ -113,7 +140,7 @@ internal static class VT103ManualAcceptanceSandbox
+ 
+     private static void Tick()
+     {
+-        if (!EditorApplication.isPlaying || string.IsNullOrEmpty(sessionRoot))
++        if (!EditorApplication.isPlaying || string.IsNullOrEmpty(sessionRoot) || !SessionState.GetBool(EnabledKey, false))
+             return;
+ 
+         ResolveTypesOnce();
+@@ -124,13 +151,13 @@ internal static class VT103ManualAcceptanceSandbox
+         Component journey = FindLoadedComponents(journeyType).FirstOrDefault();
+         if (journey != null)
+         {
+-            SetStorageOverride(journeyType, journey, sessionRoot);
+-            LogJourneyPaths(journeyType, journey);
++            if (SetStorageOverride(journeyType, journey, sessionRoot)) LogJourneyPaths(journeyType, journey);
+         }
+ 
+         foreach (Component save in FindLoadedComponents(saveType))
+         {
+-            SetStorageOverride(saveType, save, sessionRoot);
++            // An explicit owner (for example a test fixture) always keeps its storage.
++            if (!SetStorageOverride(saveType, save, sessionRoot)) continue;
+ 
+             FieldInfo questField = saveType.GetField("quests", InstanceFlags);
+             object quests = questField != null ? questField.GetValue(save) : null;
+@@ -167,15 +194,17 @@ internal static class VT103ManualAcceptanceSandbox
+         }
+     }
+ 
+-    private static void SetStorageOverride(Type type, object instance, string path)
++    private static bool SetStorageOverride(Type type, object instance, string path)
+     {
+         PropertyInfo property = type.GetProperty("StorageDirectoryOverride", InstanceFlags);
+         if (property == null)
+             throw new MissingMemberException(type.FullName, "StorageDirectoryOverride");
+ 
+         string current = property.GetValue(instance) as string;
++        if (!string.IsNullOrEmpty(current) && !SamePath(current, path)) return false;
+         if (!SamePath(current, path))
+             property.SetValue(instance, path);
++        return true;
+     }
+ 
+     private static bool SamePath(string left, string right)

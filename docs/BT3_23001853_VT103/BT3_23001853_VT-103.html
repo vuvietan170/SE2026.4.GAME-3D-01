@@ -1,0 +1,1163 @@
+<html><head><meta charset="utf-8"><style>
+@font-face {font-family: Report; src:url(arial.ttf);}
+@font-face {font-family: Report; src:url(arialbd.ttf);font-weight:bold;}
+@font-face {font-family: Report; src:url(ariali.ttf);font-style:italic;}
+body {font-family:Report; font-size:10.2pt;line-height:1.3;color:#233347;margin:0;}
+h1 {font-size:21pt;line-height:1.15;color:#102e4a;margin:0 0 12pt 0;}
+h2 {font-size:12pt;line-height:1.2;color:#007c89;margin:10pt 0 5pt 0;}
+h3 {font-size:11pt;color:#007c89;margin:0 0 9pt 0;}
+p {margin:4pt 0 6pt 0;} strong {font-weight:bold;}
+a {color:#007c89;text-decoration:none;}
+table {width:100%;border-collapse:collapse;margin:6pt 0 8pt 0;table-layout:fixed;font-size:8.4pt;line-height:1.22;}
+th {background:#e5eef5;color:#102e4a;font-weight:bold;text-align:left;}
+td,th {border:0.5pt solid #cbd7df;padding:4pt;vertical-align:top;}
+blockquote {margin:10pt 0;padding:8pt 10pt;border-left:3pt solid #009ca4;background:#eef6f7;}
+blockquote p {margin:0;}
+code {font-family:Report;font-size:9pt;color:#234a64;}
+pre {padding:7pt;background:#f1f5f8;font-size:8.6pt;line-height:1.25;white-space:pre-wrap;}
+ul,ol {padding-left:15pt;margin:4pt 0 8pt 0;} li {margin-bottom:4pt;}
+</style></head><body><h1>AUTOSAVE DRAFT — VT-103</h1>
+<h3>Bài tập cá nhân 3 · Software Engineering 2026</h3>
+<p><strong>Nguyễn Hữu Duy · MSSV 23001853 · Team SE2026-T26</strong><br />
+<strong>Dự án:</strong> GAME-3D-01 — Campus Escape (project Unity: HUS_Escape)<br />
+<strong>Repository:</strong> <a href="https://github.com/vuvietan170/SE2026.4.GAME-3D-01">vuvietan170/SE2026.4.GAME-3D-01</a><br />
+<strong>Baseline:</strong> <code>f933595ef7d1aa810032ddd54cafaad4a438aea4</code><br />
+<strong>Nhánh local:</strong> <code>individual/23001853-vt103-autosave</code><br />
+<strong>Link branch / PR: PENDING / PENDING.</strong> Git ls-remote exit 0 và không có nhánh cá nhân tương ứng trên origin (14/11/2026). Chưa tạo commit triển khai hoặc PR; không tạo đường dẫn branch giả.</p>
+<blockquote>
+<p>“Tôi chịu trách nhiệm về toàn bộ code, test và nội dung bài làm; tôi đã khai báo việc sử dụng AI.”</p>
+</blockquote>
+<h2>1. Problem statement và phạm vi</h2>
+<p>Snapshot cũ có thể hoàn tất sau snapshot mới khi retry hoặc các yêu cầu lưu cạnh tranh. Ghi theo thứ tự hoàn tất có thể làm mất tiến độ mới. Change request yêu cầu <strong>autosave draft và ngăn stale overwrite</strong>, không yêu cầu backend hoặc chu kỳ 10 giây cố định. Slice chỉ áp dụng Floor01; ba manual slots vẫn độc lập. Main Gate chưa commit của project chính không thuộc baseline bài cá nhân.</p>
+<h2>2. Acceptance criteria có thể kiểm thử</h2>
+<table>
+<thead>
+<tr>
+<th>AC</th>
+<th>Tiêu chí và oracle độc lập với thuật toán</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AC1</td>
+<td>Snapshot hợp lệ mới hơn được commit với đúng payload; file vật lý đọc lại được.</td>
+</tr>
+<tr>
+<td>AC2</td>
+<td>Revision thấp hơn head bị RejectedStale; byte của head đã commit giữ nguyên.</td>
+</tr>
+<tr>
+<td>AC3</td>
+<td>Retry cùng ID/revision/nội dung là Duplicate, không ghi lại. Tái dùng ID cho yêu cầu khác hoặc cùng revision khác ID là Conflict. Retry thấp hơn head là Stale.</td>
+</tr>
+<tr>
+<td>AC4</td>
+<td>Các writer cùng canonical path trong một process không làm revision durable giảm; sau các yêu cầu hợp lệ không lỗi, head là revision lớn nhất.</td>
+</tr>
+<tr>
+<td>AC5</td>
+<td>Tiến độ Floor01 mới kích hoạt draft riêng khi capture an toàn; không tiến độ thì không ghi thêm. Restore/lỗi persistence không phá phiên chơi/manual slots hoặc báo Committed giả.</td>
+</tr>
+</tbody>
+</table>
+<h2>3. Invariant và non-functional constraints</h2>
+<p><strong>Invariant:</strong> giữa hai commit thành công liên tiếp cùng path, <code>r(k+1) &gt; r(k)</code>; payload durable thuộc chính revision đó. Duplicate/reject/error giữ head. Chỉ trả Committed sau khi Move/Replace thành công.</p>
+<p><strong>NFC1:</strong> 120 tác vụ cùng path, p95 end-to-end ≤ 3.500 ms trong workload công bố. <strong>NFC2:</strong> Unity API chỉ ở main thread; worker nhận JSON bất biến; không đổi manual schema/slots. <strong>NFC3:</strong> chỉ một process và lexical Windows path; không hứa distributed lock hoặc crash durability tuyệt đối.</p>
+<p><em>Bản nháp 14/11/2026. Kết quả lịch sử, nghiệm thu thủ công và phần chưa kiểm chứng được phân loại riêng. Sinh viên cần duyệt bản cuối trước khi nộp.</em></p></body></html>
+<hr class="pagebreak">
+<html><head><meta charset="utf-8"><style>
+@font-face {font-family: Report; src:url(arial.ttf);}
+@font-face {font-family: Report; src:url(arialbd.ttf);font-weight:bold;}
+@font-face {font-family: Report; src:url(ariali.ttf);font-style:italic;}
+body {font-family:Report; font-size:10.2pt;line-height:1.3;color:#233347;margin:0;}
+h1 {font-size:21pt;line-height:1.15;color:#102e4a;margin:0 0 12pt 0;}
+h2 {font-size:12pt;line-height:1.2;color:#007c89;margin:10pt 0 5pt 0;}
+h3 {font-size:11pt;color:#007c89;margin:0 0 9pt 0;}
+p {margin:4pt 0 6pt 0;} strong {font-weight:bold;}
+a {color:#007c89;text-decoration:none;}
+table {width:100%;border-collapse:collapse;margin:6pt 0 8pt 0;table-layout:fixed;font-size:8.4pt;line-height:1.22;}
+th {background:#e5eef5;color:#102e4a;font-weight:bold;text-align:left;}
+td,th {border:0.5pt solid #cbd7df;padding:4pt;vertical-align:top;}
+blockquote {margin:10pt 0;padding:8pt 10pt;border-left:3pt solid #009ca4;background:#eef6f7;}
+blockquote p {margin:0;}
+code {font-family:Report;font-size:9pt;color:#234a64;}
+pre {padding:7pt;background:#f1f5f8;font-size:8.6pt;line-height:1.25;white-space:pre-wrap;}
+ul,ol {padding-left:15pt;margin:4pt 0 8pt 0;} li {margin-bottom:4pt;}
+</style></head><body><h1>Kiến trúc, kế hoạch và review AI</h1>
+<h2>4. Kiến trúc thực tế và vertical slice</h2>
+<p>Save thủ công là <code>Floor01SaveSystem.TrySave/TryContinue/TryNewGame</code>; JourneySession điều phối khu vực. Floor01 có sẵn capture/validation; QuestManager phát <code>ProgressRecorded</code>, còn <code>RestoreFacts</code> khôi phục im lặng. Không cần Inventory, QuestManager hoặc API server thứ hai.</p>
+<p><strong>Luồng:</strong> Quest fact mới → debounce 0,3 s → capture/validate V1 trên main thread → reserve revision + request ID → DraftStore gate → đọc head/kiểm tra identity → staging + Flush(true) → Move/Replace → ack. Unsafe retry 0,5 s, lỗi persistence retry 2 s. Restore hủy pending và lấy write fence trước Apply; lifecycle unsubscribe/cancel, quan sát fault sau khi component bị hủy.</p>
+<table>
+<thead>
+<tr>
+<th>Mã source</th>
+<th>Trách nhiệm và method để kiểm tra</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C1 · DraftContract.cs</td>
+<td>Envelope formatVersion 1, revision, requestId, payload/fingerprint; request bất biến.</td>
+</tr>
+<tr>
+<td>C2 · DraftStore.cs</td>
+<td>SaveAsync/SaveUnderGate bao read–check–commit trong gate theo path; SHA-256 + exact payload; ReserveRevisionAsync, SuspendWrites.</td>
+</tr>
+<tr>
+<td>C3 · Floor01Autosave.cs</td>
+<td>Bind/Progress/Update/CaptureSnapshotAsync: adapter Floor01; debounce/retry/lifecycle, không auto-load draft.</td>
+</tr>
+<tr>
+<td>C4 · Floor01SaveSystem.cs</td>
+<td>Awake thêm một C3 trên Floor01_QuestV1 rồi bind QuestManager; CaptureForAutosave dùng CaptureForTravel; RestoreWithRollback lấy fence.</td>
+</tr>
+<tr>
+<td>Q · QuestManager.cs</td>
+<td>ProgressRecorded, Signal, RestoreFacts là điểm nối có sẵn; không viết lại quest.</td>
+</tr>
+</tbody>
+</table>
+<p>C1/C2 ở asmdef thuần BCL HUSEscape.Persistence.Autosave, noEngineReferences. C3/C4 thuộc Assembly-CSharp. Play Mode tests dùng reflection qua ranh giới predefined assembly để gọi component thật. Path đầy đủ ở phụ lục B.</p>
+<h2>5. Kế hoạch AI hỗ trợ, assumptions và rollback</h2>
+<ol>
+<li>Xác minh baseline; worktree riêng trên D bảo vệ Main Gate. Đặc tả oracle trước code.</li>
+<li>RED T01–T04; patch nhỏ → GREEN; bổ sung identity-history sau review.</li>
+<li>M1/M2 riêng, khôi phục hash; điều khiển lịch thay vì chờ race ngẫu nhiên.</li>
+<li>Benchmark riêng; integration I01–I05 test-first, rồi nghiệm thu input thật.</li>
+</ol>
+<p>Người dùng chốt: concurrency một process; draft riêng; 10 s không phải requirement; không Campus/Office/Main Gate. Rollback đề xuất: phục hồi bản sao/hash slice trong worktree cá nhân, giữ draft như evidence; không reset/clean/stash project chính. Không khai đã rollback toàn game.</p>
+<h2>6. Hai đề xuất AI được sửa/bác bỏ</h2>
+<p><strong>A — Cách triển khai ban đầu chỉ so ID với head: sửa.</strong> Khi head lên 21, ID capture-20 dùng lại với payload khác tại r22 đã được chấp nhận. T03 mở rộng thật sự FAIL: expected Conflict, actual Committed [E2b]. Shared identity-history theo path sửa lỗi, cùng assertion PASS [E2]. Không suy ra ID history bền qua restart.</p>
+<p><strong>B — Lần thử M2 ban đầu dùng T04/common-start barrier: thay bằng controlled schedule.</strong> M2-original/T04 trả AggregateException/IOException, không assertion chứng minh stale overwrite [E3o]. Controlled schedule pre-replace làm T08 thấy head 22 rồi 21 [E3b]. Oracle luôn 22; chỉ lịch chạy thay đổi, không sửa expected theo implementation.</p></body></html>
+<hr class="pagebreak">
+<html><head><meta charset="utf-8"><style>
+@font-face {font-family: Report; src:url(arial.ttf);}
+@font-face {font-family: Report; src:url(arialbd.ttf);font-weight:bold;}
+@font-face {font-family: Report; src:url(ariali.ttf);font-style:italic;}
+body {font-family:Report; font-size:10.2pt;line-height:1.3;color:#233347;margin:0;}
+h1 {font-size:21pt;line-height:1.15;color:#102e4a;margin:0 0 12pt 0;}
+h2 {font-size:12pt;line-height:1.2;color:#007c89;margin:10pt 0 5pt 0;}
+h3 {font-size:11pt;color:#007c89;margin:0 0 9pt 0;}
+p {margin:4pt 0 6pt 0;} strong {font-weight:bold;}
+a {color:#007c89;text-decoration:none;}
+table {width:100%;border-collapse:collapse;margin:6pt 0 8pt 0;table-layout:fixed;font-size:8.4pt;line-height:1.22;}
+th {background:#e5eef5;color:#102e4a;font-weight:bold;text-align:left;}
+td,th {border:0.5pt solid #cbd7df;padding:4pt;vertical-align:top;}
+blockquote {margin:10pt 0;padding:8pt 10pt;border-left:3pt solid #009ca4;background:#eef6f7;}
+blockquote p {margin:0;}
+code {font-family:Report;font-size:9pt;color:#234a64;}
+pre {padding:7pt;background:#f1f5f8;font-size:8.6pt;line-height:1.25;white-space:pre-wrap;}
+ul,ol {padding-left:15pt;margin:4pt 0 8pt 0;} li {margin-bottom:4pt;}
+</style></head><body><h1>Decision table và risk-based strategy</h1>
+<h2>7. Decision table rút gọn có ưu tiên</h2>
+<p>Contract: một process/path, không có writer ngoài contract sửa principal. Xét từ trên xuống trong từng phần; “—” là không liên quan. Head lỗi gồm JSON/format/fingerprint sai hoặc không đọc được. ID xung đột: ID đã commit/quan sát nhưng revision/fingerprint khác; nội dung head còn so exact.</p>
+<table>
+<thead>
+<tr>
+<th>Rule</th>
+<th>Điều kiện phân hoạch</th>
+<th>Expected action</th>
+<th>File</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A0</td>
+<td>Không có fact tiến độ mới</td>
+<td>Không submit</td>
+<td>Không ghi</td>
+</tr>
+<tr>
+<td>A1</td>
+<td>Có fact mới; capture chưa an toàn</td>
+<td>Pending, retry có kiểm soát</td>
+<td>Không snapshot dở</td>
+</tr>
+<tr>
+<td>A2</td>
+<td>Pending/lifecycle hủy trước commit</td>
+<td>Cancel; không ack thành công</td>
+<td>Giữ head</td>
+</tr>
+<tr>
+<td>W1</td>
+<td>Request sai revision/ID/payload</td>
+<td>Lỗi input</td>
+<td>Giữ head</td>
+</tr>
+<tr>
+<td>W2</td>
+<td>Request hợp lệ, token đã hủy</td>
+<td>Cancellation</td>
+<td>Giữ head</td>
+</tr>
+<tr>
+<td>W3</td>
+<td>Head có nhưng lỗi/không đọc được</td>
+<td>Lỗi, không thay âm thầm</td>
+<td>Giữ evidence</td>
+</tr>
+<tr>
+<td>W4</td>
+<td>Head hợp lệ, incoming r &lt; head r; mọi ID</td>
+<td>RejectedStale</td>
+<td>Byte không đổi</td>
+</tr>
+<tr>
+<td>W5</td>
+<td>Không stale; ID xung đột đã biết</td>
+<td>Conflict</td>
+<td>Byte không đổi</td>
+</tr>
+<tr>
+<td>W6</td>
+<td>Head thiếu; không conflict; I/O thành công</td>
+<td>Committed đầu tiên</td>
+<td>r/payload cùng lưu</td>
+</tr>
+<tr>
+<td>W7</td>
+<td>Head thiếu; không conflict; I/O lỗi</td>
+<td>Lỗi, không Committed</td>
+<td>Không principal dở</td>
+</tr>
+<tr>
+<td>W8</td>
+<td>r = head r; cùng ID và nội dung</td>
+<td>Duplicate</td>
+<td>Không staging/replace</td>
+</tr>
+<tr>
+<td>W9</td>
+<td>r = head r; còn lại: ID/nội dung khác</td>
+<td>Conflict</td>
+<td>Byte không đổi</td>
+</tr>
+<tr>
+<td>W10</td>
+<td>r &gt; head r; không conflict; I/O thành công</td>
+<td>Committed mới</td>
+<td>Replace bằng r mới</td>
+</tr>
+<tr>
+<td>W11</td>
+<td>r &gt; head r; không conflict; I/O lỗi</td>
+<td>Lỗi, không Committed</td>
+<td>Giữ commit trước</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Hiệu chỉnh spec:</strong> bảng ban đầu VT103_TEST_SPEC.md đặt identity trước stale, mơ hồ với retry cũ. Quyết định Bước 3 được ưu tiên: <strong>revision thấp hơn head luôn Stale</strong>. Bảng trên ghi rõ thay đổi contract. A2 không hứa hủy atomic replace đã bắt đầu; restore drain/fence trước Apply. Đây không phải tuyên bố mọi rule đã được test: W1/W7 riêng, acknowledgment-loss và crash còn thiếu thí nghiệm.</p>
+<h2>8. Chiến lược theo risk</h2>
+<ul>
+<li><strong>Unit/contract + filesystem thật (T/S):</strong> oracle là ack, byte, revision, payload và side effect. Seed JSON độc lập. T03 dùng lease read-only; T07 ném lỗi sau staging thật. Negative tests T02/T05/T06 kiểm byte, không chỉ exception.</li>
+<li><strong>Integration Unity (I):</strong> Floor01 additive; Inventory/Quest/capture sản xuất, manual slot, restore, lifecycle và retry. Fixture tắt JourneySceneEntry, dùng bước 60 Hz. Không gọi đây là E2E input hay full JourneySession.</li>
+<li><strong>E2E/nghiệm thu:</strong> F/E, HUD và metadata G01–G04; manual G05–G07 chưa chạy. Không dùng component test thay nghiệm thu thao tác người chơi.</li>
+<li><strong>Không cần trong slice:</strong> HTTP/API server tests (không có server), cloud/distributed lock, Campus/Office/Main Gate autosave, hàng trăm regression Quest/AI hoặc kiểm lại toàn bộ 8 animation.</li>
+</ul>
+<p><strong>Risk trọng tâm:</strong> AI viết test khớp code. Biện pháp: expected từ AC trước patch, đọc durable data độc lập, bỏ guard có chủ đích rồi buộc assertion phát hiện vi phạm; không lấy compile error làm mutation kill.</p></body></html>
+<hr class="pagebreak">
+<html><head><meta charset="utf-8"><style>
+@font-face {font-family: Report; src:url(arial.ttf);}
+@font-face {font-family: Report; src:url(arialbd.ttf);font-weight:bold;}
+@font-face {font-family: Report; src:url(ariali.ttf);font-style:italic;}
+body {font-family:Report; font-size:10.2pt;line-height:1.3;color:#233347;margin:0;}
+h1 {font-size:21pt;line-height:1.15;color:#102e4a;margin:0 0 12pt 0;}
+h2 {font-size:12pt;line-height:1.2;color:#007c89;margin:10pt 0 5pt 0;}
+h3 {font-size:11pt;color:#007c89;margin:0 0 9pt 0;}
+p {margin:4pt 0 6pt 0;} strong {font-weight:bold;}
+a {color:#007c89;text-decoration:none;}
+table {width:100%;border-collapse:collapse;margin:6pt 0 8pt 0;table-layout:fixed;font-size:8.4pt;line-height:1.22;}
+th {background:#e5eef5;color:#102e4a;font-weight:bold;text-align:left;}
+td,th {border:0.5pt solid #cbd7df;padding:4pt;vertical-align:top;}
+blockquote {margin:10pt 0;padding:8pt 10pt;border-left:3pt solid #009ca4;background:#eef6f7;}
+blockquote p {margin:0;}
+code {font-family:Report;font-size:9pt;color:#234a64;}
+pre {padding:7pt;background:#f1f5f8;font-size:8.6pt;line-height:1.25;white-space:pre-wrap;}
+ul,ol {padding-left:15pt;margin:4pt 0 8pt 0;} li {margin-bottom:4pt;}
+body {font-size:9.5pt;} table {font-size:8.1pt;line-height:1.16;} td,th {padding:3pt;} h1 {font-size:20pt;}</style></head><body><h1>Test cases và oracle trước triển khai</h1>
+<h2>9. Bảng kiểm thử</h2>
+<p>Mã dưới đây là <strong>test hiện hành</strong>, không đồng nhất T05–T08 với case “Planned” trong spec Bước 2. P0: mất dữ liệu; P1: tích hợp/khả dụng. U+FS = contract-level với filesystem thật, không fake store.</p>
+<table>
+<thead>
+<tr>
+<th style="width:8%">Test ID</th>
+<th style="width:14%">AC / Risk</th>
+<th style="width:13%">Test level</th>
+<th style="width:25%">Precondition / Input</th>
+<th style="width:34%">Expected result</th>
+<th style="width:6%">Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="width:8%">T01</td>
+<td style="width:14%">AC1 revision/payload</td>
+<td style="width:13%">U+FS</td>
+<td style="width:25%">Seed r20; r21/payload21</td>
+<td style="width:34%">Committed; file r21/payload21</td>
+<td style="width:6%">P0</td>
+</tr>
+<tr>
+<td style="width:8%">T02</td>
+<td style="width:14%">AC2 stale; negative</td>
+<td style="width:13%">U+FS</td>
+<td style="width:25%">Seed r20; request r19</td>
+<td style="width:34%">Stale; byte giữ nguyên</td>
+<td style="width:6%">P0</td>
+</tr>
+<tr>
+<td style="width:8%">T03</td>
+<td style="width:14%">AC3 retry/ID reuse</td>
+<td style="width:13%">U+FS</td>
+<td style="width:25%">Retry r20/ID/payload, thêm read-only lease; head21 rồi reuse ID</td>
+<td style="width:34%">Duplicate không ghi; ID đổi nội dung Conflict; retry cũ Stale</td>
+<td style="width:6%">P0</td>
+</tr>
+<tr>
+<td style="width:8%">T04</td>
+<td style="width:14%">AC4 hai instance</td>
+<td style="width:13%">U+FS</td>
+<td style="width:25%">r21/r22, start barrier, dot/case path alias</td>
+<td style="width:34%">Head r22/payload22, ack hợp lệ</td>
+<td style="width:6%">P0</td>
+</tr>
+<tr>
+<td style="width:8%">T05</td>
+<td style="width:14%">AC3 ID conflict; negative</td>
+<td style="width:13%">U+FS</td>
+<td style="width:25%">Cùng ID, payload khác, r20/r21</td>
+<td style="width:34%">Conflict; byte không đổi</td>
+<td style="width:6%">P0</td>
+</tr>
+<tr>
+<td style="width:8%">T06</td>
+<td style="width:14%">AC3 revision collision; negative</td>
+<td style="width:13%">U+FS</td>
+<td style="width:25%">Cùng r20, ID khác</td>
+<td style="width:34%">Conflict; byte không đổi</td>
+<td style="width:6%">P0</td>
+</tr>
+<tr>
+<td style="width:8%">T07</td>
+<td style="width:14%">AC5 persistence failure</td>
+<td style="width:13%">FS integration</td>
+<td style="width:25%">Head có; BeforeCommit ném IOException sau staging thật</td>
+<td style="width:34%">Không Committed; head nguyên; sạch pending; retry được</td>
+<td style="width:6%">P0</td>
+</tr>
+<tr>
+<td style="width:8%">T08</td>
+<td style="width:14%">AC4 lịch nguy hiểm</td>
+<td style="width:13%">FS integration</td>
+<td style="width:25%">Pause r21 trước replace; điều khiển admission r22</td>
+<td style="width:34%">Head luôn 22; mutant làm 21 phải assertion FAIL</td>
+<td style="width:6%">P0</td>
+</tr>
+<tr>
+<td style="width:8%">I01</td>
+<td style="width:14%">AC5 không autosave</td>
+<td style="width:13%">Unity integration</td>
+<td style="width:25%">Add Key_A101 qua Inventory/Quest thật</td>
+<td style="width:34%">Draft V1 đúng scene/fact/item</td>
+<td style="width:6%">P0</td>
+</tr>
+<tr>
+<td style="width:8%">I02</td>
+<td style="width:14%">AC5 ghi khi idle</td>
+<td style="width:13%">Unity integration</td>
+<td style="width:25%">Fact trùng, nhiều frame không tiến độ</td>
+<td style="width:34%">Count và byte không đổi</td>
+<td style="width:6%">P1</td>
+</tr>
+<tr>
+<td style="width:8%">I03</td>
+<td style="width:14%">AC2/4 lệch thứ tự</td>
+<td style="width:13%">Unity integration</td>
+<td style="width:25%">Hai capture thật, commit newer trước</td>
+<td style="width:34%">Older Stale; giữ newer</td>
+<td style="width:6%">P0</td>
+</tr>
+<tr>
+<td style="width:8%">I04</td>
+<td style="width:14%">AC5 manual slots</td>
+<td style="width:13%">Unity integration</td>
+<td style="width:25%">Ba manual slots; autosave thật</td>
+<td style="width:34%">Ba file byte-identical</td>
+<td style="width:6%">P0</td>
+</tr>
+<tr>
+<td style="width:8%">I05</td>
+<td style="width:14%">AC5 lỗi phá phiên</td>
+<td style="width:13%">Unity integration</td>
+<td style="width:25%">Directory chiếm draft path, lỗi I/O thật</td>
+<td style="width:34%">LastError; count0; quest/item giữ</td>
+<td style="width:6%">P0</td>
+</tr>
+<tr>
+<td style="width:8%">I07/I12</td>
+<td style="width:14%">AC5 restore</td>
+<td style="width:13%">Unity integration</td>
+<td style="width:25%">Pending rồi New Game / Save+Continue</td>
+<td style="width:34%">Hủy pending; chỉ restore manual, không autosave lại</td>
+<td style="width:6%">P0</td>
+</tr>
+<tr>
+<td style="width:8%">I08/I09</td>
+<td style="width:14%">AC5 unsafe/lifecycle</td>
+<td style="width:13%">Unity integration</td>
+<td style="width:25%">CC airborne; re-enable nhiều lần</td>
+<td style="width:34%">Hoãn rồi retry grounded; không trùng subscription</td>
+<td style="width:6%">P1</td>
+</tr>
+<tr>
+<td style="width:8%">I10/I11</td>
+<td style="width:14%">AC1/5 head lỗi/cũ</td>
+<td style="width:13%">Unity integration</td>
+<td style="width:25%">Corrupt / head100 có sẵn</td>
+<td style="width:34%">Giữ corrupt; reserve &gt;100, không auto-load</td>
+<td style="width:6%">P0</td>
+</tr>
+<tr>
+<td style="width:8%">S01–S03</td>
+<td style="width:14%">AC4/5 reserve/cancel/fence</td>
+<td style="width:13%">U+FS</td>
+<td style="width:25%">Hai instance; cancel sau staging; restore lease</td>
+<td style="width:34%">Reserve43/44; giữ head; writer chờ fence</td>
+<td style="width:6%">P0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Kết quả:</strong> T01–T08 + S01–S03 = <strong>11/11 PASS</strong> [E5s]; I01–I12, có I06 auto-composition = <strong>12/12 PASS</strong> [E5p]. Hai Editor exit0, không timeout. Không cộng các lượt rerun thành số test độc lập.</p>
+<p>Bảng có 13 case T01–I05 riêng lẻ và 4 hàng nhóm bổ sung; mỗi hàng đủ sáu cột. Case invalid-input đầy đủ, first-write fault riêng, acknowledgment loss và crash chưa có kết quả riêng, không suy thành PASS. Tên method/fullname trong XML, path file ở phụ lục B.</p></body></html>
+<hr class="pagebreak">
+<html><head><meta charset="utf-8"><style>
+@font-face {font-family: Report; src:url(arial.ttf);}
+@font-face {font-family: Report; src:url(arialbd.ttf);font-weight:bold;}
+@font-face {font-family: Report; src:url(ariali.ttf);font-style:italic;}
+body {font-family:Report; font-size:10.2pt;line-height:1.3;color:#233347;margin:0;}
+h1 {font-size:21pt;line-height:1.15;color:#102e4a;margin:0 0 12pt 0;}
+h2 {font-size:12pt;line-height:1.2;color:#007c89;margin:10pt 0 5pt 0;}
+h3 {font-size:11pt;color:#007c89;margin:0 0 9pt 0;}
+p {margin:4pt 0 6pt 0;} strong {font-weight:bold;}
+a {color:#007c89;text-decoration:none;}
+table {width:100%;border-collapse:collapse;margin:6pt 0 8pt 0;table-layout:fixed;font-size:8.4pt;line-height:1.22;}
+th {background:#e5eef5;color:#102e4a;font-weight:bold;text-align:left;}
+td,th {border:0.5pt solid #cbd7df;padding:4pt;vertical-align:top;}
+blockquote {margin:10pt 0;padding:8pt 10pt;border-left:3pt solid #009ca4;background:#eef6f7;}
+blockquote p {margin:0;}
+code {font-family:Report;font-size:9pt;color:#234a64;}
+pre {padding:7pt;background:#f1f5f8;font-size:8.6pt;line-height:1.25;white-space:pre-wrap;}
+ul,ol {padding-left:15pt;margin:4pt 0 8pt 0;} li {margin-bottom:4pt;}
+</style></head><body><h1>RED → PATCH → GREEN và mutation</h1>
+<h2>10. Lịch sử kết quả thật</h2>
+<table>
+<thead>
+<tr>
+<th>Mốc</th>
+<th>NUnit / process thực tế</th>
+<th>Diễn giải</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RED T01–T04 [E1]</td>
+<td>4 chạy, 0 PASS, 4 assertion FAIL; exit2</td>
+<td>Scaffold không ghi: T01 còn20 thay vì21, T04 còn20 thay vì22. T02/T03 thiếu ack; không chứng minh stale overwrite vật lý.</td>
+</tr>
+<tr>
+<td>Review regression [E2b]</td>
+<td>3 PASS, 1 FAIL; exit2</td>
+<td>T03 mở rộng: expected Conflict, actual Committed sau GREEN đầu.</td>
+</tr>
+<tr>
+<td>GREEN đã sửa [E2]</td>
+<td>4/4 PASS; exit0</td>
+<td>Gate/read-check-commit + shared ID history, không yếu hóa oracle.</td>
+</tr>
+<tr>
+<td>Restore sau mutation [E3r]</td>
+<td>8/8 PASS; exit0</td>
+<td>Khôi phục guards đúng hash, không deliberate bug trong production.</td>
+</tr>
+<tr>
+<td>RED integration [E5r]</td>
+<td>5 chạy, 5 assertion FAIL; exit2</td>
+<td>Chưa có autosave/revision/error behavior; không lấy compile lỗi làm RED.</td>
+</tr>
+<tr>
+<td>GREEN cuối [E5s/E5p]</td>
+<td>11/11 Edit + 12/12 Play; exit0</td>
+<td>Capture V1, reserve, cancellation/fence được biên dịch và chạy.</td>
+</tr>
+</tbody>
+</table>
+<p>Patch nhỏ dùng C1–C4: gate theo path bao đọc head → luật revision/identity → commit; staging cùng directory, Flush(true), Replace/Move; finally release và chỉ cleanup scratch của request. Committed theo sau I/O thành công. Source/hash lưu theo mốc; <strong>chưa có commit patch để dẫn thay evidence</strong>.</p>
+<h2>11. Mutation: who tests the tests?</h2>
+<p><strong>M1 — bỏ idempotency guard:</strong> cho retry cùng ID xuống persistence. T03 thêm assertion trước khi khóa read-only để tránh mutant chết chỉ vì sharing exception. <strong>KILLED:</strong> expected Duplicate, actual Committed; một assertion failure, zero errors, exit2 [E3a].</p>
+<p><strong>M2 — bỏ semaphore critical section:</strong> giữ luật nghiệp vụ, bỏ admission/release. T04 ban đầu gặp I/O Error [E3o] → <strong>INCONCLUSIVE</strong>, không killed/survived. Thêm DraftIoHooks instance-scoped và T08: pause r21 sau staging; nếu r22 được admit thì drain nó trước, sau đó thả r21. Oracle luôn22. Hai lượt controlled <strong>KILLED</strong>, expected22/actual21 [E3b]; trace durable <strong>22 → 21</strong>. Không dùng Thread.Sleep tạo race.</p>
+<p>Mỗi thử nghiệm lưu source/hash rồi finally khôi phục. Bản đúng có seam lưu riêng; restored-final 8/8 PASS. Hai mutant chọn lọc bị bắt <strong>không phải mutation score 100%</strong> của mọi lỗi hoặc mọi lịch chạy.</p>
+<h2>12. AI-assisted patch review sau test</h2>
+<p><strong>Nhận xét đúng:</strong> chỉ so ID với head bỏ lọt historical-ID reuse. Regression T03 expected Conflict/actual Committed [E2b] chứng minh lỗi; shared committed-ID memory sửa nó [E2]. Review do cùng trợ lý thực hiện, không giả là reviewer độc lập.</p>
+<p><strong>Nhận xét thiếu evidence tại thời điểm review:</strong> “Semaphore + Task.Run có thể làm p95 vượt 3,5 s”. Đây là giả thuyết, không phải lỗi đã xác nhận; lúc đó chưa có benchmark120. P01 Bước5 sau đó đạt trong .NET console, vẫn không chứng minh SLA Unity sau integration. Không tối ưu speculative dựa trên nhận xét này.</p></body></html>
+<hr class="pagebreak">
+<html><head><meta charset="utf-8"><style>
+@font-face {font-family: Report; src:url(arial.ttf);}
+@font-face {font-family: Report; src:url(arialbd.ttf);font-weight:bold;}
+@font-face {font-family: Report; src:url(ariali.ttf);font-style:italic;}
+body {font-family:Report; font-size:10.2pt;line-height:1.3;color:#233347;margin:0;}
+h1 {font-size:21pt;line-height:1.15;color:#102e4a;margin:0 0 12pt 0;}
+h2 {font-size:12pt;line-height:1.2;color:#007c89;margin:10pt 0 5pt 0;}
+h3 {font-size:11pt;color:#007c89;margin:0 0 9pt 0;}
+p {margin:4pt 0 6pt 0;} strong {font-weight:bold;}
+a {color:#007c89;text-decoration:none;}
+table {width:100%;border-collapse:collapse;margin:6pt 0 8pt 0;table-layout:fixed;font-size:8.4pt;line-height:1.22;}
+th {background:#e5eef5;color:#102e4a;font-weight:bold;text-align:left;}
+td,th {border:0.5pt solid #cbd7df;padding:4pt;vertical-align:top;}
+blockquote {margin:10pt 0;padding:8pt 10pt;border-left:3pt solid #009ca4;background:#eef6f7;}
+blockquote p {margin:0;}
+code {font-family:Report;font-size:9pt;color:#234a64;}
+pre {padding:7pt;background:#f1f5f8;font-size:8.6pt;line-height:1.25;white-space:pre-wrap;}
+ul,ol {padding-left:15pt;margin:4pt 0 8pt 0;} li {margin-bottom:4pt;}
+</style></head><body><h1>Performance, coverage và độ ổn định</h1>
+<h2>13. 120 tác vụ — đo đúng phạm vi</h2>
+<p>Harness <strong>.NET 8.0.21 Release</strong>, SDK8.0.318; Windows, NVMe/NTFS D:, i7-12700H/20 logical processors; có Unity/Hub khác chạy. Payload JSON tổng hợp32 KiB, production DraftStore thật. Mỗi scenario warm-up120 riêng, không trộn mẫu. Ba lượt ×120/scenario = <strong>720 mẫu đo</strong>.</p>
+<p>Start gate chung. Stopwatch bao SaveAsync đến ack/lỗi, gồm semaphore wait, scheduling, serialization, I/O và audit read-back. Setup/payload/pre-call dispatch nằm ngoài API latency; dispatch spread có ghi riêng. <strong>p95 nearest-rank = mẫu thứ ceil(0,95 ×120) =114</strong> sau sắp tăng; không bỏ mẫu lỗi.</p>
+<table>
+<thead>
+<tr>
+<th style="width:15%">Case/lượt</th>
+<th style="width:11%">Min</th>
+<th style="width:11%">Mean</th>
+<th style="width:11%">Median</th>
+<th style="width:12%">p95</th>
+<th style="width:11%">Max</th>
+<th style="width:9%">Peak</th>
+<th style="width:20%">Commit/Stale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="width:15%">P01/1</td>
+<td style="width:11%">2,030</td>
+<td style="width:11%">34,295</td>
+<td style="width:11%">35,077</td>
+<td style="width:12%"><strong>48,951</strong></td>
+<td style="width:11%">50,490</td>
+<td style="width:9%">120</td>
+<td style="width:20%">2/118</td>
+</tr>
+<tr>
+<td style="width:15%">P01/2</td>
+<td style="width:11%">2,216</td>
+<td style="width:11%">47,637</td>
+<td style="width:11%">47,376</td>
+<td style="width:12%"><strong>70,817</strong></td>
+<td style="width:11%">72,379</td>
+<td style="width:9%">120</td>
+<td style="width:20%">3/117</td>
+</tr>
+<tr>
+<td style="width:15%">P01/3</td>
+<td style="width:11%">2,405</td>
+<td style="width:11%">60,326</td>
+<td style="width:11%">62,870</td>
+<td style="width:12%"><strong>105,375</strong></td>
+<td style="width:11%">106,924</td>
+<td style="width:9%">120</td>
+<td style="width:20%">7/113</td>
+</tr>
+<tr>
+<td style="width:15%">P02/1</td>
+<td style="width:11%">2,660</td>
+<td style="width:11%">11,888</td>
+<td style="width:11%">6,964</td>
+<td style="width:12%">45,130</td>
+<td style="width:11%">62,218</td>
+<td style="width:9%">21</td>
+<td style="width:20%">120/0</td>
+</tr>
+<tr>
+<td style="width:15%">P02/2</td>
+<td style="width:11%">2,447</td>
+<td style="width:11%">12,167</td>
+<td style="width:11%">10,328</td>
+<td style="width:12%">27,498</td>
+<td style="width:11%">49,303</td>
+<td style="width:9%">20</td>
+<td style="width:20%">120/0</td>
+</tr>
+<tr>
+<td style="width:15%">P02/3</td>
+<td style="width:11%">3,109</td>
+<td style="width:11%">10,906</td>
+<td style="width:11%">7,407</td>
+<td style="width:12%">23,328</td>
+<td style="width:11%">94,212</td>
+<td style="width:9%">21</td>
+<td style="width:20%">120/0</td>
+</tr>
+</tbody>
+</table>
+<p>Đơn vị ms; mỗi lượt120 started/120 completed. P01 cùng path, peak120 cả ba lượt: p95 &lt; <strong>3.500 ms — MET trong ba lượt quan sát</strong>. P02 có120 clients nhưng peak21/20/21, không thay P01. Task in-flight không đồng nghĩa physical write: gate serialize P01; Stale là từ chối hợp lệ. Tổng372 Committed,348 Stale; zero Duplicate/Conflict/I/O error [E4].</p>
+<p>Mỗi ack Committed có witness đĩa; head quan sát không giảm. Read-back độc lập sau process exit kiểm363 file cuối, payload32 KiB, metadata/SHA-256. Không phải crash recovery. Đây là benchmark <strong>trước integration</strong>, không phải Unity Mono/gameplay/FPS; không suy ra correctness tuyệt đối hay production SLA.</p>
+<h2>14. Coverage, flaky tests và residual risks</h2>
+<p><strong>Line coverage: NOT AVAILABLE. Branch coverage: NOT AVAILABLE.</strong> Không tìm thấy collector hỗ trợ ở các vị trí đã kiểm tra; không cài dependency lớn hoặc sửa Unity config. Risk matrix không phải phần trăm coverage.</p>
+<table>
+<thead>
+<tr>
+<th style="width:15%">Rủi ro</th>
+<th style="width:11%">Evidence / xử lý và giới hạn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="width:15%">Scheduling, shared state/order</td>
+<td style="width:11%">T08 ép pre-commit schedule; fixture GUID/path riêng, hooks instance-scoped; drain trước dispose. Không hứa bao hết interleaving.</td>
+</tr>
+<tr>
+<td style="width:15%">Editor shutdown hang</td>
+<td style="width:11%">stability-1 NUnit1 PASS nhưng process bị dừng, exit−1 sau shutdown stall; <strong>không clean PASS</strong>, chưa rõ nguyên nhân.</td>
+</tr>
+<tr>
+<td style="width:15%">Headless timing / long path</td>
+<td style="width:11%">I08 bỏ wall-time oracle, kiểm grounded thật; fixture60 Hz. T03 long-path lỗi thì rút ngắn fixture D:, không sửa guard; giữ lượt lỗi.</td>
+</tr>
+<tr>
+<td style="width:15%">Chưa được chứng minh</td>
+<td style="width:11%">Crash/power loss; cross-process/physical alias; persisted ID history; flush-on-quit; manual G05–G07. Reserve/fence sau integration chưa benchmark lại.</td>
+</tr>
+<tr>
+<td style="width:15%">Write fence khi restore có thể chờ I/O trên main thread, chưa có hard timeout. Gate/ID cache tồn tại suốt process; chưa stress bộ nhớ với số path/request không giới hạn.</td>
+<td style="width:11%"></td>
+</tr>
+</tbody>
+</table></body></html>
+<hr class="pagebreak">
+<html><head><meta charset="utf-8"><style>
+@font-face {font-family: Report; src:url(arial.ttf);}
+@font-face {font-family: Report; src:url(arialbd.ttf);font-weight:bold;}
+@font-face {font-family: Report; src:url(ariali.ttf);font-style:italic;}
+body {font-family:Report; font-size:10.2pt;line-height:1.3;color:#233347;margin:0;}
+h1 {font-size:21pt;line-height:1.15;color:#102e4a;margin:0 0 12pt 0;}
+h2 {font-size:12pt;line-height:1.2;color:#007c89;margin:10pt 0 5pt 0;}
+h3 {font-size:11pt;color:#007c89;margin:0 0 9pt 0;}
+p {margin:4pt 0 6pt 0;} strong {font-weight:bold;}
+a {color:#007c89;text-decoration:none;}
+table {width:100%;border-collapse:collapse;margin:6pt 0 8pt 0;table-layout:fixed;font-size:8.4pt;line-height:1.22;}
+th {background:#e5eef5;color:#102e4a;font-weight:bold;text-align:left;}
+td,th {border:0.5pt solid #cbd7df;padding:4pt;vertical-align:top;}
+blockquote {margin:10pt 0;padding:8pt 10pt;border-left:3pt solid #009ca4;background:#eef6f7;}
+blockquote p {margin:0;}
+code {font-family:Report;font-size:9pt;color:#234a64;}
+pre {padding:7pt;background:#f1f5f8;font-size:8.6pt;line-height:1.25;white-space:pre-wrap;}
+ul,ol {padding-left:15pt;margin:4pt 0 8pt 0;} li {margin-bottom:4pt;}
+body {font-size:9.7pt;} table {font-size:8.3pt;} td,th {padding:3.5pt;}</style></head><body><h1>Traceability và nghiệm thu gameplay</h1>
+<h2>15. AC/Risk → Test → File → Commit/PR → Result</h2>
+<p>File aliases: T = DraftStoreRedTests.cs; S = DraftStoreIntegrationSafetyTests.cs; I = Floor01AutosaveIntegrationTests.cs; P = Performance/Program.cs. C1–C4/Q ở trang2. <strong>Mọi patch còn ở working tree; commit triển khai/PR PENDING.</strong> Baseline f933595 không chứa patch autosave.</p>
+<table>
+<thead>
+<tr>
+<th style="width:18%">AC / Risk</th>
+<th style="width:17%">Test</th>
+<th style="width:22%">File → source</th>
+<th style="width:29%">Evidence / result</th>
+<th style="width:14%">Commit/PR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="width:18%">AC1 revision/payload</td>
+<td style="width:17%">T01, I01/I11, S01</td>
+<td style="width:22%">T/I/S → C1/C2/C3</td>
+<td style="width:29%">E5s/E5p PASS</td>
+<td style="width:14%">PENDING</td>
+</tr>
+<tr>
+<td style="width:18%">AC2 stale overwrite</td>
+<td style="width:17%">T02/T08, I03</td>
+<td style="width:22%">T/I → C2</td>
+<td style="width:29%">E5 PASS; M2 killed E3b</td>
+<td style="width:14%">PENDING</td>
+</tr>
+<tr>
+<td style="width:18%">AC3 retry/ID conflict</td>
+<td style="width:17%">T03/T05/T06</td>
+<td style="width:22%">T → C2</td>
+<td style="width:29%">E5s PASS; M1 killed E3a</td>
+<td style="width:14%">PENDING</td>
+</tr>
+<tr>
+<td style="width:18%">AC4 concurrency</td>
+<td style="width:17%">T04/T08, S01/S03, P01</td>
+<td style="width:22%">T/S/P → C2</td>
+<td style="width:29%">E3/E4/E5; một process</td>
+<td style="width:14%">PENDING</td>
+</tr>
+<tr>
+<td style="width:18%">AC5 trigger/idle/safety</td>
+<td style="width:17%">I01/I02/I06/I08</td>
+<td style="width:22%">I → C3/C4/Q</td>
+<td style="width:29%">E5p PASS; G02–G04 có giới hạn</td>
+<td style="width:14%">PENDING</td>
+</tr>
+<tr>
+<td style="width:18%">AC5 manual/restore</td>
+<td style="width:17%">I04/I07/I12, S03</td>
+<td style="width:22%">I/S → C2/C3/C4</td>
+<td style="width:29%">E5 PASS; manual G05/G06 chưa chạy</td>
+<td style="width:14%">PENDING</td>
+</tr>
+<tr>
+<td style="width:18%">AC5 failure path</td>
+<td style="width:17%">T07, I05/I10, S02</td>
+<td style="width:22%">T/I/S → C2/C3</td>
+<td style="width:29%">E5 PASS; manual G07 chưa chạy</td>
+<td style="width:14%">PENDING</td>
+</tr>
+<tr>
+<td style="width:18%">NFC1 p95 ≤3.500ms</td>
+<td style="width:17%">P01×3, P02 tham chiếu</td>
+<td style="width:22%">P → C2 bản Bước5</td>
+<td style="width:29%">E4 MET; không Unity SLA</td>
+<td style="width:14%">PENDING</td>
+</tr>
+<tr>
+<td style="width:18%">Crash/cross-process/E2E</td>
+<td style="width:17%">Chưa có phù hợp</td>
+<td style="width:22%">Ngoài slice/còn thiếu</td>
+<td style="width:29%">NOT TESTED</td>
+<td style="width:14%">PENDING</td>
+</tr>
+</tbody>
+</table>
+<h2>16. Manual acceptance: nguồn và mức kết luận</h2>
+<p>G01–G04 lấy từ <strong>người dùng báo cáo ở yêu cầu Bước8</strong>, không phải trợ lý tự thao tác Game View. Khi tổng hợp đã đọc/copy chỉ đọc draft r2: fingerprint đúng, hai facts và item khớp mô tả. Một mẫu r2 không tái dựng được payload r1 hoặc cặp so sánh G04.</p>
+<table>
+<thead>
+<tr>
+<th style="width:18%">ID</th>
+<th style="width:17%">Thao tác / Expected</th>
+<th style="width:22%">Actual / mức kết luận</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="width:18%">G01</td>
+<td style="width:17%">Play đúng worktree; component đúng; không lỗi mới</td>
+<td style="width:22%">Đúng VT103_Work; auto-component trên Floor01_QuestV1; 0,3/0,5/2s. Chưa kiểm Console đủ → <strong>PARTIAL</strong>, không PASS toàn case.</td>
+</tr>
+<tr>
+<td style="width:18%">G02</td>
+<td style="width:17%">Nhặt Key_A101 → draft hợp lệ</td>
+<td style="width:22%">Người dùng báo r1 được tạo; thiếu payload r1 riêng → <strong>PARTIAL</strong> về toàn snapshot.</td>
+</tr>
+<tr>
+<td style="width:18%">G03</td>
+<td style="width:17%">Vào A101 → revision/data mới</td>
+<td style="width:22%">Báo1→2; file r2 có item:Key_A101, room:A101, Inventory Key_A101; cửa A101 mở, không khóa → <strong>PASS phạm vi quan sát</strong>.</td>
+</tr>
+<tr>
+<td style="width:18%">G04</td>
+<td style="width:17%">Idle10s không ghi</td>
+<td style="width:22%">Báo r2→2, hash/time không đổi → <strong>PASS theo người dùng</strong>; thiếu hai mẫu gốc.</td>
+</tr>
+<tr>
+<td style="width:18%">G05</td>
+<td style="width:17%">F5 Save/Continue độc lập</td>
+<td style="width:22%"><strong>NOT EXECUTED manual</strong>; I04/I12 tự động ghi riêng.</td>
+</tr>
+<tr>
+<td style="width:18%">G06</td>
+<td style="width:17%">Restore không autosave sai/lặp</td>
+<td style="width:22%"><strong>NOT EXECUTED manual</strong>; I07/I12/S03 không thay input acceptance.</td>
+</tr>
+<tr>
+<td style="width:18%">G07</td>
+<td style="width:17%">I/O lỗi không phá game/ack giả</td>
+<td style="width:22%"><strong>NOT EXECUTED manual</strong>; T07/I05/S02 là tự động.</td>
+</tr>
+</tbody>
+</table>
+<p>Không có screenshot trong evidence đã kiểm kê; không đính kèm ảnh giả. Draft không auto-restore; F5 Continue vẫn dùng manual slot. Cần sandbox save trên D trước G05–G07 vì worktree và project chính dùng chung persistentDataPath mặc định.</p></body></html>
+<hr class="pagebreak">
+<html><head><meta charset="utf-8"><style>
+@font-face {font-family: Report; src:url(arial.ttf);}
+@font-face {font-family: Report; src:url(arialbd.ttf);font-weight:bold;}
+@font-face {font-family: Report; src:url(ariali.ttf);font-style:italic;}
+body {font-family:Report; font-size:10.2pt;line-height:1.3;color:#233347;margin:0;}
+h1 {font-size:21pt;line-height:1.15;color:#102e4a;margin:0 0 12pt 0;}
+h2 {font-size:12pt;line-height:1.2;color:#007c89;margin:10pt 0 5pt 0;}
+h3 {font-size:11pt;color:#007c89;margin:0 0 9pt 0;}
+p {margin:4pt 0 6pt 0;} strong {font-weight:bold;}
+a {color:#007c89;text-decoration:none;}
+table {width:100%;border-collapse:collapse;margin:6pt 0 8pt 0;table-layout:fixed;font-size:8.4pt;line-height:1.22;}
+th {background:#e5eef5;color:#102e4a;font-weight:bold;text-align:left;}
+td,th {border:0.5pt solid #cbd7df;padding:4pt;vertical-align:top;}
+blockquote {margin:10pt 0;padding:8pt 10pt;border-left:3pt solid #009ca4;background:#eef6f7;}
+blockquote p {margin:0;}
+code {font-family:Report;font-size:9pt;color:#234a64;}
+pre {padding:7pt;background:#f1f5f8;font-size:8.6pt;line-height:1.25;white-space:pre-wrap;}
+ul,ol {padding-left:15pt;margin:4pt 0 8pt 0;} li {margin-bottom:4pt;}
+body {font-size:10pt;} table {font-size:8.4pt;} td,th {padding:3pt;}</style></head><body><h1>Reflection và rà soát trước nộp</h1>
+<h2>17. Reflection — bản nháp theo góc nhìn sinh viên</h2>
+<!-- REFLECTION_START -->
+<p>Qua bài này, tôi tin tưởng cơ chế autosave hơn vì đã quan sát được cả hành vi đúng và cách hệ thống thất bại. Ban đầu, bốn test xanh dễ khiến tôi nghĩ phần chống ghi đè đã đủ. Tuy nhiên, trường hợp tái sử dụng request ID sau khi head thay đổi vẫn được chấp nhận. Assertion bổ sung làm lỗi hiện rõ và buộc tôi phân biệt revision với identity.</p>
+<p>Điều quan trọng nhất tôi học được là test PASS chỉ có ý nghĩa trong phạm vi oracle và lịch chạy đã kiểm tra. Hai tác vụ cùng khởi phát không bảo đảm chúng xen kẽ tại thời điểm nguy hiểm. Khi bỏ semaphore, lỗi I/O không phải bằng chứng rằng test bắt được stale overwrite. Lịch chạy có kiểm soát giúp tôi nhìn thấy head từ 22 giảm về 21 và giải thích được vì sao test thất bại.</p>
+<p>Mutation tăng confidence vì những guard cần thiết không chỉ tồn tại trong code mà còn được một assertion bảo vệ. Tuy vậy, hai mutant bị phát hiện không chứng minh mọi lỗi đã được bao phủ. Benchmark cũng chỉ cho thấy ba lượt tải cụ thể đạt ngưỡng; nó không thay thế đo trên Unity với capture, animation và tương tác thật.</p>
+<p>Tôi còn thiếu nghiệm thu đầy đủ Console, payload của revision đầu và các thao tác manual Save/Continue khi autosave lỗi. Cross-process, crash recovery và lịch sử request qua restart cũng chưa được chứng minh. Tôi cần giữ những khoảng trống này trong báo cáo thay vì dùng số test xanh để che chúng.</p>
+<p>Bước kiểm tra tiếp theo có giá trị cao nhất là hoàn tất G05–G07 trong một thư mục save thử riêng, lưu metadata trước và sau cùng log lỗi. Cách này kiểm tra đúng điểm giao giữa thao tác người chơi, manual save và autosave mà vẫn bảo vệ dữ liệu thật.</p>
+<!-- REFLECTION_END -->
+
+<h2>18. Quality gate và các việc chưa thể đóng</h2>
+<table>
+<thead>
+<tr>
+<th>Yêu cầu bài làm</th>
+<th>Nơi đối chiếu / trạng thái</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Danh tính, cam kết, repo/baseline/link</td>
+<td>Trang1; branch/PR PENDING; không hash patch giả</td>
+</tr>
+<tr>
+<td>AC, invariant, NFC, AI plan/review</td>
+<td>Trang1–3,5; hai đề xuất sửa/bác bỏ có evidence</td>
+</tr>
+<tr>
+<td>Decision table; ≥10 case đủ sáu cột</td>
+<td>Trang3–4; 17 hàng case/nhóm; không coi Planned là PASS</td>
+</tr>
+<tr>
+<td>RED–PATCH–GREEN; mutation; flaky</td>
+<td>Trang5–6; tách assertion/error, exit và shutdown hang</td>
+</tr>
+<tr>
+<td>Performance, coverage, traceability</td>
+<td>Trang6–7; đúng workload/peak/p95; coverage NOT AVAILABLE</td>
+</tr>
+<tr>
+<td>Reflection, AI log và chứng cứ</td>
+<td>Trang8; phụ lục A/B; số từ được kiểm khi xuất PDF</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Chưa có rubric gốc của giảng viên trong nguồn cung cấp.</strong> Bảng đối chiếu dựa trên yêu cầu Bước8, không tuyên bố đã đọc rubric chưa có. Trước nộp: sinh viên duyệt reflection/cam kết; bổ sung rubric và manual evidence còn thiếu; chỉ sau khi được phép push mới cập nhật link/commit. Không sửa log cũ để khớp kết luận.</p></body></html>
+<hr class="pagebreak">
+<html><head><meta charset="utf-8"><style>
+@font-face {font-family: Report; src:url(arial.ttf);}
+@font-face {font-family: Report; src:url(arialbd.ttf);font-weight:bold;}
+@font-face {font-family: Report; src:url(ariali.ttf);font-style:italic;}
+body {font-family:Report; font-size:10.2pt;line-height:1.3;color:#233347;margin:0;}
+h1 {font-size:21pt;line-height:1.15;color:#102e4a;margin:0 0 12pt 0;}
+h2 {font-size:12pt;line-height:1.2;color:#007c89;margin:10pt 0 5pt 0;}
+h3 {font-size:11pt;color:#007c89;margin:0 0 9pt 0;}
+p {margin:4pt 0 6pt 0;} strong {font-weight:bold;}
+a {color:#007c89;text-decoration:none;}
+table {width:100%;border-collapse:collapse;margin:6pt 0 8pt 0;table-layout:fixed;font-size:8.4pt;line-height:1.22;}
+th {background:#e5eef5;color:#102e4a;font-weight:bold;text-align:left;}
+td,th {border:0.5pt solid #cbd7df;padding:4pt;vertical-align:top;}
+blockquote {margin:10pt 0;padding:8pt 10pt;border-left:3pt solid #009ca4;background:#eef6f7;}
+blockquote p {margin:0;}
+code {font-family:Report;font-size:9pt;color:#234a64;}
+pre {padding:7pt;background:#f1f5f8;font-size:8.6pt;line-height:1.25;white-space:pre-wrap;}
+ul,ol {padding-left:15pt;margin:4pt 0 8pt 0;} li {margin-bottom:4pt;}
+</style></head><body><h1>Phụ lục A · AI Usage Log (1/2)</h1>
+<p>Prompt dưới đây là <strong>tóm tắt chỉ thị thật trong hội thoại</strong>, không tái tạo transcript nguyên văn. Công cụ: trợ lý Codex; không có log xác minh model/version cụ thể. Không tự khai reviewer độc lập hoặc hành động con người chưa xảy ra.</p>
+<table>
+<thead>
+<tr>
+<th style="width:11%">Giai đoạn</th>
+<th style="width:8%">Công cụ AI</th>
+<th style="width:20%">Prompt chính đã có</th>
+<th style="width:20%">Output được dùng</th>
+<th style="width:28%">Kiểm tra, sửa/bác bỏ</th>
+<th style="width:13%">Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="width:11%">Bước1 phân tích</td>
+<td style="width:8%">Codex</td>
+<td style="width:20%">Đọc Save/Load; lập AC/decision table; risk test theo code; chưa viết code</td>
+<td style="width:20%">Kế hoạch slice Floor01, oracle revision/ID</td>
+<td style="width:28%">Người dùng chốt baseline f933595, worktree riêng và scope; bác bỏ coi10s là requirement</td>
+<td style="width:13%">Hội thoại Bước1–2; TEST_SPEC</td>
+</tr>
+<tr>
+<td style="width:11%">Bước2 RED</td>
+<td style="width:8%">Codex</td>
+<td style="width:20%">Worktree riêng, test-first T01–T04; RED do assertion, không thiếu assembly</td>
+<td style="width:20%">Scaffold, test gọi production, runner/XML</td>
+<td style="width:28%">Trợ lý sửa cú pháp NUnit không tương thích, không đổi expected. Người dùng chốt concurrency/identity trước patch</td>
+<td style="width:13%">E1; RED_REPORT</td>
+</tr>
+<tr>
+<td style="width:11%">Bước3 GREEN</td>
+<td style="width:8%">Codex</td>
+<td style="width:20%">Patch nhỏ stale/idempotency, atomic write; bốn test; self-review sau test</td>
+<td style="width:20%">C1/C2, gate/fingerprint/ack</td>
+<td style="width:28%">Self-review tìm historical-ID gap; T03 Conflict/Committed. Sửa shared ID memory; không gán cho reviewer con người</td>
+<td style="width:13%">E2b/E2; GREEN_REPORT</td>
+</tr>
+<tr>
+<td style="width:11%">Bước4 mutation</td>
+<td style="width:8%">Codex</td>
+<td style="width:20%">Bỏ riêng hai guard; kill phải do assertion; khôi phục hash</td>
+<td style="width:20%">M1/M2 diffs, T05–T08, I/O seam/trace</td>
+<td style="width:28%">M2-original Error → INCONCLUSIVE; lịch event/admission thay sleep; khôi phục guard; báo shutdown stall</td>
+<td style="width:13%">E3; MUTATION_REPORT</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ranh giới trách nhiệm:</strong> người dùng chốt phạm vi/contract và cung cấp nghiệm thu Game View; trợ lý đọc source, hỗ trợ patch, chạy công cụ. XML/log/hash chứng minh kết quả tool. Self-review của cùng trợ lý không phải peer review độc lập.</p>
+<p><strong>Risk AI:</strong> expected không được viết thành “đúng enum code đang trả”. Oracle phải mô tả revision/payload/byte theo change request. Khi case mới làm GREEN thành RED, giữ evidence xấu và sửa implementation đúng phạm vi, không làm yếu test.</p>
+<p>Không có prompt log nguyên bản độc lập trên đĩa cho toàn bộ các lượt. Nguồn tóm tắt là hội thoại được cung cấp; không tạo lịch sử prompt giả để lấp chỗ trống.</p></body></html>
+<hr class="pagebreak">
+<html><head><meta charset="utf-8"><style>
+@font-face {font-family: Report; src:url(arial.ttf);}
+@font-face {font-family: Report; src:url(arialbd.ttf);font-weight:bold;}
+@font-face {font-family: Report; src:url(ariali.ttf);font-style:italic;}
+body {font-family:Report; font-size:10.2pt;line-height:1.3;color:#233347;margin:0;}
+h1 {font-size:21pt;line-height:1.15;color:#102e4a;margin:0 0 12pt 0;}
+h2 {font-size:12pt;line-height:1.2;color:#007c89;margin:10pt 0 5pt 0;}
+h3 {font-size:11pt;color:#007c89;margin:0 0 9pt 0;}
+p {margin:4pt 0 6pt 0;} strong {font-weight:bold;}
+a {color:#007c89;text-decoration:none;}
+table {width:100%;border-collapse:collapse;margin:6pt 0 8pt 0;table-layout:fixed;font-size:8.4pt;line-height:1.22;}
+th {background:#e5eef5;color:#102e4a;font-weight:bold;text-align:left;}
+td,th {border:0.5pt solid #cbd7df;padding:4pt;vertical-align:top;}
+blockquote {margin:10pt 0;padding:8pt 10pt;border-left:3pt solid #009ca4;background:#eef6f7;}
+blockquote p {margin:0;}
+code {font-family:Report;font-size:9pt;color:#234a64;}
+pre {padding:7pt;background:#f1f5f8;font-size:8.6pt;line-height:1.25;white-space:pre-wrap;}
+ul,ol {padding-left:15pt;margin:4pt 0 8pt 0;} li {margin-bottom:4pt;}
+</style></head><body><h1>Phụ lục A · AI Usage Log (2/2)</h1>
+<table>
+<thead>
+<tr>
+<th style="width:11%">Giai đoạn</th>
+<th style="width:8%">Công cụ AI</th>
+<th style="width:20%">Prompt chính đã có</th>
+<th style="width:20%">Output được dùng</th>
+<th style="width:28%">Kiểm tra, sửa/bác bỏ</th>
+<th style="width:13%">Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="width:11%">Bước5 performance</td>
+<td style="width:8%">Codex</td>
+<td style="width:20%">120 same-path/independent-path, ba lượt, nearest-rank; không sửa production</td>
+<td style="width:20%">.NET harness, raw CSV/recomputation, risk matrix</td>
+<td style="width:28%">Trợ lý đối chiếu720 mẫu; P02 peak21/20/21; không khai coverage%. Người dùng nhắc lại p95 đúng trong Bước8</td>
+<td style="width:13%">E4; PERFORMANCE_REPORT</td>
+</tr>
+<tr>
+<td style="width:11%">Bước6 integration</td>
+<td style="width:8%">Codex</td>
+<td style="width:20%">I01–I05 RED trước patch; Floor01; bảo vệ manual và restore</td>
+<td style="width:20%">C3, revision reserve, cancellation/fence; test liên quan</td>
+<td style="width:28%">Fixture60Hz, bỏ wall-time oracle nhảy, rút ngắn path T03; giữ lượt lỗi; không khai full E2E</td>
+<td style="width:13%">E5; GAMEPLAY_INTEGRATION_REPORT</td>
+</tr>
+<tr>
+<td style="width:11%">Bước7 nghiệm thu</td>
+<td style="width:8%">Codex + người dùng thao tác</td>
+<td style="width:20%">Kiểm wiring/path, G01–G07; không giả manual PASS</td>
+<td style="width:20%">Preflight auto-add Awake, checklist/metadata guide</td>
+<td style="width:28%">Người dùng xác nhận một phần G01, r1→r2 và idle10s; manual G05–G07 chưa chạy; chưa có ảnh/payload r1 đủ</td>
+<td style="width:13%">Hội thoại Bước8; E6</td>
+</tr>
+<tr>
+<td style="width:11%">Bước8 báo cáo</td>
+<td style="width:8%">Codex</td>
+<td style="width:20%">Source/evidence; PDF≤8 trang chính, reflection250–350 từ; không sửa code/push</td>
+<td style="width:20%">Markdown/PDF nháp; inventory/hash; quality gate</td>
+<td style="width:28%">Trợ lý đối chiếu XML/process/CSV, draft r2; <strong>sinh viên chưa duyệt bản cuối/reflection trong phiên này</strong></td>
+<td style="width:13%">E6; report-quality.json</td>
+</tr>
+</tbody>
+</table>
+<h2>Những gì không khai đã làm</h2>
+<p>Không có định danh model AI được xác thực; không đoán tên model. Không khai đã có screenshot, branch remote, PR hoặc commit patch. Không biến nhận xét AI thành xác nhận của giảng viên.</p>
+<p>Reflection ngôi thứ nhất có AI hỗ trợ, cần sinh viên đọc và chịu trách nhiệm trước nộp. AI Usage Log công bố việc này; không tạo chữ ký hoặc xác nhận duyệt thay sinh viên.</p>
+<p>Nhận xét về historical ID, barrier race và performance giả thuyết đã tồn tại trong báo cáo GREEN/MUTATION gốc. Phân loại “đúng”/“thiếu evidence” dựa trên artifact, không sáng tác reviewer comment để đủ rubric.</p>
+<p>Bước8 chỉ tổng hợp tài liệu; không khai test/gameplay mới từ thao tác xuất PDF. Kết quả manual người dùng cung cấp giữ nguồn riêng, không ghi vào NUnit như thể runner thực thi.</p></body></html>
+<hr class="pagebreak">
+<html><head><meta charset="utf-8"><style>
+@font-face {font-family: Report; src:url(arial.ttf);}
+@font-face {font-family: Report; src:url(arialbd.ttf);font-weight:bold;}
+@font-face {font-family: Report; src:url(ariali.ttf);font-style:italic;}
+body {font-family:Report; font-size:10.2pt;line-height:1.3;color:#233347;margin:0;}
+h1 {font-size:21pt;line-height:1.15;color:#102e4a;margin:0 0 12pt 0;}
+h2 {font-size:12pt;line-height:1.2;color:#007c89;margin:10pt 0 5pt 0;}
+h3 {font-size:11pt;color:#007c89;margin:0 0 9pt 0;}
+p {margin:4pt 0 6pt 0;} strong {font-weight:bold;}
+a {color:#007c89;text-decoration:none;}
+table {width:100%;border-collapse:collapse;margin:6pt 0 8pt 0;table-layout:fixed;font-size:8.4pt;line-height:1.22;}
+th {background:#e5eef5;color:#102e4a;font-weight:bold;text-align:left;}
+td,th {border:0.5pt solid #cbd7df;padding:4pt;vertical-align:top;}
+blockquote {margin:10pt 0;padding:8pt 10pt;border-left:3pt solid #009ca4;background:#eef6f7;}
+blockquote p {margin:0;}
+code {font-family:Report;font-size:9pt;color:#234a64;}
+pre {padding:7pt;background:#f1f5f8;font-size:8.6pt;line-height:1.25;white-space:pre-wrap;}
+ul,ol {padding-left:15pt;margin:4pt 0 8pt 0;} li {margin-bottom:4pt;}
+body {font-size:9.7pt;} table {font-size:8.3pt;} td,th {padding:3.5pt;}</style></head><body><h1>Phụ lục B · Chỉ mục source và artifact</h1>
+<p>Path tương đối từ <strong>D:/Game3D-01/VT103_Work</strong>; gốc evidence <strong>Evidence/VT103/</strong>. Alias rút gọn để bảng không tràn, không phải link/commit mới.</p>
+<table>
+<thead>
+<tr>
+<th>Alias</th>
+<th>Artifact gốc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E1</td>
+<td>red-20261113-170710/results.xml, process.json, assertions.json</td>
+</tr>
+<tr>
+<td>E2b</td>
+<td>green-20261113-173132/results.xml — historical-ID regression</td>
+</tr>
+<tr>
+<td>E2</td>
+<td>green-20261113-173233/results.xml, red-to-green.diff</td>
+</tr>
+<tr>
+<td>E3a</td>
+<td>mutation-20261113-175040/M1/: mutation.diff, results.xml, assertions.json</td>
+</tr>
+<tr>
+<td>E3o</td>
+<td>mutation-20261113-175040/M2-original/results.xml — Error, INCONCLUSIVE</td>
+</tr>
+<tr>
+<td>E3b</td>
+<td>mutation-20261113-175040/M2-controlled-trace/: results.xml, test-data/**/schedule.txt</td>
+</tr>
+<tr>
+<td>E3r</td>
+<td>mutation-20261113-175040/restored-final/: results.xml, process.json; guarded-with-seam/</td>
+</tr>
+<tr>
+<td>E4</td>
+<td>performance-20261113-182949/: summary.json; measured/{P01,P02}/round-*/samples.csv</td>
+</tr>
+<tr>
+<td>E4+</td>
+<td>Cùng E4: independent-recomputation.json, post-process-readback.json, coverage-availability.json, source-hashes.json</td>
+</tr>
+<tr>
+<td>E5r</td>
+<td>integration-20261113-185347/red-20261113-185509/results.xml</td>
+</tr>
+<tr>
+<td>E5s</td>
+<td>integration-20261113-185347/store-final-20261113-191008/: results.xml, process.json</td>
+</tr>
+<tr>
+<td>E5p</td>
+<td>integration-20261113-185347/gameplay-green-final-20261113-191142/: results.xml, process.json</td>
+</tr>
+<tr>
+<td>E6</td>
+<td>Thư mục report trong evidence-root.txt cạnh PDF: inventory.json, manual-evidence-provenance.json, observed-draft-current.json, protected-evidence.json</td>
+</tr>
+</tbody>
+</table>
+<p><strong>C1/C2/DraftIoHooks:</strong> HUS_Escape/Assets/_Project/Scripts/Utilities/Autosave/<br />
+<strong>C3/C4:</strong> HUS_Escape/Assets/_Project/Scripts/Utilities/<br />
+<strong>Q:</strong> HUS_Escape/Assets/_Project/Scripts/Puzzle/QuestManager.cs</p>
+<p><strong>T/S:</strong> Autosave/Tests/Editor/ dưới Utilities; <strong>I:</strong> Autosave/Tests/PlayMode/Floor01AutosaveIntegrationTests.cs. Tên method giữ ID T01–T08, S01–S03, I01–I12; XML có fullname/stack. <strong>P:</strong> tools/VT103/Performance/Program.cs.</p>
+<p><strong>Sáu báo cáo:</strong> docs/TechnicalDesign/VT103_TEST_SPEC.md, VT103_RED_REPORT.md, VT103_GREEN_REPORT.md, VT103_MUTATION_REPORT.md, VT103_PERFORMANCE_REPORT.md, VT103_GAMEPLAY_INTEGRATION_REPORT.md. “Chưa có gameplay” ở Bước5 là trạng thái khi đó, không phải hiện trạng Bước8.</p>
+<p><strong>Draft thật:</strong> C:/Users/ASUS/AppData/LocalLow/DefaultCompany/HUS_Escape/floor01-draft-v1.json. Chỉ copy sang E6, không sửa file gốc. Không có screenshot trong evidence kiểm kê.</p>
+<p><strong>Git:</strong> đã xác minh nhánh và baseline local. Truy vấn ban đầu lỗi mạng; lượt git ls-remote được cấp quyền mạng sau đó exit 0, không có nhánh cá nhân tương ứng. Link branch/PR vẫn PENDING. Ba file ProjectSettings modified trước tổng hợp được bảo toàn; không reset hoặc khẳng định working tree hiện tại sạch.</p></body></html>
+<hr class="pagebreak">
+<html><head><meta charset="utf-8"><style>
+@font-face {font-family: Report; src:url(arial.ttf);}
+@font-face {font-family: Report; src:url(arialbd.ttf);font-weight:bold;}
+@font-face {font-family: Report; src:url(ariali.ttf);font-style:italic;}
+body {font-family:Report; font-size:10.2pt;line-height:1.3;color:#233347;margin:0;}
+h1 {font-size:21pt;line-height:1.15;color:#102e4a;margin:0 0 12pt 0;}
+h2 {font-size:12pt;line-height:1.2;color:#007c89;margin:10pt 0 5pt 0;}
+h3 {font-size:11pt;color:#007c89;margin:0 0 9pt 0;}
+p {margin:4pt 0 6pt 0;} strong {font-weight:bold;}
+a {color:#007c89;text-decoration:none;}
+table {width:100%;border-collapse:collapse;margin:6pt 0 8pt 0;table-layout:fixed;font-size:8.4pt;line-height:1.22;}
+th {background:#e5eef5;color:#102e4a;font-weight:bold;text-align:left;}
+td,th {border:0.5pt solid #cbd7df;padding:4pt;vertical-align:top;}
+blockquote {margin:10pt 0;padding:8pt 10pt;border-left:3pt solid #009ca4;background:#eef6f7;}
+blockquote p {margin:0;}
+code {font-family:Report;font-size:9pt;color:#234a64;}
+pre {padding:7pt;background:#f1f5f8;font-size:8.6pt;line-height:1.25;white-space:pre-wrap;}
+ul,ol {padding-left:15pt;margin:4pt 0 8pt 0;} li {margin-bottom:4pt;}
+</style></head><body><h1>Phụ lục B · Trích log và metadata</h1>
+<p>Giá trị từ artifact sẵn có; <strong>không phải test chạy mới</strong>. Phân biệt NUnit, exit và timeout. Không nhúng toàn editor.log vì dài và có dữ liệu môi trường không cần thiết.</p>
+<table>
+<thead>
+<tr>
+<th>Artifact</th>
+<th>Trích kết quả</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E1 RED</td>
+<td>4 chạy; 0 PASS; 4 assertion FAIL; exit2; timeout=false</td>
+</tr>
+<tr>
+<td>E2b regression</td>
+<td>T03 expected Conflict, actual Committed; 3 PASS/1 FAIL</td>
+</tr>
+<tr>
+<td>E2 GREEN</td>
+<td>4/4 PASS; exit0; timeout=false</td>
+</tr>
+<tr>
+<td>E3a M1</td>
+<td>T03 expected Duplicate, actual Committed; một assertion failure, zero errors; exit2</td>
+</tr>
+<tr>
+<td>E3o M2-original</td>
+<td>Một Error, zero assertion failure; INCONCLUSIVE</td>
+</tr>
+<tr>
+<td>E3b M2 controlled</td>
+<td>T08 expected22, actual21; exit2; source restored exactly</td>
+</tr>
+<tr>
+<td>E3r restored</td>
+<td>8/8 PASS; exit0</td>
+</tr>
+<tr>
+<td>stability-1</td>
+<td>NUnit1 PASS, process−1 sau external stop; không clean PASS</td>
+</tr>
+<tr>
+<td>E5s / E5p</td>
+<td>11/11 và12/12 PASS; exit0, timeout=false cả hai</td>
+</tr>
+</tbody>
+</table>
+<h2>Trace schedule M2 thực tế</h2>
+<pre><code>Newer completed: Committed
+Durable before old release: 22
+Durable after both writes: 21
+</code></pre>
+<h2>Snapshot r2 đối chiếu G03</h2>
+<p>Envelope formatVersion1, revision <strong>2</strong>; scene Floor01_Prototype; facts [item:Key_A101, room:A101]; inventory [Key_A101]. Cửa Key_A101 locked=false/open=true; A102/LAB locked=true/open=false. SHA-256 payload khớp fingerprint. SHA-256 toàn file copy:</p>
+<p><code>19b96a1239784b4d05bdbae29c6098f721b4e84383e13eb170adf8a2276fd01d</code></p>
+<p>Đây là mẫu r2 lúc tổng hợp, không phải payload r1/cặp hash trước-sau idle. G04 “Hash không đổi=True; LastWriteTime không đổi=True” do người dùng báo, chưa có hai mẫu gốc. G01 thiếu kiểm Console; G05–G07 manual NOT EXECUTED.</p>
+<h2>Lệnh tham khảo — không chạy lại ở Bước8</h2>
+<pre><code>powershell -File tools/VT103/Run-Integration.ps1
+  -Phase store-check -Platform EditMode -ExpectedTests 11
+  -TestFilter HUSEscape.Persistence.Autosave.Tests
+powershell -File tools/VT103/Run-Integration.ps1
+  -Phase gameplay-check -Platform PlayMode -ExpectedTests 12
+powershell -File tools/VT103/Performance/Run-Performance.ps1
+</code></pre>
+<p>Xuống hàng chỉ phục vụ trình bày; command.txt trong mỗi run lưu lệnh gốc. Rerun tạo evidence mới, không ghi đè thư mục cũ. Bước8 chỉ đọc/đối chiếu; không chạy regression, benchmark hay mutation mới.</p></body></html>

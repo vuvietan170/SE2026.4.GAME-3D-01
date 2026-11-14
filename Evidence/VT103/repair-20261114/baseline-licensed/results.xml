@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="12" result="Failed(Child)" total="12" passed="8" failed="4" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-14 10:25:28Z" end-time="2026-11-14 10:25:45Z" duration="17,4501049">
+  <test-suite type="TestSuite" id="1065" name="HUS_Escape" fullname="HUS_Escape" runstate="Runnable" testcasecount="45" result="Failed" site="Child" start-time="2026-11-14 10:25:28Z" end-time="2026-11-14 10:25:45Z" duration="17.450105" total="12" passed="8" failed="4" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="PlayMode" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="1125" name="VT103.Autosave.PlayModeTests.dll" fullname="D:/Game3D-01/VT103_Work/Temp/VT103Verify/Library/ScriptAssemblies/VT103.Autosave.PlayModeTests.dll" runstate="Runnable" testcasecount="12" result="Failed" site="Child" start-time="2026-11-14 10:25:28Z" end-time="2026-11-14 10:25:45Z" duration="17.436495" total="12" passed="8" failed="4" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="30568" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestSuite" id="1126" name="HUSEscape" fullname="HUSEscape" runstate="Runnable" testcasecount="12" result="Failed" site="Child" start-time="2026-11-14 10:25:28Z" end-time="2026-11-14 10:25:45Z" duration="17.435436" total="12" passed="8" failed="4" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-suite type="TestSuite" id="1127" name="Persistence" fullname="HUSEscape.Persistence" runstate="Runnable" testcasecount="12" result="Failed" site="Child" start-time="2026-11-14 10:25:28Z" end-time="2026-11-14 10:25:45Z" duration="17.434881" total="12" passed="8" failed="4" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-suite type="TestSuite" id="1128" name="Autosave" fullname="HUSEscape.Persistence.Autosave" runstate="Runnable" testcasecount="12" result="Failed" site="Child" start-time="2026-11-14 10:25:28Z" end-time="2026-11-14 10:25:45Z" duration="17.434379" total="12" passed="8" failed="4" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <failure>
+              <message><![CDATA[One or more child tests had errors]]></message>
+            </failure>
+            <test-suite type="TestSuite" id="1129" name="Tests" fullname="HUSEscape.Persistence.Autosave.Tests" runstate="Runnable" testcasecount="12" result="Failed" site="Child" start-time="2026-11-14 10:25:28Z" end-time="2026-11-14 10:25:45Z" duration="17.433504" total="12" passed="8" failed="4" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <failure>
+                <message><![CDATA[One or more child tests had errors]]></message>
+              </failure>
+              <test-suite type="TestFixture" id="1112" name="Floor01AutosaveIntegrationTests" fullname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests" classname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests" runstate="Runnable" testcasecount="12" result="Failed" site="Child" start-time="2026-11-14 10:25:28Z" end-time="2026-11-14 10:25:45Z" duration="17.430471" total="12" passed="8" failed="4" inconclusive="0" skipped="0" asserts="0">
+                <properties />
+                <failure>
+                  <message><![CDATA[One or more child tests had errors]]></message>
+                </failure>
+                <test-case id="1113" name="I01_NewQuestProgressCreatesValidatedFloorDraft" fullname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I01_NewQuestProgressCreatesValidatedFloorDraft" methodname="I01_NewQuestProgressCreatesValidatedFloorDraft" classname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests" runstate="Runnable" seed="132598299" result="Passed" start-time="2026-11-14 10:25:28Z" end-time="2026-11-14 10:25:32Z" duration="4.733861" asserts="0">
+                  <properties>
+                    <property name="_JOINTYPE" value="UnityCombinatorial" />
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                  <output><![CDATA[Asset 'HUS_Player_Animator': Transition 'AnyState -> Run' in state 'AnyState' doesn't have an Exit Time or any condition, transition will be ignored
+[VT103 SANDBOX] Floor01 autosave rebound to: D:\Game3D-01\VT103_Work\Evidence\VT103\b14\20261114_172528_fcf6fddc\floor01-draft-v1.json
+[VT103 SANDBOX] Autosave state: commits=0; lastRevision=0; pending=False; error=<none>; draft=D:\Game3D-01\VT103_Work\Evidence\VT103\b14\20261114_172528_fcf6fddc\floor01-draft-v1.json
+Da nhat: Key_A101
+[VT103 SANDBOX] Autosave state: commits=0; lastRevision=0; pending=True; error=<none>; draft=D:\Game3D-01\VT103_Work\Evidence\VT103\b14\20261114_172528_fcf6fddc\floor01-draft-v1.json
+[VT103 SANDBOX] Autosave state: commits=1; lastRevision=1; pending=False; error=<none>; draft=D:\Game3D-01\VT103_Work\Evidence\VT103\b14\20261114_172528_fcf6fddc\floor01-draft-v1.json
+]]></output>
+                </test-case>
+                <test-case id="1114" name="I02_RepeatedFactAndIdleFramesDoNotCommitAgain" fullname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I02_RepeatedFactAndIdleFramesDoNotCommitAgain" methodname="I02_RepeatedFactAndIdleFramesDoNotCommitAgain" classname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests" runstate="Runnable" seed="1131930376" result="Passed" start-time="2026-11-14 10:25:32Z" end-time="2026-11-14 10:25:34Z" duration="1.213620" asserts="0">
+                  <properties>
+                    <property name="_JOINTYPE" value="UnityCombinatorial" />
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                  <output><![CDATA[[VT103 SANDBOX] Floor01 autosave rebound to: D:\Game3D-01\VT103_Work\Evidence\VT103\b14\20261114_172528_fcf6fddc\floor01-draft-v1.json
+[VT103 SANDBOX] Autosave state: commits=0; lastRevision=0; pending=False; error=<none>; draft=D:\Game3D-01\VT103_Work\Evidence\VT103\b14\20261114_172528_fcf6fddc\floor01-draft-v1.json
+Da nhat: Key_A101
+[VT103 SANDBOX] Autosave state: commits=0; lastRevision=0; pending=True; error=<none>; draft=D:\Game3D-01\VT103_Work\Evidence\VT103\b14\20261114_172528_fcf6fddc\floor01-draft-v1.json
+[VT103 SANDBOX] Autosave state: commits=1; lastRevision=2; pending=False; error=<none>; draft=D:\Game3D-01\VT103_Work\Evidence\VT103\b14\20261114_172528_fcf6fddc\floor01-draft-v1.json
+]]></output>
+                </test-case>
+                <test-case id="1115" name="I03_ReversedCapturedRequestsCannotRegressDiskRevision" fullname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I03_ReversedCapturedRequestsCannotRegressDiskRevision" methodname="I03_ReversedCapturedRequestsCannotRegressDiskRevision" classname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests" runstate="Runnable" seed="1728541102" result="Passed" start-time="2026-11-14 10:25:34Z" end-time="2026-11-14 10:25:34Z" duration="0.092062" asserts="0">
+                  <properties>
+                    <property name="_JOINTYPE" value="UnityCombinatorial" />
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                  <output><![CDATA[[VT103 SANDBOX] Floor01 autosave rebound to: D:\Game3D-01\VT103_Work\Evidence\VT103\b14\20261114_172528_fcf6fddc\floor01-draft-v1.json
+[VT103 SANDBOX] Autosave state: commits=0; lastRevision=0; pending=False; error=<none>; draft=D:\Game3D-01\VT103_Work\Evidence\VT103\b14\20261114_172528_fcf6fddc\floor01-draft-v1.json
+]]></output>
+                </test-case>
+                <test-case id="1116" name="I04_AutosavePreservesAllManualSlotsByteForByte" fullname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I04_AutosavePreservesAllManualSlotsByteForByte" methodname="I04_AutosavePreservesAllManualSlotsByteForByte" classname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests" runstate="Runnable" seed="2034670791" result="Passed" start-time="2026-11-14 10:25:34Z" end-time="2026-11-14 10:25:34Z" duration="0.385250" asserts="0">
+                  <properties>
+                    <property name="_JOINTYPE" value="UnityCombinatorial" />
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                  <output><![CDATA[[VT103 SANDBOX] Floor01 autosave rebound to: D:\Game3D-01\VT103_Work\Evidence\VT103\b14\20261114_172528_fcf6fddc\floor01-draft-v1.json
+[VT103 SANDBOX] Autosave state: commits=0; lastRevision=0; pending=False; error=<none>; draft=D:\Game3D-01\VT103_Work\Evidence\VT103\b14\20261114_172528_fcf6fddc\floor01-draft-v1.json
+Da nhat: Key_A101
+[VT103 SANDBOX] Autosave state: commits=0; lastRevision=0; pending=True; error=<none>; draft=D:\Game3D-01\VT103_Work\Evidence\VT103\b14\20261114_172528_fcf6fddc\floor01-draft-v1.json
+[VT103 SANDBOX] Autosave state: commits=1; lastRevision=5; pending=False; error=<none>; draft=D:\Game3D-01\VT103_Work\Evidence\VT103\b14\20261114_172528_fcf6fddc\floor01-draft-v1.json
+]]></output>
+                </test-case>
+                <test-case id="1117" name="I05_PersistenceFailurePreservesTheActiveSession" fullname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I05_PersistenceFailurePreservesTheActiveSession" methodname="I05_PersistenceFailurePreservesTheActiveSession" classname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests" runstate="Runnable" seed="1092118684" result="Failed" start-time="2026-11-14 10:25:34Z" end-time="2026-11-14 10:25:38Z" duration="4.083060" asserts="0">
+                  <properties>
+                    <property name="_JOINTYPE" value="UnityCombinatorial" />
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                  <failure>
+                    <message><![CDATA[  Persistence failure must be exposed, never acknowledged as saved.
+  Expected: not <empty>
+  But was:  <string.Empty>
+]]></message>
+                    <stack-trace><![CDATA[at HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests+<I05_PersistenceFailurePreservesTheActiveSession>d__25.MoveNext () [0x00067] in D:\Game3D-01\VT103_Work\HUS_Escape\Assets\_Project\Scripts\Utilities\Autosave\Tests\PlayMode\Floor01AutosaveIntegrationTests.cs:135
+at UnityEngine.TestTools.TestEnumerator+<Execute>d__8.MoveNext () [0x0003a] in .\Library\PackageCache\com.unity.test-framework@80f691d4262b\UnityEngine.TestRunner\NUnitExtensions\Attributes\TestEnumerator.cs:52
+]]></stack-trace>
+                  </failure>
+                  <output><![CDATA[[VT103 SANDBOX] Floor01 autosave rebound to: D:\Game3D-01\VT103_Work\Evidence\VT103\b14\20261114_172528_fcf6fddc\floor01-draft-v1.json
+[VT103 SANDBOX] Autosave state: commits=0; lastRevision=0; pending=False; error=<none>; draft=D:\Game3D-01\VT103_Work\Evidence\VT103\b14\20261114_172528_fcf6fddc\floor01-draft-v1.json
+Da nhat: Key_A101
+[VT103 SANDBOX] Autosave state: commits=0; lastRevision=0; pending=True; error=<none>; draft=D:\Game3D-01\VT103_Work\Evidence\VT103\b14\20261114_172528_fcf6fddc\floor01-draft-v1.json
+[VT103 SANDBOX] Autosave state: commits=1; lastRevision=6; pending=False; error=<none>; draft=D:\Game3D-01\VT103_Work\Evidence\VT103\b14\20261114_172528_fcf6fddc\floor01-draft-v1.json
+]]></output>
+                </test-case>
+                <test-case id="1118" name="I06_FloorSceneAutomaticallyComposesOneAutosaveOwner" fullname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I06_FloorSceneAutomaticallyComposesOneAutosaveOwner" methodname="I06_FloorSceneAutomaticallyComposesOneAutosaveOwner" classname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests" runstate="Runnable" seed="1257899273" result="Passed" start-time="2026-11-14 10:25:38Z" end-time="2026-11-14 10:25:38Z" duration="0.064537" asserts="0">
+                  <properties>
+                    <property name="_JOINTYPE" value="UnityCombinatorial" />
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                  <output><![CDATA[[VT103 SANDBOX] Floor01 autosave rebound to: D:\Game3D-01\VT103_Work\Evidence\VT103\b14\20261114_172528_fcf6fddc\floor01-draft-v1.json
+[VT103 SANDBOX] Autosave state: commits=0; lastRevision=0; pending=False; error=<none>; draft=D:\Game3D-01\VT103_Work\Evidence\VT103\b14\20261114_172528_fcf6fddc\floor01-draft-v1.json
+]]></output>
+                </test-case>
+                <test-case id="1119" name="I07_NewGameCancelsPendingProgressWithoutAutosavingRestoredState" fullname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I07_NewGameCancelsPendingProgressWithoutAutosavingRestoredState" methodname="I07_NewGameCancelsPendingProgressWithoutAutosavingRestoredState" classname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests" runstate="Runnable" seed="2078309601" result="Failed" start-time="2026-11-14 10:25:38Z" end-time="2026-11-14 10:25:39Z" duration="0.880161" asserts="0">
+                  <properties>
+                    <property name="_JOINTYPE" value="UnityCombinatorial" />
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                  <failure>
+                    <message><![CDATA[  Expected: False
+  But was:  True
+]]></message>
+                    <stack-trace><![CDATA[at HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests+<I07_NewGameCancelsPendingProgressWithoutAutosavingRestoredState>d__27.MoveNext () [0x000b7] in D:\Game3D-01\VT103_Work\HUS_Escape\Assets\_Project\Scripts\Utilities\Autosave\Tests\PlayMode\Floor01AutosaveIntegrationTests.cs:156
+at UnityEngine.TestTools.TestEnumerator+<Execute>d__8.MoveNext () [0x0003a] in .\Library\PackageCache\com.unity.test-framework@80f691d4262b\UnityEngine.TestRunner\NUnitExtensions\Attributes\TestEnumerator.cs:52
+]]></stack-trace>
+                  </failure>
+                  <output><![CDATA[[VT103 SANDBOX] Floor01 autosave rebound to: D:\Game3D-01\VT103_Work\Evidence\VT103\b14\20261114_172528_fcf6fddc\floor01-draft-v1.json
+[VT103 SANDBOX] Autosave state: commits=0; lastRevision=0; pending=False; error=<none>; draft=D:\Game3D-01\VT103_Work\Evidence\VT103\b14\20261114_172528_fcf6fddc\floor01-draft-v1.json
+Da nhat: Key_A101
+]]></output>
+                </test-case>
+                <test-case id="1120" name="I08_UnsafeAirborneCaptureDefersThenRetriesAfterGrounding" fullname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I08_UnsafeAirborneCaptureDefersThenRetriesAfterGrounding" methodname="I08_UnsafeAirborneCaptureDefersThenRetriesAfterGrounding" classname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests" runstate="Runnable" seed="288263415" result="Passed" start-time="2026-11-14 10:25:39Z" end-time="2026-11-14 10:25:39Z" duration="0.137111" asserts="0">
+                  <properties>
+                    <property name="_JOINTYPE" value="UnityCombinatorial" />
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                  <output><![CDATA[[VT103 SANDBOX] Floor01 autosave rebound to: D:\Game3D-01\VT103_Work\Evidence\VT103\b14\20261114_172528_fcf6fddc\floor01-draft-v1.json
+[VT103 SANDBOX] Autosave state: commits=0; lastRevision=0; pending=False; error=<none>; draft=D:\Game3D-01\VT103_Work\Evidence\VT103\b14\20261114_172528_fcf6fddc\floor01-draft-v1.json
+Da nhat: Key_A101
+[VT103 SANDBOX] Autosave state: commits=0; lastRevision=0; pending=True; error=<none>; draft=D:\Game3D-01\VT103_Work\Evidence\VT103\b14\20261114_172528_fcf6fddc\floor01-draft-v1.json
+[VT103 SANDBOX] Autosave state: commits=1; lastRevision=7; pending=False; error=<none>; draft=D:\Game3D-01\VT103_Work\Evidence\VT103\b14\20261114_172528_fcf6fddc\floor01-draft-v1.json
+]]></output>
+                </test-case>
+                <test-case id="1121" name="I09_ReenableDoesNotDuplicateEventSubscriptions" fullname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I09_ReenableDoesNotDuplicateEventSubscriptions" methodname="I09_ReenableDoesNotDuplicateEventSubscriptions" classname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests" runstate="Runnable" seed="994612171" result="Passed" start-time="2026-11-14 10:25:39Z" end-time="2026-11-14 10:25:41Z" duration="1.218905" asserts="0">
+                  <properties>
+                    <property name="_JOINTYPE" value="UnityCombinatorial" />
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                  <output><![CDATA[[VT103 SANDBOX] Floor01 autosave rebound to: D:\Game3D-01\VT103_Work\Evidence\VT103\b14\20261114_172528_fcf6fddc\floor01-draft-v1.json
+[VT103 SANDBOX] Autosave state: commits=0; lastRevision=0; pending=False; error=<none>; draft=D:\Game3D-01\VT103_Work\Evidence\VT103\b14\20261114_172528_fcf6fddc\floor01-draft-v1.json
+Da nhat: Key_A101
+[VT103 SANDBOX] Autosave state: commits=0; lastRevision=0; pending=True; error=<none>; draft=D:\Game3D-01\VT103_Work\Evidence\VT103\b14\20261114_172528_fcf6fddc\floor01-draft-v1.json
+[VT103 SANDBOX] Autosave state: commits=1; lastRevision=8; pending=False; error=<none>; draft=D:\Game3D-01\VT103_Work\Evidence\VT103\b14\20261114_172528_fcf6fddc\floor01-draft-v1.json
+]]></output>
+                </test-case>
+                <test-case id="1122" name="I10_CorruptDraftIsPreservedAndDoesNotLoadIntoGameplay" fullname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I10_CorruptDraftIsPreservedAndDoesNotLoadIntoGameplay" methodname="I10_CorruptDraftIsPreservedAndDoesNotLoadIntoGameplay" classname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests" runstate="Runnable" seed="1773956402" result="Passed" start-time="2026-11-14 10:25:41Z" end-time="2026-11-14 10:25:41Z" duration="0.429038" asserts="0">
+                  <properties>
+                    <property name="_JOINTYPE" value="UnityCombinatorial" />
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                  <output><![CDATA[[VT103 SANDBOX] Floor01 autosave rebound to: D:\Game3D-01\VT103_Work\Evidence\VT103\b14\20261114_172528_fcf6fddc\floor01-draft-v1.json
+[VT103 SANDBOX] Autosave state: commits=0; lastRevision=0; pending=False; error=<none>; draft=D:\Game3D-01\VT103_Work\Evidence\VT103\b14\20261114_172528_fcf6fddc\floor01-draft-v1.json
+Da nhat: Key_A101
+[VT103 SANDBOX] Autosave state: commits=0; lastRevision=0; pending=True; error=<none>; draft=D:\Game3D-01\VT103_Work\Evidence\VT103\b14\20261114_172528_fcf6fddc\floor01-draft-v1.json
+[VT103 SANDBOX] Autosave state: commits=0; lastRevision=0; pending=True; error=There was an error deserializing the object of type HUSEscape.Persistence.Autosave.DraftDocument. The token 'null' was expected but found 'not '.; draft=D:\Game3D-01\VT103_Work\Evidence\VT103\b14\20261114_172528_fcf6fddc\floor01-draft-v1.json
+]]></output>
+                </test-case>
+                <test-case id="1123" name="I11_ExistingHeadSeedsRevisionWithoutRestoringItsPayload" fullname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I11_ExistingHeadSeedsRevisionWithoutRestoringItsPayload" methodname="I11_ExistingHeadSeedsRevisionWithoutRestoringItsPayload" classname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests" runstate="Runnable" seed="1429767205" result="Failed" label="Error" start-time="2026-11-14 10:25:41Z" end-time="2026-11-14 10:25:41Z" duration="0.079816" asserts="0">
+                  <properties>
+                    <property name="_JOINTYPE" value="UnityCombinatorial" />
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                  <failure>
+                    <message><![CDATA[System.AggregateException : One or more errors occurred. (There was an error deserializing the object of type HUSEscape.Persistence.Autosave.DraftDocument. The token 'null' was expected but found 'not '.)
+  ----> System.Runtime.Serialization.SerializationException : There was an error deserializing the object of type HUSEscape.Persistence.Autosave.DraftDocument. The token 'null' was expected but found 'not '.
+  ----> System.Xml.XmlException : The token 'null' was expected but found 'not '.]]></message>
+                    <stack-trace><![CDATA[  at System.Threading.Tasks.Task.ThrowIfExceptional (System.Boolean includeTaskCanceledExceptions) [0x00011] in <c5ae8a4eeb824526b5df2932bc2395e0>:0 
+  at System.Threading.Tasks.Task`1[TResult].GetResultCore (System.Boolean waitCompletionNotification) [0x0002b] in <c5ae8a4eeb824526b5df2932bc2395e0>:0 
+  at System.Threading.Tasks.Task`1[TResult].get_Result () [0x0000f] in <c5ae8a4eeb824526b5df2932bc2395e0>:0 
+  at HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests+<I11_ExistingHeadSeedsRevisionWithoutRestoringItsPayload>d__31.MoveNext () [0x000b3] in D:\Game3D-01\VT103_Work\HUS_Escape\Assets\_Project\Scripts\Utilities\Autosave\Tests\PlayMode\Floor01AutosaveIntegrationTests.cs:206 
+  at UnityEngine.TestTools.TestEnumerator+<Execute>d__8.MoveNext () [0x0003a] in .\Library\PackageCache\com.unity.test-framework@80f691d4262b\UnityEngine.TestRunner\NUnitExtensions\Attributes\TestEnumerator.cs:52 
+--SerializationException
+  at System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions (System.Runtime.Serialization.XmlReaderDelegator reader, System.Boolean verifyObjectName, System.Runtime.Serialization.DataContractResolver dataContractResolver) [0x0009b] in <1d6f854cb6bd4dfb9511c0b6a0c1206e>:0 
+  at System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions (System.Runtime.Serialization.XmlReaderDelegator reader, System.Boolean verifyObjectName) [0x00000] in <1d6f854cb6bd4dfb9511c0b6a0c1206e>:0 
+  at System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject (System.Xml.XmlDictionaryReader reader) [0x0000d] in <1d6f854cb6bd4dfb9511c0b6a0c1206e>:0 
+  at System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject (System.IO.Stream stream) [0x00017] in <1d6f854cb6bd4dfb9511c0b6a0c1206e>:0 
+  at HUSEscape.Persistence.Autosave.DraftStore.ReadHead () [0x0001e] in D:\Game3D-01\VT103_Work\HUS_Escape\Assets\_Project\Scripts\Utilities\Autosave\DraftStore.cs:183 
+  at HUSEscape.Persistence.Autosave.DraftStore.SaveUnderGate (HUSEscape.Persistence.Autosave.DraftRequest request, System.Threading.CancellationToken cancellationToken) [0x00007] in D:\Game3D-01\VT103_Work\HUS_Escape\Assets\_Project\Scripts\Utilities\Autosave\DraftStore.cs:120 
+  at HUSEscape.Persistence.Autosave.DraftStore+<>c__DisplayClass11_0.<SaveAsync>b__0 () [0x00000] in D:\Game3D-01\VT103_Work\HUS_Escape\Assets\_Project\Scripts\Utilities\Autosave\DraftStore.cs:76 
+  at System.Threading.Tasks.Task`1[TResult].InnerInvoke () [0x0000f] in <c5ae8a4eeb824526b5df2932bc2395e0>:0 
+  at System.Threading.Tasks.Task.Execute () [0x00000] in <c5ae8a4eeb824526b5df2932bc2395e0>:0 
+--- End of stack trace from previous location where exception was thrown ---
+
+  at HUSEscape.Persistence.Autosave.DraftStore.SaveAsync (HUSEscape.Persistence.Autosave.DraftRequest request, System.Threading.CancellationToken cancellationToken) [0x00252] in D:\Game3D-01\VT103_Work\HUS_Escape\Assets\_Project\Scripts\Utilities\Autosave\DraftStore.cs:76 
+--XmlException
+  at System.Xml.XmlExceptionHelper.ThrowXmlException (System.Xml.XmlDictionaryReader reader, System.String res, System.String arg1, System.String arg2, System.String arg3) [0x0007c] in <1d6f854cb6bd4dfb9511c0b6a0c1206e>:0 
+  at System.Xml.XmlExceptionHelper.ThrowXmlException (System.Xml.XmlDictionaryReader reader, System.String res, System.String arg1, System.String arg2) [0x00000] in <1d6f854cb6bd4dfb9511c0b6a0c1206e>:0 
+  at System.Xml.XmlExceptionHelper.ThrowTokenExpected (System.Xml.XmlDictionaryReader reader, System.String expected, System.String found) [0x00000] in <1d6f854cb6bd4dfb9511c0b6a0c1206e>:0 
+  at System.Runtime.Serialization.Json.XmlJsonReader.Read () [0x00562] in <1d6f854cb6bd4dfb9511c0b6a0c1206e>:0 
+  at System.Xml.XmlBaseReader.Skip () [0x00034] in <1d6f854cb6bd4dfb9511c0b6a0c1206e>:0 
+  at System.Runtime.Serialization.XmlReaderDelegator.Skip () [0x00000] in <1d6f854cb6bd4dfb9511c0b6a0c1206e>:0 
+  at System.Runtime.Serialization.XmlObjectSerializerReadContext.TryHandleNullOrRef (System.Runtime.Serialization.XmlReaderDelegator reader, System.Type declaredType, System.String name, System.String ns, System.Object& retObj) [0x00085] in <1d6f854cb6bd4dfb9511c0b6a0c1206e>:0 
+  at System.Runtime.Serialization.XmlObjectSerializerReadContext.InternalDeserialize (System.Runtime.Serialization.XmlReaderDelegator reader, System.String name, System.String ns, System.Type declaredType, System.Runtime.Serialization.DataContract& dataContract) [0x0000c] in <1d6f854cb6bd4dfb9511c0b6a0c1206e>:0 
+  at System.Runtime.Serialization.XmlObjectSerializerReadContext.InternalDeserialize (System.Runtime.Serialization.XmlReaderDelegator xmlReader, System.Type declaredType, System.Runtime.Serialization.DataContract dataContract, System.String name, System.String ns) [0x0000b] in <1d6f854cb6bd4dfb9511c0b6a0c1206e>:0 
+  at System.Runtime.Serialization.XmlObjectSerializerReadContextComplex.InternalDeserialize (System.Runtime.Serialization.XmlReaderDelegator xmlReader, System.Type declaredType, System.Runtime.Serialization.DataContract dataContract, System.String name, System.String ns) [0x00010] in <1d6f854cb6bd4dfb9511c0b6a0c1206e>:0 
+  at System.Runtime.Serialization.Json.DataContractJsonSerializer.InternalReadObject (System.Runtime.Serialization.XmlReaderDelegator xmlReader, System.Boolean verifyObjectName) [0x000c5] in <1d6f854cb6bd4dfb9511c0b6a0c1206e>:0 
+  at System.Runtime.Serialization.XmlObjectSerializer.InternalReadObject (System.Runtime.Serialization.XmlReaderDelegator reader, System.Boolean verifyObjectName, System.Runtime.Serialization.DataContractResolver dataContractResolver) [0x00000] in <1d6f854cb6bd4dfb9511c0b6a0c1206e>:0 
+  at System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions (System.Runtime.Serialization.XmlReaderDelegator reader, System.Boolean verifyObjectName, System.Runtime.Serialization.DataContractResolver dataContractResolver) [0x00072] in <1d6f854cb6bd4dfb9511c0b6a0c1206e>:0 ]]></stack-trace>
+                  </failure>
+                  <output><![CDATA[[VT103 SANDBOX] Floor01 autosave rebound to: D:\Game3D-01\VT103_Work\Evidence\VT103\b14\20261114_172528_fcf6fddc\floor01-draft-v1.json
+[VT103 SANDBOX] Autosave state: commits=0; lastRevision=0; pending=False; error=<none>; draft=D:\Game3D-01\VT103_Work\Evidence\VT103\b14\20261114_172528_fcf6fddc\floor01-draft-v1.json
+]]></output>
+                </test-case>
+                <test-case id="1124" name="I12_ManualContinueRestoresOnlyManualSlotAndDoesNotAutosave" fullname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I12_ManualContinueRestoresOnlyManualSlotAndDoesNotAutosave" methodname="I12_ManualContinueRestoresOnlyManualSlotAndDoesNotAutosave" classname="HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests" runstate="Runnable" seed="1798525789" result="Failed" start-time="2026-11-14 10:25:41Z" end-time="2026-11-14 10:25:45Z" duration="4.086918" asserts="0">
+                  <properties>
+                    <property name="_JOINTYPE" value="UnityCombinatorial" />
+                    <property name="retryIteration" value="0" />
+                    <property name="repeatIteration" value="0" />
+                  </properties>
+                  <failure>
+                    <message><![CDATA[  Expected: 1
+  But was:  0
+]]></message>
+                    <stack-trace><![CDATA[at HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests+<I12_ManualContinueRestoresOnlyManualSlotAndDoesNotAutosave>d__32.MoveNext () [0x000af] in D:\Game3D-01\VT103_Work\HUS_Escape\Assets\_Project\Scripts\Utilities\Autosave\Tests\PlayMode\Floor01AutosaveIntegrationTests.cs:218
+at UnityEngine.TestTools.TestEnumerator+<Execute>d__8.MoveNext () [0x0003a] in .\Library\PackageCache\com.unity.test-framework@80f691d4262b\UnityEngine.TestRunner\NUnitExtensions\Attributes\TestEnumerator.cs:52
+]]></stack-trace>
+                  </failure>
+                  <output><![CDATA[[VT103 SANDBOX] Floor01 autosave rebound to: D:\Game3D-01\VT103_Work\Evidence\VT103\b14\20261114_172528_fcf6fddc\floor01-draft-v1.json
+[VT103 SANDBOX] Autosave state: commits=0; lastRevision=0; pending=False; error=<none>; draft=D:\Game3D-01\VT103_Work\Evidence\VT103\b14\20261114_172528_fcf6fddc\floor01-draft-v1.json
+Da nhat: Key_A101
+[VT103 SANDBOX] Autosave state: commits=0; lastRevision=0; pending=True; error=<none>; draft=D:\Game3D-01\VT103_Work\Evidence\VT103\b14\20261114_172528_fcf6fddc\floor01-draft-v1.json
+[VT103 SANDBOX] Autosave state: commits=0; lastRevision=0; pending=True; error=There was an error deserializing the object of type HUSEscape.Persistence.Autosave.DraftDocument. The token 'null' was expected but found 'not '.; draft=D:\Game3D-01\VT103_Work\Evidence\VT103\b14\20261114_172528_fcf6fddc\floor01-draft-v1.json
+Saving results to: C:/Users/ASUS/AppData/LocalLow/DefaultCompany/HUS_Escape\TestResults.xml
+]]></output>
+                </test-case>
+              </test-suite>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

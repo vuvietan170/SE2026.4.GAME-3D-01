@@ -1,0 +1,202 @@
+[
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\all-test-results.csv",
+        "sha256":  "896656AC38C11EE518E7F7D95890820E8A66B04A8B714EEA1F65A87A230826D1"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\clone.log",
+        "sha256":  "AEA52D27230B89CA1B732866AFBE137A98E65100049A56B3293DEF8D5FE7DDA0"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\fixture.diff",
+        "sha256":  "D61091316497819056D63C5F0A9F642980CE13E5D57119EFD5A1736A8C1363B7"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\helper.diff",
+        "sha256":  "2859106D125B5CF2FD573049483AB3BBA5C5454B1B1843D83417F6370BB23831"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\original-editor-test-excerpt.log",
+        "sha256":  "6CA844C57A64CB828AD4A0EA1EF7FAC2CACE2CAC7E7F723C2FD0BF83C5228B6F"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\prior-evidence-hashes.json",
+        "sha256":  "8D4EF77ABBCDF1BF54851458FB364B67457A7FEDA1D169C64554937659F77723"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\project-settings-before.json",
+        "sha256":  "B87E3B7EAC393716489DA04013D24A8E7D9D41932ED22F920B324214DD5F17D4"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\REPORT.md",
+        "sha256":  "6548BCD17E82917059DBCBE9DC7B6CED021351D049381E8CAE9A6CE8BA7FDACE"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\source-hashes.json",
+        "sha256":  "7A6D24B0C195201196BD616AD46E204EC80645BAFA9FAF593B168A9113637762"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\verification.json",
+        "sha256":  "AEB9BFA94C32C8C611E2AC2FFD3096142D80D707B50CA8A6885D3ACC975F4980"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\all-editmode\\assertions.json",
+        "sha256":  "FFD4A5235A4F7FFA4AE3962D80E8F870388D227D1B083661F6E018C75C70C5B0"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\all-editmode\\command.txt",
+        "sha256":  "A64BDF2D0D8BBC8097AB42F9C046C98D55DC0223B4358260E3F5550CCE1D0D13"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\all-editmode\\editor.log",
+        "sha256":  "F503C96ECA966F92BA146C5A8025874002205CB4D478ABD610C6D537DFD8F695"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\all-editmode\\environment.json",
+        "sha256":  "0619D8FA71C053D921D2615DB5303CF03A1774BB4BB119EFC5631E4A464AC8D5"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\all-editmode\\process.json",
+        "sha256":  "FE578F1A629F0A6C2FBDA046142FA19217FE8EA6D5FD658BBB580E0C648F2525"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\all-editmode\\results.xml",
+        "sha256":  "DDC7AB50B086FC4FC9B5F129644C2B9767A0D408F6AAB5485267FAB5B022A12C"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\all-playmode\\assertions.json",
+        "sha256":  "391DE86155F05F11DED19E8E63079903B74C4247F88AEC75DF17DBABA512C28C"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\all-playmode\\command.txt",
+        "sha256":  "80607E38FF0E53E2BA9043DE190A0E1422C569CFBA137631E8A5927575EC930A"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\all-playmode\\editor.log",
+        "sha256":  "8EBD6A0FA8992B8A3A83E854C93E41A1177686ACE2F97F57CC02023EF0A79F6A"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\all-playmode\\environment.json",
+        "sha256":  "0B67A366F16280FAD54B0E3F8053C7CD70AE3B38F011C18CCD5A7740E3E3AF2E"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\all-playmode\\process.json",
+        "sha256":  "72F2FF9BC8D6619FD2DC59B813F389365BBC15C16296804605253E1EE680B9A7"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\all-playmode\\results.xml",
+        "sha256":  "9214384D0570CDA62DF6F480BFC32EAF51FB3391B04F48121FCA1157943DF64E"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\baseline\\command.txt",
+        "sha256":  "FF126FECDDE8D67CAD078A04059D4F8BD03E9F0202CD463130571817DA17223E"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\baseline\\editor.log",
+        "sha256":  "57DAFD3A75F230D5369E4249F154F675B716E889037153B95C20F1614E101352"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\baseline\\environment.json",
+        "sha256":  "5D148B95979063ACE1F38E6408AD9B592158188B58E3454E69BB1308141EEF86"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\baseline\\process.json",
+        "sha256":  "7C34054405F5ADCA5CAD9C4B5AB3A30B5FEAE19C0205C4213425B0ACD2CC56D3"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\baseline\\terminated-UnityLockfile",
+        "sha256":  "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\baseline-licensed\\assertions.json",
+        "sha256":  "CC3B49F628BEF9451C7684BF24531284284C1433CF7D37B2A22E5BE6577DC56A"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\baseline-licensed\\command.txt",
+        "sha256":  "1FDB11BB5E614D48A962B3AD0EFB4107B6E396DCA0B10E615AEE2ED125EFC4D9"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\baseline-licensed\\editor.log",
+        "sha256":  "7BF09BF5C43864E422EA8CE632ACDEAFDCD51976F8A25FF497F60138F0D856D0"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\baseline-licensed\\environment.json",
+        "sha256":  "B6F0491B41DC77FB55EB17C1C3EB62FDC1E4A67DDC85E62E9F6E89A26987C3CD"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\baseline-licensed\\process.json",
+        "sha256":  "200B3B699B5E4BBEB28EE4BBE5E735A5B6C20E564F53114622BDE9D80558C772"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\baseline-licensed\\results.xml",
+        "sha256":  "4E4CC9C1C1899C11512C99688B49D4362AFB640D3B9FE78AB273B6D1CD061DA6"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\before\\Assets\\Editor\\VT103ManualAcceptanceSandbox.cs",
+        "sha256":  "D0AE878EA916332D7A887AB7B704BE9BB70821DBE5094E521F621EE950C6000D"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\before\\Assets\\_Project\\Scripts\\Utilities\\Floor01Autosave.cs",
+        "sha256":  "FE0AE382E8E64215BC7D75EC06FA6469F3BB14185CE1792BF391D0D34C98A62B"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\before\\Assets\\_Project\\Scripts\\Utilities\\Floor01SaveSystem.cs",
+        "sha256":  "BBF755C7D94CE108C43FDB26DDA00F9340647374CDB30498D845556FF2FB79F5"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\before\\Assets\\_Project\\Scripts\\Utilities\\Autosave\\DraftStore.cs",
+        "sha256":  "EF4A1DBE22FA476FDDBB1E0A802AC193034AAA2E657FAF3B5A54D4A953A94FE1"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\before\\Assets\\_Project\\Scripts\\Utilities\\Autosave\\Tests\\PlayMode\\Floor01AutosaveIntegrationTests.cs",
+        "sha256":  "1104D30BC2824ADE1DB4904809B0F8BE32204326A49948DAD102BF14AF7FF3C1"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\fixed-original-tests\\assertions.json",
+        "sha256":  "EA28EF9EC4AB313D085C62927BBC8DBE6C9B015DB677C91088D2ACCA8A5B6E51"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\fixed-original-tests\\command.txt",
+        "sha256":  "C4CBCA7395C8C7AEBD54E2E5245CCF6180E3A2779034CA5ADA12279ED78916F2"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\fixed-original-tests\\editor.log",
+        "sha256":  "FF81CFBFD1D046F6A6445BBFA0ABF1AD54154A7CD9170393869100040D20F4FF"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\fixed-original-tests\\environment.json",
+        "sha256":  "D272CDE4577FA305F62C7AEB0FD9F5D1908D176FB51D505207A501F3D5040534"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\fixed-original-tests\\process.json",
+        "sha256":  "B3736CCE55BA344B3C010C4AE222BA0BCC1BA87CDB135220B8FCC23E4DF9F3AD"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\fixed-original-tests\\results.xml",
+        "sha256":  "E819699DA5F32152D8D24D5038E417CAF252A48CB28D0BD77F2C63CC51A41F41"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\tested-source\\Assets\\Editor\\VT103ManualAcceptanceSandbox.cs",
+        "sha256":  "866679CCA208AEE86F1274889662AA846C1A0A1125FD021DB146B5A4D00AD8AF"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\tested-source\\Assets\\_Project\\Scripts\\Utilities\\Floor01Autosave.cs",
+        "sha256":  "FE0AE382E8E64215BC7D75EC06FA6469F3BB14185CE1792BF391D0D34C98A62B"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\tested-source\\Assets\\_Project\\Scripts\\Utilities\\Floor01SaveSystem.cs",
+        "sha256":  "BBF755C7D94CE108C43FDB26DDA00F9340647374CDB30498D845556FF2FB79F5"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\tested-source\\Assets\\_Project\\Scripts\\Utilities\\Autosave\\DraftStore.cs",
+        "sha256":  "EF4A1DBE22FA476FDDBB1E0A802AC193034AAA2E657FAF3B5A54D4A953A94FE1"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\tested-source\\Assets\\_Project\\Scripts\\Utilities\\Autosave\\Tests\\Editor\\ManualAcceptanceIsolationTests.cs",
+        "sha256":  "68C7957C6D1F81F0506B25B45919F40014C6D91BC0C8E3AD3E14600875B2A0E4"
+    },
+    {
+        "path":  "D:\\Game3D-01\\VT103_Work\\Evidence\\VT103\\repair-20261114\\tested-source\\Assets\\_Project\\Scripts\\Utilities\\Autosave\\Tests\\PlayMode\\Floor01AutosaveIntegrationTests.cs",
+        "sha256":  "D972C3BFB628DD5C2B46633D08900E4B807E4C070D4C5849609BC08078A884D3"
+    }
+]

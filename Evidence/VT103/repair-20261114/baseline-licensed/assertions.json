@@ -1,0 +1,74 @@
+[
+    {
+        "name":  "HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I01_NewQuestProgressCreatesValidatedFloorDraft",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I02_RepeatedFactAndIdleFramesDoNotCommitAgain",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I03_ReversedCapturedRequestsCannotRegressDiskRevision",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I04_AutosavePreservesAllManualSlotsByteForByte",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I05_PersistenceFailurePreservesTheActiveSession",
+        "result":  "Failed",
+        "message":  "  Persistence failure must be exposed, never acknowledged as saved.\n  Expected: not \u003cempty\u003e\n  But was:  \u003cstring.Empty\u003e\n",
+        "stack":  "at HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests+\u003cI05_PersistenceFailurePreservesTheActiveSession\u003ed__25.MoveNext () [0x00067] in D:\\Game3D-01\\VT103_Work\\HUS_Escape\\Assets\\_Project\\Scripts\\Utilities\\Autosave\\Tests\\PlayMode\\Floor01AutosaveIntegrationTests.cs:135\nat UnityEngine.TestTools.TestEnumerator+\u003cExecute\u003ed__8.MoveNext () [0x0003a] in .\\Library\\PackageCache\\com.unity.test-framework@80f691d4262b\\UnityEngine.TestRunner\\NUnitExtensions\\Attributes\\TestEnumerator.cs:52\n"
+    },
+    {
+        "name":  "HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I06_FloorSceneAutomaticallyComposesOneAutosaveOwner",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I07_NewGameCancelsPendingProgressWithoutAutosavingRestoredState",
+        "result":  "Failed",
+        "message":  "  Expected: False\n  But was:  True\n",
+        "stack":  "at HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests+\u003cI07_NewGameCancelsPendingProgressWithoutAutosavingRestoredState\u003ed__27.MoveNext () [0x000b7] in D:\\Game3D-01\\VT103_Work\\HUS_Escape\\Assets\\_Project\\Scripts\\Utilities\\Autosave\\Tests\\PlayMode\\Floor01AutosaveIntegrationTests.cs:156\nat UnityEngine.TestTools.TestEnumerator+\u003cExecute\u003ed__8.MoveNext () [0x0003a] in .\\Library\\PackageCache\\com.unity.test-framework@80f691d4262b\\UnityEngine.TestRunner\\NUnitExtensions\\Attributes\\TestEnumerator.cs:52\n"
+    },
+    {
+        "name":  "HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I08_UnsafeAirborneCaptureDefersThenRetriesAfterGrounding",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I09_ReenableDoesNotDuplicateEventSubscriptions",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I10_CorruptDraftIsPreservedAndDoesNotLoadIntoGameplay",
+        "result":  "Passed",
+        "message":  null,
+        "stack":  null
+    },
+    {
+        "name":  "HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I11_ExistingHeadSeedsRevisionWithoutRestoringItsPayload",
+        "result":  "Failed",
+        "message":  "System.AggregateException : One or more errors occurred. (There was an error deserializing the object of type HUSEscape.Persistence.Autosave.DraftDocument. The token \u0027null\u0027 was expected but found \u0027not \u0027.)\n  ----\u003e System.Runtime.Serialization.SerializationException : There was an error deserializing the object of type HUSEscape.Persistence.Autosave.DraftDocument. The token \u0027null\u0027 was expected but found \u0027not \u0027.\n  ----\u003e System.Xml.XmlException : The token \u0027null\u0027 was expected but found \u0027not \u0027.",
+        "stack":  "  at System.Threading.Tasks.Task.ThrowIfExceptional (System.Boolean includeTaskCanceledExceptions) [0x00011] in \u003cc5ae8a4eeb824526b5df2932bc2395e0\u003e:0 \n  at System.Threading.Tasks.Task`1[TResult].GetResultCore (System.Boolean waitCompletionNotification) [0x0002b] in \u003cc5ae8a4eeb824526b5df2932bc2395e0\u003e:0 \n  at System.Threading.Tasks.Task`1[TResult].get_Result () [0x0000f] in \u003cc5ae8a4eeb824526b5df2932bc2395e0\u003e:0 \n  at HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests+\u003cI11_ExistingHeadSeedsRevisionWithoutRestoringItsPayload\u003ed__31.MoveNext () [0x000b3] in D:\\Game3D-01\\VT103_Work\\HUS_Escape\\Assets\\_Project\\Scripts\\Utilities\\Autosave\\Tests\\PlayMode\\Floor01AutosaveIntegrationTests.cs:206 \n  at UnityEngine.TestTools.TestEnumerator+\u003cExecute\u003ed__8.MoveNext () [0x0003a] in .\\Library\\PackageCache\\com.unity.test-framework@80f691d4262b\\UnityEngine.TestRunner\\NUnitExtensions\\Attributes\\TestEnumerator.cs:52 \n--SerializationException\n  at System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions (System.Runtime.Serialization.XmlReaderDelegator reader, System.Boolean verifyObjectName, System.Runtime.Serialization.DataContractResolver dataContractResolver) [0x0009b] in \u003c1d6f854cb6bd4dfb9511c0b6a0c1206e\u003e:0 \n  at System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions (System.Runtime.Serialization.XmlReaderDelegator reader, System.Boolean verifyObjectName) [0x00000] in \u003c1d6f854cb6bd4dfb9511c0b6a0c1206e\u003e:0 \n  at System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject (System.Xml.XmlDictionaryReader reader) [0x0000d] in \u003c1d6f854cb6bd4dfb9511c0b6a0c1206e\u003e:0 \n  at System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject (System.IO.Stream stream) [0x00017] in \u003c1d6f854cb6bd4dfb9511c0b6a0c1206e\u003e:0 \n  at HUSEscape.Persistence.Autosave.DraftStore.ReadHead () [0x0001e] in D:\\Game3D-01\\VT103_Work\\HUS_Escape\\Assets\\_Project\\Scripts\\Utilities\\Autosave\\DraftStore.cs:183 \n  at HUSEscape.Persistence.Autosave.DraftStore.SaveUnderGate (HUSEscape.Persistence.Autosave.DraftRequest request, System.Threading.CancellationToken cancellationToken) [0x00007] in D:\\Game3D-01\\VT103_Work\\HUS_Escape\\Assets\\_Project\\Scripts\\Utilities\\Autosave\\DraftStore.cs:120 \n  at HUSEscape.Persistence.Autosave.DraftStore+\u003c\u003ec__DisplayClass11_0.\u003cSaveAsync\u003eb__0 () [0x00000] in D:\\Game3D-01\\VT103_Work\\HUS_Escape\\Assets\\_Project\\Scripts\\Utilities\\Autosave\\DraftStore.cs:76 \n  at System.Threading.Tasks.Task`1[TResult].InnerInvoke () [0x0000f] in \u003cc5ae8a4eeb824526b5df2932bc2395e0\u003e:0 \n  at System.Threading.Tasks.Task.Execute () [0x00000] in \u003cc5ae8a4eeb824526b5df2932bc2395e0\u003e:0 \n--- End of stack trace from previous location where exception was thrown ---\n\n  at HUSEscape.Persistence.Autosave.DraftStore.SaveAsync (HUSEscape.Persistence.Autosave.DraftRequest request, System.Threading.CancellationToken cancellationToken) [0x00252] in D:\\Game3D-01\\VT103_Work\\HUS_Escape\\Assets\\_Project\\Scripts\\Utilities\\Autosave\\DraftStore.cs:76 \n--XmlException\n  at System.Xml.XmlExceptionHelper.ThrowXmlException (System.Xml.XmlDictionaryReader reader, System.String res, System.String arg1, System.String arg2, System.String arg3) [0x0007c] in \u003c1d6f854cb6bd4dfb9511c0b6a0c1206e\u003e:0 \n  at System.Xml.XmlExceptionHelper.ThrowXmlException (System.Xml.XmlDictionaryReader reader, System.String res, System.String arg1, System.String arg2) [0x00000] in \u003c1d6f854cb6bd4dfb9511c0b6a0c1206e\u003e:0 \n  at System.Xml.XmlExceptionHelper.ThrowTokenExpected (System.Xml.XmlDictionaryReader reader, System.String expected, System.String found) [0x00000] in \u003c1d6f854cb6bd4dfb9511c0b6a0c1206e\u003e:0 \n  at System.Runtime.Serialization.Json.XmlJsonReader.Read () [0x00562] in \u003c1d6f854cb6bd4dfb9511c0b6a0c1206e\u003e:0 \n  at System.Xml.XmlBaseReader.Skip () [0x00034] in \u003c1d6f854cb6bd4dfb9511c0b6a0c1206e\u003e:0 \n  at System.Runtime.Serialization.XmlReaderDelegator.Skip () [0x00000] in \u003c1d6f854cb6bd4dfb9511c0b6a0c1206e\u003e:0 \n  at System.Runtime.Serialization.XmlObjectSerializerReadContext.TryHandleNullOrRef (System.Runtime.Serialization.XmlReaderDelegator reader, System.Type declaredType, System.String name, System.String ns, System.Object\u0026 retObj) [0x00085] in \u003c1d6f854cb6bd4dfb9511c0b6a0c1206e\u003e:0 \n  at System.Runtime.Serialization.XmlObjectSerializerReadContext.InternalDeserialize (System.Runtime.Serialization.XmlReaderDelegator reader, System.String name, System.String ns, System.Type declaredType, System.Runtime.Serialization.DataContract\u0026 dataContract) [0x0000c] in \u003c1d6f854cb6bd4dfb9511c0b6a0c1206e\u003e:0 \n  at System.Runtime.Serialization.XmlObjectSerializerReadContext.InternalDeserialize (System.Runtime.Serialization.XmlReaderDelegator xmlReader, System.Type declaredType, System.Runtime.Serialization.DataContract dataContract, System.String name, System.String ns) [0x0000b] in \u003c1d6f854cb6bd4dfb9511c0b6a0c1206e\u003e:0 \n  at System.Runtime.Serialization.XmlObjectSerializerReadContextComplex.InternalDeserialize (System.Runtime.Serialization.XmlReaderDelegator xmlReader, System.Type declaredType, System.Runtime.Serialization.DataContract dataContract, System.String name, System.String ns) [0x00010] in \u003c1d6f854cb6bd4dfb9511c0b6a0c1206e\u003e:0 \n  at System.Runtime.Serialization.Json.DataContractJsonSerializer.InternalReadObject (System.Runtime.Serialization.XmlReaderDelegator xmlReader, System.Boolean verifyObjectName) [0x000c5] in \u003c1d6f854cb6bd4dfb9511c0b6a0c1206e\u003e:0 \n  at System.Runtime.Serialization.XmlObjectSerializer.InternalReadObject (System.Runtime.Serialization.XmlReaderDelegator reader, System.Boolean verifyObjectName, System.Runtime.Serialization.DataContractResolver dataContractResolver) [0x00000] in \u003c1d6f854cb6bd4dfb9511c0b6a0c1206e\u003e:0 \n  at System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions (System.Runtime.Serialization.XmlReaderDelegator reader, System.Boolean verifyObjectName, System.Runtime.Serialization.DataContractResolver dataContractResolver) [0x00072] in \u003c1d6f854cb6bd4dfb9511c0b6a0c1206e\u003e:0 "
+    },
+    {
+        "name":  "HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests.I12_ManualContinueRestoresOnlyManualSlotAndDoesNotAutosave",
+        "result":  "Failed",
+        "message":  "  Expected: 1\n  But was:  0\n",
+        "stack":  "at HUSEscape.Persistence.Autosave.Tests.Floor01AutosaveIntegrationTests+\u003cI12_ManualContinueRestoresOnlyManualSlotAndDoesNotAutosave\u003ed__32.MoveNext () [0x000af] in D:\\Game3D-01\\VT103_Work\\HUS_Escape\\Assets\\_Project\\Scripts\\Utilities\\Autosave\\Tests\\PlayMode\\Floor01AutosaveIntegrationTests.cs:218\nat UnityEngine.TestTools.TestEnumerator+\u003cExecute\u003ed__8.MoveNext () [0x0003a] in .\\Library\\PackageCache\\com.unity.test-framework@80f691d4262b\\UnityEngine.TestRunner\\NUnitExtensions\\Attributes\\TestEnumerator.cs:52\n"
+    }
+]

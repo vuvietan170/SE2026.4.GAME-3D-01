@@ -1,0 +1,6 @@
+{
+  "name": "VT103.Autosave.PlayModeTests",
+  "references": ["HUSEscape.Persistence.Autosave"],
+  "optionalUnityReferences": ["TestAssemblies"],
+  "autoReferenced": false
+}

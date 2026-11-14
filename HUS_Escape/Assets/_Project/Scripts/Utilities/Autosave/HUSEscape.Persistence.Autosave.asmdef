@@ -1,0 +1,7 @@
+{
+    "name": "HUSEscape.Persistence.Autosave",
+    "rootNamespace": "HUSEscape.Persistence.Autosave",
+    "references": [],
+    "autoReferenced": true,
+    "noEngineReferences": true
+}
