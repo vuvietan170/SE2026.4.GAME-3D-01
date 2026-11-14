@@ -1,7 +1,6 @@
 
 using System.Collections;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using HUSEscape.Inventory;
 
 public class DoorInteraction : MonoBehaviour
@@ -64,10 +63,7 @@ public class DoorInteraction : MonoBehaviour
     {
         RotateDoor();
 
-        if (Keyboard.current == null)
-            return;
-
-        if (Keyboard.current.eKey.wasPressedThisFrame && IsSelectedTarget() && !isInteracting)
+        if (IsSelectedTarget() && InteractionSelection.Pressed(player, "Interact") && !isInteracting)
         {
             TryInteract();
         }

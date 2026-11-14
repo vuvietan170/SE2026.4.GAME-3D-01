@@ -1,6 +1,5 @@
 using HUSEscape.World;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 /// <summary>Prototype call panel only. Does not move actors, change quests, save data or load scenes.</summary>
 public sealed class ElevatorUnavailable : MonoBehaviour
@@ -17,7 +16,7 @@ public sealed class ElevatorUnavailable : MonoBehaviour
     public string Message => Time.unscaledTime < messageUntil ? "Thang máy chưa khả dụng" : "E — Gọi thang máy";
     private void Update()
     {
-        if (CanInteract && Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame) messageUntil = Time.unscaledTime + 4;
+        if (CanInteract && entry.Gate.PlayerPressed("Interact")) messageUntil = Time.unscaledTime + 4;
     }
     private void OnGUI()
     {

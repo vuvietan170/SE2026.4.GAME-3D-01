@@ -35,7 +35,7 @@ namespace HUSEscape.World
             // A native scene can run Start before SceneLoader commits Playing. Keep
             // actors gated until completion; never create another Core to bypass Loading.
             if (!isActiveAndEnabled || Session != null) yield break; // Completion may already have attached or rejected us.
-            if (actorRoot == null || actorRoot.activeInHierarchy) Gate.Block();
+            if (actorRoot == null || actorRoot.activeInHierarchy) Gate.HoldForTravel();
             var cores = FindObjectsByType<GameBootstrap>(FindObjectsInactive.Include)
                 .Where(b => b.IsInitialized).ToArray();
             if (cores.Length > 1) { Debug.LogError("Multiple Core owners.", this); yield break; }

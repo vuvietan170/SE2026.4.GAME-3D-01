@@ -5,6 +5,13 @@ using UnityEngine;
 /// <summary>Resolves scene-local actors and selects one nearby target without a global owner.</summary>
 internal static class InteractionSelection
 {
+    internal static bool Pressed(Transform actor, string action)
+    {
+        if (actor == null) return false;
+        var gate = actor.GetComponentInParent<HUSEscape.Player.GameplayInputGate>();
+        if (gate == null) gate = actor.GetComponentInChildren<HUSEscape.Player.GameplayInputGate>();
+        return gate != null && gate.PlayerPressed(action);
+    }
     internal static bool Resolve(Component target, ref Transform player,
         ref Animator animator, out PlayerInventory inventory)
     {

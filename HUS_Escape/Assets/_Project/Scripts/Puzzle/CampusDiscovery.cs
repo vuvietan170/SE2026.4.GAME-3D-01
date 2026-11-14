@@ -1,6 +1,5 @@
 using HUSEscape.World;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace HUSEscape.Quests
 {
@@ -16,7 +15,7 @@ namespace HUSEscape.Quests
         private void Update()
         {
             if (!Near || entry.Session == null || entry.Session.IsLoading || entry.Gate.IsBlocked || entry.player.GetComponent<InventoryUI>().IsOpen) return;
-            if (automatic || (Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame)) entry.quests.Signal(fact);
+            if (automatic || (entry.Gate.PlayerPressed("Interact"))) entry.quests.Signal(fact);
         }
         private void OnGUI()
         {

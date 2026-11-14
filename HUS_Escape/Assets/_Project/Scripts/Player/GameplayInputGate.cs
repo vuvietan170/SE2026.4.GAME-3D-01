@@ -1,122 +1,200 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
+using HUSEscape.Core;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace HUSEscape.Player
 {
-    /// <summary>Scene-local modal input/pause lease; preserves controller state and existing action enablement.</summary>
+    public interface IGameplayPauseOwner { bool IsPauseOpen { get; } }
+
+    /// <summary>Actor-owned actions and modal leases; never changes the serialized shared action asset.</summary>
     [DisallowMultipleComponent, DefaultExecutionOrder(-10000)]
     public sealed class GameplayInputGate : MonoBehaviour
     {
         [SerializeField] private InputActionAsset inputActions;
         [SerializeField] private ThirdPersonCameraFollow cameraFollow;
+        private InputActionAsset runtimeActions;
+        private InputActionMap playerMap, menuMap;
+        private readonly Dictionary<object, bool> owners = new Dictionary<object, bool>();
+        private readonly List<object> ownerOrder = new List<object>();
+        private readonly HashSet<string> consumedUi = new HashSet<string>();
+        private int consumedFrame = -1;
+        private readonly List<InputAction> suspended = new List<InputAction>();
+        private readonly object legacyOwner = new object();
+        private GameplayPauseCoordinator coordinator;
+        private bool inputSuspended, localEnvironment;
+        private float previousScale;
+        private CursorLockMode previousCursor;
+        private bool previousVisible;
+        private int releaseFrame = -1;
+        public event Action Deactivated;
         public sealed class Snapshot
         {
-            internal Snapshot() { }
             internal GameplayInputGate Owner;
-            internal bool Blocked, CameraEnabled, CameraPending, CameraWasEnabled, Visible, PreviousVisible;
-            internal float Scale, PreviousScale;
-            internal CursorLockMode Cursor, PreviousCursor;
-            internal InputAction[] Actions, Suspended;
-            internal bool[] Enabled;
-            internal int ReleaseDelay, ResumeDelay;
+            internal Dictionary<object, bool> Owners;
+            internal object[] Order;
+            internal InputAction[] ResumeActions;
+            internal bool CameraEnabled, LocalEnvironment;
+            internal float PreviousScale;
+            internal CursorLockMode PreviousCursor;
+            internal bool PreviousVisible;
         }
-        private Coroutine cameraResume;
-        private readonly List<InputAction> suspended = new List<InputAction>();
-        private float previousTimeScale;
-        private int releaseFrame = -1;
-        private int resumeFrame = -1;
-        private bool cameraWasEnabled;
-        private CursorLockMode previousCursorLock;
-        private bool previousCursorVisible;
-        /// <summary>Whether gameplay input is blocked, including the closing-frame grace period.</summary>
-        public bool IsBlocked { get; private set; }
-        /// <summary>Captures this gate's lease and actual action enablement before a travel request.</summary>
+        public bool IsBlocked => !isActiveAndEnabled || runtimeActions == null || owners.Count > 0 || Time.frameCount <= releaseFrame ||
+            (coordinator != null && (!coordinator.Available || coordinator.Manager.CurrentState != GameState.Playing));
+        public bool CanOpenMenus => isActiveAndEnabled && runtimeActions != null && Time.frameCount > releaseFrame &&
+            (coordinator == null || (coordinator.Available && (coordinator.Manager.CurrentState == GameState.Playing || coordinator.Manager.CurrentState == GameState.Paused)));
+        internal void Configure(InputActionAsset asset, ThirdPersonCameraFollow camera)
+        {
+            if (inputActions == null) inputActions = asset;
+            if (cameraFollow == null) cameraFollow = camera;
+            EnsureActions(); Sync();
+        }
+        private void Awake() => EnsureActions();
+        private void EnsureActions()
+        {
+            if (runtimeActions != null || inputActions == null) return;
+            runtimeActions = Instantiate(inputActions); runtimeActions.hideFlags = HideFlags.HideAndDontSave;
+            runtimeActions.Disable();
+            playerMap = runtimeActions.FindActionMap("Player", true);
+            menuMap = runtimeActions.FindActionMap("GameplayUI", false);
+            playerMap.Enable(); if (isActiveAndEnabled) menuMap?.Enable();
+        }
+        public InputAction PlayerAction(string name) { EnsureActions(); return playerMap?.FindAction(name, false); }
+        public bool PlayerPressed(string name) => !IsBlocked && (PlayerAction(name)?.WasPressedThisFrame() ?? false);
+        public bool UiPressed(string name) => isActiveAndEnabled &&
+            (consumedFrame != Time.frameCount || !consumedUi.Contains(name)) &&
+            (menuMap?.FindAction(name, false)?.WasPressedThisFrame() ?? false);
+        public bool IsTopModal(object owner)
+        {
+            for (int i = ownerOrder.Count - 1; i >= 0; i--)
+                if (owners.TryGetValue(ownerOrder[i], out bool pause) && pause) return ReferenceEquals(ownerOrder[i], owner);
+            return false;
+        }
+        public bool ConsumeUi(string name, object owner)
+        {
+            if (!IsTopModal(owner) || !UiPressed(name)) return false;
+            if (consumedFrame != Time.frameCount) { consumedUi.Clear(); consumedFrame = Time.frameCount; }
+            consumedUi.Add(name); return true;
+        }
+        public void Bind(GameBootstrap core)
+        {
+            if (coordinator != null && coordinator.IsFor(core)) { Sync(); return; }
+            if (coordinator != null) coordinator.SetPaused(this, false);
+            RestoreLocalEnvironment(); coordinator = GameplayPauseCoordinator.Bind(core); Sync();
+        }
+        private void Start()
+        {
+            if (coordinator != null) return;
+            GameBootstrap owner = null;
+            foreach (var candidate in FindObjectsByType<GameBootstrap>(FindObjectsInactive.Include))
+            {
+                if (!candidate.IsInitialized || !candidate.isActiveAndEnabled) continue;
+                if (owner != null) { Debug.LogError("Input gate requires one Core owner.", this); return; }
+                owner = candidate;
+            }
+            // Legacy SampleScene can run without Core. Journey injects Core explicitly when it creates one later.
+            if (owner != null) Bind(owner);
+        }
+        public bool Acquire(object owner, bool pauseGame = true)
+        {
+            if (owner == null || !isActiveAndEnabled || runtimeActions == null) return false;
+            if (pauseGame && coordinator != null && !coordinator.Available) return false;
+            releaseFrame = -1;
+            if (!owners.ContainsKey(owner)) ownerOrder.Add(owner);
+            owners[owner] = pauseGame || (owners.TryGetValue(owner, out bool previous) && previous);
+            Sync(); return true;
+        }
+        public void Release(object owner)
+        {
+            if (owner == null || !owners.Remove(owner)) return;
+            ownerOrder.Remove(owner);
+            if (owners.Count == 0) releaseFrame = Time.frameCount + 1;
+            Sync();
+        }
+        public void Block() => Acquire(legacyOwner);
+        public void HoldForTravel() => Acquire(legacyOwner, false);
+        public void ReleaseAfterFrame()
+        {
+            owners.Remove(legacyOwner); ownerOrder.Remove(legacyOwner);
+            if (owners.Count == 0) releaseFrame = Time.frameCount + 1;
+            Sync();
+        }
+        public void ReleaseImmediately() { owners.Clear(); ownerOrder.Clear(); releaseFrame = -1; Sync(); }
         public Snapshot CaptureSnapshot()
         {
-            var actions = new List<InputAction>();
-            var map = inputActions != null ? inputActions.FindActionMap("Player", false) : null;
-            if (map != null) foreach (var action in map.actions) actions.Add(action);
-            var enabled = new bool[actions.Count];
-            for (int i = 0; i < actions.Count; i++) enabled[i] = actions[i].enabled;
-            return new Snapshot {
-                Owner = this, Blocked = IsBlocked, Scale = Time.timeScale, PreviousScale = previousTimeScale,
-                CameraEnabled = cameraFollow != null && cameraFollow.enabled, CameraPending = cameraResume != null, CameraWasEnabled = cameraWasEnabled,
-                Cursor = Cursor.lockState, Visible = Cursor.visible, PreviousCursor = previousCursorLock, PreviousVisible = previousCursorVisible,
-                Actions = actions.ToArray(), Enabled = enabled, Suspended = suspended.ToArray(),
-                ReleaseDelay = releaseFrame < 0 ? -1 : Mathf.Max(0, releaseFrame - Time.frameCount),
-                ResumeDelay = resumeFrame < 0 ? -1 : Mathf.Max(0, resumeFrame - Time.frameCount)
-            };
+            var resume = new List<InputAction>();
+            if (inputSuspended) resume.AddRange(suspended);
+            else if (playerMap != null) foreach (var action in playerMap.actions) if (action.enabled) resume.Add(action);
+            return new Snapshot { Owner = this, Owners = new Dictionary<object, bool>(owners), Order = ownerOrder.ToArray(), ResumeActions = resume.ToArray(),
+                CameraEnabled = cameraFollow != null && cameraFollow.enabled, LocalEnvironment = localEnvironment,
+                PreviousScale = previousScale, PreviousCursor = previousCursor, PreviousVisible = previousVisible };
         }
-        /// <summary>Restores an existing scene after a failed destination disabled shared input actions.</summary>
         public void RestoreSnapshot(Snapshot snapshot)
         {
-            if (snapshot == null || snapshot.Owner != this) throw new System.ArgumentException("Input snapshot belongs to another gate.");
-            if (cameraResume != null && cameraFollow != null) cameraFollow.StopCoroutine(cameraResume);
-            cameraResume = null;
-            IsBlocked = snapshot.Blocked; Time.timeScale = snapshot.Scale; previousTimeScale = snapshot.PreviousScale;
-            cameraWasEnabled = snapshot.CameraWasEnabled; previousCursorLock = snapshot.PreviousCursor; previousCursorVisible = snapshot.PreviousVisible;
-            releaseFrame = snapshot.ReleaseDelay < 0 ? -1 : Time.frameCount + snapshot.ReleaseDelay;
-            resumeFrame = snapshot.ResumeDelay < 0 ? -1 : Time.frameCount + snapshot.ResumeDelay;
-            suspended.Clear(); suspended.AddRange(snapshot.Suspended);
-            Cursor.lockState = snapshot.Cursor; Cursor.visible = snapshot.Visible;
-            // Set the camera first: its OnDisable changes Player/Look too.
-            if (cameraFollow != null)
+            if (snapshot == null || snapshot.Owner != this) throw new ArgumentException("Input snapshot belongs to another gate.");
+            owners.Clear(); ownerOrder.Clear();
+            foreach (var pair in snapshot.Owners)
             {
-                cameraFollow.enabled = snapshot.CameraEnabled && Time.deltaTime > 0;
-                if ((snapshot.CameraEnabled || snapshot.CameraPending) && !cameraFollow.enabled) cameraResume = cameraFollow.StartCoroutine(ResumeCamera(cameraFollow));
+                if (pair.Key is UnityEngine.Object obj && obj == null) continue;
+                if (pair.Key is IGameplayPauseOwner modal && !modal.IsPauseOpen) continue;
+                owners.Add(pair.Key, pair.Value);
             }
-            for (int i = 0; i < snapshot.Actions.Length; i++)
-                if (snapshot.Enabled[i]) snapshot.Actions[i].Enable(); else snapshot.Actions[i].Disable();
+            foreach (var owner in snapshot.Order) if (owners.ContainsKey(owner)) ownerOrder.Add(owner);
+            releaseFrame = -1; playerMap?.Disable(); inputSuspended = true;
+            suspended.Clear(); suspended.AddRange(snapshot.ResumeActions);
+            localEnvironment = snapshot.LocalEnvironment; previousScale = snapshot.PreviousScale;
+            previousCursor = snapshot.PreviousCursor; previousVisible = snapshot.PreviousVisible;
+            if (cameraFollow != null) cameraFollow.enabled = snapshot.CameraEnabled;
+            Sync();
         }
-        /// <summary>Pauses gameplay without disabling or resetting the player/camera components.</summary>
-        public void Block()
-        {
-            releaseFrame = -1;
-            resumeFrame = -1;
-            if (IsBlocked) return;
-            IsBlocked = true; previousTimeScale = Time.timeScale; Time.timeScale = 0;
-            cameraWasEnabled = cameraFollow != null && cameraFollow.enabled;
-            if (cameraWasEnabled) cameraFollow.enabled = false;
-            previousCursorLock = Cursor.lockState; previousCursorVisible = Cursor.visible;
-            Cursor.lockState = CursorLockMode.None; Cursor.visible = true;
-            var map = inputActions != null ? inputActions.FindActionMap("Player", false) : null;
-            if (map == null) return;
-            foreach (var action in map.actions) if (action.enabled) { suspended.Add(action); action.Disable(); }
-        }
-        /// <summary>Closes safely without leaking the same key press into gameplay.</summary>
-        public void ReleaseAfterFrame() { if (IsBlocked) releaseFrame = Time.frameCount + 1; }
         private void Update()
         {
-            if (releaseFrame >= 0 && Time.frameCount > releaseFrame && resumeFrame < 0)
-            { Time.timeScale = previousTimeScale; resumeFrame = Time.frameCount + 1; }
-            if (resumeFrame >= 0 && Time.frameCount >= resumeFrame) Restore();
+            var dead = new List<object>();
+            foreach (var owner in owners.Keys) if (owner is UnityEngine.Object obj && obj == null) dead.Add(owner);
+            foreach (var owner in dead) { owners.Remove(owner); ownerOrder.Remove(owner); }
+            Sync();
         }
-        /// <summary>Ends the source scene's pause lease after loading, before destination actors activate.</summary>
-        public void ReleaseImmediately() => Restore();
-        private void Restore()
+        private void Sync()
         {
-            if (!IsBlocked) return;
-            IsBlocked = false; releaseFrame = resumeFrame = -1; Time.timeScale = previousTimeScale;
-            Cursor.lockState = previousCursorLock; Cursor.visible = previousCursorVisible;
-            foreach (var action in suspended) action.Enable();
-            suspended.Clear();
-            if (cameraWasEnabled && cameraFollow != null)
+            bool pause = false;
+            foreach (bool request in owners.Values) pause |= request;
+            if (coordinator != null) coordinator.SetPaused(this, isActiveAndEnabled && pause);
+            else if (isActiveAndEnabled && pause)
             {
-                if (Time.deltaTime > 0 || !cameraFollow.gameObject.activeInHierarchy) cameraFollow.enabled = true;
-                else cameraResume = cameraFollow.StartCoroutine(ResumeCamera(cameraFollow));
+                if (!localEnvironment) { previousScale = Time.timeScale; previousCursor = Cursor.lockState; previousVisible = Cursor.visible; localEnvironment = true; }
+                Time.timeScale = 0; Cursor.lockState = CursorLockMode.None; Cursor.visible = true;
+            }
+            else RestoreLocalEnvironment();
+            if (playerMap == null) return;
+            if (IsBlocked)
+            {
+                if (!inputSuspended)
+                {
+                    suspended.Clear(); foreach (var action in playerMap.actions) if (action.enabled) suspended.Add(action);
+                    inputSuspended = true;
+                }
+                playerMap.Disable();
+            }
+            else if (inputSuspended)
+            {
+                inputSuspended = false; foreach (var action in suspended) action.Enable(); suspended.Clear();
             }
         }
-        private IEnumerator ResumeCamera(ThirdPersonCameraFollow follow)
+        private void RestoreLocalEnvironment()
         {
-            // Never run the unchanged SmoothDamp camera with deltaTime=0 after a pause.
-            yield return null;
-            while (IsBlocked || Time.deltaTime <= 0) yield return null;
-            if (follow != null) follow.enabled = true;
-            cameraResume = null;
+            if (!localEnvironment) return;
+            localEnvironment = false; Time.timeScale = previousScale; Cursor.lockState = previousCursor; Cursor.visible = previousVisible;
         }
-        private void OnDisable() => Restore();
-        private void OnDestroy() => Restore();
+        private void OnEnable() { releaseFrame = Time.frameCount + 1; EnsureActions(); menuMap?.Enable(); Sync(); }
+        private void OnDisable()
+        {
+            if (Deactivated != null) foreach (Action handler in Deactivated.GetInvocationList())
+                try { handler(); } catch (Exception error) { Debug.LogWarning(error.Message, this); }
+            owners.Clear(); ownerOrder.Clear(); releaseFrame = -1;
+            if (coordinator != null) coordinator.SetPaused(this, false);
+            RestoreLocalEnvironment(); Sync(); menuMap?.Disable();
+        }
+        private void OnDestroy() { if (runtimeActions != null) Destroy(runtimeActions); }
     }
 }

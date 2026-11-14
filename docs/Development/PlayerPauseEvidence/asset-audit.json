@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "build_scenes": [
+    "Assets/_Project/Scenes/Bootstrap/Bootstrap.unity",
+    "Assets/_Project/Scenes/MainMenu/MainMenu.unity",
+    "Assets/Scenes/SampleScene.unity",
+    "Assets/_Project/Scenes/Floor01_Prototype.unity",
+    "Assets/_Project/Scenes/Campus_Prototype.unity",
+    "Assets/_Project/Scenes/TrainingOffice_Prototype.unity"
+  ],
+  "asset_guids": 171,
+  "scene_script_guids": 44,
+  "package_script_guids_requiring_unity": [
+    "01614664b831546d2ae94a42149d80ac",
+    "0cd44c1031e13a943bb63640046fad76",
+    "172515602e62fb746b5d573b38a5fe58",
+    "474bcb49853aa07438625e644c072ee6",
+    "4e29b1a8efbd4b44bb3f3716e73f07ff",
+    "5f7201a12d95ffc409449d95f23cf332",
+    "70b342d8ce5c2fd48b8fa3147d48d1d1",
+    "76c392e42b5098c458856cdf6ecaaaa1",
+    "a79441f348de89743a2939f4d699eac1",
+    "aeda7bfbf984f2a4da5ab4b8967b115d",
+    "dc42784cf147c0c48a680349fa168899",
+    "fc1515ab76e54f068e2f2207940fab32",
+    "fe87c0e1cc204ed48ad3b37840f39efc",
+    "fff0960ef4ea6e04eac66b4a7fd2189d"
+  ],
+  "errors": []
+}
