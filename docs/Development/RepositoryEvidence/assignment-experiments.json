@@ -1,0 +1,75 @@
+{
+  "08-final-clean.log": {
+    "exit_code": 0,
+    "expected_exit_code": 0
+  },
+  "07-mutation.log": {
+    "exit_code": 1,
+    "expected_exit_code": 1
+  },
+  "06-config-48.log": {
+    "exit_code": 0,
+    "expected_exit_code": 0
+  },
+  "05-load-3.log": {
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "measurement": {
+      "concurrentTasks": 150,
+      "successfulRestores": 50,
+      "deniedOwnership": 50,
+      "deniedExpired": 50,
+      "fakeIoDelayMs": 10,
+      "p95Ms": 60.8099,
+      "maxMs": 63.1414,
+      "targetMs": 4000,
+      "passed": true
+    }
+  },
+  "04-repeat-3.log": {
+    "exit_code": 0,
+    "expected_exit_code": 0
+  },
+  "05-load-2.log": {
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "measurement": {
+      "concurrentTasks": 150,
+      "successfulRestores": 50,
+      "deniedOwnership": 50,
+      "deniedExpired": 50,
+      "fakeIoDelayMs": 10,
+      "p95Ms": 55.6638,
+      "maxMs": 56.5097,
+      "targetMs": 4000,
+      "passed": true
+    }
+  },
+  "04-repeat-2.log": {
+    "exit_code": 0,
+    "expected_exit_code": 0
+  },
+  "05-load-1.log": {
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "measurement": {
+      "concurrentTasks": 150,
+      "successfulRestores": 50,
+      "deniedOwnership": 50,
+      "deniedExpired": 50,
+      "fakeIoDelayMs": 10,
+      "p95Ms": 65.0191,
+      "maxMs": 67.4626,
+      "targetMs": 4000,
+      "passed": true
+    }
+  },
+  "04-repeat-1.log": {
+    "exit_code": 0,
+    "expected_exit_code": 0
+  },
+  "03-reverse.log": {
+    "exit_code": 0,
+    "expected_exit_code": 0
+  }
+}

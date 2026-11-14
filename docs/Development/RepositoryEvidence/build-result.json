@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "target": "StandaloneLinux64",
+  "result": "Succeeded",
+  "player": "/tmp/hus-repository-validation/BuildSmoke/HUSEscape.x86_64",
+  "errors": 0,
+  "warnings": 2,
+  "bytes": 313677439,
+  "input_sha256": "d7debf67847cc798bb614c246f3c0a5713c3937d3ce2c1bfe8b4f56d7c86e7ce"
+}

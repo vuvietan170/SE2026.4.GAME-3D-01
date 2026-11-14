@@ -1,0 +1,23 @@
+PASS TC01-default-policy
+PASS TC02-config-0
+PASS TC02-config-1
+PASS TC02-config-2
+PASS TC02-config-719
+PASS TC02-config-720
+PASS TC02-config-721
+PASS TC03-expiry--1
+PASS TC03-expiry-0
+PASS TC03-expiry-1
+PASS TC04-config-changes-outcome
+PASS TC05-cross-owner
+PASS TC06-blank-identity
+PASS TC07-null-deletion-time
+PASS TC08-future-deletion-time
+PASS TC09-not-deleted
+PASS TC10-not-found
+PASS TC11-save-false
+PASS TC12-save-throws
+PASS TC13-delete-regression
+PASS TC14-config-file
+PASS TC15-owner-check-before-conflict
+RESULT total=22 passed=22 failed=0

@@ -1,0 +1,32 @@
+[
+  {
+    "old": "Assets/Scripts/SaveSystem/SaveSlot.cs",
+    "new": "assignments/VT105/SaveSystem/SaveSlot.cs",
+    "sha256": "46d8ff732a3d7fafdbcc33c052880f05ddddce2919b04faf11a70204e84d9f3d",
+    "identical_bytes": true
+  },
+  {
+    "old": "Assets/Scripts/SaveSystem/SaveSlotPolicy.cs",
+    "new": "assignments/VT105/SaveSystem/SaveSlotPolicy.cs",
+    "sha256": "10024cb7d9a789181253326978186494b4b8d8e47936b7296bc27b4ddda9415d",
+    "identical_bytes": true
+  },
+  {
+    "old": "Assets/Scripts/SaveSystem/SaveSlotService.cs",
+    "new": "assignments/VT105/SaveSystem/SaveSlotService.cs",
+    "sha256": "fa7c6a67848ecc49fe022c7f1cdb75ff6b8d7ab67a94d8c9dc167ee7e0ca1b26",
+    "identical_bytes": true
+  },
+  {
+    "old": "Assets/Scripts/SaveSystem/Tests/SaveSlotServiceTests.cs",
+    "new": "assignments/VT105/SaveSystem/LegacyTests/SaveSlotServiceTests.cs",
+    "sha256": "c4286a4c70ae32a738819bf6c530d5e0396a87f77cfc46aeb78b1bc2fe7ad427",
+    "identical_bytes": true
+  },
+  {
+    "old": "Assets/Scripts/SaveSystem/Tests/SaveSlotMutationTests.cs",
+    "new": "assignments/VT105/SaveSystem/LegacyTests/SaveSlotMutationTests.cs",
+    "sha256": "a47eb0689ab7a5fe5ceea1f9a852e6c6b763db8f0bfa21d2f8e210ef69d1f9bf",
+    "identical_bytes": true
+  }
+]

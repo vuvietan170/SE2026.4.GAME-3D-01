@@ -1,0 +1,76 @@
+{
+  "passed": true,
+  "unity": "6000.6.5f1",
+  "base_dev": "126ec82",
+  "main_compared": "c2cb34f",
+  "branch": "chore/repository-standardization",
+  "tests": {
+    "edit": {
+      "id": "2",
+      "testcasecount": "110",
+      "result": "Passed",
+      "total": "110",
+      "passed": "110",
+      "failed": "0",
+      "inconclusive": "0",
+      "skipped": "0",
+      "asserts": "0",
+      "engine-version": "3.5.0.0",
+      "clr-version": "4.0.30319.42000",
+      "start-time": "2026-11-14 08:07:56Z",
+      "end-time": "2026-11-14 08:07:56Z",
+      "duration": "0.251023"
+    },
+    "play": {
+      "id": "2",
+      "testcasecount": "33",
+      "result": "Passed",
+      "total": "33",
+      "passed": "33",
+      "failed": "0",
+      "inconclusive": "0",
+      "skipped": "0",
+      "asserts": "0",
+      "engine-version": "3.5.0.0",
+      "clr-version": "4.0.30319.42000",
+      "start-time": "2026-11-14 08:08:22Z",
+      "end-time": "2026-11-14 08:08:26Z",
+      "duration": "3.48882"
+    }
+  },
+  "gameplay_probes": {
+    "MvpLoop": "PASS 16/16; 163 assertions",
+    "JourneyIntegration": "PASS; 49 checks",
+    "PlayerPause": "PASS 20/20",
+    "Transaction": "PASS 34/34"
+  },
+  "assignment": "22/22 plus reverse/repeat/load/config/mutation",
+  "final_build": {
+    "passed": true,
+    "target": "StandaloneLinux64",
+    "result": "Succeeded",
+    "player": "/tmp/hus-repository-validation/BuildSmoke/HUSEscape.x86_64",
+    "errors": 0,
+    "warnings": 2,
+    "bytes": 313677439,
+    "input_sha256": "d7debf67847cc798bb614c246f3c0a5713c3937d3ce2c1bfe8b4f56d7c86e7ce"
+  },
+  "player_smoke": {
+    "passed": true,
+    "unityVersion": "6000.6.5f1",
+    "stage": "fresh-floor",
+    "error": "",
+    "coreOwners": 1,
+    "journeyOwners": 1
+  },
+  "execution_notes": "Full run passed suites and build but smoke checked before deferred Destroy. Fixed only staged smoke probe; final compile/build/smoke rerun passed. See both run summaries.",
+  "full_run_summary": "validation-first-build.json",
+  "final_run_summary": "validation-summary.json",
+  "logs_and_xml": "/tmp/hus-repository-validation",
+  "runtime_sources_changed": false,
+  "render_asset_changes": [
+    "Assets/Settings/PC_Renderer.asset",
+    "Assets/Settings/DefaultVolumeProfile.asset"
+  ],
+  "no_push_pr_merge_or_history_rewrite": true
+}

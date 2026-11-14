@@ -1,5 +1,9 @@
 # BT3 — Vũ Viết Tấn — 23001931 — VT-105
 
+> Source hiện ở [assignments/VT105](../../assignments/VT105/README.md); báo cáo/PDF/evidence bên dưới giữ đường dẫn lịch sử của bài nộp. Harness đã được cập nhật.
+> `experiments.py` ghi output mới vào `artifacts/assignment-vt105/` (hoặc `VT105_EVIDENCE_DIR`), không ghi đè evidence lịch sử.
+
+
 Đầu ra: [BT3_23001931_VT-105.pdf](BT3_23001931_VT-105.pdf),
 [bản nguồn báo cáo](REPORT.md), [plan trước code](PLAN.md), [logs](evidence/).
 

@@ -1,13 +1,14 @@
 """Reproducible experiments; mutation is committed only in a disposable repository."""
 import hashlib
 import json
+import os
 from pathlib import Path
 import shutil
 import subprocess
 import tempfile
 
 ROOT = Path(__file__).resolve().parents[2]
-EVIDENCE = ROOT / "docs/BT3_23001931_VT105/evidence"
+EVIDENCE = Path(os.environ.get("VT105_EVIDENCE_DIR", str(ROOT / "artifacts/assignment-vt105")))
 
 
 def execute(args, cwd=ROOT):
@@ -39,29 +40,29 @@ try:
 finally:
     config.write_bytes(original_config)
 
-source = ROOT / "Assets/Scripts/SaveSystem/SaveSlotService.cs"
+source = ROOT / "assignments/VT105/SaveSystem/SaveSlotService.cs"
 digest_before = hashlib.sha256(source.read_bytes()).hexdigest()
 with tempfile.TemporaryDirectory(prefix="vt105-mutation-") as directory:
     temp = Path(directory)
-    shutil.copytree(ROOT / "Assets/Scripts/SaveSystem", temp / "Assets/Scripts/SaveSystem")
+    shutil.copytree(ROOT / "assignments/VT105/SaveSystem", temp / "assignments/VT105/SaveSystem")
     shutil.copytree(ROOT / "tools/VT105", temp / "tools/VT105", ignore=shutil.ignore_patterns("bin", "obj", "__pycache__"))
     for args in (["git", "init", "-b", "mutation/vt105-restore-authorization"],
                  ["git", "config", "user.name", "VT105 temporary mutation experiment"],
                  ["git", "config", "user.email", "vt105@example.invalid"],
-                 ["git", "add", "Assets", "tools"],
+                 ["git", "add", "assignments", "tools"],
                  ["git", "commit", "-m", "experiment: unmutated production snapshot"]):
         result = execute(args, temp)
         if result.returncode: raise RuntimeError(result.stderr)
-    mutant = temp / "Assets/Scripts/SaveSystem/SaveSlotService.cs"
+    mutant = temp / "assignments/VT105/SaveSystem/SaveSlotService.cs"
     text = mutant.read_text()
     guard = '''            if (string.IsNullOrWhiteSpace(currentUserId) || slot.UserId != currentUserId) {
                 throw new UnauthorizedAccessException($"User {currentUserId} is not authorized to restore slot {slotId}.");
             }'''
     if text.count(guard) != 1: raise RuntimeError("Expected exactly one restore authorization guard")
     mutant.write_text(text.replace(guard, "            // MUTATION: restore authorization removed."))
-    diff = execute(["git", "diff", "--", "Assets/Scripts/SaveSystem/SaveSlotService.cs"], temp)
+    diff = execute(["git", "diff", "--", "assignments/VT105/SaveSystem/SaveSlotService.cs"], temp)
     (EVIDENCE / "07-mutation.patch").write_text(diff.stdout)
-    for args in (["git", "add", "Assets"], ["git", "commit", "-m", "mutation: remove restore authorization guard"]):
+    for args in (["git", "add", "assignments"], ["git", "commit", "-m", "mutation: remove restore authorization guard"]):
         result = execute(args, temp)
         if result.returncode: raise RuntimeError(result.stderr)
     history = execute(["git", "log", "-2", "--format=%H %s"], temp).stdout

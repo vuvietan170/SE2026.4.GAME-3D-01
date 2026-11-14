@@ -8,6 +8,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
-    <Compile Include="../../Assets/Scripts/SaveSystem/*.cs" />
+    <Compile Include="../../assignments/VT105/SaveSystem/*.cs" />
   </ItemGroup>
 </Project>

@@ -12,7 +12,9 @@ Language: C# | Target: TBD (pending official confirmation)
 | `HUS_Escape/Assets/` | Unity-imported content and its versioned `.meta` files. |
 | `HUS_Escape/Packages/` | Package manifest and dependency lock file; change only for intentional dependency work. |
 | `HUS_Escape/ProjectSettings/` | Shared editor and project configuration; review changes explicitly. |
-| `docs/GDD/` | Game design, mechanics, narrative, and level design documents. |
+| `docs/GDD/` | Reserved design-document area; folder presence does not imply content is complete. |
+| `assignments/VT105/` | Standalone .NET save-slot exercise, outside Unity imports; see SAVE_SYSTEMS.md. |
+| `tools/Validation/` | Disposable-project compile/test/build/player-smoke runner. |
 | `docs/TechnicalDesign/` | System specifications, implementation plans, and technical constraints. |
 | `docs/Architecture/` | Project organization, architectural decisions, and system relationships. |
 | `docs/Development/` | Contributor setup, workflows, and development procedures. |
@@ -33,7 +35,7 @@ All new project-owned Unity assets and C# code belong in
 | `Audio/` | Audio clips organized into `Music/`, `SFX/`, `Ambient/`, and `Voice/`. |
 | `Materials/` | Project-owned materials; group by feature or environment when needed. |
 | `Prefabs/` | Reusable configured GameObjects organized into `Characters/`, `NPCs/`, `Environment/`, `Interactables/`, `Items/`, and `UI/`. Player prefabs belong in `Characters/`; non-player characters belong in `NPCs/`. |
-| `Scenes/` | Scene assets grouped into `Bootstrap/`, `MainMenu/`, `Zone01_LabT3/`, `Zone02_Campus/`, `Zone03_TrainingOffice/`, and `Zone04_MainGate/`. Put related scene variants in the corresponding folder. |
+| `Scenes/` | Active scenes: `Bootstrap/Bootstrap.unity`, `MainMenu/MainMenu.unity`, and `Floor01_Prototype.unity`, `Campus_Prototype.unity`, `TrainingOffice_Prototype.unity`. `Zone01..04` are reserved folders, not implemented scenes; Main Gate MVP is in Campus. |
 | `Scripts/` | C# source grouped by responsibility as described below. |
 | `Settings/` | Project-owned configuration assets, such as render profiles and future ScriptableObject configuration. Unity's root `ProjectSettings/` remains the location for engine configuration. |
 | `UI/` | UI source assets in `Fonts/`, `Icons/`, `Sprites/`, and `Layouts/`; reusable UI GameObjects belong in `Prefabs/UI/`. |
@@ -54,8 +56,7 @@ All new project-owned Unity assets and C# code belong in
 | `Audio/` | Audio playback and audio system coordination. |
 | `Utilities/` | Small reusable helpers with no feature-specific ownership; avoid using this as a catch-all. |
 
-These folders reserve ownership boundaries only. FO-001 introduces no gameplay
-scripts, placeholder classes, scenes, or assembly definitions.
+The initial FO-001 layout reserved ownership only. Current gameplay exists in the scenes/scripts listed above; folders containing only `.gitkeep`/`.meta` remain placeholders. See [FEATURE_STATUS.md](../Development/FEATURE_STATUS.md).
 
 FO-003B implements the `Scripts/UI/` boundary as the `HUSEscape.UI` assembly and
 namespace. It references Core and existing Unity UI/Input System assemblies;
@@ -64,6 +65,14 @@ owner, while MainMenuView and its EventSystem belong to the MainMenu scene.
 Keep dependencies explicit and release scene references on unload. UI tests live
 in separate `Tests/Editor/` and `Tests/PlayMode/` assemblies. See
 [MAIN_MENU.md](../TechnicalDesign/MAIN_MENU.md) for lifecycle and input contracts.
+
+## Current assemblies and save ownership
+
+- `HUSEscape.Core`: lifecycle and SceneLoader; does not reference UI/Player.
+- `HUSEscape.UI`: references Core, Unity UI and Input System; owns the Bootstrap-bound menu flow.
+- `HUSEscape.Player`: references Core and Input System; owns controller/camera/input/pause code.
+- `Assembly-CSharp`: current AI, interaction, inventory, puzzle and Utilities composition/persistence. These have not been split into speculative empty asmdefs. Editor tooling lives under Editor folders; Core/UI tests have separate test assemblies.
+- Root-level `Assets/Scripts/SaveSystem` was verified as standalone VT-105, then moved unchanged to `assignments/VT105/SaveSystem`; the .NET 8 harness explicitly compiles it. No game assembly references it. [Save-system relationship](SAVE_SYSTEMS.md).
 
 ## Third-party and existing content
 
@@ -111,7 +120,6 @@ separate reviewed change that preserves GUIDs and checks scene and asset referen
   it. Add subfolders when they improve navigation; avoid speculative hierarchies,
   duplicated assets, and miscellaneous dumping grounds.
 - Keep editor-only scripts in an `Editor/` subfolder under their owning area
-  when such tooling is actually introduced. Assembly definitions require separate
-  dependency planning and are outside FO-001.
+  when such tooling is actually introduced. New assembly boundaries require dependency planning; preserve the implemented Core/UI/Player boundaries.
 - Document new ownership boundaries here. Review dependency and ProjectSettings
   changes separately from folder organization work.
