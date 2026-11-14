@@ -1,0 +1,4 @@
+PASS Assets/Scenes/SampleScene.unity: one PlayerController1; inherited references and eight tuning values preserved; no missing scripts
+PASS Assets/_Project/Scenes/Floor01_Prototype.unity: one PlayerController1; inherited references and eight tuning values preserved; no missing scripts
+PASS Assets/_Project/Scenes/Campus_Prototype.unity: one PlayerController1; inherited references and eight tuning values preserved; no missing scripts
+PASS Assets/_Project/Scenes/TrainingOffice_Prototype.unity: one PlayerController1; inherited references and eight tuning values preserved; no missing scripts

@@ -1,0 +1,78 @@
+{
+  "unity": "6000.6.5f1",
+  "base": "289de8b",
+  "branch": "fix/player-input-pause-consistency",
+  "project": "/tmp/hus-integration-validation",
+  "compile": {
+    "exit_code": 0,
+    "log": "/tmp/hus-player-compile.log"
+  },
+  "test_runner": {
+    "EditMode": {
+      "result": {
+        "id": "2",
+        "testcasecount": "110",
+        "result": "Passed",
+        "total": "110",
+        "passed": "110",
+        "failed": "0",
+        "inconclusive": "0",
+        "skipped": "0",
+        "asserts": "0",
+        "engine-version": "3.5.0.0",
+        "clr-version": "4.0.30319.42000",
+        "start-time": "2026-11-13 21:54:35Z",
+        "end-time": "2026-11-13 21:54:35Z",
+        "duration": "0.2312438"
+      },
+      "xml": "/tmp/hus-player-EditMode.xml",
+      "log": "/tmp/hus-player-EditMode.log"
+    },
+    "PlayMode": {
+      "result": {
+        "id": "2",
+        "testcasecount": "33",
+        "result": "Passed",
+        "total": "33",
+        "passed": "33",
+        "failed": "0",
+        "inconclusive": "0",
+        "skipped": "0",
+        "asserts": "0",
+        "engine-version": "3.5.0.0",
+        "clr-version": "4.0.30319.42000",
+        "start-time": "2026-11-13 21:54:59Z",
+        "end-time": "2026-11-13 21:55:03Z",
+        "duration": "4.6921609"
+      },
+      "xml": "/tmp/hus-player-PlayMode.xml",
+      "log": "/tmp/hus-player-PlayMode.log"
+    }
+  },
+  "probes": {
+    "player": {
+      "headline": "PASS 20/20",
+      "log": "/tmp/hus-player-final-validation.log"
+    },
+    "transactions": {
+      "headline": "PASS 34/34",
+      "log": "/tmp/hus-player-transactions-final.log"
+    },
+    "journey": {
+      "headline": "PASS",
+      "log": "/tmp/hus-player-native.log",
+      "checks": 49
+    }
+  },
+  "source_sha256": {
+    "HUS_Escape/Assets/_Project/Scripts/Inventory/InventoryUI.cs": "2e4ef8d77613b5ee79f5f5c71e35bec426da467e6cd6105d9dd8f77501c9d8da",
+    "HUS_Escape/Assets/_Project/Scripts/Puzzle/QuestPuzzleUI.cs": "b37a6fbce7fe570a7158b5b8000d93588831b0b62d66069c02cdd5bd67dbcadd",
+    "HUS_Escape/Assets/_Project/Scripts/Utilities/JourneySceneEntry.cs": "4835421d4964b95929c0b80d2af0af3872e239680bbdb8403895155230e824eb",
+    "HUS_Escape/Assets/_Project/Scripts/Utilities/JourneySession.cs": "2ddf2f75a093dbed89c675b7bde0ef58d817541a7ea0de8069441ac2dfbefa38",
+    "HUS_Escape/Assets/_Project/Scripts/Player/PlayerController.cs": "6fbf8e1ae8943e982fe78f25e3477a6876da5a8863eee7cd466f3b445a8a9c3d",
+    "HUS_Escape/Assets/_Project/Scripts/Player/PlayerController1.cs": "cad270cfb499d066dd341c07f0f6973b01375faa6dc88c8e0ed1a77a3657769c",
+    "HUS_Escape/Assets/_Project/Scripts/Player/ThirdPersonCameraFollow.cs": "c5092b9afa2fab9a6702494eb7e7eaaf60b9884a37d977105a8c8ddd3f24ecd1",
+    "HUS_Escape/Assets/_Project/Scripts/Player/GameplayInputGate.cs": "74e6026cdf1b649fd7600ddb2d435ed8ab9fbada8a071a526d377caabda9c39c",
+    "HUS_Escape/Assets/_Project/Scripts/Player/GameplayPauseCoordinator.cs": "4449b1dff54ca5fd72f2409d2b3303e23a4017c7ad3fb5ba6a5590d0637ed9f5"
+  }
+}

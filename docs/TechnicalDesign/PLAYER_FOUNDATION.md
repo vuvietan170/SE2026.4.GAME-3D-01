@@ -1,5 +1,8 @@
 # Player Foundation (FO-004A)
 
+> Bản triển khai hiện tại: [Player input và pause thống nhất](PLAYER_INPUT_PAUSE.md).
+> Phần dưới ghi lại thiết kế FO-004A ban đầu.
+
 ## Scope
 
 FO-004A introduces the first player movement component in the `HUSEscape.Player`

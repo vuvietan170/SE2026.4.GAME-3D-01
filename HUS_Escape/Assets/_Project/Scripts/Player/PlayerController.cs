@@ -1,181 +1,275 @@
+
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace HUSEscape.Player
 {
-    /// <summary>Camera-relative third-person movement driven by the project's Player action map.</summary>
-    [DisallowMultipleComponent]
+    [DisallowMultipleComponent, DefaultExecutionOrder(-8000)]
     [RequireComponent(typeof(CharacterController))]
-    public sealed class PlayerController : MonoBehaviour
+    public class PlayerController : MonoBehaviour
     {
-        private const string PlayerMapName = "Player";
-        private const string MoveActionName = "Move";
-        private const string SprintActionName = "Sprint";
-        private const string JumpActionName = "Jump";
+        protected const string PlayerMapName = "Player";
+        protected const string MoveActionName = "Move";
+        protected const string SprintActionName = "Sprint";
+        protected const string JumpActionName = "Jump";
 
         [Header("Input")]
-        [SerializeField] private InputActionAsset inputActions;
+        [SerializeField] protected InputActionAsset inputActions;
 
         [Header("Camera")]
-        [SerializeField] private Transform cameraTransform;
+        [SerializeField] protected Transform cameraTransform;
+
+        [Header("Animation")]
+        [SerializeField] protected Animator animator;
+        [SerializeField, Min(0f)] protected float animationSmoothTime = 0.1f;
 
         [Header("Movement")]
-        [SerializeField, Min(0f)] private float moveSpeed = 4f;
-        [SerializeField, Min(1f)] private float sprintMultiplier = 1.6f;
-        [SerializeField, Min(0f)] private float rotationSharpness = 12f;
+        [SerializeField, Min(0f)] protected float moveSpeed = 4f;
+        [SerializeField, Min(1f)] protected float sprintMultiplier = 1.6f;
+        [SerializeField, Min(0f)] protected float rotationSharpness = 12f;
+        [SerializeField, Min(0f)] protected float crouchSpeed = 2f;
 
-        [Header("Jump and gravity")]
-        [SerializeField, Min(0f)] private float jumpHeight = 1.2f;
-        [SerializeField] private float gravity = -20f;
-        [SerializeField, Min(0f)] private float groundedStickForce = 2f;
+        [Header("Jump and Gravity")]
+        [SerializeField, Min(0f)] protected float jumpHeight = 1.2f;
+        [SerializeField] protected float gravity = -20f;
+        [SerializeField, Min(0f)] protected float groundedStickForce = 2f;
 
-        private CharacterController characterController;
-        private InputAction moveAction;
-        private InputAction sprintAction;
-        private InputAction jumpAction;
-        private float verticalVelocity;
+        protected static readonly int SpeedHash =
+            Animator.StringToHash("Speed");
+        protected static readonly int CrouchHash =
+            Animator.StringToHash("IsCrouching");
+        protected static readonly int JumpHash =
+            Animator.StringToHash("Jump");
+        protected static readonly int OpenHash =
+            Animator.StringToHash("Open");
+        protected static readonly int GrabHash =
+            Animator.StringToHash("GrabTorch");
 
-        private void Awake()
+        protected CharacterController characterController;
+
+        protected InputAction moveAction;
+        protected InputAction sprintAction;
+        protected InputAction jumpAction;
+
+        protected GameplayInputGate inputGate;
+        protected InputAction crouchAction;
+        protected bool rejected;
+        public bool IsCrouching => isCrouching;
+        public GameplayInputGate InputGate => EnsureGate();
+        protected GameplayInputGate EnsureGate()
+        {
+            if (inputGate == null) inputGate = GetComponent<GameplayInputGate>();
+            if (inputGate == null) inputGate = gameObject.AddComponent<GameplayInputGate>();
+            inputGate.Configure(inputActions, cameraTransform != null ? cameraTransform.GetComponent<ThirdPersonCameraFollow>() : null);
+            return inputGate;
+        }
+        protected bool SelectMovementOwner()
+        {
+            foreach (var candidate in GetComponents<PlayerController>())
+                if (candidate != this && candidate.isActiveAndEnabled && candidate.inputActions != null && candidate.GetEntityId().CompareTo(GetEntityId()) < 0)
+                { rejected = true; enabled = false; Debug.LogWarning("Another controller already owns this CharacterController.", this); return false; }
+            return true;
+        }
+        protected float verticalVelocity;
+        protected bool isCrouching;
+
+        protected virtual void Awake()
         {
             characterController = GetComponent<CharacterController>();
+            if (!SelectMovementOwner()) return;
 
             if (cameraTransform == null && Camera.main != null)
-            {
                 cameraTransform = Camera.main.transform;
-            }
 
+            if (animator == null)
+                animator = GetComponentInChildren<Animator>();
+
+            if (animator != null)
+                animator.applyRootMotion = false;
+            else
+                Debug.LogWarning(
+                    "Player Animator not found.", this);
+
+            EnsureGate();
             if (!TryResolveActions())
-            {
                 enabled = false;
-            }
         }
 
-        private bool TryResolveActions()
+        protected bool TryResolveActions()
         {
             if (inputActions == null)
             {
                 Debug.LogError(
-                    "PlayerController requires the InputSystem_Actions asset assigned to Input Actions.",
-                    this);
+                    "Input Actions asset is missing.", this);
                 return false;
             }
 
             try
             {
-                InputActionMap playerMap = inputActions.FindActionMap(PlayerMapName, true);
-                moveAction = playerMap.FindAction(MoveActionName, true);
-                sprintAction = playerMap.FindAction(SprintActionName, true);
-                jumpAction = playerMap.FindAction(JumpActionName, true);
+                var gate = EnsureGate();
+                moveAction = gate.PlayerAction(MoveActionName);
+                sprintAction = gate.PlayerAction(SprintActionName);
+                jumpAction = gate.PlayerAction(JumpActionName);
+                crouchAction = gate.PlayerAction("Crouch");
+                if (moveAction == null || sprintAction == null || jumpAction == null || crouchAction == null)
+                    throw new InvalidOperationException("Player actions Move/Sprint/Jump/Crouch are required.");
                 return true;
             }
-            catch (InvalidOperationException exception)
+            catch (InvalidOperationException e)
             {
-                Debug.LogError(
-                    $"PlayerController could not resolve the '{PlayerMapName}' action map " +
-                    $"with '{MoveActionName}', '{SprintActionName}', and '{JumpActionName}' actions. " +
-                    exception.Message,
-                    this);
+                Debug.LogError(e.Message, this);
                 return false;
             }
         }
 
-        private void OnEnable()
+        protected virtual void OnEnable()
         {
-            if (moveAction == null || sprintAction == null || jumpAction == null)
-            {
-                return;
-            }
-
-            moveAction.Enable();
-            sprintAction.Enable();
-            jumpAction.Enable();
+            if (!SelectMovementOwner()) return;
+            characterController = GetComponent<CharacterController>();
+            if (!TryResolveActions()) enabled = false;
+        }
+        protected virtual void OnDisable()
+        {
+            verticalVelocity = 0f; isCrouching = false;
+            if (!rejected && animator != null && animator.runtimeAnimatorController != null)
+            { animator.SetFloat(SpeedHash, 0); animator.SetBool(CrouchHash, false); animator.ResetTrigger(JumpHash); }
         }
 
-        private void OnDisable()
+        protected virtual void Update()
         {
-            moveAction?.Disable();
-            sprintAction?.Disable();
-            jumpAction?.Disable();
-            verticalVelocity = 0f;
-        }
-
-        private void Update()
-        {
-            if (characterController == null || moveAction == null)
-            {
+            if (inputGate == null || inputGate.IsBlocked || Time.deltaTime <= 0f) return;
+            if (characterController == null || !characterController.enabled || moveAction == null)
                 return;
-            }
 
-            float deltaTime = Time.deltaTime;
-            Vector2 input = Vector2.ClampMagnitude(moveAction.ReadValue<Vector2>(), 1f);
-            Vector3 moveDirection = GetCameraRelativeDirection(input);
+            float dt = Time.deltaTime;
 
-            if (moveDirection.sqrMagnitude > 0.0001f)
-            {
-                RotateTowards(moveDirection, deltaTime);
-            }
+            // Crouch is a stance/speed toggle; the standing capsule deliberately stays unchanged.
+            if (crouchAction.WasPressedThisFrame()) isCrouching = !isCrouching;
+
+            Vector2 input = Vector2.ClampMagnitude(
+                moveAction.ReadValue<Vector2>(), 1f);
+
+            Vector3 direction = GetCameraRelativeDirection(input);
+
+            bool moving = direction.sqrMagnitude > 0.0001f;
+
+            bool sprinting =
+                moving &&
+                !isCrouching &&
+                sprintAction != null &&
+                sprintAction.IsPressed();
+
+            if (moving)
+                RotateTowards(direction, dt);
 
             bool grounded = characterController.isGrounded;
+
             if (grounded && verticalVelocity < 0f)
             {
                 verticalVelocity = -groundedStickForce;
             }
 
-            if (grounded && jumpAction != null && jumpAction.WasPressedThisFrame())
+            // SPACE: Jump
+            if (grounded &&
+                !isCrouching &&
+                jumpAction != null &&
+                jumpAction.WasPressedThisFrame())
             {
-                verticalVelocity = Mathf.Sqrt(jumpHeight * -2f * gravity);
+                verticalVelocity =
+                    Mathf.Sqrt(jumpHeight * -2f * gravity);
+
+
+                if (animator != null)
+                    animator.SetTrigger(JumpHash);
             }
 
-            verticalVelocity += gravity * deltaTime;
+            verticalVelocity += gravity * dt;
 
-            float speed = sprintAction != null && sprintAction.IsPressed()
-                ? moveSpeed * sprintMultiplier
-                : moveSpeed;
+            float actualSpeed = isCrouching
+                ? crouchSpeed
+                : sprinting
+                    ? moveSpeed * sprintMultiplier
+                    : moveSpeed;
 
-            Vector3 velocity = moveDirection * speed;
+            Vector3 velocity = direction * actualSpeed;
             velocity.y = verticalVelocity;
-            characterController.Move(velocity * deltaTime);
+
+            CollisionFlags collision =
+                characterController.Move(velocity * dt);
+
+            if ((collision & CollisionFlags.Above) != 0 &&
+                verticalVelocity > 0f)
+            {
+                verticalVelocity = 0f;
+            }
+
+            // Update Animator parameters
+            if (animator != null)
+            {
+                float animationSpeed = !moving
+                    ? 0f
+                    : sprinting ? 1f : 0.4f;
+
+                animator.SetFloat(
+                    SpeedHash,
+                    animationSpeed,
+                    animationSmoothTime,
+                    dt);
+
+                animator.SetBool(CrouchHash, isCrouching);
+
+
+            }
         }
 
-        private Vector3 GetCameraRelativeDirection(Vector2 input)
+        protected Vector3 GetCameraRelativeDirection(Vector2 input)
         {
-            Transform reference = cameraTransform != null ? cameraTransform : transform;
-            Vector3 forward = Vector3.ProjectOnPlane(reference.forward, Vector3.up).normalized;
-            Vector3 right = Vector3.ProjectOnPlane(reference.right, Vector3.up).normalized;
+            Transform reference =
+                cameraTransform != null
+                    ? cameraTransform
+                    : transform;
+
+            Vector3 forward = Vector3.ProjectOnPlane(
+                reference.forward, Vector3.up).normalized;
+
+            Vector3 right = Vector3.ProjectOnPlane(
+                reference.right, Vector3.up).normalized;
 
             if (forward.sqrMagnitude < 0.0001f)
-            {
                 forward = Vector3.ProjectOnPlane(transform.forward, Vector3.up).normalized;
-            }
 
             if (right.sqrMagnitude < 0.0001f)
-            {
                 right = Vector3.ProjectOnPlane(transform.right, Vector3.up).normalized;
-            }
 
-            return Vector3.ClampMagnitude(right * input.x + forward * input.y, 1f);
+            return Vector3.ClampMagnitude(
+                right * input.x + forward * input.y, 1f);
         }
 
-        private void RotateTowards(Vector3 direction, float deltaTime)
+        protected void RotateTowards(Vector3 direction, float dt)
         {
             if (rotationSharpness <= 0f)
-            {
                 return;
-            }
 
-            Quaternion targetRotation = Quaternion.LookRotation(direction, Vector3.up);
-            float blend = 1f - Mathf.Exp(-rotationSharpness * deltaTime);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, blend);
+            Quaternion target = Quaternion.LookRotation(
+                direction, Vector3.up);
+
+            float blend = 1f - Mathf.Exp(
+                -rotationSharpness * dt);
+
+            transform.rotation = Quaternion.Slerp(
+                transform.rotation, target, blend);
         }
 
-        private void OnValidate()
+        protected virtual void OnValidate()
         {
             moveSpeed = Mathf.Max(0f, moveSpeed);
+            crouchSpeed = Mathf.Max(0f, crouchSpeed);
             sprintMultiplier = Mathf.Max(1f, sprintMultiplier);
             rotationSharpness = Mathf.Max(0f, rotationSharpness);
             jumpHeight = Mathf.Max(0f, jumpHeight);
             groundedStickForce = Mathf.Max(0f, groundedStickForce);
+            animationSmoothTime = Mathf.Max(0f, animationSmoothTime);
             gravity = Mathf.Min(-0.01f, gravity);
         }
     }

@@ -3,13 +3,12 @@ using HUSEscape.Persistence;
 using HUSEscape.World;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 namespace HUSEscape.Quests
 {
     public enum QuestModal { None, Journal, Clue, Code, Sequence, Lab, Progress, Information }
     /// <summary>Scene-local HUD, journal and A101 dialogs using the project's existing IMGUI approach.</summary>
     [DefaultExecutionOrder(-9000)]
-    public sealed class QuestPuzzleUI : MonoBehaviour
+    public sealed class QuestPuzzleUI : MonoBehaviour, IGameplayPauseOwner
     {
         [SerializeField] private QuestManager quests;
         [SerializeField] private GameplayInputGate inputGate;
@@ -36,6 +35,7 @@ namespace HUSEscape.Quests
         private GUIStyle bodyStyle, titleStyle, buttonStyle, smallStyle;
         private void OnEnable()
         {
+            if (inputGate != null) inputGate.Deactivated += CloseModal;
             if (quests != null) quests.ProgressRecorded += OnProgress;
             if (saveSystem != null) saveSystem.Restored += ProgressRestored;
         }
@@ -72,15 +72,13 @@ namespace HUSEscape.Quests
         private string message = "";
         private Vector2 scroll;
         public QuestModal Mode { get; private set; }
+        public bool IsPauseOpen => Mode != QuestModal.None;
         public string EnteredCode => enteredCode;
         public string Message => message;
         public System.Collections.Generic.IReadOnlyList<int> SelectedEvents => selectedEvents;
-        private static readonly Key[] Digits = { Key.Digit0, Key.Digit1, Key.Digit2, Key.Digit3, Key.Digit4, Key.Digit5, Key.Digit6, Key.Digit7, Key.Digit8, Key.Digit9 };
-        private static readonly Key[] Numpad = { Key.Numpad0, Key.Numpad1, Key.Numpad2, Key.Numpad3, Key.Numpad4, Key.Numpad5, Key.Numpad6, Key.Numpad7, Key.Numpad8, Key.Numpad9 };
         private void Update()
         {
-            var keyboard = Keyboard.current;
-            if (keyboard == null || quests == null || quests.Inventory == null || inputGate == null) return;
+            if (quests == null || quests.Inventory == null || inputGate == null) return;
             if (Mode == QuestModal.None)
             {
                 if (noticeRemaining <= 0 && notices.Count > 0) { notice = notices.Dequeue(); noticeRemaining = 4f; }
@@ -89,37 +87,38 @@ namespace HUSEscape.Quests
             }
             if (Mode != QuestModal.None)
             {
-                if (keyboard.escapeKey.wasPressedThisFrame || (Mode == QuestModal.Journal && keyboard.jKey.wasPressedThisFrame)) { CloseModal(); return; }
+                if (!inputGate.IsTopModal(this)) return;
+                if (inputGate.ConsumeUi("Cancel", this) || (Mode == QuestModal.Journal && inputGate.ConsumeUi("Journal", this))) { CloseModal(); return; }
                 if (Mode == QuestModal.Code)
                 {
-                    for (int i = 0; i < 10; i++) if (keyboard[Digits[i]].wasPressedThisFrame || keyboard[Numpad[i]].wasPressedThisFrame) AppendDigit(i);
-                    if (keyboard.backspaceKey.wasPressedThisFrame && enteredCode.Length > 0) enteredCode = enteredCode.Substring(0, enteredCode.Length - 1);
-                    if (keyboard.deleteKey.wasPressedThisFrame) enteredCode = "";
-                    if (keyboard.enterKey.wasPressedThisFrame || keyboard.numpadEnterKey.wasPressedThisFrame) SubmitCode();
+                    for (int i = 0; i < 10; i++) if (inputGate.UiPressed("Digit" + i)) AppendDigit(i);
+                    if (inputGate.UiPressed("Backspace") && enteredCode.Length > 0) enteredCode = enteredCode.Substring(0, enteredCode.Length - 1);
+                    if (inputGate.UiPressed("Clear")) enteredCode = "";
+                    if (inputGate.UiPressed("Submit")) SubmitCode();
                 }
                 else if (Mode == QuestModal.Sequence)
                 {
-                    if (keyboard.aKey.wasPressedThisFrame || keyboard.digit1Key.wasPressedThisFrame || keyboard.numpad1Key.wasPressedThisFrame) SelectEvent(0);
-                    if (keyboard.bKey.wasPressedThisFrame || keyboard.digit2Key.wasPressedThisFrame || keyboard.numpad2Key.wasPressedThisFrame) SelectEvent(1);
-                    if (keyboard.cKey.wasPressedThisFrame || keyboard.digit3Key.wasPressedThisFrame || keyboard.numpad3Key.wasPressedThisFrame) SelectEvent(2);
-                    if (keyboard.backspaceKey.wasPressedThisFrame && selectedEvents.Count > 0) selectedEvents.RemoveAt(selectedEvents.Count - 1);
-                    if (keyboard.deleteKey.wasPressedThisFrame) selectedEvents.Clear();
-                    if (keyboard.enterKey.wasPressedThisFrame || keyboard.numpadEnterKey.wasPressedThisFrame) SubmitSequence();
+                    if (inputGate.UiPressed("SequenceA") || inputGate.UiPressed("Digit1")) SelectEvent(0);
+                    if (inputGate.UiPressed("SequenceB") || inputGate.UiPressed("Digit2")) SelectEvent(1);
+                    if (inputGate.UiPressed("SequenceC") || inputGate.UiPressed("Digit3")) SelectEvent(2);
+                    if (inputGate.UiPressed("Backspace") && selectedEvents.Count > 0) selectedEvents.RemoveAt(selectedEvents.Count - 1);
+                    if (inputGate.UiPressed("Clear")) selectedEvents.Clear();
+                    if (inputGate.UiPressed("Submit")) SubmitSequence();
                 }
-                else if (Mode == QuestModal.Lab && (keyboard.enterKey.wasPressedThisFrame || keyboard.numpadEnterKey.wasPressedThisFrame))
+                else if (Mode == QuestModal.Lab && (inputGate.UiPressed("Submit")))
                 {
                     if (CanConfirmLab()) ConfirmLabCompletion(); else CloseModal();
                 }
                 return;
             }
             if (inputGate.IsBlocked || (inventoryUI != null && inventoryUI.IsOpen)) return;
-            if (keyboard.f5Key.wasPressedThisFrame && (saveSystem != null || journey != null)) { confirmation = 0; Open(QuestModal.Progress); return; }
-            if (keyboard.jKey.wasPressedThisFrame) { Open(QuestModal.Journal); return; }
+            if (inputGate.UiPressed("Save") && (saveSystem != null || journey != null)) { confirmation = 0; Open(QuestModal.Progress); return; }
+            if (inputGate.UiPressed("Journal")) { Open(QuestModal.Journal); return; }
             var note = NearestNote(); var cabinet = NearestCabinet();
             // A modal target takes this frame before legacy E/F updates; the input gate prevents a double interaction.
-            if (keyboard.fKey.wasPressedThisFrame && note != null) { currentNote = note; Open(QuestModal.Clue); note.Read(quests); return; }
-            if (keyboard.eKey.wasPressedThisFrame && cabinet != null) { currentCabinet = cabinet; enteredCode = ""; Open(QuestModal.Code); }
-            else if (keyboard.eKey.wasPressedThisFrame)
+            if (inputGate.PlayerPressed("Pickup") && note != null) { currentNote = note; Open(QuestModal.Clue); note.Read(quests); return; }
+            if (inputGate.PlayerPressed("Interact") && cabinet != null) { currentCabinet = cabinet; enteredCode = ""; Open(QuestModal.Code); }
+            else if (inputGate.PlayerPressed("Interact"))
             {
                 var panel = NearestSequence();
                 if (panel != null) { currentSequence = panel; selectedEvents.Clear(); Open(QuestModal.Sequence); }
@@ -152,7 +151,7 @@ namespace HUSEscape.Quests
             }
             return best;
         }
-        private void Open(QuestModal mode) { message = ""; Mode = mode; inputGate.Block(); }
+        private void Open(QuestModal mode) { if (inputGate != null && inputGate.Acquire(this)) { message = ""; Mode = mode; } }
         private LabInteractable NearestLab()
         {
             foreach (var target in FindObjectsByType<LabInteractable>())
@@ -179,7 +178,7 @@ namespace HUSEscape.Quests
             return best;
         }
         /// <summary>Closes any quest dialog, retaining a one-frame input release guard.</summary>
-        public void CloseModal() { Mode = QuestModal.None; currentNote = null; currentCabinet = null; currentSequence = null; currentLab = null; selectedEvents.Clear(); enteredCode = ""; if (inputGate != null) inputGate.ReleaseAfterFrame(); }
+        public void CloseModal() { Mode = QuestModal.None; currentNote = null; currentCabinet = null; currentSequence = null; currentLab = null; selectedEvents.Clear(); enteredCode = ""; if (inputGate != null) inputGate.Release(this); }
         /// <summary>Selects one event once; both keyboard and mouse use this path.</summary>
         public void SelectEvent(int index)
         {
@@ -205,6 +204,7 @@ namespace HUSEscape.Quests
         }
         private void OnDisable()
         {
+            if (inputGate != null) inputGate.Deactivated -= CloseModal;
             if (quests != null) quests.ProgressRecorded -= OnProgress;
             if (saveSystem != null) saveSystem.Restored -= ProgressRestored;
             CloseModal();
@@ -250,7 +250,7 @@ namespace HUSEscape.Quests
                     OpaquePanel(new Rect(770, 85, 494, 150)); GUI.Label(new Rect(788, 102, 458, 120), notice, smallStyle);
                 }
             }
-            else DrawModal();
+            else if (inputGate != null && inputGate.IsTopModal(this)) DrawModal();
             GUI.depth = previousDepth; GUI.matrix = previousMatrix;
         }
         private void DrawModal()

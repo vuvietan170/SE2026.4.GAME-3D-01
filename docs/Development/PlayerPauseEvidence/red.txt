@@ -1,0 +1,35 @@
+FAIL 0/7
+FAIL InventoryPausesCoreAndInput: System.Exception: Inventory leaves gameplay/Core unpaused
+  at PlayerPauseProbe+<InventoryPausesCoreAndInput>d__31.MoveNext () [0x00093] in /tmp/hus-integration-validation/Assets/PlayerPauseProbe.cs:86
+  at PlayerPauseProbe.Update () [0x000a7] in /tmp/hus-integration-validation/Assets/PlayerPauseProbe.cs:60
+FAIL CrouchUsesExistingAction: System.Exception: Player/Crouch action C is ignored
+  at PlayerPauseProbe+<CrouchUsesExistingAction>d__32.MoveNext () [0x00060] in /tmp/hus-integration-validation/Assets/PlayerPauseProbe.cs:91
+  at PlayerPauseProbe.Update () [0x000a7] in /tmp/hus-integration-validation/Assets/PlayerPauseProbe.cs:60
+FAIL NestedOwnersKeepPause: System.Exception: Releasing one modal resumed another
+  at PlayerPauseProbe+<NestedOwnersKeepPause>d__33.MoveNext () [0x00097] in /tmp/hus-integration-validation/Assets/PlayerPauseProbe.cs:96
+  at PlayerPauseProbe.Update () [0x000a7] in /tmp/hus-integration-validation/Assets/PlayerPauseProbe.cs:60
+FAIL GatePauseMatchesGameManager: System.Exception: Gate pauses time without Paused Core
+  at PlayerPauseProbe+<GatePauseMatchesGameManager>d__34.MoveNext () [0x0006d] in /tmp/hus-integration-validation/Assets/PlayerPauseProbe.cs:98
+  at PlayerPauseProbe.Update () [0x000a7] in /tmp/hus-integration-validation/Assets/PlayerPauseProbe.cs:60
+FAIL CameraEnableCannotBypassGate: System.Exception: Camera OnEnable re-enabled Look behind pause
+  at PlayerPauseProbe+<CameraEnableCannotBypassGate>d__35.MoveNext () [0x00078] in /tmp/hus-integration-validation/Assets/PlayerPauseProbe.cs:104
+  at PlayerPauseProbe.Update () [0x000a7] in /tmp/hus-integration-validation/Assets/PlayerPauseProbe.cs:60
+FAIL DisableGateClosesUi: System.Exception: Disabled gate leaves UI open without a lease
+  at PlayerPauseProbe+<DisableGateClosesUi>d__36.MoveNext () [0x000af] in /tmp/hus-integration-validation/Assets/PlayerPauseProbe.cs:109
+  at PlayerPauseProbe.Update () [0x000a7] in /tmp/hus-integration-validation/Assets/PlayerPauseProbe.cs:60
+FAIL ControllerFamilyHasSingleOwner: System.Exception: Two movement controllers own one CharacterController
+  at PlayerPauseProbe+<ControllerFamilyHasSingleOwner>d__37.MoveNext () [0x0014b] in /tmp/hus-integration-validation/Assets/PlayerPauseProbe.cs:119
+  at PlayerPauseProbe.Update () [0x000a7] in /tmp/hus-integration-validation/Assets/PlayerPauseProbe.cs:60
+RUNTIME ERRORS
+
+EDITOR ERRORS
+ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+System.Collections.Generic.List`1[T].get_Item (System.Int32 index) (at <fe1d7a670f4f4d078f963f4439913bcb>:0)
+UnityEditor.Search.SearchDatabase+<EnumerateAll>d__78.MoveNext () (at /home/bokken/build/output/unity/unity/Modules/QuickSearch/Editor/Indexing/SearchDatabase.cs:351)
+System.Linq.Enumerable.TryGetFirst[TSource] (System.Collections.Generic.IEnumerable`1[T] source, System.Boolean& found) (at <ada5ca24c2414cbb9aa0f67c3255a013>:0)
+System.Linq.Enumerable.First[TSource] (System.Collections.Generic.IEnumerable`1[T] source) (at <ada5ca24c2414cbb9aa0f67c3255a013>:0)
+UnityEditor.Search.SearchDatabase.GetDefaultSearchDatabase () (at /home/bokken/build/output/unity/unity/Modules/QuickSearch/Editor/Indexing/SearchDatabase.cs:325)
+UnityEditor.Search.SearchInit.IndexationOnStartup () (at /home/bokken/build/output/unity/unity/Modules/QuickSearch/Editor/SearchInit.cs:109)
+UnityEditor.EditorApplication.Internal_CallDelayFunctions () (at /home/bokken/build/output/unity/unity/Editor/Mono/EditorApplication.cs:427)
+UnityEngine.StackTraceUtility:ExtractStringFromExceptionInternal(Object, String&, String&) (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:50)

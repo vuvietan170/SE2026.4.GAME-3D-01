@@ -6,7 +6,6 @@ namespace HUSEscape.Player
     [DisallowMultipleComponent]
     public sealed class ThirdPersonCameraFollow : MonoBehaviour
     {
-        private const string PlayerMapName = "Player";
         private const string LookActionName = "Look";
 
         [Header("Target")]
@@ -38,6 +37,7 @@ namespace HUSEscape.Player
         [SerializeField, Min(0.01f)] private float collisionRecoveryTime = 0.18f;
 
         private InputAction lookAction;
+        private GameplayInputGate inputGate;
         private Vector3 positionVelocity;
         private Camera viewCamera;
         private SphereCollider overlapProbe;
@@ -60,10 +60,10 @@ namespace HUSEscape.Player
                 return;
             }
 
-            InputActionMap playerMap =
-                inputActions.FindActionMap(PlayerMapName, false);
-
-            lookAction = playerMap?.FindAction(LookActionName, false);
+            inputGate = target.GetComponent<GameplayInputGate>();
+            if (inputGate == null && target.TryGetComponent<PlayerController>(out var controller)) inputGate = controller.InputGate;
+            inputGate?.Configure(inputActions, this);
+            lookAction = inputGate != null ? inputGate.PlayerAction(LookActionName) : null;
 
             if (lookAction == null)
             {
@@ -86,19 +86,9 @@ namespace HUSEscape.Player
             overlapProbe.hideFlags = HideFlags.HideInInspector | HideFlags.DontSave;
         }
 
-        private void OnEnable()
-        {
-            lookAction?.Enable();
-        }
-
-        private void OnDisable()
-        {
-            lookAction?.Disable();
-        }
-
         private void LateUpdate()
         {
-            if (target == null || lookAction == null)
+            if (target == null || lookAction == null || inputGate == null || inputGate.IsBlocked || Time.deltaTime <= 0f)
                 return;
 
             float deltaTime = Time.deltaTime;

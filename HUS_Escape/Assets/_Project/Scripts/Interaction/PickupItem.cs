@@ -1,7 +1,6 @@
 
 using System.Collections;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using HUSEscape.Inventory;
 
 public class PickupItem : MonoBehaviour
@@ -39,8 +38,7 @@ public class PickupItem : MonoBehaviour
 
     private void Update()
     {
-        if (Keyboard.current != null &&
-            Keyboard.current.fKey.wasPressedThisFrame && IsSelectedTarget()
+        if (IsSelectedTarget() && InteractionSelection.Pressed(player, "Pickup")
             && !collected && !isPickingUp)
         {
             StartCoroutine(Pickup());

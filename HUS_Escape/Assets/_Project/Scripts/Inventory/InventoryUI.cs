@@ -2,10 +2,10 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using HUSEscape.Inventory;
 
-public class InventoryUI : MonoBehaviour
+[DefaultExecutionOrder(-9050)]
+public class InventoryUI : MonoBehaviour, HUSEscape.Player.IGameplayPauseOwner
 {
     [Serializable]
     public class ItemVisual
@@ -24,6 +24,32 @@ public class InventoryUI : MonoBehaviour
 
     private bool isOpen;
     public bool IsOpen => isOpen;
+    public bool IsPauseOpen => isOpen;
+    private HUSEscape.Player.GameplayInputGate gate;
+    private void BindGate()
+    {
+        var next = GetComponent<HUSEscape.Player.GameplayInputGate>();
+        if (next == gate) return;
+        if (gate != null) gate.Deactivated -= Close;
+        gate = next;
+        if (gate != null) gate.Deactivated += Close;
+    }
+    public bool SetOpen(bool open)
+    {
+        BindGate();
+        if (open)
+        {
+            if (!isActiveAndEnabled || gate == null || !gate.CanOpenMenus || !gate.Acquire(this)) return false;
+            isOpen = true;
+        }
+        else { isOpen = false; if (gate != null) gate.Release(this); }
+        return true;
+    }
+    private void Close() => SetOpen(false);
+    private void OnDisable()
+    {
+        Close(); if (gate != null) gate.Deactivated -= Close; gate = null;
+    }
 
     private const int Columns = 4;
     private const int Rows = 3;
@@ -36,12 +62,12 @@ public class InventoryUI : MonoBehaviour
 
     private void Update()
     {
-        if (TryGetComponent<HUSEscape.Player.GameplayInputGate>(out var gate) && gate.IsBlocked) return;
-        if (Keyboard.current != null &&
-            Keyboard.current.tabKey.wasPressedThisFrame)
+        BindGate(); if (gate == null) return;
+        if (isOpen)
         {
-            isOpen = !isOpen;
+            if (gate.ConsumeUi("Inventory", this) || gate.ConsumeUi("Cancel", this)) SetOpen(false);
         }
+        else if (!gate.IsBlocked && gate.UiPressed("Inventory")) SetOpen(true);
     }
 
     private ItemVisual FindVisual(string itemId)
@@ -57,7 +83,6 @@ public class InventoryUI : MonoBehaviour
 
     private void OnGUI()
     {
-        if (TryGetComponent<HUSEscape.Player.GameplayInputGate>(out var gate) && gate.IsBlocked) return;
         if (!isOpen || inventory == null)
             return;
 

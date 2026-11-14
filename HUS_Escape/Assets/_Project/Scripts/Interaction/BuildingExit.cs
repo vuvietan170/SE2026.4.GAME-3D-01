@@ -1,6 +1,5 @@
 using HUSEscape.World;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 /// <summary>An intentional E-only exit; walking through its range never initiates travel.</summary>
 public sealed class BuildingExit : MonoBehaviour
@@ -23,7 +22,7 @@ public sealed class BuildingExit : MonoBehaviour
     private void Update()
     {
         if (!CanShowPrompt) return;
-        if (Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame && !entry.Session.TryLeaveFloor())
+        if (entry.Gate.PlayerPressed("Interact") && !entry.Session.TryLeaveFloor())
         { feedback = entry.Session.LastMessage; feedbackWasComplete = entry.quests.IsComplete; feedbackUntil = Time.unscaledTime + 8; }
     }
     private void OnGUI()

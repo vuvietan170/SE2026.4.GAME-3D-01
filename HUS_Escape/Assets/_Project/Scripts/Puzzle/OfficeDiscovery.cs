@@ -1,6 +1,5 @@
 using HUSEscape.World;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace HUSEscape.Quests
 {
@@ -18,7 +17,7 @@ namespace HUSEscape.Quests
         private bool Selected => InteractionSelection.IsNearest(this, entry.player.transform, p => p.gameObject.scene == gameObject.scene && p.Available, false);
         private void Update()
         {
-            if (!Available || !Selected || Keyboard.current == null || !(useF ? Keyboard.current.fKey.wasPressedThisFrame : Keyboard.current.eKey.wasPressedThisFrame)) return;
+            if (!Available || !Selected || !entry.Gate.PlayerPressed(useF ? "Pickup" : "Interact")) return;
             if (fact == "office:computer" && (!entry.quests.HasObserved("office:notice") || !entry.quests.HasObserved("office:document")))
             { entry.ui.ShowInformation(title,"Hãy khảo sát bảng thông báo và đọc tài liệu hành chính trước khi xác nhận tuyến đường."); return; }
             entry.quests.Signal(fact); entry.ui.ShowInformation(title,content);

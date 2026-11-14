@@ -39,6 +39,7 @@ namespace HUSEscape.World
             internal bool OwnsGate;
             internal HUSEscape.Player.GameplayInputGate.Snapshot InputBefore;
         }
+        private GameBootstrap bootstrap;
         private GameManager manager;
         private SceneLoader loader;
         private JourneySceneEntry current;
@@ -80,7 +81,7 @@ namespace HUSEscape.World
                 throw new InvalidOperationException("Core services must finish loading before journey initialization.");
             if (services.CurrentState == GameState.Ready && !services.TryChangeState(GameState.Playing))
                 throw new InvalidOperationException("Core could not enter Playing.");
-            manager = services; loader = sceneLoader;
+            bootstrap = core; manager = services; loader = sceneLoader;
             loader.SceneLoaded += Loaded; loader.SceneLoadFailed += Failed; DontDestroyOnLoad(gameObject);
         }
         internal void Detach(JourneySceneEntry entry) { if (current == entry) current = null; }
@@ -125,7 +126,8 @@ namespace HUSEscape.World
                 if (proposed.Floor != null)
                     Floor01SaveSystem.ValidateSnapshot(proposed.Floor, entry.quests.Definitions, new[] { "Key_A101", "Key_A102", "Key_Lab" }, entry.inventory.Capacity);
                 if (entry.actorRoot != null) entry.actorRoot.SetActive(true); // Awake prepares actor-owned state.
-                if (current != entry) entry.Gate.Block();
+                entry.Gate.Bind(bootstrap);
+                if (current != entry) entry.Gate.HoldForTravel();
                 if (StorageDirectoryOverride != null && entry.floorSave != null) entry.floorSave.StorageDirectoryOverride = StorageDirectoryOverride;
                 // World-area restore has no puzzle side effects, and resolves pose before touching facts.
                 if (entry.isCampus || entry.isTrainingOffice)
@@ -150,6 +152,7 @@ namespace HUSEscape.World
                 if (world && proposed.Floor == null) LastMessage = "Khu vực mở trực tiếp: hãy Continue trong F5 hoặc New Game từ Floor 01.";
                 if (world || (!proposed.Fresh && proposed.Floor == null))
                     entry.ui.ProgressRestored((world && proposed.Pose == null) || (!world && proposed.Floor == null));
+                entry.Gate.ReleaseAfterFrame();
             }
             finally { applying = false; }
         }
@@ -191,7 +194,7 @@ namespace HUSEscape.World
             }
             catch (Exception captureError) { return Reject("Không thể chụp phiên hiện tại: " + captureError.Message); }
             travel = accepted;
-            if (accepted.OwnsGate) accepted.Source.Gate.Block();
+            if (accepted.Source != null) accepted.Source.Gate.Acquire(this);
             if (!loader.TryLoadScene(proposed.Path, GameState.Playing, out string error))
             {
                 // A synchronous backend failure may already have called Failed.
@@ -204,7 +207,7 @@ namespace HUSEscape.World
         private void Update()
         {
             // Closing a source modal cannot release the travel pause while native loading is pending.
-            if (travel != null && travel.Source != null) travel.Source.Gate.Block();
+            if (travel != null && travel.Source != null) travel.Source.Gate.Acquire(this);
         }
         private void Loaded(string path)
         {
@@ -239,7 +242,7 @@ namespace HUSEscape.World
                 current = accepted.Source;
                 if (target != null && target != current) Quarantine(target);
                 current.Gate.RestoreSnapshot(accepted.InputBefore);
-                if (accepted.OwnsGate) current.Gate.Block();
+                if (accepted.OwnsGate) current.Gate.HoldForTravel();
                 if (accepted.OwnsGate || current.ui.Mode == HUSEscape.Quests.QuestModal.None) current.Gate.ReleaseAfterFrame();
                 // Keep an open modal's lease; if the user closed it during loading,
                 // finish that close instead of restoring an invisible permanent pause.

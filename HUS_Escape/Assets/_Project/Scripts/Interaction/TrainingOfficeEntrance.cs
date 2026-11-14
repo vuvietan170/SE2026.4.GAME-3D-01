@@ -1,6 +1,5 @@
 using HUSEscape.World;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 /// <summary>Intentional nearby E entry/return, using the existing journey and production SceneLoader.</summary>
 public sealed class TrainingOfficeEntrance : MonoBehaviour
@@ -14,7 +13,7 @@ public sealed class TrainingOfficeEntrance : MonoBehaviour
     private bool Available => IsNear && entry.Session != null && !entry.Session.IsLoading && !entry.Gate.IsBlocked && !entry.player.GetComponent<InventoryUI>().IsOpen;
     private void Update()
     {
-        if (Available && Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame)
+        if (Available && entry.Gate.PlayerPressed("Interact"))
         {
             bool accepted = returnToCampus ? entry.Session.TryReturnCampus() : entry.Session.TryEnterOffice();
             if (!accepted) { feedback = entry.Session.LastMessage; feedbackUntil = Time.unscaledTime + 6; entry.ui.ShowInformation("LỐI VÀO PHÒNG ĐÀO TẠO", feedback); }

@@ -2,6 +2,7 @@
     "name": "HUSEscape.Player",
     "rootNamespace": "HUSEscape.Player",
     "references": [
-        "Unity.InputSystem"
+        "Unity.InputSystem",
+        "HUSEscape.Core"
     ]
 }
