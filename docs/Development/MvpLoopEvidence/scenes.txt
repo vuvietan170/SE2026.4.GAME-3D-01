@@ -1,0 +1,6 @@
+PASS Assets/_Project/Scenes/Bootstrap/Bootstrap.unity: imported references and scripts valid
+PASS Assets/_Project/Scenes/MainMenu/MainMenu.unity: imported references and scripts valid
+PASS Assets/Scenes/SampleScene.unity: imported references and scripts valid
+PASS Assets/_Project/Scenes/Floor01_Prototype.unity: imported references and scripts valid
+PASS Assets/_Project/Scenes/Campus_Prototype.unity: imported references and scripts valid
+PASS Assets/_Project/Scenes/TrainingOffice_Prototype.unity: imported references and scripts valid

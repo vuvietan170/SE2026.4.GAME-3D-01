@@ -36,7 +36,7 @@ namespace HUSEscape.Quests
             new QuestDefinition("office_document", "Đọc tài liệu hành chính ở quầy tiếp nhận (F).", "office:document"),
             new QuestDefinition("office_computer", "Truy cập máy tính xác nhận tuyến ra cổng chính (E).", "office:computer") };
         private QuestDefinition[] journal, officeJournal;
-        private const string officeCompleteObjective = "Đến cổng chính — đã xác nhận tuyến đường. Main Gate chưa triển khai trong bản này.";
+        private const string officeCompleteObjective = "Đến cổng chính phía Bắc Campus và nhấn E để thoát.";
         public bool OfficeActive { get; private set; }
         public int OfficeIndex { get { int i = 0; while (i < office.Length && observed.Contains(office[i].CompletionEvent)) i++; return i; } }
         public string[] CaptureOfficeFacts() { var facts = new List<string>(); foreach (var q in office) if (observed.Contains(q.CompletionEvent)) facts.Add(q.CompletionEvent); return facts.ToArray(); }
@@ -82,7 +82,7 @@ namespace HUSEscape.Quests
         public IReadOnlyList<QuestDefinition> Definitions => definitions;
         public int CurrentIndex { get; private set; }
         public bool IsComplete => CurrentIndex >= definitions.Length;
-        public string CurrentObjective => OfficeActive ? (OfficeIndex < office.Length ? office[OfficeIndex].Title : "Đến cổng chính — đã xác nhận tuyến đường. Main Gate chưa triển khai trong bản này.") : CampusActive && OfficeIndex == office.Length ? officeCompleteObjective : CampusActive ? (CampusIndex < campus.Length ? campus[CampusIndex].Title : "Đến cửa Phòng Đào tạo phía Đông Bắc và nhấn E.") : IsComplete ? "Đã hoàn thành tuyến nhiệm vụ tầng 1. Quay lại cuối hành lang để ra Campus (E)." : definitions[CurrentIndex].Title;
+        public string CurrentObjective => OfficeActive ? (OfficeIndex < office.Length ? office[OfficeIndex].Title : "Trở lại Campus qua cửa sảnh (E), rồi đến cổng chính phía Bắc.") : CampusActive && OfficeIndex == office.Length ? officeCompleteObjective : CampusActive ? (CampusIndex < campus.Length ? campus[CampusIndex].Title : "Đến cửa Phòng Đào tạo phía Đông Bắc và nhấn E.") : IsComplete ? "Đã hoàn thành tuyến nhiệm vụ tầng 1. Quay lại cuối hành lang để ra Campus (E)." : definitions[CurrentIndex].Title;
         private void Awake()
         {
             states = new QuestState[definitions.Length];

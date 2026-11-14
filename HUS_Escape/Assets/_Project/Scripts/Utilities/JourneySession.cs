@@ -3,11 +3,15 @@ using System.IO;
 using System.Linq;
 using HUSEscape.Core;
 using HUSEscape.Persistence;
+using HUSEscape.Player;
+using HUSEscape.AI;
+using HUSEscape.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace HUSEscape.World
 {
+    public enum JourneyOutcome { Playing, Caught, Won }
     public enum JourneyArea { Floor01, Campus, TrainingOffice }
     [Serializable] public sealed class JourneyCheckpoint
     {
@@ -22,7 +26,7 @@ namespace HUSEscape.World
 
     /// <summary>Commits checkpoint data only after its destination has restored successfully.</summary>
     [DisallowMultipleComponent]
-    public sealed class JourneySession : MonoBehaviour
+    public sealed class JourneySession : MonoBehaviour, IGameplayPauseOwner
     {
         private sealed class Proposal
         {
@@ -30,7 +34,7 @@ namespace HUSEscape.World
             internal Floor01SaveData Floor;
             internal string[] Campus = Array.Empty<string>(), Office = Array.Empty<string>();
             internal JourneyCheckpoint Pose;
-            internal bool Fresh;
+            internal bool Fresh, Menu;
         }
         private sealed class Travel
         {
@@ -39,6 +43,10 @@ namespace HUSEscape.World
             internal bool OwnsGate;
             internal HUSEscape.Player.GameplayInputGate.Snapshot InputBefore;
         }
+        public const string MenuPath = "Assets/_Project/Scenes/MainMenu/MainMenu.unity";
+        public JourneyOutcome Outcome { get; private set; }
+        public bool IsPauseOpen => Outcome != JourneyOutcome.Playing;
+        private bool retiring;
         private GameBootstrap bootstrap;
         private GameManager manager;
         private SceneLoader loader;
@@ -82,6 +90,8 @@ namespace HUSEscape.World
             if (services.CurrentState == GameState.Ready && !services.TryChangeState(GameState.Playing))
                 throw new InvalidOperationException("Core could not enter Playing.");
             bootstrap = core; manager = services; loader = sceneLoader;
+            // Direct scene play creates the same menu flow on its existing Core, never a second owner.
+            if (core.GetComponent<MainMenuFlow>() == null) core.gameObject.AddComponent<MainMenuFlow>().ConfigureOwner(core);
             loader.SceneLoaded += Loaded; loader.SceneLoadFailed += Failed; DontDestroyOnLoad(gameObject);
         }
         internal void Detach(JourneySceneEntry entry) { if (current == entry) current = null; }
@@ -143,7 +153,11 @@ namespace HUSEscape.World
                 else if (proposed.Floor != null) entry.floorSave.RestoreForTravel(proposed.Floor);
                 // Everything that can reject the checkpoint ran before these committed fields change.
                 floor = Copy(proposed.Floor); campusMemory = proposed.Campus.ToArray(); officeMemory = proposed.Office.ToArray();
-                current = entry; floorPath = entry.floorPath; campusPath = entry.campusPath; officePath = entry.officePath;
+                UnbindGuards();
+                current = entry;
+                foreach (var guard in entry.guards) guard.PlayerCaught += Caught;
+                Outcome = JourneyOutcome.Playing;
+                floorPath = entry.floorPath; campusPath = entry.campusPath; officePath = entry.officePath;
                 recovery = null; RecoveryRequired = false;
                 entry.Bind(this);
                 // Floor restore already notified its UI through Restored. Calling it
@@ -158,7 +172,7 @@ namespace HUSEscape.World
         }
         public bool TryLeaveFloor()
         {
-            if (IsLoading || RecoveryRequired || current == null || current.isCampus || current.isTrainingOffice) return Reject("Không thể rời Floor 01 lúc này.");
+            if (Outcome != JourneyOutcome.Playing || IsLoading || RecoveryRequired || current == null || current.isCampus || current.isTrainingOffice) return Reject("Không thể rời Floor 01 lúc này.");
             if (!current.quests.IsComplete) return Reject("Hoàn thành đủ 17 mục tiêu tầng 1 trước khi ra Campus.");
             try
             {
@@ -170,20 +184,20 @@ namespace HUSEscape.World
         }
         public bool TryEnterOffice()
         {
-            if (IsLoading || RecoveryRequired || !IsCampus || floor == null) return Reject("Hãy đến Phòng Đào tạo từ một hành trình Campus hợp lệ.");
+            if (Outcome != JourneyOutcome.Playing || IsLoading || RecoveryRequired || !IsCampus || floor == null) return Reject("Hãy đến Phòng Đào tạo từ một hành trình Campus hợp lệ.");
             if (current.quests.CampusIndex < 3) return Reject("Khảo sát sân trường, sơ đồ và biển hướng trước khi vào.");
             return Begin(new Proposal { Path = officePath, Floor = Copy(floor), Campus = current.quests.CaptureCampusFacts(), Office = officeMemory.ToArray() });
         }
         public bool TryReturnCampus()
         {
-            if (IsLoading || RecoveryRequired || !IsTrainingOffice || floor == null) return Reject("Chưa thể trở về Campus.");
+            if (Outcome != JourneyOutcome.Playing || IsLoading || RecoveryRequired || !IsTrainingOffice || floor == null) return Reject("Chưa thể trở về Campus.");
             return Begin(new Proposal { Path = campusPath, Floor = Copy(floor), Campus = current.quests.CaptureCampusFacts(), Office = current.quests.CaptureOfficeFacts(),
                 Pose = new JourneyCheckpoint { position = new Vector3(16, 1.08f, 51), yaw = 180 } });
         }
-        private bool Begin(Proposal proposed)
+        private bool Begin(Proposal proposed, bool allowBlocked = false)
         {
             if (IsLoading || loader == null || loader.IsLoading || (current == null && !RecoveryRequired)) return Reject("Đang tải Scene hoặc không có phiên để chuyển.");
-            if (current != null && current.Gate.IsBlocked && current.ui.Mode == HUSEscape.Quests.QuestModal.None)
+            if (!allowBlocked && current != null && current.Gate.IsBlocked && current.ui.Mode == HUSEscape.Quests.QuestModal.None)
                 return Reject("Hãy chờ input được mở lại trước khi chuyển khu vực.");
             Travel accepted;
             try
@@ -195,7 +209,7 @@ namespace HUSEscape.World
             catch (Exception captureError) { return Reject("Không thể chụp phiên hiện tại: " + captureError.Message); }
             travel = accepted;
             if (accepted.Source != null) accepted.Source.Gate.Acquire(this);
-            if (!loader.TryLoadScene(proposed.Path, GameState.Playing, out string error))
+            if (!loader.TryLoadScene(proposed.Path, proposed.Menu ? GameState.Ready : GameState.Playing, out string error))
             {
                 // A synchronous backend failure may already have called Failed.
                 if (ReferenceEquals(travel, accepted)) Abort(accepted, error);
@@ -206,6 +220,14 @@ namespace HUSEscape.World
         }
         private void Update()
         {
+            if (!IsLoading && !RecoveryRequired && current != null && IsPauseOpen)
+            {
+                // A disabled gate may release UI leases; a terminal result must still keep actors frozen.
+                current.Gate.Acquire(this);
+                if (current.Gate.ConsumeUi("Submit", this))
+                { if (Outcome == JourneyOutcome.Caught) TryRetry(); else TryNewGame(true); }
+                else if (current.Gate.ConsumeUi("Cancel", this)) TryReturnToMenu();
+            }
             // Closing a source modal cannot release the travel pause while native loading is pending.
             if (travel != null && travel.Source != null) travel.Source.Gate.Acquire(this);
         }
@@ -213,6 +235,14 @@ namespace HUSEscape.World
         {
             var accepted = travel;
             if (accepted == null || path != accepted.Proposed.Path) return;
+            if (accepted.Proposed.Menu)
+            {
+                var menu = SceneManager.GetSceneByPath(MenuPath);
+                if (!menu.IsValid() || !menu.isLoaded || menu != SceneManager.GetActiveScene() ||
+                    menu.GetRootGameObjects().SelectMany(r => r.GetComponentsInChildren<MainMenuView>(true)).Count() != 1)
+                { Abort(accepted, "Scene menu thiếu view hợp lệ."); return; }
+                CompleteReturnToMenu(accepted); return;
+            }
             var entries = FindObjectsByType<JourneySceneEntry>().Where(e => e.gameObject.scene.path == path).ToArray();
             JourneySceneEntry target = entries.Length == 1 ? entries[0] : null;
             // A surviving source (test/additive backend) must release its global pause before destination Awake.
@@ -240,6 +270,10 @@ namespace HUSEscape.World
                 (accepted.Source.floorSave == null || !accepted.Source.floorSave.RecoveryRequired))
             {
                 current = accepted.Source;
+                // A menu load commits Ready before view validation. A surviving gameplay
+                // scene needs Playing again; its restored modal/result lease will pause it if required.
+                if (accepted.Proposed.Menu && manager.CurrentState == GameState.Ready)
+                    manager.TryChangeState(GameState.Playing);
                 if (target != null && target != current) Quarantine(target);
                 current.Gate.RestoreSnapshot(accepted.InputBefore);
                 if (accepted.OwnsGate) current.Gate.HoldForTravel();
@@ -279,7 +313,7 @@ namespace HUSEscape.World
         /// <summary>Current context uses the original Floor V1 slot or the explicit Campus slot.</summary>
         public bool TrySave(bool overwrite = false)
         {
-            if (IsLoading || RecoveryRequired || current == null) return Reject("Đang tải khu vực.");
+            if (IsPauseOpen || IsLoading || RecoveryRequired || current == null) return Reject("Đang tải khu vực hoặc phiên đã kết thúc.");
             if (!IsCampus && !IsTrainingOffice) { bool result = current.floorSave.TrySave(overwrite); LastMessage = current.floorSave.LastMessage; return result; }
             try
             {
@@ -312,7 +346,7 @@ namespace HUSEscape.World
         public bool TryContinue(bool campus) => TryContinue(campus ? JourneyArea.Campus : JourneyArea.Floor01);
         public bool TryContinue(JourneyArea area)
         {
-            if (!Enum.IsDefined(typeof(JourneyArea), area) || IsLoading || RecoveryRequired || current == null || loader.IsLoading)
+            if (IsPauseOpen || !Enum.IsDefined(typeof(JourneyArea), area) || IsLoading || RecoveryRequired || current == null || loader.IsLoading)
                 return Reject("Đang chuyển khu vực hoặc khu vực không hợp lệ.");
             bool campus = area == JourneyArea.Campus, office = area == JourneyArea.TrainingOffice;
             try
@@ -362,6 +396,7 @@ namespace HUSEscape.World
         public bool TryNewGame(bool confirmed)
         {
             if (!confirmed || IsLoading || RecoveryRequired || current == null || loader.IsLoading) return Reject("Cần xác nhận New Game khi không tải Scene.");
+            if (IsPauseOpen) return Begin(new Proposal { Path = floorPath, Fresh = true }, true);
             if (!IsCampus && !IsTrainingOffice)
             {
                 var before = LiveSnapshot();
@@ -376,6 +411,70 @@ namespace HUSEscape.World
                 finally { applying = false; }
             }
             return Begin(new Proposal { Path = floorPath, Fresh = true });
+        }
+        /// <summary>Only the authored Campus gate can finish a valid completed journey.</summary>
+        public bool TryEscape(MainGateExit gate)
+        {
+            if (retiring || IsPauseOpen || IsLoading || RecoveryRequired || !IsCampus || current.Gate.IsBlocked ||
+                gate == null || !gate.isActiveAndEnabled || gate.entry != current || !gate.IsNear)
+                return Reject("Hãy đến Cổng chính trong Campus khi có thể điều khiển.");
+            if (floor?.lab == null || !floor.lab.complete || current.quests.CampusIndex != 3 || current.quests.OfficeIndex != 3)
+                return Reject("Hoàn thành tuyến Floor 01, khám phá Campus và ba nhiệm vụ Phòng Đào tạo trước khi ra cổng.");
+            if (!current.Gate.Acquire(this)) return Reject("Không thể kết thúc phiên lúc này.");
+            Outcome = JourneyOutcome.Won; LastMessage = "Đã hoàn thành hành trình HUS Escape. Bản lưu trên đĩa được giữ nguyên.";
+            return true;
+        }
+        private void Caught(PatrolGuard guard)
+        {
+            if (retiring || IsPauseOpen || IsLoading || RecoveryRequired || current == null ||
+                !current.guards.Contains(guard) || guard.Target != current.player.transform || current.Gate.IsBlocked) return;
+            if (!current.Gate.Acquire(this)) return;
+            Outcome = JourneyOutcome.Caught;
+            LastMessage = "Bạn đã bị bảo vệ bắt. Thử lại tại điểm vào khu vực, giữ nhiệm vụ và vật phẩm hiện tại.";
+        }
+        /// <summary>Reloads the area through SceneLoader; resets AI, preserves live progress, uses its safe entry spawn.</summary>
+        public bool TryRetry()
+        {
+            if (retiring || Outcome != JourneyOutcome.Caught || IsLoading || RecoveryRequired || current == null)
+                return Reject("Chỉ thử lại sau khi bị bắt và khi không tải Scene.");
+            try
+            {
+                var retry = LiveSnapshot();
+                retry.Pose = new JourneyCheckpoint { position = current.spawn.position, yaw = current.spawn.eulerAngles.y };
+                if (!IsCampus && !IsTrainingOffice && retry.Floor != null)
+                { retry.Floor.playerPosition = current.spawn.position; retry.Floor.playerYaw = current.spawn.eulerAngles.y; }
+                return Begin(retry, true);
+            }
+            catch (Exception error) { return Reject("Không thể thử lại: " + error.Message); }
+        }
+        public bool TryReturnToMenu()
+        {
+            if (retiring || IsLoading || loader == null || loader.IsLoading) return Reject("Đang tải Scene.");
+            return Begin(new Proposal { Path = MenuPath, Menu = true }, true);
+        }
+        private void UnbindGuards()
+        {
+            if (current == null || current.guards == null) return;
+            foreach (var guard in current.guards) if (guard != null) guard.PlayerCaught -= Caught;
+        }
+        private void CompleteReturnToMenu(Travel accepted)
+        {
+            // Only clear confirmed state after the menu load has actually succeeded.
+            retiring = true; UnbindGuards();
+            if (accepted.Source != null)
+            {
+                accepted.Source.ui.CloseModal();
+                accepted.Source.player.GetComponent<InventoryUI>()?.SetOpen(false);
+                accepted.Source.Gate.ReleaseImmediately();
+                if (accepted.Source.actorRoot != null) accepted.Source.actorRoot.SetActive(false);
+            }
+            travel = null; current = null; floor = null; recovery = null;
+            campusMemory = officeMemory = Array.Empty<string>();
+            Outcome = JourneyOutcome.Playing; RecoveryRequired = false;
+            loader.SceneLoaded -= Loaded; loader.SceneLoadFailed -= Failed;
+            // Menu always has an accessible cursor, irrespective of the gameplay cursor snapshot.
+            Time.timeScale = 1; Cursor.lockState = CursorLockMode.None; Cursor.visible = true;
+            Destroy(gameObject);
         }
         private static bool Safe(JourneySceneEntry entry, Vector3 position)
         {
@@ -405,8 +504,22 @@ namespace HUSEscape.World
                 if (GUI.Button(new Rect(40, 105, 320, 40), "Tải lại checkpoint phiên trước")) TryRecover();
                 GUI.enabled = true;
             }
+            else if (IsPauseOpen && !IsLoading)
+            {
+                int depth = GUI.depth; GUI.depth = -200;
+                float width = Mathf.Min(620, Screen.width - 32), x = (Screen.width - width) / 2, y = Mathf.Max(16, (Screen.height - 300) / 2);
+                var old = GUI.color; GUI.color = new Color(.035f, .045f, .065f, 1);
+                GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), Texture2D.whiteTexture); GUI.color = old;
+                GUI.Box(new Rect(x, y, width, 300), Outcome == JourneyOutcome.Won ? "CHIẾN THẮNG — HUS ESCAPE" : "BẠN ĐÃ BỊ BẮT");
+                var text = new GUIStyle(GUI.skin.label) { wordWrap = true, alignment = TextAnchor.MiddleCenter, fontSize = 18 };
+                GUI.Label(new Rect(x + 20, y + 45, width - 40, 100), LastMessage, text);
+                if (GUI.Button(new Rect(x + 24, y + 160, width - 48, 45), Outcome == JourneyOutcome.Caught ? "Thử lại khu vực / Enter" : "Chơi lại từ đầu / Enter"))
+                { if (Outcome == JourneyOutcome.Caught) TryRetry(); else TryNewGame(true); }
+                if (GUI.Button(new Rect(x + 24, y + 220, width - 48, 45), "Trở về menu / Esc")) TryReturnToMenu();
+                GUI.depth = depth;
+            }
             else if (IsLoading) GUI.Box(new Rect(Screen.width / 2f - 200, Screen.height / 2f - 40, 400, 80), "Đang tải khu vực…");
         }
-        private void OnDestroy() { if (loader != null) { loader.SceneLoaded -= Loaded; loader.SceneLoadFailed -= Failed; } }
+        private void OnDestroy() { UnbindGuards(); if (current != null) current.Gate.Release(this); if (loader != null) { loader.SceneLoaded -= Loaded; loader.SceneLoadFailed -= Failed; } }
     }
 }
