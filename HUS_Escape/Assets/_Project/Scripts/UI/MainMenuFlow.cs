@@ -35,6 +35,14 @@ namespace HUSEscape.UI
         /// <summary>Gets whether a Start request or an owned Core load is pending.</summary>
         public bool IsLoading => pending || (loader != null && loader.IsLoading);
 
+        /// <summary>Configures the existing Core when gameplay is opened directly in the Editor.</summary>
+        public void ConfigureOwner(GameBootstrap owner)
+        {
+            if (hasStarted || manager != null || owner == null || owner.gameObject != gameObject)
+                throw new InvalidOperationException("Configure the same Core owner before menu flow Start.");
+            bootstrap = owner;
+        }
+
         private void Start()
         {
             hasStarted = true;

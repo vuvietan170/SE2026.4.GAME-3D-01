@@ -1,5 +1,9 @@
 # Training Office Foundation
 
+> Cập nhật MVP: [vòng chơi, cổng chính, bị bắt và retry (thiết kế đề xuất)](MVP_ESCAPE_LOOP.md).
+> Phần dưới ghi lại nền tảng trước MVP; mô tả “chưa có Main Gate/Game Over” đã được thay thế bởi tài liệu trên.
+
+
 Scene: `Assets/_Project/Scenes/TrainingOffice_Prototype.unity`.
 Campus: cửa tại X=16, Z=53.9; đứng khoảng Z=51.2..52 và nhấn E.
 Nhánh đường nối từ đường phía Bắc Z=48; biển PHÒNG ĐÀO TẠO ở trên cửa.

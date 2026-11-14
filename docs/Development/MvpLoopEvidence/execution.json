@@ -1,0 +1,80 @@
+{
+  "base": "b9eba8e",
+  "branch": "feat/mvp-escape-loop",
+  "unity": "6000.6.5f1",
+  "project": "/tmp/hus-integration-validation",
+  "compile": {
+    "exit_code": 0,
+    "log": "/tmp/hus-mvp-compile.log"
+  },
+  "tests": {
+    "EditMode": {
+      "xml": "/tmp/hus-mvp-EditMode.xml",
+      "result": {
+        "id": "2",
+        "testcasecount": "110",
+        "result": "Passed",
+        "total": "110",
+        "passed": "110",
+        "failed": "0",
+        "inconclusive": "0",
+        "skipped": "0",
+        "asserts": "0",
+        "engine-version": "3.5.0.0",
+        "clr-version": "4.0.30319.42000",
+        "start-time": "2026-11-14 07:39:34Z",
+        "end-time": "2026-11-14 07:39:34Z",
+        "duration": "0.2881173"
+      },
+      "log": "/tmp/hus-mvp-EditMode.log"
+    },
+    "PlayMode": {
+      "xml": "/tmp/hus-mvp-PlayMode.xml",
+      "result": {
+        "id": "2",
+        "testcasecount": "33",
+        "result": "Passed",
+        "total": "33",
+        "passed": "33",
+        "failed": "0",
+        "inconclusive": "0",
+        "skipped": "0",
+        "asserts": "0",
+        "engine-version": "3.5.0.0",
+        "clr-version": "4.0.30319.42000",
+        "start-time": "2026-11-14 07:39:50Z",
+        "end-time": "2026-11-14 07:39:54Z",
+        "duration": "4.2833305"
+      },
+      "log": "/tmp/hus-mvp-PlayMode.log"
+    }
+  },
+  "probes": {
+    "mvp": {
+      "result": "PASS 16/16; 163 assertions",
+      "log": "/tmp/hus-mvp-green.log"
+    },
+    "journey": {
+      "result": "PASS",
+      "log": "/tmp/hus-mvp-JourneyIntegrationValidation.Run.log"
+    },
+    "player-pause": {
+      "result": "PASS 20/20",
+      "log": "/tmp/hus-mvp-PlayerPauseValidation.Run.log"
+    },
+    "transactions": {
+      "result": "PASS 34/34",
+      "log": "/tmp/hus-mvp-TransactionValidation.Run.log"
+    }
+  },
+  "source_sha256": {
+    "HUS_Escape/Assets/_Project/Scripts/Utilities/JourneySession.cs": "8fd4ef180935343dc5db614533a0bf508d6fbbfdc40e77f94f6d8ecda2e68698",
+    "HUS_Escape/Assets/_Project/Scripts/UI/MainMenuFlow.cs": "e48a904fbca6b49e99e1153812fd9320c126256fb4f0d0d8f69b1b7695b31dbe",
+    "HUS_Escape/Assets/_Project/Scripts/AI/PatrolGuard.cs": "88ae2c07d5ba8b2efdeb7e18866131058736199f64b37cb08138f3a499a670b5",
+    "HUS_Escape/Assets/_Project/Scripts/Interaction/MainGateExit.cs": "4a97332b6505bcbcfcb8daa53957ada08802a5da0e83a309763e04486011657f",
+    "HUS_Escape/Assets/_Project/Scripts/Puzzle/QuestManager.cs": "1d78eee48e3daa4b4440843a08545d13c3fce0088c5192276594f1aec9cc8d2f",
+    "HUS_Escape/Assets/_Project/Scripts/Puzzle/QuestPuzzleUI.cs": "52c07dbcc6e2ce73fcc496d350d6414a544018fd6d129c3d3b4cd7ee6e4dd1bb",
+    "HUS_Escape/Assets/_Project/Scenes/Campus_Prototype.unity": "176c3842a2a42d698cb2cdaa34a7045474d5d4aa1117c1964245261fbab4f686",
+    "HUS_Escape/Assets/_Project/Scenes/TrainingOffice_Prototype.unity": "8f6e568120b9b094691e2b57bb75dcaf20fc88789262b66753fd2e2fa02bc5c2"
+  }
+}

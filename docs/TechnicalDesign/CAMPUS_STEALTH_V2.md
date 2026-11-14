@@ -1,5 +1,9 @@
 # Campus Stealth V2
 
+> Cập nhật MVP: [vòng chơi, cổng chính, bị bắt và retry (thiết kế đề xuất)](MVP_ESCAPE_LOOP.md).
+> Phần dưới ghi lại nền tảng trước MVP; mô tả “chưa có Main Gate/Game Over” đã được thay thế bởi tài liệu trên.
+
+
 - `PatrolGuard` giữ GUID và các trường cấu hình V1; bổ sung Search, Return,
   vị trí cuối, truy đuổi tối đa 8 giây/22 m tính từ vị trí ban đầu.
   Tốc độ bảo vệ: tuần tra 1.5 m/s, truy đuổi 3.2 m/s.

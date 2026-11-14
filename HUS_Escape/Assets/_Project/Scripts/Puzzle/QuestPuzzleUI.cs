@@ -338,6 +338,7 @@ namespace HUSEscape.Quests
                 if (journey.Area != JourneyArea.Floor01 && journey.HasFloorSave && Button("Continue Floor 01 — Save V1")) journey.TryContinue(false);
                 if (!journey.IsTrainingOffice && journey.HasOfficeSave && Button("Continue Phòng Đào tạo")) journey.TryContinue(JourneyArea.TrainingOffice);
                 if (Button("New Game — bắt đầu lại Floor 01")) confirmation = 2;
+                if (Button("Trở về menu — kết thúc phiên, giữ file lưu")) journey.TryReturnToMenu();
             }
             else
             {

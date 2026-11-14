@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "original_campus_blocks": 821,
+  "new_blocks": 81,
+  "changed_existing_blocks": [
+    "9223372036854775807"
+  ],
+  "unchanged_script_meta_sha256": {
+    "Utilities/JourneySession.cs.meta": "977f5df979ee64aa7748372e1d25dfe8f3276be733c590d37db3c3e3fa10e967",
+    "Puzzle/QuestManager.cs.meta": "4cf31586f639e443ca4b11960c701f07a6390b57a2c8ff894cb0c806e38f9bfd",
+    "AI/PatrolGuard.cs.meta": "8d28958094eb1f7f64f067e942e4906a6da02bc15dced52af0d10c7a2cd06b55"
+  },
+  "build_settings_unchanged": true
+}

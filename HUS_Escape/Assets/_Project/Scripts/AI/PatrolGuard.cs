@@ -19,6 +19,10 @@ namespace HUSEscape.AI
         [SerializeField, Min(1)] private float maxChaseDistance = 22, maxChaseTime = 8, searchTime = 4;
         [SerializeField, Min(1)] private float hearingRange = 12, alarmRange = 24;
         [SerializeField] private PatrolGuard alarmRecipient;
+        [SerializeField, Min(.1f)] private float captureDistance = 1.8f;
+        private bool captureReported;
+        public Transform Target => player;
+        public event Action<PatrolGuard> PlayerCaught;
         private Transform player;
         private CharacterController controller, playerController;
         private Animator playerAnimator;
@@ -40,7 +44,7 @@ namespace HUSEscape.AI
             player = target;
             playerController = target != null ? target.GetComponent<CharacterController>() : null;
             playerAnimator = target != null ? target.GetComponentInChildren<Animator>() : null;
-            HasLineOfSight = false; visibleTime = unseenTime = 0;
+            HasLineOfSight = false; visibleTime = unseenTime = 0; captureReported = false;
         }
         private void Awake()
         {
@@ -78,6 +82,7 @@ namespace HUSEscape.AI
                         if (alarmRecipient != null && alarmRecipient.isActiveAndEnabled && FlatDistance(transform.position, alarmRecipient.transform.position) <= alarmRange)
                             alarmRecipient.ReceiveAlarm(lastKnownPosition);
                     }
+                    if (TryCapture()) return;
                     MoveTo(lastKnownPosition, chaseSpeed, 1.6f); return;
                 }
             }
@@ -92,6 +97,18 @@ namespace HUSEscape.AI
                 else { if (FlatDistance(transform.position, lastKnownPosition) > 1.6f) MoveTo(lastKnownPosition, speed, 1.6f); else { transform.Rotate(0, 45 * Time.deltaTime, 0); Gravity(); } return; }
             }
             if (State == GuardState.Patrol || State == GuardState.Return) MovePatrol();
+        }
+        /// <summary>Human guards catch once per binding, only in Alert, nearby and with fresh unobstructed sight.</summary>
+        public bool TryCapture()
+        {
+            if (!isActiveAndEnabled || isDog || captureReported || State != GuardState.Alert || Time.deltaTime <= 0 ||
+                player == null || !player.gameObject.activeInHierarchy || FlatDistance(transform.position, player.position) > captureDistance ||
+                Mathf.Abs(transform.position.y - player.position.y) > 1.5f || !CanSee(player)) return false;
+            // UI pauses and loading must not turn into an unseen catch when controls return.
+            var gate = player.GetComponent<HUSEscape.Player.GameplayInputGate>();
+            if (gate == null || gate.IsBlocked || PlayerCaught == null) return false;
+            captureReported = true;
+            PlayerCaught.Invoke(this); return true;
         }
         private float MovementSpeed() => playerController == null ? 0 : Vector3.ProjectOnPlane(playerController.velocity, Vector3.up).magnitude;
         private bool IsCrouching() => playerAnimator != null && playerAnimator.GetBool("IsCrouching");
